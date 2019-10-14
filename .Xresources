@@ -1,0 +1,182 @@
+
+!! make URLs in the terminal clickable 
+ URxvt.perl-ext-common: default,matcher,tabbed
+ URxvt.matcher.button: 1
+! matcher to open and list recent (currently limited to 10) URLs via keyboard
+ URxvt.keysym.C-Delete: perl:matcher:last
+ URxvt.keysym.M-Delete: pedl:matcher:list
+!! underlined text, instead of only link
+!! URxvt.colorUL: #4682B4
+!!Matching links can be colored with a chosen foreground or background colore ... 
+!! URxvt.matcher.rend.0: Uline Bold fg5
+!!Or Alternative 
+!! URxvt.colorUL: #4682B4
+
+
+xterm*termName: xterm-256color
+URxvt*.termName: rxvt-unicode-256color
+
+!!!Dont know what it mean!! 
+xterm*customization: -color
+URxvt*customization: -color
+
+xterm*StringConversionWarnings: on
+URxvt*StringConversionWarnings: on
+
+URxvt.perl-ext: default,url-select
+URxvt.perl-ext-common: tabbresize-font,tabbed,default,matcher
+URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+
+
+!! Changing font size on the fly
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+!! URxvt.iso14755: false
+!! URxvt.iso14755_52: false
+
+
+
+!!Fonts, Size and letterspace
+URxvt.letterSpace: -1
+URxvt.font:xft:Monospace:size=6
+
+!!disable the scrollback buffer for the secondary screen:
+URxvt.secondaryWheel: 1
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.saveLines: 1000
+URxvt*skipScroll:  true
+URxvt.scrollBar: false
+Rxvt.matcher.button: 1
+URxvt.tabbed.saveLines: 1000
+URxvt.tabbed.scrollBar: true
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.tabbed.secondaryScroll: true
+URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt*inheritPixmap: true 
+URxvt*shading: 70
+URxvt*scrollBar_right: false
+!! do not scroll with output
+URxvt*scrollTtyOutput: true
+
+!! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+!! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+!!the distance between characters can feel too wide. The spacing can be reduced by one pixel as such
+!URxvt.letterSpace: -1
+
+
+! --- ~/.Xresources ------------------------------------------------------------
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+
+!URxvt*background: #626262
+URxvt*background: #171717
+!URxvt*foreground: #f382d3
+!URxvt*foreground: #FF008C
+!#URxvt*foreground: #FF008C
+URxvt*foreground: #FE0083 
+!URxvt*foreground: #ff1493 
+
+!*foreground: #E30360
+!!xterm*foreground: #E30360
+!xterm*foreground: #F80077
+xterm*foreground:  #F00e8b
+!*foreground: #FF008C
+!*background: #2D2D2D
+xterm*background: #171717
+
+
+! Tabbedex features
+ URxvt.tabbed.new-button:       no
+ URxvt.tabbed.autohide:         yes
+ URxvt.tabbed.no-tabbedex-keys: yes
+
+! Tabbedex colors http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+ URxvt.tabbed.tabbar-fg:   24
+ URxvt.tabbed.tabbar-bg:   234
+ URxvt.tabbed.tab-fg:      232
+ URxvt.tabbed.tab-bg:      226
+ URxvt.tabbed.bell-tab-fg: 255
+ URxvt.tabbed.bell-tab-bg: 160
+ URxvt.tabbed.bell-fg:     244
+ URxvt.tabbed.bell-bg:     17
+ URxvt.tabbed.title-fg:    28
+ URxvt.tabbed.title-bg:    16
+
+! Tabbedex keybindings (4-1: Super + Alt)
+ URxvt.keysym.4-1-Up:    perl:tabbedex:new_tab
+ URxvt.keysym.4-1-C-Left:    perl:tabbedex:prev_tab
+ URxvt.keysym.4-1-C-Right:   perl:tabbedex:next_tab
+ URxvt.keysym.4-1-Down:      perl:tabbedex:rename_tab
+ URxvt.keysym.4-1-Left:  perl:tabbedex:move_tab_left
+ URxvt.keysym.4-1-Right: perl:tabbedex:move_tab_right
+
+! --- standard colorsO---
+!
+!! black
+!*color0: #424242
+!
+!! bright_black
+!*color8: #626262
+!
+!! red
+!*color1: #ae7584
+!
+!! bright_red
+!*color9: #f9f5f6
+!
+!! green
+!*color2: #84ae75
+!
+!! bright_green
+!*color10: #f6f9f5
+!
+!! yellow
+!*color3: #ae9f75
+!
+!! bright_yellow
+!*color11: #f9f8f5
+!
+!! blue
+!*color4: #7584ae
+!
+!! bright_blue
+!*color12: #f5f6f9
+!
+!! magenta
+!*color5: #9f75ae
+!
+!!bright_magenta
+!*color13: #f8f5f9
+!
+!! cyan
+!*color6: #75ae9f
+!
+!! bright_cyan
+!*color14: #f5f9f8
+!
+!! white
+!*color7: #e0e0e0
+!
+!! bright_white
+!*color15: #ffffff
+!
+!
+!! ------------------------------------------------------------------------------
+!! --- end of terminal colors section -------------------------------------------
+!! ------------------------------------------------------------------------------ 
