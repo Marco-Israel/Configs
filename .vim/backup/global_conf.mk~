@@ -1,0 +1,89 @@
+
+################################################################################
+### 					MIS_BUILD - GLOBAL SETTINGS
+################################################################################
+#
+# @file 	global_conf.mk
+# @author 	Marco Isarel (MI)
+# @date 	2019-03
+#
+#
+# @brief Global configuration and settings which are aviable to the productive
+# 		and unittest project.
+#
+#
+# @details  This Makefile defines global specific settings which can be
+# 			included by all makefiles in the system. Pleas define only
+# 			information here which are equivalent to all projekts all
+# 			makefiles.
+#
+#
+# @attation Please define a global system variable %%MISBUILD%% or
+# 			$MISBUILD in you shell config or in your windows system
+# 			settions which holding the path the path to the root folder of
+# 			this build system.  Normaly the  path to set is the folder where
+# 			this cnfig makefile stays.
+#
+#
+################################################################################
+
+
+
+
+################################################################################
+### Root build location
+################################################################################
+
+###
+# If you don't set the enviument variable %%MISBUILDROOT%%
+# $PATH_MISBUID you need to configure a fix path to the root folder
+# of this build system. Normaly it should be the folder where this
+# config makefile stays.
+###
+#PATH_MISBUILD  = d:\00_MIS_BUILD
+#PATH_MISBUILD = C:\app\Swipetronic\swipetronic_SW
+PATH_BUILDENVIRONMENTROOT = d:\00_MIS_BUILD
+
+
+
+
+################################################################################
+### Other qual setting which can included by all other makefiles respectifly
+################################################################################
+
+
+#
+#ifeq ($(TYPE_TOOLCHAIN),clang)
+##---ifeq BEGIN CLANG---
+#ifeq ($(USAGE_TOOLEXPLICIT),Y)
+#	#nothing or todo #
+#else
+#CC:=@"$(PATH_TOOLCHAIN)/todo"
+#AS:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#LD:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#AR:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#HX:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#endif
+##---ifeq END CLANG---
+#endif
+#
+#
+#
+#ifeq ($(TYPE_TOOLCHAIN),gcc)
+##---ifeq BEGIN GCC---
+#ifeq ($(USAGE_TOOLEXPLICIT),Y)
+#	#nothing or todo #
+#else
+#CC:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#AS:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#LD:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#AR:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#HX:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/todo"
+#endif
+##---ifeq END GCC---
+#endif
+#
+
+
+################################################################################
+### EOF ########################################################################

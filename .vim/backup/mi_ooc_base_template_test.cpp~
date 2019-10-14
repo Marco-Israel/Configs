@@ -1,0 +1,618 @@
+/*******************************************************************************
+ * @file        test_sub.cpp
+ * @author      Marco Isarel (MI)
+ * @date        2019-05
+ * @ingroup     cppUTest
+ * @copyright Copyright (c) 2019 Marco Israel
+ *
+ *
+ * @brief Test the sub template core functions
+ *
+ *
+ * @details Test the sub template core functions
+*
+*
+*
+*
+*
+                IMPORTANT NOTICE - COPYRIGHT INFORMATION
+*
+*
+*
+* English:
+*
+* THIS SOFTWARE AND ITS OBJECT ORIENTED ARCHITECTURE IN THE PROGRAMMING
+* LANGUAGE C AS WELL AS THE NAMING CONVENTION IS PROVIDED "AS IS" by
+* MARCO ISRAEL. ANY EXPRESS OR IMPLIED  WARRANTIES, INCLUDING, BUT NOT
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO  EVENT SHALL MARCO ISRAEL
+* BE LIABLE FOR ANY DIRECT, INDIRECT, * INCIDENTAL, SPECIAL, EXEMPLARY,
+* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT * LIMITED TO, PROCUREMENT
+* OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY  OF LIABILITY,
+* WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR
+* OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+* ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* The Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* is allowed to use this object oriented software architecture as well
+* as its naming conversation in and only in the their project
+* 'ED0096_Swipetronic'. Marco Israel 2019 - 2020.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions
+* are met:
+*     * Redistribution of source code must retain the this copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistribution in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in
+*       the documentation and/or other materials provided with the
+*       distribution.
+*     * Neither the name of the <organization> nor the names of its
+*       contributors may be used to endorse or promote products derived
+*       from this software without specific prior written permission.
+*
+*
+*
+* German:
+*
+* Alle Inhalte in source und binaer Form, insbesondere die hier aufgezeigte
+* object orientierte Softwarearchitektur- in der Programmiersprache C,
+* seiner coding Conversation (Namensgebung etwa fuer Variablen, Funktionen,
+* Parameter, Datentypen, usw.) sind urheberrechtlich geschuetzt.
+* Alle Rechte, einschließlich der Verwendung, Veroeffentlichung, Bearbeitung,
+* Uebersetzung oder Vervielfältigung, bleiben Marco Israel vorbehalten.
+* Dieses gilt auch fuer alle Instanzen, Kopien oder sonstigen Verwendungen
+* in source oder binearform. In jedem Fall sind diese Copyright und Urheber
+* Informationen zu uebernehmen und duerfen nicht ohne Zustimmung vereandert
+* oder entfernt werden. Marco Israel uebernimmt keine Haftung in irgendeiner
+* Form und Art und Weise, die durch die Nutzung dieser Architektur oder seiner
+* Kopien und Instancen in source oder binaerform direkt oder indirekt
+* entstehen und kann nicht fuer Schaeden belangt werden.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template sowie seine object orientierte Software
+* Architektur in C, als auch der die genutzte Namensgebungskonversation,
+* innerhalb * und ausschliesslich fuer das * Project 'ED0096_Swipetronic'
+* zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+* @detail
+* ____TODO______
+*
+* The UML diagrams in this template folder provides you the context of template
+* structure in a graphical view. Feel free to take a look at this diagrams.
+* In case of questions you can contact me under Marco-Israel@online.de.
+*
+*
+********************************************************************************
+* @attention
+* ____TODO______
+*
+* If you change something inside the template structure, do this in the
+* template folder first and run 'make' inside the 'test' folder to see if
+* the unittests still pass.
+*
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+#include "CppUTest/TestHarness.h"
+#include "CppUTestExt/MockSupport.h"
+#include "CppUTestExt/MockSupport_c.h"
+
+extern "C" {
+#include "mi_ooc_base_template.h"
+#include "mi_ooc_template_mock.hpp"
+#include "mi_ooc_errorHandler_mock.h"
+}
+
+
+
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+#define MI_OOC_B1_TEST_VALUE    (0x55u)
+#define MI_OOC_B1_DEFAULT_VALUE (0xFFu)
+
+
+
+
+
+/*******************************************************************************
+ **     Variables and Types global STATIC (private)
+ ******************************************************************************/
+
+   static mi_ooc_b1__this__st this__S;
+   static mi_ooc_b1__ctorParamList__st ctorparam__S;
+   static mi_ooc_b1__vFTable__st* ps__baseVFTable;
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Local MOCKs
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/* ----- PART: expacted Calls ------------------------------------------------*/
+
+
+//
+//static inline void expactNCall____TODO____(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList,
+//    uint8_t numberOfCalls)
+//{
+//        mock().expectNCalls(numberOfCalls, "ctor_mock")
+//            .withConstPointerParameter("ps__this", ps__this)
+//            .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+//
+
+/* -------- END PART: expacted Calls -----------------------------------------*/
+
+
+
+
+
+/* ----- PART: local MOCKs ---------------------------------------------------*/
+
+
+//
+//static void ____TODO____MOCK(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList)
+//{
+//
+//    mock().actualCall("____TODO____")
+//        .withConstPointerParameter("ps__this",ps__this)
+//        .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+
+
+/* -------- END PART: local MOCKs --------------------------------------------*/
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Unittests
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+TEST_GROUP(MI_OOC_BASE_TG)
+{
+    void setup()
+    {
+
+         ps__baseVFTable = _mi_ooc_b1__getPt_vFTable();
+
+    }
+
+    void teardown()
+    {
+        mi_ooc_b1__deleate(&this__S);
+
+    }
+};
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        1__TEST_if_a_call_to_new_returs_the_right_this_pointer)
+{
+
+ POINTERS_EQUAL(mi_ooc_b1__new(&this__S, &ctorparam__S), &this__S);
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        2__TEST_a_call_to_new_with_NULLp_arguments)
+{
+
+    mock_c()->ignoreOtherCalls();
+
+    POINTERS_EQUAL(NULLp,
+            mi_ooc_b1__new( (mi_ooc_b1__this__st*)0,
+            (mi_ooc_b1__ctorParamList__st*)0) );
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        3__TEST_if_base_objectMember_gets_initialized_by_ctor_paramList)
+{
+
+   ctorparam__S.attributePublic__S.____TODO______baseDataMember =
+   MI_OOC_B1_TEST_VALUE;
+
+
+
+   mi_ooc_b1__new(&this__S, &ctorparam__S);
+
+
+   LONGS_EQUAL(MI_OOC_B1_TEST_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        4__TEST_if_base_objectMMeber_gets_init_to_default_if_ctor_is_null)
+{
+
+   mi_ooc_b1__new(&this__S, ((mi_ooc_b1__ctorParamList__st*)0) );
+
+
+   LONGS_EQUAL(MI_OOC_B1_DEFAULT_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        5__MOCK_a_call_to_ctor_should_happen_NEVER_because_its_called_directly)
+{
+
+   ctorparam__S.attributePublic__S.____TODO______baseDataMember =
+   MI_OOC_B1_TEST_VALUE;
+
+
+   this__S.ps__virtualOperation = 0u;
+   UT_PTR_SET(ps__baseVFTable->virtualOperation__S.pf__ctor,
+           &_ctor_MOCK);
+
+
+
+   expactNCall__ctor(&this__S, &ctorparam__S, 0u);
+
+
+
+   mi_ooc_b1__new(&this__S, &ctorparam__S);
+
+
+   LONGS_EQUAL(MI_OOC_B1_TEST_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+    mock().checkExpectations();
+    mock().clear();
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        6__MOCK_a_call_to_dtor_should_happen_NEVER_because_its_called_directly)
+{
+
+   UT_PTR_SET(ps__baseVFTable->virtualOperation__S.pf__dtor,
+           &_dtor_MOCK);
+
+
+   mi_ooc_b1__new(&this__S, &ctorparam__S);
+
+
+   LONGS_EQUAL(MI_OOC_B1_TEST_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+
+   expactNCall__dtor(&this__S, 0u);
+   mi_ooc_b1__deleate(&this__S);
+
+
+   mock().checkExpectations();
+   mock().clear();
+
+
+   LONGS_EQUAL(0x00,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        7__TEST_base_SET_and_GET_functions)
+{
+    uint8_t newValue = 88u;
+
+   mi_ooc_b1__this__st this__S;
+    mi_ooc_b1__set_____TODO______baseDataMember(&this__S, newValue);
+
+    LONGS_EQUAL(newValue, mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        8__TEST_if_data_member_gets_overwritten_by_ctor_and_deleaded_by_dtor)
+{
+
+    uint8_t valueToOverwrite = 0xCC;
+
+   ctorparam__S.attributePublic__S.____TODO______baseDataMember =
+   MI_OOC_B1_TEST_VALUE;
+
+
+   mi_ooc_b1__set_____TODO______baseDataMember(&this__S,
+           valueToOverwrite);
+
+   LONGS_EQUAL(valueToOverwrite,
+           mi_ooc_b1__get_____TODO______baseDataMember( &this__S));
+
+
+
+   mi_ooc_b1__new(&this__S,&ctorparam__S);
+
+
+
+   LONGS_EQUAL(MI_OOC_B1_TEST_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S) );
+
+
+   mi_ooc_b1__deleate(&this__S);
+
+
+   LONGS_EQUAL(0u,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S) );
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        9__TEST_if_instanceConter_gets_incremented)
+{
+
+    uint8_t const numberOfInstances = 3u;
+    uint8_t currentInstancesBase[numberOfInstances] = {0};
+
+    mi_ooc_b1__this__st base__S[numberOfInstances];
+
+
+
+    for(int i =0;i != numberOfInstances; i++){
+      currentInstancesBase[i] =  mi_ooc_b1__get_instanceCounter(&base__S[i]);
+      LONGS_EQUAL(currentInstancesBase[i],
+              mi_ooc_b1__get_instanceCounter(&base__S[i]));
+    }
+
+
+    for(int i= 0u;i != numberOfInstances; i++){
+     mi_ooc_b1__new(&base__S[i], NULL);
+    }
+
+
+
+    for(int i= 0u;i != numberOfInstances; i++){
+        LONGS_EQUAL(currentInstancesBase[i] + numberOfInstances,
+                mi_ooc_b1__get_instanceCounter(&base__S[i]));
+    }
+
+
+    for(int i= 0u;i != numberOfInstances; i++){
+     mi_ooc_b1__deleate(&base__S[i]);
+     LONGS_EQUAL(numberOfInstances-(i+1), mi_ooc_b1__get_instanceCounter(
+                 &base__S[i]) );
+    }
+
+
+    for(int i= 0u;i != numberOfInstances; i++){
+     LONGS_EQUAL(0u, mi_ooc_b1__get_instanceCounter(
+                 &base__S[i]) );
+    }
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        10__MOCK_a_call_to_errorHandler)
+{
+
+
+    UT_PTR_SET(ps__baseVFTable->virtualOperation__S.pf__errorHandler,
+            &mi_ooc__errorHandler_default_MOCK);
+
+
+    expactNCall__errorHandler_default(&ps__this, NULLp, 1u);
+
+
+    LONGS_EQUAL(0,  mi_ooc_b1__new(NULL, NULL));
+
+
+    mock_c()->checkExpectations();
+    mock_c()->clear();
+
+}
+
+
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        11__TEST_if_vfTable_gets_linked_and_unlinked)
+{
+
+
+  ctorparam__S.attributePublic__S.____TODO______baseDataMember =
+      MI_OOC_B1_TEST_VALUE;
+
+
+   memset(&this__S, 0x00, sizeof(mi_ooc_b1__this__st));
+
+
+   POINTERS_EQUAL(0x00, this__S.ps__virtualOperation);
+
+
+   mi_ooc_b1__new(&this__S, &ctorparam__S);
+
+
+   LONGS_EQUAL(MI_OOC_B1_TEST_VALUE,
+           mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+
+   POINTERS_EQUAL(_mi_ooc_b1__getPt_vFTable(), this__S.ps__virtualOperation);
+
+
+   mi_ooc_b1__set_____TODO______baseDataMember(&this__S, 33u);
+
+
+   LONGS_EQUAL(1u, mi_ooc_b1__get_objectNr(&this__S) );
+
+
+   mi_ooc_b1__deleate(&this__S);
+
+
+   LONGS_EQUAL( 0x00, mi_ooc_b1__get_____TODO______baseDataMember(&this__S));
+
+
+   POINTERS_EQUAL(0x00, this__S.ps__virtualOperation);
+
+
+   LONGS_EQUAL(0u, mi_ooc_b1__get_objectNr(&this__S));
+
+
+}
+
+
+
+
+
+TEST(MI_OOC_BASE_TG,
+        12__TEST_objctNr_and_instanceCounter_after_calling_new_multitimes)
+{
+
+   mi_ooc_b1__this__st base__S;
+   mi_ooc_b1__this__st base2__S;
+   mi_ooc_b1__ctorParamList__st ctorparamB__S;
+
+
+   mi_ooc_b1__new(&base__S, &ctorparamB__S);
+   mi_ooc_b1__new(&base2__S, &ctorparamB__S);
+
+
+    LONGS_EQUAL(1, mi_ooc_b1__get_objectNr(&base__S));
+    LONGS_EQUAL(2, mi_ooc_b1__get_objectNr(&base2__S));
+
+
+   mi_ooc_b1__new(&base__S, &ctorparamB__S);
+   mi_ooc_b1__new(&base2__S, &ctorparamB__S);
+
+   POINTERS_EQUAL(_mi_ooc_b1__getPt_vFTable() , base__S.ps__virtualOperation);
+   POINTERS_EQUAL(_mi_ooc_b1__getPt_vFTable() , base2__S.ps__virtualOperation);
+
+   LONGS_EQUAL(1, mi_ooc_b1__get_objectNr(&base__S));
+   LONGS_EQUAL(2, mi_ooc_b1__get_objectNr(&base2__S));
+
+
+   mi_ooc_b1__deleate(&base__S);
+   mi_ooc_b1__deleate(&base2__S);
+
+
+   LONGS_EQUAL(0, mi_ooc_b1__get_instanceCounter(&base__S)  );
+   LONGS_EQUAL(0, mi_ooc_b1__get_instanceCounter(&base__S)  );
+
+
+   POINTERS_EQUAL(0x00, base__S.ps__virtualOperation);
+   POINTERS_EQUAL(0x00, base2__S.ps__virtualOperation);
+
+   mi_ooc_b1__new(&base__S, &ctorparamB__S);
+   mi_ooc_b1__new(&base2__S, &ctorparamB__S);
+
+
+   LONGS_EQUAL(1, mi_ooc_b1__get_objectNr(&base__S));
+   LONGS_EQUAL(2, mi_ooc_b1__get_objectNr(&base2__S));
+
+
+   mi_ooc_b1__deleate(&base__S);
+   mi_ooc_b1__deleate(&base2__S);
+
+}
+
+
+
+TEST(MI_OOC_BASE_TG,
+        13__TEST_a_call_to_deleat_should_not_underflow_the_instanceCounter)
+{
+    LONGS_EQUAL(0u, mi_ooc_b1__get_instanceCounter(&this__S));
+            mi_ooc_b1__new(&this__S,&ctorparam__S);
+
+    LONGS_EQUAL(1u, mi_ooc_b1__get_instanceCounter(&this__S));
+        mi_ooc_b1__deleate(&this__S);
+        mi_ooc_b1__deleate(&this__S);
+        mi_ooc_b1__deleate(&this__S);
+    LONGS_EQUAL(0u, mi_ooc_b1__get_instanceCounter(&this__S));
+
+}

@@ -1,0 +1,36 @@
+/*
+ * adcConversions.h
+ *
+ *  Created on: 12.07.2018
+ *      Author: Z602900
+ */
+
+#ifndef ADC_CONVERSION_TYPES_H_
+#define ADC_CONVERSION_TYPES_H_
+#include "lemdd_header.h"
+
+
+
+
+typedef struct
+{
+
+	float32 					gain;			/*<! gain which schould be used*/
+	float32 					offset;			/*!< offset to be added after conversion*/
+	float32						min;			/*!< Minimum allowed value*/
+	float32 					max;			/*!< Maximum allowed value*/
+} adc_conversion_config;
+
+
+
+
+/**
+ *  Converts the given raw value from adc with specified settings to a real value.
+ *  @param rawValue	The raw Adc Value to be converted
+ *  @param config Conversion settings
+ *
+ *  @returns  Conversion result
+ */
+float32 adc_conversion_convert_raw(uint32_t rawValue, adc_conversion_config *const config);
+
+#endif /* ADC_CONVERSION_TYPES_H_ */

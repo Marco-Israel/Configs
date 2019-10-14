@@ -1,0 +1,62 @@
+
+;----------------------------------------------------------------------
+; Clear default area
+;----------------------------------------------------------------------
+  
+AREA.CLEAR
+
+;----------------------------------------------------------------------
+; Choose hex mode as default for input values, and enable spotlight
+;----------------------------------------------------------------------
+  
+RADIX Hex
+MODE.Hll
+SETUP.Var %SpotLight ;Establish SpotLight as default setting for all
+
+;----------------------------------------------------------------------
+; Add some extra buttons to the toolbar
+;----------------------------------------------------------------------
+MENU.ReProgram reset_go.men
+MENU.ReProgram in_target_reset.men
+
+
+DO Aurix_menu.cmm
+DO window_pos.cmm
+
+;----------------------------------------------------------------------
+; Choose a different TRACE32 menu file e.g. Japanese (default: english)
+;----------------------------------------------------------------------
+
+IF LANGUAGE()!=""
+(
+   LOCAL  &menuname
+   &menuname="~~/t32"+LANGUAGE()+".men"
+   IF OS.FILE(&menuname)
+      MENU.ReProgram &menuname
+)
+
+;----------------------------------------------------------------------
+; Recall and define TRACE32 command history file
+;----------------------------------------------------------------------
+  
+AutoSTOre , HISTory BookMark
+
+;----------------------------------------------------------------------
+; System settings
+;----------------------------------------------------------------------
+
+SYStem.RESet
+Break.SELect Program Onchip
+
+;----------------------------------------------------------------------
+; Configure controller specific settings
+;----------------------------------------------------------------------
+
+SYStem.CPU TC275TP 
+SYSTEM.CONFIG.DEBUGPORTTYPE DAP2
+SYStem.JTAGCLOCK 40Mhz
+SYSTEM.CONFIG DAP DAPENABLE ON
+SYSTEM.OPTION.DUALPORT ON
+SYStem.Up
+
+ENDDO

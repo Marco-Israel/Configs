@@ -1,0 +1,94 @@
+/*******************************************************************************
+ * @file    testlist.txt
+ * @author     Marco Isarel (MI)
+ * @date     2019-05
+ * @ingroup utest_mi_ooc_template
+ * @copyright Copyright (c) 2019 Marco Israel
+ *
+ *
+ * @brief Testlist in this folder to test the mi_ooc template files
+ *
+ *
+ * @details Testlist in this folder to test the mi_ooc template files
+*******************************************************************************/
+
+
+
+
+mi_ooc_base_template_test.cpp:
+--------------------------------------------------------------------------------
+1. TEST if a call to new returs the right this pointer back.
+2. TEST a call to new with NULLp arguments should give no error
+3. TEST if base objectMember gets initialized by given ctor paramList value
+4. TEST if base objectMMeber gets init to default if ctor is null
+5. MOCK a call to ctor should happen NEVER because its called directly in new
+6  MOCK a call to dtor should happen NEVER because its called directly in deleat
+7  TEST base SET and GET functions
+8  TEST if data member gets overwritten by ctor and deleaded by dtor
+9  TEST if instanceConter gets incremented
+10  MOCK a call to errorHandler
+11  TEST if vfTable gets linked and unlinked
+12  TEST objctNr and instanceCounter after calling new multitimes
+12 TEST multicall to deleat should not underflow the instanceCounter
+
+
+mi_ooc_sub_template_test.cpp:
+--------------------------------------------------------------------------------
+1. TEST Create new object, hand it over to new, check if result pointers equal.
+2. TEST what happen if ps__this is NULLp
+3. cast base to this
+4. cast paseParamList to thisParamList
+5. TEST if dummy object member gets initialized by paramList value.
+6. TEST if object gets initialized with default values if paramList is NULLp.
+7, TEST Get vFTable, overwrite _ctor, test if _ctor mock is called ONCE by new()
+8, TEST get vFTable, overwrite _dtor test if _dtor mock is called ONCE and
+    only once by deleate().
+9. TEST inline set() and get() to set object member variabe
+10. TEST if base and sub data members gets bothe initialized by new()->ctor()
+11:, TEST if base and sub object members get freed after caling deleate.
+12:. TEST if instantce Counter gets incremented after calling new();
+13. TEST if error Handler get called
+
+- TEST whats happen if ps__this is null.
+- TEST if dummy values gets reset and ps__this will be overwirten to NULLp.
+- TEST if mock _dtor get called once.
+
+
+
+
+
+test/mi_ooc_uart_test.cpp
+--------------------------------------------------------------------------------
+1. TEST if HWNr gets initialized by ctor (calling new)
+2. TEST if HWNr gets cleard by dtor (calling deleat)
+3. MOCK a call to uart send();
+4. MOCK a call to uart receive();
+5. TEST if the vFTABLE gets initialized
+
+
+
+
+
+mi_ooc_sensor_test.cpp:
+--------------------------------------------------------------------------------
+1. TEST if vFTable gets initialized
+2. TEST if same this pointer gets returned by new.
+3. MOCK a call to Ctor. This should calld never because in the base constructor
+    _ctor is called directly.
+4. MOCK a call to send. This should be called.
+5. MOCK a call to receive. This should be called.
+6. TEST replace send, receive, errorHandler by user defined MOCKS and check a
+    call to this mocks.
+
+
+
+
+
+elmos52042_sensor_test.cpp:
+--------------------------------------------------------------------------------
+1. MOCK call to ctor. Because it is called explicite and overwriten in ctor
+    again, this call to mock shoud never happen.
+2. MOCK a clann to menchesterSender.
+3. MOCK a clann to reciver.
+4. MOCK a clann to elmos52042Errorhandler.
+

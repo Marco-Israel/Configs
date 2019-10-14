@@ -1,0 +1,18 @@
+/*
+ * aurix_activeWait.c
+ *
+ *  Created on: 13.05.2019
+ *      Author: Z602900
+ */
+
+
+
+
+
+#include "aurix_activeWait.h"
+
+void aurix_waitActive(uint32_t microsecs) {
+    uint32_t ticks = IfxStm_getTicksFromMicroseconds(&MODULE_STM0, microsecs);
+    IfxStm_waitTicks(&MODULE_STM0, ticks); }
+
+

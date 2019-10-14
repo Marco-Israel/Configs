@@ -1,0 +1,829 @@
+///*******************************************************************************
+//* @file             manchester_encoderDecoder.c
+//* @author           Marco Israel
+//* @version          v. 1.0
+//* @date             2019-08
+//* @ingroup          mi_ooc
+//* @copydoc          manchester_encoderDecoder.h
+//* @brief            Manchester encoder and decoder sofware object
+//* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+//*
+//*
+//*
+//*
+//*                      IMPORTANT NOTICE - COPYRIGHT INFORMATION
+//*
+//*
+//* English:
+//*
+//* THIS SOFTWARE AND ITS OBJECT ORIENTED ARCHITECTURE IN THE PROGRAMMING
+//* LANGUAGE C AS WELL AS THE NAMING CONVENTION IS PROVIDED "AS IS" by
+//* MARCO ISRAEL. ANY EXPRESS OR IMPLIED  WARRANTIES, INCLUDING, BUT NOT
+//* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+//* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO  EVENT SHALL MARCO ISRAEL
+//* BE LIABLE FOR ANY DIRECT, INDIRECT, * INCIDENTAL, SPECIAL, EXEMPLARY,
+//* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT * LIMITED TO, PROCUREMENT
+//* OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+//* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY  OF LIABILITY,
+//* WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR
+//* OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+//* ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//*
+//* The Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+//* is allowed to use this object oriented software architecture as well
+//* as its naming conversation in and only in the their project
+//* 'ED0096_Swipetronic'. Marco Israel 2019 - 2020.
+//*
+//* Redistribution and use in source and binary forms, with or without
+//* modification, are permitted provided that the following conditions
+//* are met:
+//*     * Redistribution of source code must retain the this copyright
+//*       notice, this list of conditions and the following disclaimer.
+//*     * Redistribution in binary form must reproduce the above copyright
+//*       notice, this list of conditions and the following disclaimer in
+//*       the documentation and/or other materials provided with the
+//*       distribution.
+//*     * Neither the name of the <organization> nor the names of its
+//*       contributors may be used to endorse or promote products derived
+//*       from this software without specific prior written permission.
+//*
+//*
+//*
+//* German:
+//*
+//* Alle Inhalte in source und binaer Form, insbesondere die hier aufgezeigte
+//* object orientierte Softwarearchitektur- in der Programmiersprache C,
+//* seiner coding Conversation (Namensgebung etwa fuer Variablen, Funktionen,
+//* Parameter, Datentypen, usw.) sind urheberrechtlich geschuetzt.
+//* Alle Rechte, einschließlich der Verwendung, Veroeffentlichung, Bearbeitung,
+//* Uebersetzung oder Vervielfältigung, bleiben Marco Israel vorbehalten.
+//* Dieses gilt auch fuer alle Instanzen, Kopien oder sonstigen Verwendungen
+//* in source oder binearform. In jedem Fall sind diese Copyright und Urheber
+//* Informationen zu uebernehmen und duerfen nicht ohne Zustimmung vereandert
+//* oder entfernt werden. Marco Israel uebernimmt keine Haftung in irgendeiner
+//* Form und Art und Weise, die durch die Nutzung dieser Architektur oder seiner
+//* Kopien und Instancen in source oder binaerform direkt oder indirekt
+//* entstehen und kann nicht fuer Schaeden belangt werden.
+//*
+//* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+//* ist berechtigt dieses Template sowie seine object orientierte Software
+//* Architektur in C, als auch der die genutzte Namensgebungskonversation,
+//* innerhalb * und ausschliesslich fuer das * Project 'ED0096_Swipetronic'
+//* zu nutzen. Marco Israel 2019 - 2020.
+//*
+//*
+//*
+//*
+//********************************************************************************
+//* @detail
+//* ____TODO______
+//*
+//* The UML diagrams in this template folder provides you the context of template
+//* structure in a graphical view. Feel free to take a look at this diagrams.
+//* In case of questions you can contact me under Marco-Israel@online.de.
+//*
+//*
+//********************************************************************************
+//* @attention
+//* ____TODO______
+//*
+//* If you change something inside the template structure, do this in the
+//* template folder first and run 'make' inside the 'test' folder to see if
+//* the unittests still pass.
+//*
+//*
+//*******************************************************************************/
+//
+//
+//
+//
+//
+//
+//
+//
+///*******************************************************************************
+// *******************************************************************************
+// **                     DEFINITIONS
+// *******************************************************************************
+// ******************************************************************************/
+//
+//
+//
+///*******************************************************************************
+// **     INCLUDED global defined information
+// ******************************************************************************/
+//
+//#include <manchester_encoderDecoder.h>
+//
+//
+//
+///*******************************************************************************
+// **     MACRO definition
+// ******************************************************************************/
+//
+//
+//
+//
+///*******************************************************************************
+// **     Type GENERAL definition
+// ******************************************************************************/
+//
+//
+//
+//
+///*******************************************************************************
+// **     Type FUNCTION POINTER definition
+// ******************************************************************************/
+//
+//
+//
+//
+///*******************************************************************************
+// **     Type UNION definition
+// ******************************************************************************/
+//
+//
+//
+//
+///*******************************************************************************
+// **     Type ENUM definition
+// ******************************************************************************/
+//
+//
+//
+//
+///*******************************************************************************
+// **     Type STRUCTURE definition
+// ******************************************************************************/
+//
+//
+//
+//
+//
+//
+///*******************************************************************************
+// **     Function PRIVATE PROTOTYPE definition (static)
+// ******************************************************************************/
+//
+//
+//
+///* ----- PART: INLINE prototypes ---------------------------------------------*/
+//
+//
+//
+///**
+// * Returns a pointer to the objects private virtual Function Table (vFTable)
+// * If not the table will be initialized first.
+// * @return Returns a pointer to the objects private virtual Function Table
+// * (vFTable). If not the table will be initialized first.
+// */
+//static INLINE manchester_encoderDecoder__vFTable__st *
+//                  _manchester_encoderDecoder__getPt_initialized_vFTable(void);
+//
+//
+///* -------- END PART: prototypes ---------------------------------------------*/
+//
+//
+//
+//
+//
+///* ----- PART: APPLICATION prototypes ----------------------------------------*/
+//
+//
+//
+///**
+// * virtual Function Table (vFTable) initialization.
+// */
+//static void _vFTable__init_if_uninitialized(void);
+//
+//
+//
+///* -------- END PART: APPLICATION prototypes ---------------------------------*/
+//
+//
+//
+//
+//
+///* ----- PART: Virtual prototypes --------------------------------------------*/
+//
+//
+///**
+// * Default constructor.
+// * @param ps__base Pointer to 'this' (its) base object.
+// * @param ps__paramList Pointer to the base constructor function parameter list.
+// */
+//STATIC void _ctor(encoderDecoder__this__st *const ps__base,
+//    encoderDecoder__ctorParamList__st *const  ps__baseParamList);
+//
+//
+//
+//
+//
+///**
+// * Default destructor.
+// * @param ps__base Pointer to 'this' (its) base object.
+// */
+//
+//STATIC void _dtor(encoderDecoder__this__st *const ps__base);
+//
+//
+//
+//
+//
+///**
+// * @brief Encode a data stream
+// *
+// * @Param ps__this This base Sensor object.
+// * @Param pa__dataSrc A pointer to the Data to encode.
+// * @Param lenghtOfSrc The number of BYTES to encode.
+// * @Param pad__dataDest A pointer to the Destination Buffer.
+// * @Param sizeOfDstination The size of the destination buffer in BYTES.
+// *
+// * @Returns The number of decode BYTES.
+// *
+// * @attention The data in the destination buffer gets overwritten.
+// * @attention The destionation buffer must be twice the size the source.
+//*/
+//STATIC uint8_t _manchesterEncoder(
+//        encoderDecoder__this__st *const ps__this
+//        );
+//
+//
+//
+//
+//
+///**
+// * @brief Decode a data stream
+// *
+// * @Param ps__this This base Sensor object.
+// * @Param pa__dataSrc A pointer to the Data to encode.
+// * @Param lenghtOfSrc The number of BYTES to encode.
+// * @Param pad__dataDest A pointer to the Destination Buffer.
+// * @Param sizeOfDstination The size of the destination buffer in BYTES.
+// *
+// * @Returns The number of decode BYTES.
+// *
+// * @attention The data in the destination buffer gets overwritten.
+// * @attention The destionation buffer must be twice the size the source.
+//*/
+//STATIC uint8_t  _manchesterDecoder(
+//        encoderDecoder__this__st *const ps__this
+//        );
+//
+//
+//
+//
+//
+//
+//
+//
+///*******************************************************************************
+// *******************************************************************************
+// **                     IMPLEMENTATIONS
+// *******************************************************************************
+// ******************************************************************************/
+//
+//
+//
+///*******************************************************************************
+// **     Variables global EXTERN (public) implementation
+// ******************************************************************************/
+//
+//
+//
+//
+//
+///*******************************************************************************
+// **     Variables global STATIC (private) implementation
+// ******************************************************************************/
+//
+//
+///**
+// * A table holding virtual function which can be replaced during run-time.
+// * Such functions are called 'virtual' in OOC context.
+// *
+// * NOTE 1: Because we want only one virtual function table (vFTable) for each
+// * 'Class', not for each instance of a 'Class' (called 'object'), the virtual
+// * function table is allocated in the data segment. So the vFTable must be
+// * initialized only once. Each instance have afterwards the same (overwritten)
+// * functions (methods) (also if the first instance gets deleted).
+// *
+// * NOTE 2: This makes it also easy to use its address as an object identifier.
+// */
+//STATIC manchester_encoderDecoder__vFTable__st   _vFTable__S;
+//
+//
+//
+//
+///**
+// * Flag to indicate if the vFTable is (already) initialized or not.
+// * This should normally be done by the constructor during the first
+// * instantiating of this object.
+// */
+//STATIC uint8_t _activeInstanceCounter  = __MI_OOC__NOT_INITIALIZED__;
+//
+//
+//
+//
+//
+///*******************************************************************************
+// **     Function PRIVATE INLINE implementation (STATIC inline)
+// ******************************************************************************/
+//
+//
+//
+//STATIC INLINE manchester_encoderDecoder__vFTable__st *
+//           _manchester_encoderDecoder__getPt_initialized_vFTable(void)
+//{
+//    _vFTable__init_if_uninitialized();
+//    return &_vFTable__S;
+//}
+//
+//
+//
+//
+//
+///*******************************************************************************
+// **     Function PRIVATE implementation (static)
+// ******************************************************************************/
+//
+//
+//
+///* ----- PART: APPLICATION functions -----------------------------------------*/
+//
+//
+// STATIC void _vFTable__init_if_uninitialized(void)
+//{
+//
+//    /*
+//     * Prevent a reinitialization after the class was instantiated
+//     * at least one time or more. This would reset the vFTable.
+//     */
+//
+//    if (__MI_OOC__NO_INSTANCE__ == _activeInstanceCounter)
+//    {
+//
+//    /**
+//     * First COPY the SUPERclass vFTable.
+//     */
+//    _vFTable__S.base__S = *_encoderDecoder__getPt_vFTable();
+//
+//
+//
+//    /*
+//    * Second overwrite the base virtual functions which
+//    * need a specific implementation in this SUBclass.
+//    * All other function are inhered from the base class
+//    * like:
+//    *
+//    * _errorHandler();
+//    *
+//    *attention: NOTE: Because every object must (know
+//    * how to) create and destroy its own (members) there
+//    * is at least the ctor and dtor to overwrite.
+//    */
+//     _vFTable__S.base__S.virtualOperation__S.pf__ctor = &_ctor;
+//     _vFTable__S.base__S.virtualOperation__S.pf__dtor = &_dtor;
+//
+//
+//    _vFTable__S.base__S.virtualOperation__S.pf__encoder = &_manchesterEncoder;
+//    _vFTable__S.base__S.virtualOperation__S.pf__decoder = &_manchesterDecoder;
+//
+//
+//
+//    }
+//
+//}
+//
+//
+//
+///* -------- END PART: APPLICATION functions ----------------------------------*/
+//
+//
+//
+//
+//
+///* ----- PART: Virtual functions ---------------------------------------------*/
+//
+//
+//STATIC void _ctor(encoderDecoder__this__st *const ps__base,
+//    encoderDecoder__ctorParamList__st *const  ps__baseParamList)
+//{
+//
+//    if (NULLp != ps__base) {
+//
+//        /* First of call the super constructor explicit. */
+//       encoderDecoder__vFTable__st * ps__baseVFTable =
+//           _encoderDecoder__getPt_vFTable();
+//
+//
+//       if(NULLp != ps__baseVFTable->virtualOperation__S.pf__ctor){
+//
+//        ps__baseVFTable->virtualOperation__S.pf__ctor(
+//                ps__base, ps__baseParamList);
+//
+//
+//       }
+//       else{
+//
+//           MANCHESTER_ENCODERDECODER__ERROR_HANDLER__CTOR(ps__base)
+//
+//       }
+//
+//
+//
+//        /* Make this object an instance of its base class. */
+//        ps__base->ps__virtualOperation =
+//            &_vFTable__S.base__S.virtualOperation__S;
+//
+//
+//        /* Get (downcast) 'this' object from its base */
+//        manchester_encoderDecoder__this__st * ps__this =
+//                manchester_encoderDecoder__getPt_this__byPt_its_base(ps__base);
+//
+//
+//        if (NULLp != ps__this) {
+//
+//           /** Then initialize this vFTable and link it to this object. */
+//           _vFTable__init_if_uninitialized();
+//           ps__this->ps__virtualOperation = &_vFTable__S.virtualOperation__S;
+//
+//
+//
+//
+//           /**
+//            * Finally do some constructor code of this object members.
+//            */
+//            manchester_encoderDecoder__ctorParamList__st * ps__paramList=NULLp;
+//
+//            if (NULLp != ps__baseParamList) {
+//
+//
+//            /* Get (downcast) the paramList from its base paramList */
+//                ps__paramList =
+//                manchester_encoderDecoder__getPt_ctorParamList__byPt_its_base(
+//                        ps__baseParamList);
+//            }
+//
+//
+//            if (NULLp != ps__paramList) {
+//
+//            //BEGIN*****************************************************
+//
+//            //END*******************************************************
+//
+//            }
+//            else {
+//
+//            //BEGIN*****************************************************
+//
+//            //END*******************************************************
+//
+//            }
+//
+//
+//        }
+//        else
+//        {
+//            MANCHESTER_ENCODERDECODER__ERROR_HANDLER__CTOR(ps__base)
+//        }
+//
+//    }
+//    else
+//    {
+//            MANCHESTER_ENCODERDECODER__ERROR_HANDLER__CTOR(ps__base)
+//    }
+//}
+//
+//
+//
+//
+//
+//STATIC void _dtor(encoderDecoder__this__st *const ps__base)
+//{
+//
+//    if (NULLp != ps__base) {
+//
+//
+//        manchester_encoderDecoder__this__st * ps__this =
+//            manchester_encoderDecoder__getPt_this__byPt_its_base(ps__base);
+//
+//
+//        if(NULLp != ps__this){
+//
+//
+//            //
+//            /*
+//             * First: Preform destructor code for 'this' sub object
+//             * which corresponds to this object and must be done
+//             * before this memory is freed.
+//             */
+//            //BEGIN*****************************************************
+//
+//            //END*******************************************************
+//
+//
+//
+//            /*
+//             * Second: 'this' is a SUBclass, so after performing
+//             * destruction code for 'this' sub members, we should
+//             * call the 'super' destructor from the SUPERclass to
+//             * deconstruct the super object members.
+//             *
+//             *attention: ATTENTION: Because we overwrite the dtor in
+//             * this class, we must call the base destructor explicitly.
+//             * Otherwise 'this' function will be called again.
+//             */
+//            _encoderDecoder__getPt_vFTable()
+//                ->virtualOperation__S.pf__dtor( ps__base);
+//
+//        }
+//        else{
+//            MANCHESTER_ENCODERDECODER__ERROR_HANDLER__DTOR(ps__base)
+//        }
+//
+//    }
+//    else {
+//            MANCHESTER_ENCODERDECODER__ERROR_HANDLER__DTOR(ps__base)
+//    }
+//}
+//
+//
+//
+//
+//
+//
+//STATIC uint8_t  _manchesterEncoder(
+//        encoderDecoder__this__st *const ps__this
+//        )
+//{
+//        (void)ps__this;
+//
+//            return 0;
+//}
+//
+//
+//
+//
+//
+//STATIC uint8_t  _manchesterDecoder(
+//        encoderDecoder__this__st *const ps__this
+//        )
+//{
+//        (void)ps__this;
+//
+//            return 0;
+//}
+//
+//
+//
+//
+//
+//
+//
+///* -------- END PART: Virtual functions --------------------------------------*/
+//
+//
+//
+///*******************************************************************************
+// **     Function PROTECTED implementation (extern)
+// ******************************************************************************/
+//
+//
+//
+//PROTECTED manchester_encoderDecoder__vFTable__st *
+//    _manchester_encoderDecoder__getPt_vFTable(void)
+//{
+//    return &_vFTable__S;
+//}
+//
+//
+//
+//
+//
+///*******************************************************************************
+// **     Function PUBLIC implementation (extern)
+// ******************************************************************************/
+//
+//
+//
+//EXTERN manchester_encoderDecoder__this__st * manchester_encoderDecoder__new(
+//         manchester_encoderDecoder__this__st *const ps__this,
+//         manchester_encoderDecoder__ctorParamList__st *const ps__paramList)
+//{
+//
+//     manchester_encoderDecoder__this__st * ps__ret = NULLp;
+//
+//    if (NULLp != ps__this) {
+//
+//        ps__ret = ps__this;
+//
+//    }
+//#if defined __USE_HEAP__
+//    else {
+//
+//        /**
+//         * Allocate a memory area if object should be stored in the heap
+//         * heap segment. Alternative the objects can be pushed on the
+//         * stack or stored in the datasegment.
+//         */
+//        ps__ret = (manchester_encoderDecoder__this__st*)malloc(sizeof(
+//                    manchester_encoderDecoder__this__st));
+//
+//    }
+//#endif
+//
+//
+//    if (NULLp != ps__ret) {
+//
+//        /**
+//         * First clear the memory area for this new object.
+//         */
+//        memset(ps__ret, 0x00, sizeof(manchester_encoderDecoder__this__st));
+//
+//
+//        /**
+//         * Second Initialize the new object data by calling this
+//         * constructor explicit. (_ctor can not be overwritten yet).
+//         */
+//        _ctor(&(ps__ret->base__S), &ps__paramList->base__S);
+//
+//
+//        /**
+//         * Finally increment the number of active instances
+//         */
+//        _activeInstanceCounter++;
+//
+//    }
+//    else {
+//
+//        MI_OOC__ERROR_HANDLER__NULL_POINTER
+//
+//    }
+//
+//    return ps__ret;
+//}
+//
+//
+//
+//
+//
+//EXTERN void manchester_encoderDecoder__deleate(
+//        manchester_encoderDecoder__this__st *const ps__this)
+//{
+//    if(NULLp != ps__this){
+//
+//        if(NULLp != ps__this->base__S.ps__virtualOperation->pf__dtor)
+//        {
+//
+//            /**
+//             * First deconstruct the object members
+//             */
+//            ps__this->base__S.ps__virtualOperation->pf__dtor(
+//                    &ps__this->base__S);
+//
+//        }
+//        else{
+//
+//            _dtor(&ps__this->base__S);
+//        }
+//
+//
+//        #if defined __USE_HEAP__
+//        /**
+//         * Afterwards free the objects memory.
+//         * If you allocate memory in HEAP, this is step is important
+//         * to prevent a heap overflow and corrupt stack data.
+//         */
+//     free(ps__this);
+//        #endif
+//
+//
+//
+//        /**
+//         * Finally decrement the number of active instances.
+//         */
+//         _activeInstanceCounter--;
+//    }
+//    else{
+//
+//        MI_OOC__ERROR_HANDLER__NULL_POINTER
+//
+//    }
+//}
+//
+//
+//
+//
+//
+//EXTERN uint8_t manchester_encoderDecoder__get_instanceCounter(
+//        manchester_encoderDecoder__this__st *const ps__this)
+//{
+//
+//    (void)ps__this;
+//    return _activeInstanceCounter;
+//
+//}
+//
+//
+//
+//
+//
+//EXTERN bool_t manchester_encoderDecoder__is_this__instance_of_base(
+//        encoderDecoder__this__st *const ps__base)
+//{
+//
+//    bool_t ret = FALSE;
+//
+//    /*
+//     * Check if the base vFTable addresses are equal.
+//     * Because the vFTable are allocated in data/bss segment, this addresses
+//     * can also be used as unique "object identifier"
+//     * */
+//
+//
+//    if(NULLp != ps__base){
+//
+//        if(ps__base->ps__virtualOperation ==
+//                &_vFTable__S.base__S.virtualOperation__S)
+//        {
+//            ret = TRUE;
+//        }
+//
+//    }
+//
+//    return ret;
+//}
+//
+//
+//
+//
+//
+//EXTERN manchester_encoderDecoder__this__st *
+//    manchester_encoderDecoder__getPt_this__byPt_its_base(
+//        encoderDecoder__this__st *const ps__base)
+//{
+//
+//    manchester_encoderDecoder__this__st * ps__ret = NULLp;
+//
+//
+//    /*
+//     * just put "super" as the second parameter. The Preprocessor
+//     *  macro replacing will do the rest.
+//     */
+//    if (TRUE == manchester_encoderDecoder__is_this__instance_of_base(ps__base))
+//    {
+//        ps__ret = OBJECT_POINTER_GET__THIS(
+//            manchester_encoderDecoder__this__st,
+//            base__S,
+//            ps__base);
+//    }
+//    else {
+//        MANCHESTER_ENCODERDECODER__ERROR_HANDLER__THIS_FROM_BASE(
+//                ps__base, &_vFTable__S)
+//    }
+//
+//    return ps__ret;
+//}
+//
+//
+//
+//
+//
+//EXTERN manchester_encoderDecoder__ctorParamList__st *
+//           manchester_encoderDecoder__getPt_ctorParamList__byPt_its_base(
+//                   encoderDecoder__ctorParamList__st *const
+//                   ps__baseParamList)
+//{
+//
+//    manchester_encoderDecoder__ctorParamList__st * ps__ret = NULLp;
+//
+//    /* Just put 'super' as the second parameter.
+//     * The Preprocessor macro replacing will do the rest. */
+//    if(NULLp != ps__baseParamList)
+//{
+//  ps__ret = OBJECT_POINTER_GET__THIS(
+//      manchester_encoderDecoder__ctorParamList__st,
+//      base__S,
+//      ps__baseParamList);
+//}
+//    return ps__ret;
+//}
+//
+//
+//
+//
+///* ----- PART: STATIC (Local) Functions --------------------------------------*/
+//
+///* -------- END PART: STATIC (Local) Functions -------------------------------*/
+//
+//
+//
+///* ----- PART: EXTERN (Global) Functions -------------------------------------*/
+//
+///* -------- END PART: EXTERN (Global) Functions ------------------------------*/
+//
+//
+///**************** (C) COPYRIGHT Marco Israel ****** END OF FILE ***************/
+//
+//

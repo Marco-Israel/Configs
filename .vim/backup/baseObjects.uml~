@@ -1,0 +1,337 @@
+/'******************************************************************************
+* @file             basePeripherie.uml
+* @author           Marco Israel
+* @version          v. 1.0
+* @date             06-2019
+* @ingroup          uml
+* @brief            base Sw interfaces to HW peripherie
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+*
+*
+*              		IMPORTANT NOTICE - COPYRIGHT INFORMATION
+*
+
+*
+*
+* THIS SOFTWARE IS PROVIDED BY MARCO ISRAEL "AS IS". ANY EXPRESS OR IMPLIED
+* WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+* EVENT SHALL <copyright holder> BE LIABLE FOR ANY DIRECT, INDIRECT,
+* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES(INCLUDING, BUT NOT
+* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+* OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING
+* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistribution of source code must retain the this copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistribution in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the <organization> nor the
+*       names of its contributors may be used to endorse or promote products
+*       derived from this software without specific prior written permission.
+*
+*
+*
+* Alle Inhalte in source und binaer Form, insbesondere dises Template mit seinen
+* object orientierten Konzepte der Programmiersprache C, der Coding-Conversation
+* und Namensgebung beispielweise fuer Variablen, Funktionen, Parameter,
+* Datentypen, usw., sind urheberrechtlich geschuetzt, Alle Rechte, einschließlich
+* der Verwendung, Veroeffentlichung, Bearbeitung, Uebersetzung oder
+* Verfielfaeltigung, bleiben Marco Israel vorbehalten. Dieses gilt auch fuer
+* alle Instanzen, Kopien oder sonstigen Verwendungen in source oder binearform.
+* In jedem Fall sind diese Copyright informationen zu uebernehmen und duerfen
+* nicht ohne zustimmung vereandert werden.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template innnerhalb und ausschliesslich fuer das
+* Project 'ED0096_Swipetronic' zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+* @detail
+* ----TODO----__
+*
+*
+********************************************************************************
+* @attention
+* ----TODO----__
+*
+*
+******************************************************************************'/
+
+
+
+@startuml
+set namespaceSeparator ::
+scale 1
+header mi_ooc\ntemplates
+'footer
+
+skinparam class {
+	'BackgroundColor<<H>> Wheat
+    'BorderColor<<H>> Tomato
+	'ArrowColor<<H>> SeaGreen
+    'BackgroundColor #D7FFAF
+    BackgroundColor<<HARDWARE>> #D7AF00
+    BackgroundColor<<HW SW Interface>> #AFD7D7
+    BackgroundColor<<Template>> #LightSlateGray
+    BackgroundColor<<HW Wrapper>> #ff87af
+    BackgroundColor<< (H,#FF7700) HARDWARE >> #D7AF00
+    'BackgroundColor<< (I,#FF7700) HARDWARE >> #D7AF00
+    BackgroundColor<< (H,#FF7700) >> #FFD75F
+}
+
+
+
+
+
+
+/'******************************************************************************
+**      Global variables
+ *****************************************************************************'/
+!$hw="<< (H,#FF7700) HARDWARE >>"
+!$hww="<<(W,#d70087) HW Wrapper>>"
+
+!$aB="AbstractClass\nmi_ooc_BASE"
+!$aS="AbstractClass\nmi_ooc_SUB"
+
+!$mi_ooc_TEMPLATES="mi_ooc_TEMPLATES"
+!$mi_ooc_ADAPTER="mi_ooc_ADAPTER"
+!$mi_ooc_BASE="mi_ooc_BASE"
+!$mi_ooc_SUB="mi_ooc_SUB"
+
+
+/'******************************************************************************
+**      Inheritance logic
+ *****************************************************************************'/
+
+/'******************************************************************************
+*      Interfaces
+ *****************************************************************************'/
+ folder $mi_ooc_TEMPLATES {
+
+abstract class  $aB <<Template>> {
+  + instanceCounter   :  uint8_t volatile    {get}{static}
+  ~ vFTable   :  vFTable__st volatile    {get}{static}
+  ----
+  - _ctor(base__st*, ctorParamList__st*) {abstract}
+  - _dtor(base__st*) {abstract}
+  + _errorHandler(base__st*, errorParamList__st*) {abstract}
+  + new(this__st*, ctorParamList__st*)   :   this__st*
+  + delete(this__st*)
+}
+
+
+abstract class  $aS <<Template>> {
+  ----
+  + getThis_fromBase(base__st*)   :   this_st*
+}
+
+}
+
+
+/'******************************************************************************
+*      Base objects
+ *****************************************************************************'/
+
+AbstractClass\nmi_ooc_BASE <|.. PORT_PIN  : < <<Implements>>
+class PORT_PIN {
+ - hwNr  :   uint8_t
+ ----
+ + _set_pinlevel(base__S*, portPin, newLevel) {abstract}
+ + _get_pinlevel(base__S*, portPin)      :   uint8_t  {abstract}
+
+ + _set_mode(base__S*, pinPort, newMode) {abstract}
+ + _set_alternateFunction(base__S*, pinPort, newAlternateFunction) {abstract}
+____
+<b>TODO:</b>
+ o Implement howl object
+ }
+
+
+
+
+
+AbstractClass\nmi_ooc_BASE <|.. ADC  : < <<Implements>>
+class ADC{
+ - hwNr  :   uint8_t
+ ----
+ + _get_result(base__st*)    :   int  {abstract}
+ + _adc_start() {abstract}
+ ____
+ <b>TODO:</b>
+ o Implement howl object
+ }
+
+
+
+
+
+AbstractClass\nmi_ooc_BASE <|.. DMA  : < <<Implements>>
+class DMA{
+ - hwNr  :   uint8_t
+ ----
+ + _set_source(base__st*, source_pt*)     {abstract}
+ + _set_destination(base__st*, source_pt*)    {abstract}
+ + _dma_start(base__st*)  {abstract}
+ ____
+ <b>TODO:</b>
+ o Implement howl object
+ }
+
+
+
+
+
+AbstractClass\nmi_ooc_BASE <|.. SPI  : < <<Implements>>
+class SPI {
+ - hwNr  :   uint8_t
+ ----
+ + _write(base__st*, source_pt*, length)   {abstract}
+ + _read(base__st*, destionation_pt*)     :   length   {abstract}
+ + _chipSelect(base__st*, source_pt*)  {abstract}
+ ____
+ <b>TODO:</b>
+ o Implement howl object
+}
+
+
+
+
+AbstractClass\nmi_ooc_BASE <|.. UART  : < <<Implements>>
+class UART {
+ - hwNr  :   uint8_t
+ ----
+ +  _send(base_S*, source[ ] *, bytesToSend)   :  uint8_t{abstract}
+ +  _receive(base_S*, destination[ ] *, destinationSize)   :  uint8_t{abstract}
+ ____
+ <b>TODO:</b>
+ o  Initialize UART HW in the CTor.
+ o  Add switch/case to ctor to assigne UART1_<function>, UART2_<function>, ...
+    to the function pointer according to the hwNr.
+ o  Ask the PORT_PIN Object to set the alternate Function and other pin/port
+    settings to UARTA1. A PORT_PIN object is needed before.
+}
+
+
+/'******************************************************************************
+*      Interfaces
+ *****************************************************************************'/
+
+ interface Interface\nUART_Wrapper<<Template>> {
+    - _uart[1,..]__enable_tx_if_not()
+    - _uart[1,..]__is_tx_ready_to_send()  :   bool_t
+    - _uart[1,..]__clear_tx_error_statusflag()
+    - _uart[1,..]__tx_has_error()   :   bool_t
+    ____
+    <b>TODO:</b>
+    Provide RX Interface
+
+ }
+
+
+UART -left*"1" UART_WRAPPER    : > <<Calls>>
+ Interface\nUART_Wrapper <|.. UART_WRAPPER : < <<Implements>>
+ class UART_WRAPPER <<(W,#d70087) HW Wrapper>> {
+    ____
+    <b>TODO:</b>
+    o   Implement functions
+        according to the MCU,
+ }
+
+ UART_WRAPPER -right> UARTx_HW  : > <<Calls HW Nr. X>>
+ class UARTx_HW << (H,#FF7700) HARDWARE >> {
+     ----
+    <b>HW INFO:</b>
+}
+
+
+/'******************************************************************************
+*      DMA base objects
+ *****************************************************************************'/
+
+
+
+
+/'******************************************************************************
+*      UART base objects
+ *****************************************************************************'/
+
+
+/'
+class ADC_HW << (H,#FF7700) >> {
+    - result_reg    {get}
+
+}
+
+ADC_HW o-- ADC
+
+
+'/
+
+
+/'****************************************************************************/'
+**
+/'****************************************************************************'/
+ !include ..\TODO.txt
+
+ folder $mi_ooc_TEMPLATES {
+note as N1
+    <b>ATTENTION:</b>
+    <u>Changing the mi_ooc core template:</u>
+    If you change somethink inside the template mi_ooc files, its recomended
+    to <b>run the unitest suite by calling make inside the unitTest folder!</b>
+
+    The unit tests will show you if the base ooc functionality is still working.
+    If you destroyed the template, fix the error till all tests pass again
+    before useing it in in production. Its also recomended to write new unit
+    tests if you add new features like new functions.
+end note
+}
+
+
+note as N2
+     <b>NOTE:</b>
+     There are no real <i>interface files</i> or <i>abstract classes.</i>
+     But every base object must at leat provide this object members
+     in minimum.
+end note
+N2 - mi_ooc_TEMPLATES
+'N2 -- AbstractClass\nmi_ooc_BASE
+'N2 -- AbstractClass\nmi_ooc_SUB
+'N2 -- Interface\nUART_Wrapper
+
+ 'note right of mi_ooc\nbaseMembers
+
+/'
+ note "MI_OOC \nTemplate class diagram\n"  as N1
+
+
+ note "This are the template classes" as N2
+ mi_ooc_base .. N2
+ N2 .. mi_ooc_sub
+
+
+
+
+ package "mi_ooc" <<Folder>> {
+
+ note  left of mi_ooc_base :Base Class
+
+
+ note  left of mi_ooc_sub : Derived Class
+
+}
+'/
+
+@enduml
+

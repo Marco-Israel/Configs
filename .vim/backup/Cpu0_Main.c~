@@ -1,0 +1,132 @@
+/**
+ * \file Cpu0_Main.c
+ * \brief Main function definition for Cpu core 0 .
+ *
+ * \copyright Copyright (c) 2015 Infineon Technologies AG. All rights reserved.
+ *
+ *
+ *
+ *                                 IMPORTANT NOTICE
+ *
+ *
+ * Infineon Technologies AG (Infineon) is supplying this file for use
+ * exclusively with Infineon's microcontroller products. This file can be freely
+ * distributed within development tools that are supporting such microcontroller
+ * products.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+ * OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ * INFINEON SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL,
+ * OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+ *
+ */
+
+#include "Ifx_Types.h"
+#include "IfxCpu.h"
+#include "IfxScuWdt.h"
+
+
+#include "SysSe/Bsp/Bsp.h"
+#include "Configuration.h"
+#include "ConfigurationIsr.h"
+
+#include "aurix_timer.h"
+#include "aurix_gtm.h"
+#include "aurix_gpio.h"
+#include "aurix_activeWait.h"
+#include "lemdd_io.h"
+#include "sio.h"
+#include "elmos_52042.h"
+
+#include "AppTaster.h"
+#include "AppStatusLEDs.h"
+#include "AppElmos52042.h"
+#include "AppShiftLocktreiber.h"
+#include "AppBrueckentreiber.h"
+#include "AppScheduler.h"
+#include "AppJoystick.h"
+#include "AppVadc.h"
+#include "AppCan.h"
+#include "DebugPrintTask.h"
+#include "AppSBC.h"
+
+//TODO Berechnungen ADC \\emea\esp\team\kst227940\Individual\LE-Projekte\ED\ED0043_Advanced_Centre_Panel\HW\01_MRF_ECU_EDA0411-02\Berechnungen.xlsx
+void hardware_init(void)
+{
+
+
+	/*Init GTM and Clocks*/
+    aurix_gtm_enable_clock(&MODULE_GTM);
+    aurix_gtm_cmu_enable(&MODULE_GTM, IfxGtm_Cmu_getGclkFrequency(&MODULE_GTM));
+    aurix_gtm_cmu_setupFxclk(&MODULE_GTM);
+    aurix_gtm_cmu_setupClk(&MODULE_GTM,100000000,IfxGtm_Cmu_Clk_0);
+    aurix_gtm_cmu_setupClk(&MODULE_GTM,10000000,IfxGtm_Cmu_Clk_1);
+	IfxScuCcu_init(&IfxScuCcu_defaultClockConfig);
+    /* Init extern Ifx_TickTime TimeConst[TIMER_COUNT]; table*/
+    initTime();
+
+    /*Init Hardware:*/
+    IfxCpu_enableInterrupts();
+    Status_LED_init();				/*Init status leds*/
+    Elmos_Init();					/*Init and configure elmos*/
+    SBC_init();
+    SBC_enableCAN();				/*Enable CAN Transceiver from SBC*/
+    IfxCpu_disableInterrupts();
+
+
+    AppTaster_init();
+    init_ShiftLocktreiber();		/*init shiftlock */
+    AppBrueckentreiber_init();		/*Init brueckentreiber*/
+    AppScheduler_init();			/*Init Scheduler. This must happen before any task gets registered !*/
+    Joystick_init();				/*Init Joystick for pwm dutycylce manipulation and register task in scheduler*/
+    AppCan_init();					/*Init CAN and register can Tx task*/
+    AppVADC_adc_init();				/*Init ADC and register ADC read task*/
+
+    initDebugPrintTask();			/*Init and register a debug Task which prints Scheduler debug info and some other stuff via printf*/
+
+}
+
+int core0_main (void)
+{
+
+	extern ahc_brueckentreiber brueckentreiber;
+	lemdd_io_level_e lampe = LEMDD_IO_HIGH;
+    /*
+     * !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
+     * Enable the watchdog in the demo if it is required and also service the watchdog periodically
+     * */
+    IfxScuWdt_disableCpuWatchdog (IfxScuWdt_getCpuWatchdogPassword ());
+    IfxScuWdt_disableSafetyWatchdog (IfxScuWdt_getSafetyWatchdogPassword ());
+
+
+    hardware_init();
+
+
+    Status_LED_setGreen(LEMDD_IO_HIGH);
+
+    Brueckentreiber_startPwm(AKTOR_SEL_1);
+    Brueckentreiber_setDutyCycle(AKTOR_SEL_1,50);			/*< TODO: Specify desired default dutycycle in % here for AKT1 */
+    Brueckentreiber_setStromrichtung(AKTOR_SEL_1,AKTOR_FluxDirection_Positive); /*Default Stromrichtung erstmal ^^*/
+
+    Brueckentreiber_startPwm(AKTOR_SEL_2);
+    Brueckentreiber_setDutyCycle(AKTOR_SEL_2,50);			/*< TODO: Specify desired default dutycycle in % here for AKT2 */
+    Brueckentreiber_setStromrichtung(AKTOR_SEL_2,AKTOR_FluxDirection_Positive); /*Default Stromrichtung erstmal ^^*/
+
+    ShiftLocktreiber_set_1_d(LEMDD_IO_HIGH);
+    ShiftLocktreiber_set_2_d(LEMDD_IO_HIGH);
+
+    AppScheduler_start();									/*Start scheduling of tasks (Joystick, ADC)*/
+    IfxCpu_enableInterrupts();
+    while (1)
+    {
+    	static volatile uja113x_SBCConfigData scfg;
+    	lampe = LEMDD_IO_HIGH == lampe ? LEMDD_IO_LOW: LEMDD_IO_HIGH;
+    	//elmos_52042_sio_enterConfigurationMode(&elmos);
+    	aurix_waitActive(500000);
+    	Status_LED_setGreen(lampe);
+
+    }
+    return (1);
+}
+

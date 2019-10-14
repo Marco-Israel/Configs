@@ -1,0 +1,722 @@
+
+/*******************************************************************************
+* @file             mi_ooc_mi_ooc_b1.h
+* @author           Marco Israel
+* @version          v. 6.0
+* @date             2019-06
+* @ingroup          mi_ooc
+* @brief            Abstract uart base object
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+*
+*
+*                      IMPORTANT NOTICE - COPYRIGHT INFORMATION
+*
+*
+* English:
+*
+* THIS SOFTWARE AND ITS OBJECT ORIENTED ARCHITECTURE IN THE PROGRAMMING
+* LANGUAGE C AS WELL AS THE NAMING CONVENTION IS PROVIDED "AS IS" by
+* MARCO ISRAEL. ANY EXPRESS OR IMPLIED  WARRANTIES, INCLUDING, BUT NOT
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO  EVENT SHALL MARCO ISRAEL
+* BE LIABLE FOR ANY DIRECT, INDIRECT, * INCIDENTAL, SPECIAL, EXEMPLARY,
+* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT * LIMITED TO, PROCUREMENT
+* OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY  OF LIABILITY,
+* WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR
+* OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+* ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* The Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* is allowed to use this object oriented software architecture as well
+* as its naming conversation in and only in the their project
+* 'ED0096_Swipetronic'. Marco Israel 2019 - 2020.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions
+* are met:
+*     * Redistribution of source code must retain the this copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistribution in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in
+*       the documentation and/or other materials provided with the
+*       distribution.
+*     * Neither the name of the <organization> nor the names of its
+*       contributors may be used to endorse or promote products derived
+*       from this software without specific prior written permission.
+*
+*
+*
+* German:
+*
+* Alle Inhalte in source und binaer Form, insbesondere die hier aufgezeigte
+* object orientierte Softwarearchitektur- in der Programmiersprache C,
+* seiner coding Conversation (Namensgebung etwa fuer Variablen, Funktionen,
+* Parameter, Datentypen, usw.) sind urheberrechtlich geschuetzt.
+* Alle Rechte, einschließlich der Verwendung, Veroeffentlichung, Bearbeitung,
+* Uebersetzung oder Vervielfältigung, bleiben Marco Israel vorbehalten.
+* Dieses gilt auch fuer alle Instanzen, Kopien oder sonstigen Verwendungen
+* in source oder binearform. In jedem Fall sind diese Copyright und Urheber
+* Informationen zu uebernehmen und duerfen nicht ohne Zustimmung vereandert
+* oder entfernt werden. Marco Israel uebernimmt keine Haftung in irgendeiner
+* Form und Art und Weise, die durch die Nutzung dieser Architektur oder seiner
+* Kopien und Instancen in source oder binaerform direkt oder indirekt
+* entstehen und kann nicht fuer Schaeden belangt werden.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template sowie seine object orientierte Software
+* Architektur in C, als auch der die genutzte Namensgebungskonversation,
+* innerhalb * und ausschliesslich fuer das * Project 'ED0096_Swipetronic'
+* zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+* @detail
+* Abstract UART base object
+*
+* In case of questions you can contact me under Marco-Israel@online.de.
+*
+*
+********************************************************************************
+* @attention
+*
+* If you change something inside the template structure, do this in the
+* template folder first and run 'make' inside the 'test' folder to see if
+* the unittests still pass.
+*
+*
+********************************************************************************
+* @todo
+*
+* - Initialize UART HW in the CTor
+* - Add switch/case to ctor to assigne UART1_<function>, UART2_<function>, ...
+*   to the function pointer according to the hwNr.
+* - Ask the PORT_PIN Object to set the alternate Function and other pin/port
+*   settings to UARTA1. A PORT_PIN object is needed before.
+*
+*
+*******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED GUARDS
+ ******************************************************************************/
+
+#ifndef __MI_OOC_UART__H__
+#define __MI_OOC_UART__H__
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+#include <mi_ooc.h>
+#include <mi_ooc_errorHandlers.h>
+
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (public) definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+#ifndef __MI_OOC_UARAT1_HWNR__
+#define __MI_OOC_UARAT1_HWNR__ (1u)
+#endif
+
+/**
+ * Maximal length of errors
+ */
+#define __UART_MAX_ERROR_TEXT__    __MI_OOC__MAX_ERROR_TEXT__
+
+
+
+/**
+ * You can define code her for handling constructor errors or exceptions.
+ */
+#ifndef __UART__ERROR_HANDLER__CTOR__
+#define __UART__ERROR_HANDLER__CTOR__(ps__this)     \
+    __MI_OOC__ERROR_HANDLER__DEFAULT__
+#endif
+
+
+
+/**
+ * You can define code her for handling deconstructor errors or exceptions.
+ */
+#ifndef __UART__ERROR_HANDLER__DTOR__
+#define __UART__ERROR_HANDLER__DTOR__(ps__this)     \
+    __MI_OOC__ERROR_HANDLER__DEFAULT__
+#endif
+
+/*
+ * UART TX SEND error handler
+ */
+
+#ifndef __UART__ERROR_HANDLER__SEND__
+#define __UART__ERROR_HANDLER__SEND__(ps__this, pa__source, failedByteNr)   \
+    __MI_OOC__ERROR_HANDLER__DEFAULT__
+#endif
+
+/*
+ * UART RX RECEIVE error handler
+ */
+
+#ifndef __UART__ERROR_HANDLER__RECEIVE__
+#define __UART__ERROR_HANDLER__RECEIVE__(ps__this, pa__destination,         \
+        failedByteNr) __MI_OOC__ERROR_HANDLER__DEFAULT__
+#endif
+/*******************************************************************************
+ **     Type GENERAL definition
+ ******************************************************************************/
+
+
+
+/**
+ * This attributes (object variables and other data members)
+ */
+typedef struct uart__thisAttribute__S uart__thisAttribute__st;
+
+
+
+/*
+ * This virtual operations (virtual or abstract methods / functions)
+ */
+typedef struct uart__thisVirtualOperation__S
+            uart__thisVirtualOperation__st;
+
+
+
+/**
+ * The object itself
+ */
+typedef struct uart__this__S    uart__this__st;
+
+
+
+/**
+ * The constructor parameter list:  Variables parsed to the constructor
+ * of 'this' object as function parameters.
+ */
+typedef struct uart__ctorParamList__S uart__ctorParamList__st;
+
+
+
+/**
+ * The virtual Function Table (vFTable)
+ */
+typedef struct uart__vFTable__S uart__vFTable__st;
+
+
+
+/**
+ * Parameter list to be parsed to the error and exception handling function
+ * An error and exception object. This can also be used as and error object
+ * to collect error or exception information,
+ */
+typedef struct uart__errorHandlerParamList__S
+            uart__errorHandlerParamList__st;
+
+
+
+/*******************************************************************************
+ **     Type FUNCTION POINTER definition
+ ******************************************************************************/
+
+
+
+/* ----- PART: VIRTUAL functions (methods) -----------------------------------*/
+
+
+ /**
+ * Pointer to the constructor function.
+ * @param ps__this This base object itself.
+ * @param ps__paramList List of function parameters.
+ */
+typedef void (uart__ctor__ft)(uart__this__st *const ps__this,
+        uart__ctorParamList__st *const  ps__paramList);
+
+
+
+/**
+ * Pointer to the destructor function
+ * @param ps__this This base object itself
+ */
+typedef void (uart__dtor__ft)(uart__this__st *const ps__this);
+
+
+
+/**
+ * Pointer to the destructor function
+ * @param ps__this This base object itself
+ * @param ps__paramList List of function parameters.
+ */
+typedef void (uart__error__ft)(uart__this__st *const ps__this,
+        uart__errorHandlerParamList__st *const ps__paramList);
+
+
+
+
+/**
+ * Write a softwarebuffer out via uart
+ * @param ps__this This base object itselfe.
+ * @param pa__souce source buffer
+ * @param numberOfBytes The number of bytes to transmit
+ * @param Returns the number of sendet bytes.
+ */
+typedef uint8_t (uart__send__ft)(uart__this__st *const ps__this,
+        uint8_t *const pa__source, uint8_t bytesToSend);
+
+
+
+/**
+ * Receive data via UART
+ * @param ps_this This base object itself,
+ * @param opa__destination The destination buffer to overwrite with the new data
+ * @param destinationBufferSize the maximum size of the buffer to write new data
+ * @return Returns the number of Bytes received and written to the buffer
+ */
+
+typedef uint8_t (uart__receive__ft)(
+        uart__this__st *const ps__this, uint8_t *const opa__destination,
+        uint8_t destinationBufferSize);
+
+
+    //BEGIN*****TODO***************TODO***************TODO*****BEGIN
+
+
+    //END*******TODO***************TODO***************TODO*******END
+
+
+/* -------- END PART: VIRTUAL functions (methods) ----------------------------*/
+
+
+
+
+
+/*******************************************************************************
+ **     Type UNION definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type ENUM definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type STRUCTURE definition
+ ******************************************************************************/
+
+
+
+/**
+ * Variables parsed to the constructor of 'this' object as function parameters.
+ */
+ struct uart__thisAttribute__S {
+
+    /** The Hardware number or ID like UART1, ADC2, ...*/ 
+     uint8_t hwNr;
+
+
+    //BEGIN*****TODO******************TODO******************TODO
+
+
+    //END*******TODO******************TODO******************TODO
+
+
+};
+
+
+
+
+
+/**
+ * Virtual Operations (virtual methods / functions) specific to this SUBclass
+ */
+struct  uart__thisVirtualOperation__S {
+
+
+    /** The object constructor */
+    uart__ctor__ft *        pf__ctor;
+
+
+    /** The object deconstructor */
+    uart__dtor__ft *       pf__dtor;
+
+
+    /** The error and exception handler */
+    uart__error__ft *        pf__errorHandler;
+
+
+    /** The uart send function */
+    uart__send__ft *        pf__uartSend;
+
+
+    /** The uart receive function */
+    uart__receive__ft *        pf__uartReceive;
+
+    //BEGIN*****TODO***************TODO***************TODO*****BEGIN
+
+
+
+
+    //END*******TODO***************TODO***************TODO*******END
+
+};
+
+
+
+
+
+/**
+ * Object context, collects all public stuff of an instantiated class (object).
+ */
+struct uart__this__S {
+
+
+    /**
+     * The collection ob object data member
+     */
+    uart__thisAttribute__st attribute__S;
+
+
+
+    /**
+     * The base class virtual functions, which can be
+     * replaced during runtime individual for each object.
+     */
+    uart__thisVirtualOperation__st* ps__virtualOperation;
+
+
+};
+
+
+
+
+
+
+/**
+ * The base virtual Functions table (vFTable).
+ * holds all virtual functions (methods) which can be
+ * overwritten by derived classes during runtime.
+ */
+struct  uart__vFTable__S {
+
+
+    uart__thisVirtualOperation__st virtualOperation__S;
+
+};
+
+
+
+
+
+/**
+ * Variables parsed to the constructor of 'this' object as function parameters.
+ */
+ struct uart__ctorParamList__S {
+
+
+    /**
+     * Parameters corresponding to this object data Members.
+     */
+    uart__thisAttribute__st attribute__S;
+
+
+};
+
+
+
+
+
+/**
+ * An Error and Exception object which collects information about
+ * an error. It can be parsed to an errorHandler for instance.
+ */
+struct  uart__errorHandlerParamList__S {
+
+
+    /**
+     * A number which identifies the error type.
+     * For instance: This could be an integer value, an explicit
+     * casted enum number or pointer or an error bit or bit-field.
+     *
+     *Attention: ATTENTION: It is not recommended to use
+     * #include <errno.h> or other global error header files.
+     * A change in those global files forces a recompilation
+     * of all files which include this header.
+     * THIS IS NOT WHAT YOU WANT!
+     */
+    uint32_t error_num_or_bitfield;
+
+
+    /** A individual error number, depending of the object */
+    uint32_t error_individual_value;
+
+
+    /**
+     * A individual text string. For instance the file name and the line number.
+     */
+    char error_text_or_description[__UART_MAX_ERROR_TEXT__];
+
+
+};
+
+
+
+/*******************************************************************************
+ **     Function PUBLIC PROTOTYPE definition (extern)
+ ******************************************************************************/
+
+
+/* ----- PART: PUBLIC INLINE functions (methods) -----------------------------*/
+
+
+
+/* -------- END PART: PUBLIC INLINE functions (methods) ----------------------*/
+
+
+
+
+/* ----- PART: PUBLIC functions (methods) ------------------------------------*/
+
+
+
+/**
+ * Object allocator
+ * Allocates memory if using the heap and initialize the objects members
+ * (like the vFTable for instance).
+ * @param ps__this This base object itself if it is already allocated in stack
+ * or in the data memory segment. Otherwise parsing a NULL to this argument,
+ * this function will try to allocate heap memory if __USING_HEAP__ is allowed.
+ * @param ps__paramList List of function parameters.
+ * @return Returns a pointer to this object. If the memory is allocated in heap
+ * the function will return the pointer to the new heap data block after
+ * it has allocated it. Otherwise it will return the pointer parsed given by
+ * the parameter ps__this.
+ *
+ *attention: NOTE: There are different ways to allocate memory:
+ * For instance, you can allocate memory in the stack, statically
+ * in the data segment or manually from the heap. That is why you can
+ * parse a pointer to 'this' to this function and get (maybe the same)
+ */
+EXTERN uart__this__st * uart__new(
+        uart__this__st *const ps__this,
+        uart__ctorParamList__st *const ps__paramList);
+
+
+
+
+
+/**
+ * Object deallocator
+ * Preform some cleanup stuff (like closing pipes) by calling.
+ * the deconstructor and free the memory if using the heap.
+ * Last one is important when using the heap memory.
+ * @param ps__this This base object itself.
+ */
+EXTERN void uart__deleate(uart__this__st *const ps__this);
+
+
+
+
+
+/**
+ * Returns the class identifier.
+ * @param ps__this This base object itself.
+ * @return Returns the class identifier.
+ */
+EXTERN uart__vFTable__st * uart__get_classID(
+        uart__this__st *const ps__this);
+
+
+
+
+
+/**
+ * Returns the number of objects instantiated from this class.
+ * @param ps_this This base object itself.
+ * @return Returns the number of currently active instances (objects)
+ * allocated from this class.
+ */
+EXTERN uint8_t uart__get_instanceCounter(
+        uart__this__st *const ps__this);
+
+
+
+/* -------- END PART: PUBLIC functions (methods) -----------------------------*/
+
+
+
+
+/* ----- PART: PROTECTED functions (methods) ---------------------------------*/
+
+
+/**
+ * Returns a pointer to the objects private virtual Function Table (vFTable).
+ * @return Returns a const pointer to a const vFTable which can not be modified.
+ *
+ * NOTE: This function should be 'protected' or 'restricted. That is why
+ * this function is prefixed by an '_' (underscore)
+ *
+ *attention: ATTENTION: The function does care about if the vFTable is
+ * already initialized or not.
+ */
+PROTECTED uart__vFTable__st * _uart__getPt_vFTable(void);
+
+
+/* -------- END PART: PROTECTED functions (methods) --------------------------*/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     IMPLEMENTATIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     Function INLINE implementation
+ ******************************************************************************/
+
+
+/* ----- PART: NORMAL object functions (methods) -----------------------------*/
+
+
+
+/* -------- END PART: Normal object functions (methods) ----------------------*/
+
+
+    //BEGIN*****TODO***************TODO***************TODO*****BEGIN
+
+
+    //END*******TODO***************TODO***************TODO*******END
+
+
+
+
+/* ----- PART: VIRTUAL object functions (methods) ----------------------------*/
+
+
+/**
+ * Direct call to virtual the base errorHandler.
+ * @param ps__this This base object itself.
+ * @param ps__paramList List of function parameters.
+ */
+STATIC INLINE void uart__erroHandler(
+        uart__this__st *const ps__this,
+        uart__errorHandlerParamList__st *const ps__paramList){
+
+    ps__this->ps__virtualOperation->pf__errorHandler(ps__this, ps__paramList);
+
+}
+
+
+
+
+
+/**
+ * Write a softwarebuffer out via uart
+ * @param ps__this This base object itselfe.
+ * @param pa__souce source buffer
+ * @param numberOfBytes The number of bytes to transmit
+ * @param Returns the number of sendet bytes.
+ */
+
+STATIC INLINE uint8_t uart__send(uart__this__st *const ps__this,
+        uint8_t *const pa__source, uint8_t bytesToSend)
+{
+
+    return ps__this->ps__virtualOperation->pf__uartSend(ps__this,
+            pa__source, bytesToSend);
+}
+
+
+
+
+
+/**
+ * Receive data via UART
+ * @param ps_this This base object itself,
+ * @param opa__destination The destination buffer to overwrite with the new data
+ * @param destinationBufferSize the maximum size of the buffer to write new data
+ * @return Returns the number of Bytes received and written to the buffer
+ */
+
+STATIC INLINE uint8_t uart__receive(uart__this__st *const ps__this,
+        uint8_t *const opa__destination, uint8_t destinationBufferSize)
+{
+
+   return  ps__this->ps__virtualOperation->pf__uartReceive(ps__this,
+            opa__destination, destinationBufferSize);
+}
+
+//BEGIN*****TODO***************TODO***************TODO*****BEGIN
+
+
+
+//END*******TODO***************TODO***************TODO*******END
+
+
+/* ---------- END PART: Virtual object functions (methods) -------------------*/
+
+
+
+
+
+
+/* ----- PART: CLEAN CODE (Local helper) Functions ---------------------------*/
+
+/*--------------------- END PART: CLEAN CODE (Local helper) Functions --------*/
+
+
+/* ----- PART: STATIC (Local) Functions --------------------------------------*/
+
+/*--------------------- END PART: STATIC (Local) Functions -------------------*/
+
+
+/* ----- PART: EXTERN (Global) Functions -------------------------------------*/
+
+/*--------------------- END PART: EXTERN (Global) Functions ------------------*/
+
+
+
+/**************** (C) COPYRIGHT Marco Israel ****** END OF FILE ***************/
+
+#endif /*__UART__H__*/
+

@@ -1,0 +1,174 @@
+/******************************************************************************
+ *
+ * @file 	mi_ooc_sensor_mock.hpp
+ * @author 	Marco Isarel (MI)
+ * @date 	2019-06
+ * @ingroup mi_ooc_utest
+ *
+ *
+ * @brief Mock the sensor functions
+ *
+ *
+ * @details Mock the sensor functions
+ *
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+#include "CppUTest/TestHarness.h"
+#include "CppUTestExt/MockSupport.h"
+
+
+
+extern "C" {
+#include <mi_ooc_sensor.h>
+}
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables and Types EXTERN (public)
+ ******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Globbal MOCKs
+ *******************************************************************************
+ ******************************************************************************/
+
+
+/* ----- PART: MOCK Prototypes -----------------------------------------------*/
+
+
+extern void ctorSensor_MOCK(sensor__this__st *const ps__this,
+        sensor__ctorParamList__st *const  ps__paramList);
+
+
+
+
+
+extern uint8_t sendSensor_MOCK(sensor__this__st *const ps__this,
+    uint8_t *const pa__source, uint8_t bytesToSend);
+
+
+
+
+
+extern uint8_t receiveSensor_MOCK(sensor__this__st *const ps__this,
+    uint8_t *const pa__destination, uint8_t maxLength);
+
+
+
+
+
+extern void sensorErrorHandler_MOCK(
+        sensor__this__st *const ps__this,
+        sensor__errorHandlerParamList__st *const ps__paramList);
+
+/* -------- END PART: MOCK Prototypes ----------------------------------------*/
+
+
+
+
+
+
+
+/* ----- PART: Expact CALLS --------------------------------------------------*/
+
+static inline void expactOneCall__sensorReceive(
+        sensor__this__st *const ps__this,
+        uint8_t *const pa__destination, uint8_t maxLength)
+{
+
+        mock()
+            .expectOneCall("receiveSensor")
+            .withConstPointerParameter("ps__this", ps__this)
+            .withConstPointerParameter("pa__destination", pa__destination)
+            .withParameter("maxLength", maxLength);
+
+}
+
+
+
+
+
+
+static inline void expactOneCall__sensorSend(
+        sensor__this__st *const ps__this,
+        uint8_t *const pa__source, uint8_t bytesToSend)
+{
+        mock()
+            .expectOneCall("sendSensor")
+            .withConstPointerParameter("ps__this", ps__this)
+            .withConstPointerParameter("pa__source", pa__source)
+            .withParameter("bytesToSend", bytesToSend);
+}
+
+
+
+
+
+static inline void expactNCall__sensorCtor(
+        sensor__this__st *const ps__this,
+        sensor__ctorParamList__st *const  ps__paramList, uint8_t nCalls)
+{
+        mock()
+        .expectNCalls(nCalls,"ctorSensor")
+        .withConstPointerParameter("ps__this",ps__this)
+        .withConstPointerParameter("ps__paramList",ps__paramList );
+}
+
+
+
+
+
+static inline void expactNCall__sensorErrorHandler(
+        sensor__this__st *const ps__this,
+        sensor__errorHandlerParamList__st *const ps__paramList,
+        uint8_t numberOfCalls)
+{
+    mock().expectNCalls(numberOfCalls,"sensorErrorHander")
+        .withConstPointerParameter("ps__this", ps__this)
+        .withConstPointerParameter("ps__paramList", ps__paramList);
+}
+
+
+/* -------- END PART: Expact Calls -------------------------------------------*/
+
+
+
+
+/************************************************** END OF FILE ***************/

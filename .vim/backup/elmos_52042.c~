@@ -1,0 +1,168 @@
+/*
+ * elmos_52042.c
+ *
+ *  Created on: 24.04.2019
+ *      Author: Z602900
+ */
+#include "elmos_52042.h"
+#include "aurix_activeWait.h"
+#include "Cfg_Elmos.h"
+#include "aurix_gpio.h"
+
+
+void elmos_52042_s_init(elmos_52042_s *device , SIO_Module* sio_module, lemdd_io_pin_s *pin_voltage_off,lemdd_io_level_e voltage_pin_logic_level)
+{
+	device->sio_module 			= sio_module;					/*Setup SIO module for elmos configuration*/
+	device->voltage_off 		= pin_voltage_off;				/*Set voltage off pin for hard reset*/
+	device->voltage_logic_level = voltage_pin_logic_level;		/*Set logic level of voltage pin*/
+	device->mode 				= elmos52042_mode_UNKNOWN;		/*Set elmos mode (initially unknown)s*/
+}
+
+
+void elmos_52042_sio_transmit(elmos_52042_s *device,uint8_t *data,uint8_t count)
+{
+	extern lemdd_io_pin_s SIO_io_pin;
+	volatile uint8_t checksum 	= 0;
+	uint8_t i 					= 0;
+
+	//TODO REFACTOR
+	// Error prone layout for AHC platine. Thats why we reinitiallize our gpio pin here.
+	//Usuallay elmos pin must be bidirectional
+	//Refactor this
+	// ELMOS soll jetzt zuhören:
+	aurix_gpio_init(device->sio_module->io_pin,&elmosCfg.elmos_out_cfg);
+
+	for (i=0;i<count;i++)
+	{
+		checksum += data[i];		/*Calculate Checksum while*/
+		SIO_transmitByte(device->sio_module,data[i]);
+	}
+	checksum++;											/*Increment checksum*/
+	SIO_transmitByte(device->sio_module,checksum);		/*Send calculated checksum after that.*/
+
+	// ELMOS soll jetzt reden:
+	aurix_gpio_init(device->sio_module->io_pin,&elmosCfg.elmos_out_input_cfg);
+}
+
+void elmos_52042_hardReset_reset(elmos_52042_s *device)
+{
+	lemdd_io_level_e on 		= device->voltage_logic_level;
+	lemdd_io_level_e off 		= LEMDD_IO_HIGH == on ? LEMDD_IO_LOW: LEMDD_IO_HIGH;
+	lemdd_io_set_output_level(device->voltage_off,off);
+	aurix_waitActive(ELMSO_52042_DOWN_TIME);				/*Wait minimum delay to turn thid beast off.*/
+	lemdd_io_set_output_level(device->voltage_off,on);
+	device->mode 				= elmos52042_mode_STARTUP;
+}
+
+void elmos_52042_sio_enterConfigurationMode(elmos_52042_s *device)
+{
+	elmos_52042_hardReset_reset(device);					/*Reset ELMOS first. You can only talk to ELMOS via SIO immediately after startup.*/
+	aurix_waitActive(ELMOS_52042_RESET_TIME);
+
+	uint8_t enaconf_cmd[3];
+	enaconf_cmd[0]  			= elmos_52042_command_ENACONF;
+	enaconf_cmd[1]				= 0xE5;/*Constant see UM.*/
+	enaconf_cmd[2]				= 0x5E;/*Constant see UM.*/
+	//Start Transmit:
+	elmos_52042_sio_transmit(device,enaconf_cmd,3);
+	//TODO: Receive Response Check if Ack
+	//Only set to mode Config if ACK received
+	device->mode = elmos52042_mode_CONFIG;
+}
+
+void elmos_52042_sio_enterDiagnosisMode(elmos_52042_s *device)
+{
+	//TODO: Implement ?
+}
+
+void elmos_52042_sio_operate(elmos_52042_s *device)
+{
+	uint8_t command[1];
+	command[0]  			= elmos_52042_command_OPERATE;
+	elmos_52042_sio_transmit(device,command,1);
+}
+
+lemdd_error_e  elmos_52042_sio_readRegister(elmos_52042_s *device, uint8_t address, uint16_t *result)
+{
+	//TODO: Implement ?
+	return lemdd_err_calc_fail; //Not implemented yet.
+}
+
+lemdd_error_e  elmos_52042_sio_writeRegister(elmos_52042_s *device,uint8_t address, uint16_t value)
+{
+	lemdd_error_e success 		= lemdd_err_calc_fail;
+	const uint8_t cmd_length 	= 4;
+	uint8_t command[cmd_length];
+	command[0] 					=  elmos_52042_command_WRITE;
+	command[1] 					=  address;
+	command[2] 					= (value >> 8);
+	command[3] 					= (value & 0x00FF);
+	elmos_52042_sio_transmit(device,command,cmd_length);
+	success 					= lemdd_err_ok;
+	return success;
+}
+
+lemdd_error_e  elmos_52042_sio_updateEEPROM(elmos_52042_s *device)
+{
+	lemdd_error_e success 		= lemdd_err_calc_fail;
+	const uint8_t cmd_length 	= 2;
+	uint8_t command[cmd_length];
+	command[0]					= elmos_52042_command_EEUPD;
+	command[1]					= 0x1 /*Constant see UM.*/;
+	elmos_52042_sio_transmit(device,command,cmd_length);
+	success 					= lemdd_err_ok;
+	return success;
+}
+
+lemdd_error_e  elmos_52042_sio_readEEPROM(elmos_52042_s *device)
+{
+	lemdd_error_e success 		= lemdd_err_calc_fail;
+	const uint8_t cmd_length 	= 2;
+	uint8_t command[cmd_length];
+	command[0]					= elmos_52042_command_READEE;
+	command[1]					= 0x00 /*Constant see UM.*/;
+	elmos_52042_sio_transmit(device,command,cmd_length);
+	success 					= lemdd_err_ok;
+	return success;
+}
+
+lemdd_error_e  elmos_52042_sio_softReset(elmos_52042_s *device)
+{
+	lemdd_error_e success 		= lemdd_err_calc_fail;
+	const uint8_t cmd_length 	= 1;
+	uint8_t command[cmd_length];
+	command[0]					= elmos_52042_command_RESET; /*Device enters Restart without answer.*/
+	elmos_52042_sio_transmit(device,command,cmd_length);
+	success 					= lemdd_err_ok;
+	return success;
+}
+
+lemdd_error_e  elmos_52042_sio_BIST(elmos_52042_s *device,elmos_52042_bist bist_mode )
+{
+	return lemdd_err_calc_fail; //Not implemented yet.
+}
+lemdd_error_e  elmos_52042_sio_ActivateAnalogOutput(
+		elmos_52042_s *device,
+		elmos_52042_analog_outputMode outputMode,
+		elmos_52042_analog_output_pressure pressureRouting,
+		elmos_52042_analog_output_signal_correction signalCorrection,
+		uint8_t dacRegHigh,
+		uint8_t lowByteDACReg)
+{
+	extern lemdd_io_pin_s SIO_io_pin;
+
+	lemdd_error_e success 		= lemdd_err_calc_fail;
+	const uint8_t cmd_length 	= 3;
+	uint8_t command[cmd_length];
+	command[0]					= elmos_52042_command_ANAOUT;
+	command[1]					|= outputMode;												/*Determine outputmode*/
+	command[1]					|= pressureRouting;											/*Determine if raw or corrected pressure should be used.*/
+	command[1]					|= signalCorrection;										/*Determine if signal should be corrected single or continuos*/
+	command[1]					|= (command[1] & 0xF0  == 0) ?(0x0F & dacRegHigh) : 0;		/*High Byte (11:8) for DAC Reg*/
+	command[2]					 =	lowByteDACReg;
+	elmos_52042_sio_transmit(device,command,cmd_length);
+	success 					= lemdd_err_ok;
+
+	return success;
+}
+

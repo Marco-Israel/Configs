@@ -1,0 +1,676 @@
+
+/*******************************************************************************
+* @file             mi_ooc_sensor.c
+* @author           Marco Israel
+* @version          v. 6.0
+* @date             2019-07
+* @ingroup          mi_ooc
+* @copydoc          mi_ooc_sensor.h
+* @brief            Sensor base object
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+*
+*
+*                      IMPORTANT NOTICE - COPYRIGHT INFORMATION
+*
+*
+* English:
+*
+* THIS SOFTWARE AND ITS OBJECT ORIENTED ARCHITECTURE IN THE PROGRAMMING
+* LANGUAGE C AS WELL AS THE NAMING CONVENTION IS PROVIDED "AS IS" by
+* MARCO ISRAEL. ANY EXPRESS OR IMPLIED  WARRANTIES, INCLUDING, BUT NOT
+* LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+* A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO  EVENT SHALL MARCO ISRAEL
+* BE LIABLE FOR ANY DIRECT, INDIRECT, * INCIDENTAL, SPECIAL, EXEMPLARY,
+* OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT * LIMITED TO, PROCUREMENT
+* OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+* BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY  OF LIABILITY,
+* WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR
+* OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+* ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* The Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* is allowed to use this object oriented software architecture as well
+* as its naming conversation in and only in the their project
+* 'ED0096_Swipetronic'. Marco Israel 2019 - 2020.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions
+* are met:
+*     * Redistribution of source code must retain the this copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistribution in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in
+*       the documentation and/or other materials provided with the
+*       distribution.
+*     * Neither the name of the <organization> nor the names of its
+*       contributors may be used to endorse or promote products derived
+*       from this software without specific prior written permission.
+*
+*
+*
+* German:
+*
+* Alle Inhalte in source und binaer Form, insbesondere die hier aufgezeigte
+* object orientierte Softwarearchitektur- in der Programmiersprache C,
+* seiner coding Conversation (Namensgebung etwa fuer Variablen, Funktionen,
+* Parameter, Datentypen, usw.) sind urheberrechtlich geschuetzt.
+* Alle Rechte, einschließlich der Verwendung, Veroeffentlichung, Bearbeitung,
+* Uebersetzung oder Vervielfältigung, bleiben Marco Israel vorbehalten.
+* Dieses gilt auch fuer alle Instanzen, Kopien oder sonstigen Verwendungen
+* in source oder binearform. In jedem Fall sind diese Copyright und Urheber
+* Informationen zu uebernehmen und duerfen nicht ohne Zustimmung vereandert
+* oder entfernt werden. Marco Israel uebernimmt keine Haftung in irgendeiner
+* Form und Art und Weise, die durch die Nutzung dieser Architektur oder seiner
+* Kopien und Instancen in source oder binaerform direkt oder indirekt
+* entstehen und kann nicht fuer Schaeden belangt werden.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template sowie seine object orientierte Software
+* Architektur in C, als auch der die genutzte Namensgebungskonversation,
+* innerhalb * und ausschliesslich fuer das * Project 'ED0096_Swipetronic'
+* zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+* @detail
+* ____TODO______
+*
+* The UML diagrams in this template folder provides you the context of template
+* structure in a graphical view. Feel free to take a look at this diagrams.
+* In case of questions you can contact me under Marco-Israel@online.de.
+*
+*
+********************************************************************************
+* @attention
+* ____TODO______
+*
+* If you change something inside the template structure, do this in the
+* template folder first and run 'make' inside the 'test' folder to see if
+* the unittests still pass.
+*
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+#include <mi_ooc_sensor.h>
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type GENERAL definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type FUNCTION POINTER definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type UNION definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type ENUM definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type STRUCTURE definition
+ ******************************************************************************/
+
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE PROTOTYPE definition (static)
+ ******************************************************************************/
+
+
+
+/* ----- PART: INLINE prototypes ---------------------------------------------*/
+
+
+
+
+
+/* -------- END PART: INLINE prototypes --------------------------------------*/
+
+
+
+
+
+/* ----- PART: APPLICATION prototypes ----------------------------------------*/
+
+
+/**
+ * Initialized the virtual Function Table (vFTable) if its not.
+ */
+STATIC void _vFTable__init_if_uninitialized(void);
+
+
+/* -------- END PART: APPLICATION prototypes ---------------------------------*/
+
+
+
+
+
+/* ----- PART: Virtual prototypes --------------------------------------------*/
+
+
+ /**
+  * Default constructor.
+  * @param ps__this This base object itself.
+  * @param ps__paramList List of function parameters.
+  */
+STATIC void _ctor(sensor__this__st *const ps__this,
+    sensor__ctorParamList__st *const  ps__paramList);
+
+
+
+
+
+/**
+ * Default destructor.
+ * @param ps__this This base object itself.
+ */
+
+STATIC void _dtor(sensor__this__st* const ps__this);
+
+
+
+
+
+/**
+* Default error handler,
+ * @param ps__this This base object itself.
+ * @param ps__paramList List of function parameters.
+*/
+STATIC void _errorHandler(sensor__this__st *const ps__this,
+        sensor__errorHandlerParamList__st *const ps__paramList);
+
+
+
+
+
+/**
+ * @brief  Send data to a Sensor
+ *
+ * @Param ps__this This base Sensor object
+ * @Param pa__dataSrc A pointer to the Data to send
+ * @Param lenghtOfSrc The length (number of bytes) to send
+ *
+ * @Returns The number of bytes sendet
+ */
+STATIC uint8_t  _send(
+        sensor__this__st *const ps__this,
+        uint8_t *const pa__dataSrc,
+        uint8_t lenghtOfSrc);
+
+
+
+
+
+/**
+ * @brief  Receive data from the Sensor
+ *
+ * @Param ps__this This base Sensor object
+ * @Param pad__dataDest A pointer to the Destination Buffer.
+ * @Param sizeOfDstination The size of the destination buffer in bytes
+ * @attation NOTE: The data in the buffer will be overwirtten.
+ *
+ * @Returns The number of bytes received and written to the pad__dataDest .
+ */
+STATIC uint8_t _receive(sensor__this__st *const ps__this,
+        uint8_t *const pad__dataDest,
+        uint8_t sizeOfDstination);
+
+
+
+
+
+
+    //END********************************************************END
+    //BEGIN****************************************************BEGIN
+
+
+
+
+
+/* -------- END PART: Virtual prototypes -------------------------------------*/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     IMPLEMENTATIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (Public) implementation
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables global STATIC (Private) implementation
+ ******************************************************************************/
+
+/**
+ * A table holding virtual function which can be replaced during run-time.
+ * Such functions are called 'virtual' in OOC context.
+ *
+ * NOTE 1: Because we want only one virtual function table (vFTable) for each
+ * 'Class', not for each instance of a 'Class' (called 'object'), the virtual
+ * function table is allocated in the data segment. So the vFTable must be
+ * initialized only once. Each instance have afterwards the same (overwritten)
+ * functions (methods) (also if the first instance gets deleted).
+ *
+ * NOTE 2: This makes it also easy to use its address as an object identifier.
+ */
+static sensor__vFTable__st   _vFTable_S = {
+    .virtualOperation__S.pf__ctor=&_ctor,
+    .virtualOperation__S.pf__dtor =  &_dtor,
+    .virtualOperation__S.pf__errorHandler = &_errorHandler,
+    .virtualOperation__S.pf__send = &_send,
+    .virtualOperation__S.pf__receive = &_receive
+};
+
+
+
+
+/**
+ * Flag to indicate if the vFTable is (already) initialized or not.
+ * This should normally be done by the constructor during the first
+ * instantiating of this object.
+ */
+static volatile uint8_t  _activeInstanceCounter = __MI_OOC__NOT_INITIALIZED__;
+
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE INLINE implementation (STATIC inline)
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE implementation (static)
+ ******************************************************************************/
+
+
+
+/* ----- PART: APPLICATION functions -----------------------------------------*/
+
+
+
+STATIC void _vFTable__init_if_uninitialized(void)
+{
+
+    /*
+     * Prevent a reinitialization after the class was instantiated
+     * at least one time or more. This would reset the vFTable.
+     */
+
+    if (MI_OOC__NO_INSTANCE == _activeInstanceCounter) {
+
+        /*First set default virtual function. There are at least
+         * the default constructor and deconstructor to set as well
+         * as a default error handling function.
+         */
+
+    }
+}
+
+
+
+/* -------- END PART: APPLICATION functions ----------------------------------*/
+
+
+
+
+
+STATIC void _ctor(
+        sensor__this__st* const ps__this,
+        sensor__ctorParamList__st *const  ps__paramList)
+{
+
+    if (NULLp != ps__this) {
+
+        /** Initialize this vFTable and link it to this object. */
+        _vFTable__init_if_uninitialized();
+
+        ps__this->ps__virtualOperation = &_vFTable_S.virtualOperation__S;
+
+
+         //BEGIN*****************************************************
+
+        if (NULLp != ps__paramList)
+        {
+
+
+
+        }
+        else {
+             /*
+              * @todo:  ____TODO______ Set default values if no parameter are
+              * parsed to this constructor.
+              */
+        }
+
+
+        /*
+         * @todo: ____TODO______ Preform finally some general object
+         * construction here.
+         */
+
+        //END*******************************************************
+
+    }
+    else
+    {
+        SENSOR__ERROR_HANDLER__CTOR(ps__this)
+    }
+
+}
+
+
+
+
+
+STATIC void _dtor(sensor__this__st *const ps__this)
+{
+
+
+    if (NULLp != ps__this) {
+
+
+        //BEGIN*****************************************************
+        /*
+         * Base object deconstruction code.
+         * The base dtor shall deconstruct the base struct (object)
+         * members and preform cleanup like closing pipes.
+         * @todo **** Implement  'this'  destructor code ****.
+         */
+       //END*******************************************************
+
+    }
+    else {
+            SENSOR__ERROR_HANDLER__DTOR(ps__this)
+    }
+
+}
+
+
+
+
+
+STATIC void _errorHandler(sensor__this__st *const ps__this,
+        sensor__errorHandlerParamList__st *const ps__paramList)
+{
+
+    (void)ps__this;
+    (void)ps__paramList;
+    MI_OOC__ERROR_HANDLER__DEFAULT
+
+}
+
+
+
+
+
+STATIC uint8_t  _send(sensor__this__st *const ps__this,
+        uint8_t *const pa__dataSrc,
+        uint8_t lenghtOfSrc)
+{
+    (void)ps__this;
+    (void)pa__dataSrc;
+    (void)lenghtOfSrc;
+
+
+    return lenghtOfSrc;
+}
+
+
+
+
+
+STATIC uint8_t _receive(sensor__this__st *const ps__this,
+        uint8_t *const pad__dataDest,
+        uint8_t sizeOfDstination)
+{
+    (void)ps__this;
+    (void)pad__dataDest;
+    (void)sizeOfDstination;
+
+    return sizeOfDstination;
+
+}
+
+
+
+
+
+
+//BEGIN*****************************************************
+
+
+
+//END*******************************************************
+
+
+
+/* -------- END PART: Virtual functions --------------------------------------*/
+
+
+
+/*******************************************************************************
+ **     Function PROTECTED implementation (extern)
+ ******************************************************************************/
+
+
+
+PROTECTED sensor__vFTable__st * _sensor__getPt_vFTable(void)
+{
+
+    return &_vFTable_S;
+
+}
+
+
+
+
+
+/*******************************************************************************
+ **     Function PUBLIC implementation (extern)
+ ******************************************************************************/
+
+
+
+EXTERN sensor__this__st * sensor__new(
+         sensor__this__st *const ps__this,
+         sensor__ctorParamList__st *const ps__paramList)
+{
+
+     sensor__this__st * ps__ret = NULLp;
+
+    if (NULLp != ps__this) {
+
+        ps__ret = ps__this;
+
+    }
+#if defined __USE_HEAP__
+    else {
+
+        /**
+         * Allocate a memory area if object should be stored in the heap
+         * heap segment. Alternative the objects can be pushed on the
+         * stack or stored in the datasegment.
+         */
+        ps__ret = (sensor__this__st*)malloc(sizeof(
+                    sensor__this__st));
+
+    }
+#endif
+
+
+    if (NULLp != ps__ret) {
+
+        /**
+         * First clear the memory area for this new object.
+         */
+        memset(ps__ret, 0x00, sizeof(sensor__this__st));
+
+
+        /**
+         * Second init the new object data by calling this _ctor
+         * explicit. (_ctor can not be overwritten yet).
+         */
+        _ctor(ps__ret, ps__paramList);
+
+
+        /**
+         * Finally increment the number of active instances
+         */
+        _activeInstanceCounter++;
+        ps__ret->attribute__S.objectID = _activeInstanceCounter;
+
+
+    }
+    else{
+        MI_OOC__ERROR_HANDLER__NULL_POINTER
+     }
+
+    return ps__ret;
+}
+
+
+
+
+
+EXTERN void sensor__deleate(sensor__this__st *const ps__this)
+{
+
+    if(NULLp != ps__this) {
+
+
+        if(NULLp != ps__this->ps__virtualOperation->pf__dtor) {
+
+            /**
+             * First deconstruct the object members
+             */
+            ps__this->ps__virtualOperation->pf__dtor(ps__this);
+
+        }
+        else{
+
+            _dtor(ps__this);
+
+        }
+
+
+        #if defined __USE_HEAP__
+        /**
+         * Afterwards free the objects memory.
+         * If you allocate memory in HEAP, this is step is important
+         * to prevent a heap overflow and corrupt stack data,
+         */
+        free(ps__this);
+        #endif
+
+
+        /**
+         * Finally decrement the number of active instances
+         */
+         _activeInstanceCounter--;
+    }
+    else{
+
+       MI_OOC__ERROR_HANDLER__NULL_POINTER
+
+    }
+}
+
+
+
+
+
+EXTERN uint8_t sensor__get_instanceCounter(
+        sensor__this__st *const ps__this)
+{
+
+    (void)ps__this;
+    return _activeInstanceCounter;
+
+}
+
+
+
+/* ----- PART: STATIC (Local) Functions --------------------------------------*/
+
+/* -------- END PART: STATIC (Local) Functions -------------------------------*/
+
+
+
+/* ----- PART: EXTERN (Global) Functions -------------------------------------*/
+
+/* -------- END PART: EXTERN (Global) Functions ------------------------------*/
+
+
+
+/**************** (C) COPYRIGHT Marco Israel ****** END OF FILE ***************/
+
+

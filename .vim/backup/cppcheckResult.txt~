@@ -1,0 +1,89 @@
+productive/mi_ooc_base_template.c:302:5: warning: syntax error: { . virtualOperation__S [syntaxError]
+
+    ^
+productive/mi_ooc_gpio.c:318:5: warning: syntax error: { . virtualOperation__S [syntaxError]
+
+    ^
+productive/mi_ooc_sub_template.c:465:21: warning: Variable '___TODO___' is not assigned a value. [unassignedVariable]
+                int ___TODO___;
+                    ^
+productive/mi_ooc_sub_template.c:475:22: warning: Variable '___TODO___' is not assigned a value. [unassignedVariable]
+                 int ___TODO___;
+                     ^
+productive/mi_ooc_sub_template.c:486:17: warning: Variable '___TODO___' is not assigned a value. [unassignedVariable]
+            int ___TODO___;
+                ^
+productive/mi_ooc_sub_template.c:530:18: warning: Variable '___TODO___' is not assigned a value. [unassignedVariable]
+             int ___TODO___;
+                 ^
+productive/mi_ooc_sub_template.c:486:17: warning: Required An identifier declared in an inner scope shall not hide an identifier declared in an outer scope [c2012-5.3]
+            int ___TODO___;
+                ^
+productive/mi_ooc_sub_template.c:775:19: warning: Required A cast shall not be performed between a pointer to object type and a pointer to a diferent object type [c2012-11.3]
+        ps__ret = OBJECT_POINTER_GET__THIS(
+                  ^
+productive/mi_ooc_sub_template.c:802:13: warning: Required A cast shall not be performed between a pointer to object type and a pointer to a diferent object type [c2012-11.3]
+  ps__ret = OBJECT_POINTER_GET__THIS(
+            ^
+productive/mi_ooc_sub_template.c:775:19: warning: Advisory A conversion should not be performed between a pointer to object and an integer type [c2012-11.4]
+        ps__ret = OBJECT_POINTER_GET__THIS(
+                  ^
+productive/mi_ooc_sub_template.c:802:13: warning: Advisory A conversion should not be performed between a pointer to object and an integer type [c2012-11.4]
+  ps__ret = OBJECT_POINTER_GET__THIS(
+            ^
+productive/mi_ooc_sub_template.c:461:17: warning: Required A cast shall not be performed between pointer to object and a non-integer arithmetic type [c2012-11.7]
+                (void)ps__paramList;
+                ^
+productive/mi_ooc_sub_template.c:579:5: warning: Required A cast shall not be performed between pointer to object and a non-integer arithmetic type [c2012-11.7]
+    (void) ps__this;
+    ^
+productive/mi_ooc_sub_template.c:726:5: warning: Required A cast shall not be performed between pointer to object and a non-integer arithmetic type [c2012-11.7]
+    (void)ps__this;
+    ^
+productive/mi_ooc_sub_template.c:646:15: warning: Required The value returned by a function having non-void return type shall be used [c2012-17.7]
+        memset(ps__ret, 0x00, sizeof(mi_ooc_s1__this__st));
+              ^
+productive/mi_ooc_sub_template.c:775:19: warning: Advisory The +, -, += and -= operators should not be applied to an expression of pointer type [c2012-18.4]
+        ps__ret = OBJECT_POINTER_GET__THIS(
+                  ^
+productive/mi_ooc_sub_template.c:802:13: warning: Advisory The +, -, += and -= operators should not be applied to an expression of pointer type [c2012-18.4]
+  ps__ret = OBJECT_POINTER_GET__THIS(
+            ^
+productive/mi_ooc_sub_template.c:634:47: warning: Required The memory allocation and deallocation functions of <stdlib.h> shall not be used [c2012-21.3]
+        ps__ret = (mi_ooc_s1__this__st*)malloc(sizeof(
+                                              ^
+productive/mi_ooc_sub_template.c:701:10: warning: Required The memory allocation and deallocation functions of <stdlib.h> shall not be used [c2012-21.3]
+     free(ps__this);
+         ^
+productive/mi_ooc_uart.c:328:5: warning: syntax error: { . virtualOperation__S [syntaxError]
+
+    ^
+productive/mi_ooc_sub_template.c:313:0: warning: The function '_mi_ooc_s1__getPt_initialized_vFTable' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_sub_template.c:599:0: warning: The function '_mi_ooc_s1__getPt_vFTable' is never used. [unusedFunction]
+
+^
+productive/mi_ooc.c:127:0: warning: The function 'mi_ooc__empty_function_with_errorhandler' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_errorHandlers.c:231:0: warning: The function 'mi_ooc__errorHandler_default' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_errorHandlers.c:236:0: warning: The function 'mi_ooc__errorHandler_enptyFunction' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_sub_template.c:675:0: warning: The function 'mi_ooc_s1__deleate' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_sub_template.c:722:0: warning: The function 'mi_ooc_s1__get_instanceCounter' is never used. [unusedFunction]
+
+^
+productive/mi_ooc_sub_template.c:614:0: warning: The function 'mi_ooc_s1__new' is never used. [unusedFunction]
+
+^
+productive/mi_ooc.c:112:0: warning: The function 'ooc_empty_function' is never used. [unusedFunction]
+
+^
+nofile:0:0: warning: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+

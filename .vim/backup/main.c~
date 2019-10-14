@@ -1,0 +1,269 @@
+/*******************************************************************************
+* @file             Aurix_ElmosMain.c
+* @author           Marco Israel
+* @version          v. 1.5
+* @date             2019-07
+* @ingroup          elmos
+* @brief            Communicating form Aurix to Elmos
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+********************************************************************************
+* @detail
+* ____TODO______
+*
+* In case of questions you can contact me under Marco-Israel@online.de.
+*
+*
+********************************************************************************
+* @attention
+* ____TODO______
+*
+* If you change something inside the template structure, do this in the
+* template folder first and run 'make' inside the 'test' folder to see if
+*
+*
+*******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global information
+ ******************************************************************************/
+
+#include <Bsp.h>
+
+#include "Ifx_Types.h"
+#include "IfxCpu.h"
+#include "IfxScuWdt.h"
+#include "SysSe/Bsp/Bsp.h"
+
+
+#include "IfxPort_Io.h"
+//#include "IfxPort_PinMap.h"
+
+
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (public) definition
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+#deinfe AHC_LED_GREEN   (4u)
+#deinfe AHC_LED_RED     (5u)
+
+
+
+/*******************************************************************************
+ **     Type GENERAL definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type FUNCTION POINTER definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type UNION definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type ENUM definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type STRUCTURE definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE PROTOTYPE definition (static)
+ ******************************************************************************/
+/*******************************************************************************
+ **     Function PUBLIC PROTOTYPE definition (extern)
+ ******************************************************************************/
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     IMPLEMENTATIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (public) implementation
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables global STATIC (private) implementation
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE INLINE implementation (STATIC inline)
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE implementation (static)
+ ******************************************************************************/
+
+
+
+static void _initGpioPIN(volatile Ifx_P  *const  port, uint8_t pin)
+{
+
+
+    IfxPort_Pin portPin = {port, pin};
+
+
+
+    IfxPort_Io_ConfigPin configPin =
+    {
+       .pin  =  &portPin,
+       .mode = IfxPort_Mode_outputPushPullGeneral,
+       .padDriver = 0u
+    };
+
+
+
+    IfxPort_Io_Config configIO =
+    {
+       .size = 1u,
+       .pinTable  = &configPin
+    };
+
+
+
+    IfxPort_Io_initModule(&configIO);
+
+}
+
+
+
+
+
+static void _initHardware(void)
+{
+
+    _initGpioPIN(&MODULE_P02, AHC_LED_GREEN);
+
+    IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
+    IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
+
+    IfxCpu_disableInterrupts();
+
+    initTime();
+
+	IfxScuCcu_init(&IfxScuCcu_defaultClockConfig);
+
+
+	/*Init GTM and Clocks*/
+    aurix_gtm_enable_clock(&MODULE_GTM);
+    aurix_gtm_cmu_enable(&MODULE_GTM, IfxGtm_Cmu_getGclkFrequency(&MODULE_GTM));
+    aurix_gtm_cmu_setupFxclk(&MODULE_GTM);
+
+
+    Elmos_Init();
+
+
+
+
+    AppScheduler_init();
+   /// initDebugPrintTask();
+
+    IfxCpu_enableInterrupts();
+
+
+    IfxPort_setPinHigh(&MODULE_P02, AHC_LED_GREEN);
+}
+
+
+
+
+
+/*******************************************************************************
+ **     Function PUBLIC implementation (extern)
+ ******************************************************************************/
+
+
+
+void core2_main(void)
+{
+
+}
+
+
+
+
+
+void core1_main(void)
+{
+}
+
+
+
+
+
+void core0_main(void)
+{
+
+    _initHardware();
+
+
+
+    while(1){
+    }
+
+}
+
+
+/************************************************** END OF FILE ***************/

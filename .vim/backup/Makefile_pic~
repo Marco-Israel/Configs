@@ -1,0 +1,519 @@
+################################################################################
+### 					MIS_BUILD  -  PIC MAKEFILE
+################################################################################
+#
+# @file 	Makefile
+# @author 	Marco Isarel (MI)
+# @date 	2019-03
+#
+#
+# @brief 	Makefile for the MICROCHIP Toolchain to build PIC MCU code
+#
+#
+# @details  This Makefile defines project specific settings used for PIC MCUs.
+# 			In the end of this file the core makefile is called which holds all
+# 			general rules.
+#
+#
+# Revision History of changes.
+#
+# 	Date		| Author    | Revision	| Change Description
+
+#  -- DO NOT CHANGE THIS WITHOUT KNOWING WHAT YOU ARE DOING --
+#  -------------|-----------|-----------|---------------------
+#
+#
+# @todo
+#
+#
+# @attention
+#
+#
+################################################################################
+
+
+
+################################################################################
+### Symbols to include
+################################################################################
+
+-include	../../global_conf.mk
+
+
+
+################################################################################
+### Special variable, matching to folders inside this buildsystem ##############
+################################################################################
+# NAME_APP: must match to the project root folder name wich holds the productive
+# 			and the unittest folder!!!
+# 				driver like "generated", "vendor_low_level" or  "mcal"
+# TYPE_ARCHITECTURE: This name must match to the driverfolder
+# TYPE_CPU: This should match to the mcu type
+################################################################################
+
+NAME_APP = lmos52042_lib
+
+TYPE_ARCHITECTURE = 18F27K42
+
+TYPE_CPU = pic18
+
+
+
+################################################################################
+### Path settings
+################################################################################
+
+#PATH_TOOLCHAIN = $(PATH_MISBUILD)/TOOLS/microchip/xc8/pic
+PATH_TOOLCHAIN = ../../TOOLS/microchip/xc8/pic
+
+PATH_THIRDPARTY += $(PATH_MISBUILD)/TOOLS/thirdparty/mi_ooc/productive
+
+#PATH_THIRDPARTY = ../../TOOLS/thirdparty/mi_ooc
+#PATH_THIRDPARTY = $(PATH_PROJECT)/TOOLS/thirdparty/mi_ooc
+
+PATH_VPATH = .
+
+PATH_STDLSL = $(PATH_TOOLCHAIN)/
+
+PATH_STDLIB = $(PATH_TOOLCHAIN)/lib/c99
+
+PATH_STDINC = $(PATH_TOOLCHAIN)/include/c99
+
+
+
+################################################################################
+### Special files in other locations to include into the build
+################################################################################
+
+FILE_PREOBJ =
+
+FILE_POSTOBJ =
+
+FILE_PRELIB =
+
+FILE_POSTLIB =
+
+FILE_LIBSTD =
+
+FILE_PREPROCESSORINC =
+
+FILE_ASSEMBLERINC =
+
+FILE_COMPILER_APP =
+
+FILE_COMPILER_OS =
+
+FILE_COMPILER_BSW =
+
+FILE_COMPILER_DRIVER =
+
+FILE_LSL =
+#FILE_LSL =$(PATH_STARTUPCODE)/linkerscricpt.lsl
+
+FILE_STARTUPCODE = startup/empty_dummy.c
+#FILE_STARTUPCODE = $(PATH_STARTUPCODE)/startup.c
+
+
+
+################################################################################
+### Project configuration
+################################################################################
+
+USAGE_MULTICORE =N
+
+USAGE_VERBOSE =N
+
+USAGE_TOOLEXPLICIT =N
+
+USAGE_WARNING_AS_ERROR =Y
+
+USAGE_TOOLSEXPLICIT =N
+
+USAGE_SCANDEPTH =6
+
+USAGE_CHECKONLY =N
+
+USAGE_DEBUGSYMBOLS =N
+
+USAGE_OPTIMIZE =2
+
+USAGE_BACKWARDSLASH =N
+
+USAGE_OUTPUTIHEX =Y
+
+USAGE_OUTPUTELF =Y
+
+USAGE_OUTPUTCOFF =N
+
+USAGE_OUTPUTMAP =Y
+
+LIMIT_ERROR =1
+
+TYPE_INTERMEDIATEFILE = p1
+
+USAGE_FLASHCOMMAND = java -jar \
+				  $(PATH_TOOLCHAIN)/../../mplab_platform/mplab_ipe/ipecmd.jar \
+				  -TPICD4 -P$(TYPE_ARCHITECTURE) -OL -W -M -Y -K -I -F
+
+
+
+################################################################################
+### Toolchain to use
+################################################################################
+
+ifeq ($(USAGE_TOOLEXPLICIT),Y)
+CC:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/xc8-cc.exe"
+
+ifeq ($(TYPE_ARCHITECTURE),pic18)
+AS:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/aspic18.exe"
+
+else
+AS:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/aspic.exe"
+
+endif
+
+LD:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/hlink.exe"
+
+AR:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/xc8-ar.exe"
+
+HX:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/hexmate"
+
+
+else
+
+CCC:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/xc8-cc.exe"
+
+CC:=$(CCC)
+
+AS:=$(CCC)
+
+LD:=$(CCC)
+
+AR:=$(USAGE_EXPOSE)"$(PATH_TOOLCHAIN)/bin/xc8-ar.exe"
+
+HX:=$(CCC)
+
+endif
+
+
+
+################################################################################
+### Archiver flags
+################################################################################
+
+ARFLAGS = --target $(TYPE_ARCHITECTURE) -r
+
+
+
+################################################################################
+### Global flags
+################################################################################
+
+GLOBALFLAGS =  -fmax-errors=$(LIMIT_ERROR) \
+				-mno-ivt \
+				-mcpu=$(TYPE_ARCHITECTURE) \
+				-msummary=-psect,-class,-mem,-hex,-file \
+				-mstack=hybrid:auto:auto:auto \
+				-O0 \
+				-mdebugger=icd3 \
+				-memi=wordwrite \
+				--nofallback \
+				-mno-keep-startup \
+				-mno-download-hex \
+				-mdefault-config-bits \
+				-fno-short-double \
+				-fno-short-float \
+				-fno-signed-char \
+				-funsigned-char \
+				-memi=wordwrite \
+				dummy.c
+
+
+
+
+
+ifeq ($(TYPE_ARCHITECTURE),pic18)
+GLOBALFLAGS  +=
+else
+GLOBALFLAGS += -mosccal \
+			  -moscval=64
+endif
+
+
+
+
+
+ifeq ($(USAGE_CHECKONLY),Y)
+GLOBALFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_DEBUGSYMBOLS),Y)
+GLOBALFLAGS +=-v
+GLOBALFLAGS +=-finstrumented-functions
+GLOBALFLAGS +=-save-temps
+GLOBALFLAGS += -Og
+GLOBALFLAGS += -msummary=+psect,+class,+mem,+hex,+file,+xmlfull
+else
+GLOBALFLAGS += -msummary=-psect,-class,-mem,-hex,-file,+xmlfull
+endif
+
+
+
+
+
+ifeq ($(USAGE_WARNING_AS_ERROR),Y)
+GLOBALFLAGS +=-mwarn=-9
+else
+GLOBALFLAGS +=-mwarn=9
+GLOBALFLAGS +=-w
+endif
+
+
+
+
+
+ifeq ($(USAGE_VERBOSE),Y)
+GLOBALFLAGS += -v
+GLOBALFLAGS += -msummary=+psect,+class,+mem,+hex,+file,+xmlfull
+endif
+
+
+
+
+
+ifeq ($(USAGE_PROFILING),Y)
+GLOBALFLAGS += -finstrumented-functions
+else
+#GLOBALFLAGS += -fno-instrumented-functions
+endif
+
+
+
+#-mext=cci \
+#-DXPRJ_default=default
+#-m[no-]ivt=address The interrupt vector table selected at startup
+#-mmaxichip Use of a hypothetical device with full memory
+#-mram=ranges Data memory that is available for the program
+#-mreserve=ranges What memory should be reserved
+#-m[no-]resetbits Whether the device status bits should be preserved
+#-mrom=ranges Program memory that is available for the program
+#-mshroud Whether the output file should obfuscate the source code
+#-mstack=model[:size] Which data stack will be used by default
+#-m[no-]stackcall Whether functions can be called via lookup tables
+#-msummary=types What memory summary information is produced
+#-mundefints=action How the compiler completes unimplemented interrupts
+#-m[no-]use-ivt see -m[no-]ivt
+#
+
+
+
+################################################################################
+### Compiler flags
+################################################################################
+
+CFLAGS =$(foreach tmp_inc,$(PATH_ALLHEADERDIR),$(patsubst %,-I%,$(tmp_inc))) 	\
+	$(foreach tmp_inc,$(PATH_COMPILERINC),$(patsubst %,-I%,$(tmp_inc))) 	\
+	$(foreach tmp_inc,$(PATH_PREPROCESSORINC),$(patsubst %,-I%,$(tmp_inc))) \
+	$(foreach tmp_inc,$(FILE_PREPROCESSORINC),$(patsubst %,-I%, 			\
+	$(dir $(tmp_inc)))) \
+	-std=c99 \
+	-xassembler-with-cpp \
+	-maddrqual=reject \
+	-mundefints=swbp \
+	-c \
+	-o $(PATHOUT_OBJ)/$(@F)
+
+
+
+
+ifeq ($(USAGE_CHECKONLY),Y)
+CFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_DEBUGSYMBOLS),Y)
+CFLAGS += -M
+endif
+
+
+
+
+
+ifeq ($(USAGE_VERBOSE),Y)
+endif
+
+
+
+
+
+ifeq ($(USAGE_WARNING_AS_ERROR),Y)
+CFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_PROFILING),Y)
+CFLAGS +=
+endif
+
+
+
+################################################################################
+## Assembler flags
+################################################################################
+
+ASFLAGS = -fasmfile \
+	$(foreach tmp_inc,$(FILE_ASSEMBLERINC),$(patsubst %,-I%,$(dir $(tmp_inc)))) \
+	$(foreach tmp_inc,$(FILE_ASSEMBLERINC),$(patsubst %,-L%,$(dir $(tmp_inc)))) \
+	$(foreach tmp_inc,$(PATH_ASSEMBLERINC),$(patsubst %,-I%,$(tmp_inc)))  \
+	$(foreach tmp_inc,$(PATH_ASSEMBLERINC),$(patsubst %,-L%,$(tmp_inc))) \
+	-Wa,-a \
+	-o $(PATHOUT_OBJ)/$(@F)
+
+
+
+
+
+ifeq ($(USAGE_CHECKONLY),Y)
+ASFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_DEBUGSYMBOLS),Y)
+ASFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_WARNING_AS_ERROR),Y)
+ASFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_VERBOSE),Y)
+ASFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_PROFILING),Y)
+ASFLAGS +=
+endif
+
+
+
+################################################################################
+### Linker flags
+################################################################################
+
+LDFLAGS = $(foreach tmp_inc,$(PATH_PRELINKLIB),$(patsubst %,-L%,$(tmp_inc)))  \
+		  $(foreach tmp_inc,$(PATH_STDLIB),$(patsubst %,-L%,$(tmp_inc))) 	  \
+		  $(foreach tmp_inc,$(PATH_POSTLINKLIB),$(patsubst %,-L%,$(tmp_inc))) \
+		  $(foreach tmp_inc,$(PATH_STARTUPCODE),$(patsubst %,-L%,$(tmp_inc))) \
+		  $(foreach tmp_inc,$(PATH_STDLSL),$(patsubst %,-L%,$(tmp_inc))) 	  \
+ 		--fill=0 \
+		-o $(PATHOUT_OTHER)/$(@F)
+
+		#-Wl,-data-init
+
+
+
+
+ifeq ($(USAGE_OUTPUTIHEX),Y)
+LDFLAGS +=  -ginhx032
+LDFLAGS += -o $(PATHOUT_OTHER)/$(NAME_APP).hex
+endif
+
+
+
+
+
+ifeq ($(USAGE_OUTPUTELF),Y)
+LDFLAGS += -gdwarf-3
+LDFLAGS += -o $(PATHOUT_OTHER)/$(NAME_APP).elf
+endif
+
+
+
+
+
+ifeq ($(USAGE_OUTPUTCOFF),Y)
+LDFLAGS += -gcoff
+LDFLAGS += -o $(PATHOUT_OTHER)/$(NAME_APP).cof
+endif
+
+
+
+
+
+ifeq ($(USAGE_OUTPUTMAP),Y)
+LDFLAGS +=	-Wl,-Map=$(PATHOUT_OTHER)/$(NAME_APP).map
+LDFLAGS += -Wa,-a=$(PATHOUT_OTHER)/$(NAME_APP).lst
+endif
+
+
+
+
+
+ifeq ($(USAGE_DEBUGSYMBOLS),Y)
+LDFLAGS +=	-Wl,-Map=$(PATHOUT_OTHER)/$(NAME_APP).map
+LDFLAGS += -Wa,-a=$(PATHOUT_OTHER)/$(NAME_APP).lst
+endif
+
+
+
+
+
+ifeq ($(USAGE_VERBOSE),Y)
+LDFLAGS +=	-Wl,-Map=$(PATHOUT_OTHER)/$(NAME_APP).map
+LDFLAGS += -Wa,-a=$(PATHOUT_OTHER)/$(NAME_APP).lst
+endif
+
+
+
+
+
+ifeq ($(USAGE_CHECKONLY),Y)
+LDFLAGS +=
+endif
+
+
+
+
+
+ifeq ($(USAGE_PROFILING),Y)
+LDFLAGS +=
+endif
+
+
+
+################################################################################
+### Include MIS_BUILD core makefile which holds the rules and global stuff
+################################################################################
+
+include ../../TOOLS/makefiles/core_makefile.mk
+
+
+
+################################################################################
+### EOF ########################################################################
+

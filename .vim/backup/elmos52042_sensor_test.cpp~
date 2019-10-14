@@ -1,0 +1,223 @@
+/******************************************************************************
+ *
+ * @file 	elmos52042_sensor_test.cpp
+ * @author 	Marco Isarel (MI)
+ * @date 	2019-08
+ * @ingroup cppUTest
+ * @copyright Copyright (c) 2019 Marco Israel
+ *
+ *
+ * @brief Unittest the elmos52042 SSP Sensor
+ *
+ *
+ * @detail Unittest the elmos52042 SSP Sensor
+ *
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+
+#include "CppUTest/TestHarness.h"
+#include "CppUTestExt/MockSupport.h"
+
+#include <mi_ooc_sensor_mock.hpp>
+
+
+
+extern "C" {
+#include <elmos52042_sensor.h>
+}
+
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+
+
+
+
+
+/*******************************************************************************
+ **     Variables and Types global STATIC (private)
+ ******************************************************************************/
+static elmos52042__ctorParamList__st ctorParamList__S;
+static elmos52042__this__st this__S;
+static elmos52042__vFTable__st* ps__vFTable;
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Local MOCKs
+ *******************************************************************************
+ ******************************************************************************/
+
+//
+//
+///* ----- PART: expacted Calls ------------------------------------------------*/
+//
+//
+//
+//static inline void expactNCall____TODO____(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList,
+//    uint8_t numberOfCalls)
+//{
+//        mock().expectNCalls(numberOfCalls, "ctor_mock")
+//            .withConstPointerParameter("ps__this", ps__this)
+//            .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+//
+//
+///* -------- END PART: expacted Calls -----------------------------------------*/
+//
+//
+//
+//
+//
+///* ----- PART: local MOCKs ---------------------------------------------------*/
+//
+//
+//
+//static void ____TODO____MOCK(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList)
+//{
+//
+//    mock().actualCall("____TODO____")
+//        .withConstPointerParameter("ps__this",ps__this)
+//        .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+//
+//
+///* -------- END PART: local MOCKs --------------------------------------------*/
+//
+//
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Unittests
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+
+
+TEST_GROUP(ELMOS52042_SSP_SENSOR_TG)
+{
+    void setup()
+    {
+        ps__vFTable = _elmos52042__getPt_vFTable();
+
+        ctorParamList__S.ownVirtualOperation__S.pf__manchesterSender =
+            &sendSensor_MOCK;
+        ctorParamList__S.ownVirtualOperation__S.pf__receiver=
+            &receiveSensor_MOCK;
+        ctorParamList__S.ownVirtualOperation__S.pf__errorHandler=
+            &sensorErrorHandler_MOCK;
+
+
+        elmos52042__new(&this__S, &ctorParamList__S);
+    }
+
+    void teardown()
+    {
+    }
+};
+
+
+
+
+
+/* ----- PART: Unit Tests ----------------------------------------------------*/
+
+
+
+
+TEST(ELMOS52042_SSP_SENSOR_TG, 0__mock_call_to_sensor_ctor)
+{
+        #define NO_CALL_BECAUSE_CTOR_IS_CALLED_DIRECTLY (0u)
+       UT_PTR_SET(ps__vFTable->base__S.virtualOperation__S.pf__ctor,
+               &ctorSensor_MOCK);
+       expactNCall__sensorCtor(&this__S.base__S, &ctorParamList__S.base__S,
+               NO_CALL_BECAUSE_CTOR_IS_CALLED_DIRECTLY
+               );
+       elmos52042__new(&this__S, &ctorParamList__S);
+}
+
+
+
+TEST(ELMOS52042_SSP_SENSOR_TG, 1__mock_call_to_send)
+{
+
+   uint8_t buffer[5];
+   expactOneCall__sensorSend(&this__S.base__S, &buffer[0], 5);
+   elmos52042__send(&this__S, &buffer[0], 5);
+}
+
+
+
+
+
+TEST(ELMOS52042_SSP_SENSOR_TG, 2__mock_call_to_receive)
+{
+
+    uint8_t buffer[5];
+   expactOneCall__sensorReceive(&this__S.base__S, &buffer[0], 5);
+   elmos52042__receive(&this__S, &buffer[0], 5);
+}
+
+
+
+
+//TEST(ELMOS52042_SSP_SENSOR_TG, 3__mock_call_to_errorHandler)
+//{
+//
+//  sensor__errorHandlerParamList__st paramList__S;
+//   expactNCall__sensorErrorHandler(&this__S.base__S, &paramList__S,1u );
+//   elmos52042__erroHandler(&this__S, &paramList__S);
+//}
+
+
+
+/* -------- END PART: Unit Tests ---------------------------------------------*/
+
+
+
+
+
+/************************************************** END OF FILE ***************/
+

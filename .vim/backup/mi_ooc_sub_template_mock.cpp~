@@ -1,0 +1,310 @@
+
+/*******************************************************************************
+* @file             mi_ooc_mi_ooc_s1_mock.cpp
+* @author           Marco Israel
+* @version          v. 1.1
+* @date             2019-05
+* @ingroup          utest
+* @copydoc          mi_ooc_mi_ooc_s1_mock.hpp
+* @brief            mock implementation for _mi_ooc_mi_ooc_s1
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+*
+*
+*                      IMPORTANT NOTICE - COPYRIGHT INFORMATION
+*
+*
+*
+*
+* THIS SOFTWARE IS PROVIDED BY MARCO ISRAEL "AS IS". ANY EXPRESS OR IMPLIED
+* WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+* EVENT SHALL <copyright holder> BE LIABLE FOR ANY DIRECT, INDIRECT,
+* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES(INCLUDING, BUT NOT
+* LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
+* OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+* OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING
+* NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+* EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*     * Redistribution of source code must retain the this copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistribution in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the name of the <organization> nor the
+*       names of its contributors may be used to endorse or promote products
+*       derived from this software without specific prior written permission.
+*
+*
+*
+* Alle Inhalte in source und binaer Form, insbesondere dises Template mit seinen
+* object orientierten Konzepte der Programmiersprache C, der Coding-Conversation
+* und Namensgebung beispielweise fuer Variablen, Funktionen, Parameter,
+* Datentypen, usw., sind urheberrechtlich geschuetzt, Alle Rechte, einschließlich
+* der Verwendung, Veroeffentlichung, Bearbeitung, Uebersetzung oder
+* Verfielfaeltigung, bleiben Marco Israel vorbehalten. Dieses gilt auch fuer
+* alle Instanzen, Kopien oder sonstigen Verwendungen in source oder binearform.
+* In jedem Fall sind diese Copyright informationen zu uebernehmen und duerfen
+* nicht ohne zustimmung vereandert werden.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template innnerhalb und ausschliesslich fuer das
+* Project 'ED0096_Swipetronic' zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+* @detail
+*
+*
+********************************************************************************
+* @attention
+*
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+#include "CppUTestExt/MockSupport.h"
+
+
+extern "C"
+{
+#include "mi_ooc_sub_template_mock.hpp"
+}
+
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type GENERAL definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type FUNCTION POINTER definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type UNION definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type ENUM definition
+ ******************************************************************************/
+
+
+
+
+/*******************************************************************************
+ **     Type STRUCTURE definition
+ ******************************************************************************/
+
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE PROTOTYPE definition (static)
+ ******************************************************************************/
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     IMPLEMENTATIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (public) implementation
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables global STATIC (private) implementation
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE INLINE implementation (STATIC inline)
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Function PRIVATE implementation (static)
+ ******************************************************************************/
+
+
+
+/* ----- PART: MOCK Ctor -----------------------------------------------------*/
+
+EXTERN void _ctor_MOCK(mi_ooc_b1__this__st *const ps__this,
+    mi_ooc_b1__ctorParamList__st *const  ps__thisParamList)
+{
+
+    mock("sub_template").actualCall("ctor_mock")
+        .withParameter("ps__this",(mi_ooc_b1__this__st *const) ps__this)
+        .withParameter("ps__thisParamList",
+                (mi_ooc_b1__ctorParamList__st const *const)ps__thisParamList);
+
+
+        ps__this->attribute__S.____TODO______baseDataMember = __MOCK_VALUE__;
+}
+
+
+
+
+EXTERN void expactOneCall__ctor(mi_ooc_b1__this__st *const ps__this,
+    mi_ooc_b1__ctorParamList__st *const  ps__thisParamList)
+{
+        mock("sub_template")
+            .expectOneCall("ctor_mock")
+            .withParameter("ps__this",(mi_ooc_b1__this__st *const) ps__this)
+            .withParameter("ps__thisParamList",
+                (mi_ooc_b1__ctorParamList__st const *const)ps__thisParamList);
+
+
+}
+
+
+
+EXTERN void expactNCall__ctor(mi_ooc_b1__this__st *const ps__this,
+    mi_ooc_b1__ctorParamList__st *const  ps__thisParamList,
+    uint8_t numberOfCalls)
+{
+        mock("sub_template")
+            .expectNCalls(numberOfCalls, "ctor_mock")
+            .withParameter("ps__this",(mi_ooc_b1__this__st *const) ps__this)
+            .withParameter("ps__thisParamList", ps__thisParamList);
+}
+
+/* -------- END PART: MOCK Ctor ----------------------------------------------*/
+
+
+
+
+
+/* ----- PART: MOCK Dtor -----------------------------------------------------*/
+
+
+EXTERN void _dtor_MOCK(mi_ooc_b1__this__st *const ps__this)
+{
+
+    mock("sub_template").actualCall("dtor_mock")
+        .withParameter("ps__this",(mi_ooc_b1__this__st *const) ps__this);
+
+        ps__this->attribute__S.____TODO______baseDataMember++;
+}
+
+
+
+EXTERN void expactOneCall__dtor(mi_ooc_b1__this__st *const ps__this)
+{
+        mock("sub_template")
+            .expectOneCall("dtor_mock")
+            .withParameter("ps__this",(mi_ooc_b1__this__st *const) ps__this);
+
+}
+
+
+
+EXTERN void expactNCall__dtor(mi_ooc_b1__this__st *const ps__this,
+    uint8_t numberOfCalls)
+{
+        mock("sub_template")
+            .expectNCalls(numberOfCalls, "ctor_mock")
+            .withParameter("ps__this",ps__this);
+}
+
+
+/* -------- END PART: MOCK Dtor ----------------------------------------------*/
+
+
+
+
+
+/*******************************************************************************
+ **     Function PROTECTED implementation (extern)
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Function PUBLIC implementation (extern)
+ ******************************************************************************/
+
+
+
+
+
+
+
+/* ----- PART: STATIC (Local) Functions --------------------------------------*/
+
+/* -------- END PART: STATIC (Local) Functions -------------------------------*/
+
+
+
+/* ----- PART: EXTERN (Global) Functions -------------------------------------*/
+
+/* -------- END PART: EXTERN (Global) Functions ------------------------------*/
+
+
+/**************** (C) COPYRIGHT Marco Israel ****** END OF FILE ***************/
+

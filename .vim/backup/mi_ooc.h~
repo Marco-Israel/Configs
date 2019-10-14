@@ -1,0 +1,366 @@
+
+/*******************************************************************************
+* @file             mi_ooc.h
+* @author           Marco Israel
+* @version          v. 1.5
+* @date             2018 - 05
+* @ingroup          mi_ooc
+* @brief            General ooc header file which holds all global stuff.
+* @copyright        Copyright (c) 2018 Marco Israel. All rights reserved.
+*
+*
+*
+*
+*                   IMPORTANT NOTICE
+*
+*
+*
+*
+* THIS SOFTWARE IS PROVIDED "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+* OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+* MARCO ISRAEL SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL,
+* INCIDENTAL, OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+*
+* Alle Inhalte, insbesondere dises Template mit seinen object orientierten
+* Konzepte der Programmiersprache C, der Coding-Conversation und Namensgebung
+* beispielweise fuer Variablen, Funktionen, Parameter, Datentypen, usw., sind
+* urheberrechtlich geschuetzt, Alle Rechte, einschließlich der Verwendung,
+* Veroeffentlichung, Bearbeitung, Uebersetzung oder Verfielfaeltigung, bleiben
+* Marco Israel vorbehalten. Dieses gilt auch fuer alle Instanzen, Kopien oder
+* sonstigen Verwendungen.
+*
+* Die Lemfoerder Electronics GmbH, Bussche-Münch-Straße 12, 32339 Espelkamp,
+* ist berechtigt dieses Template innnerhalb und ausschliesslich fuer das
+* Project 'ED0096_Swipetronic' zu nutzen. Marco Israel 2019 - 2020.
+*
+*
+*
+*
+********************************************************************************
+
+********************************************************************************
+* @detail
+* Because this header should be included by all base classes, this file is and
+* can be used to provide information to ALL classes (base classes as well as
+* all sub classes.) For instance you can define includes, macros, functions,
+* or definitions here.
+*
+* This file should be the root header file of the ooc project (apart from
+* 3-party headers included here for all objects).
+*.
+*
+********************************************************************************
+* @attention
+* Information provided here will be included by all object independently if
+* they instantiated from a base or a sub class. So be careful especially
+* when including further header files.
+*
+*
+*******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED GUARDS
+ ******************************************************************************/
+#ifndef _OOC_H
+#define _OOC_H
+
+
+/*******************************************************************************
+ **     INCLUDED Global Information
+ ******************************************************************************/
+
+/**
+ * Because this header should be included by all base classes, it holds.
+ */
+#include "mi_ooc_bool.h"
+
+
+#include <stddef.h>     /**< e.g. size_t */
+#include <string.h>     /**< e.g. memset */
+#include <stdint.h>     /**< types like uint8_t */
+
+#if defined __USE_HEAP__
+#include <stdlib.h>     /**< e.g. malloc & free */
+#endif
+
+
+
+/*******************************************************************************
+ **     MACRO Definitions
+ ******************************************************************************/
+
+
+
+/* ----- PART: Magic numbers -------------------------------------------------*/
+
+
+
+/**
+ * Object Member like a variable is not initialized. This is the case if there
+ * is no instance from a class yet.
+ */
+#define __MI_OOC__NOT_INITIALIZED__         (0u)
+
+
+
+/**
+ * The class was not instantiated yet. So there is no
+ * object or subobject of this class currently.
+ */
+#define __MI_OOC__NO_INSTANCE__              (0u)
+
+
+
+/**
+ * Default length of error message texts.
+ */
+#define __MI_OOC__MAX_ERROR_TEXT__      (64u)
+#define MI_OOC__MAX_ERROR_TEXT      (64u)
+
+
+
+/* -------- END PART: Magic numbers ------------------------------------------*/
+
+
+
+
+
+/* ----- PART: Compiler depended attributes ----------------------------------*/
+
+
+/** Packed attribute for GNU Compiler */
+#if defined __MI_OOC_COMPILER__ == __GNU__
+#define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
+
+/** Packed attribute for CLANG Compiler */
+#elif defined __MI_OOC_COMPILER__ == __CLANG__
+#define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
+
+/** Packed attribute for ARM Compiler */
+#elif defined __MI_OOC_COMPILER__ == __ARM__
+#define PACK( __Declaration__ ) __packed;
+
+/** Packed attribute for VS Compiler */
+#elif defined __MI_OOC_COMPILER__ == __VS__
+#define PACK( __Declaration__ )                                             \
+    __pragma( pack(push, 1) ) __Declaration__ __pragma( pack(pop) )
+
+/** Packed attribute for PIC Compiler */
+#elif defined __MI_OOC_COMPILER__ == __PIC__
+#define PACK( __Declaration__ ) __packed
+
+/** Packed attribute for TASKING Compiler */
+#elif defined __MI_OOC_COMPILER__ == __TASKING__
+#define PACK( __Declaration__ ) __packed
+
+/** Packed attribute should go away for OTHER Compiler */
+#else
+#define PACK( __Declaration__ )
+#error
+#endif
+
+
+/* -------- END PART: Compiler depended attributes ---------------------------*/
+
+
+
+
+
+/* ----- PART: OOC helper macros ---------------------------------------------*/
+
+
+/**
+ * Returns address offset of member inside a struct.
+ * (start-address 0 + offset_to_member = plain address-offset of member)
+ */
+#define OFFSETOF__STRUCT_MEMBER(__struct_type__, __struct_member__)            \
+        (size_t)&(((__struct_type__ *)0)->__struct_member__)
+
+
+
+/**
+ * Returns pointer to 'SUBclass' (i.e. outer struct) from pointer to
+ * 'SUPERclass' (i.e. contained inner struct).
+ */
+#define OBJECT_POINTER_GET__THIS(                                            \
+      __struct_type__this__,                                                \
+      __objmember__super__,                                                    \
+      __ps__super__                                                            \
+      )                                                                        \
+                                                                            \
+   ((__struct_type__this__ *)(                                                \
+      (unsigned char *)(__ps__super__)                                        \
+      - OFFSETOF__STRUCT_MEMBER(__struct_type__this__, __objmember__super__) \
+      )                                                                        \
+    )
+
+
+
+/**
+ * To be used when e.g. SUPERclass doesn't have implemented some method,
+ * but we don't want to leave NULL pointer here.
+ */
+#define MI_OOC__EMPTY_FUNC            ((void *)ooc_empty_func)
+
+
+
+/**
+ * To be used when e.g. SUPERclass doesn't have implemented some method,
+ * but we don't want to leave NULL pointer here and if we like to call
+ * an error handler.
+ */
+#define MI_OOC__EMPTY_FUNC_WITH_ERR   ((void *)ooc_empty_func_with_err)
+
+
+/* -------- END PART: OOC helper macros --------------------------------------*/
+
+
+
+
+
+/* ----- PART: Datatype and specifiers  --------------------------------------*/
+
+
+/**
+ * Define NULLp if its not already defined elsewhere before. Should indicate
+ * a Pointer-NULL
+ */
+#ifndef NULLp
+#define NULLp ((void*)0)
+#endif
+
+
+
+/**
+ * Define NULLp if its not already defined elsewhere before. Should indicate
+ * a Integer-NULL
+ */
+#ifndef NULLv
+#define NULLv (0u)
+#endif
+
+
+/**
+ * Define STATIC if its not already defined elsewhere before.
+ */
+#ifndef STATIC
+#define STATIC static
+#endif
+
+/**
+ * Define PROTECTED if its not already defined elsewhere before.
+ */
+#ifndef PROTECTED
+#define PROTECTED extern
+#endif
+
+
+/**
+ * Define EXTERN if its not already defined elsewhere before.
+ */
+#ifndef EXTERN
+#define EXTERN extern
+#endif
+
+
+
+/**
+ * Define INLINE if its not already defined elsewhere before.
+ */
+#ifndef INLINE
+#define INLINE inline
+#endif
+
+/* -------- END PART: Datatype and specifiers  -------------------------------*/
+
+
+
+
+
+/* ----- PART: Macro Functions -------------------------------------------*/
+
+
+
+/* -------- END PART: Macro Functions ----------------------------------------*/
+
+
+
+/*******************************************************************************
+ **     Type GENERAL Definitions
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Type FUNCTION POINTER Definitions
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Type UNION Definitions
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Type ENUM Definitions
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Type STRUCTURE Definitions
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables global EXTERN (Public)
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Variables global STATIC (Private)
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Functions PROTOTYPES (Private)
+ ******************************************************************************/
+
+
+
+/**
+ * A empty dummy function to avoid a NULL Pointer (NULLp).
+ */
+void mi_ooc__empty_func(void);
+
+
+
+/**
+ * A empty function with holding only an error handler macro.
+ */
+void mi_ooc__empty_func_with_errorhandler(void);
+
+
+
+/*******************************************************************************
+ **     Function INLINE IMPLEMENTATION
+ ******************************************************************************/
+
+
+/*******************************************************************************
+ **     Function IMPLEMENTATION
+ ******************************************************************************/
+
+
+
+
+
+/**************** (C) COPYRIGHT Marco Israel ****** END OF FILE ***************/
+
+#endif // _OOC_H
+
+

@@ -1,0 +1,255 @@
+/******************************************************************************
+ *
+ * @file 	manchester_encoderDecoder_encoderDecoder_test.cpp
+ * @author 	Marco Isarel (MI)
+ * @date 	2019-08
+ * @ingroup cppUTest
+ * @copyright Copyright (c) 2019 Marco Israel
+ *
+ *
+ * @brief Unittest the manchester_encoderDecoder SSP EncoderDecoder
+ *
+ *
+ * @detail Unittest the manchester_encoderDecoder SSP EncoderDecoder
+ *
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+
+#include "CppUTest/TestHarness.h"
+#include "CppUTestExt/MockSupport.h"
+
+#include <mi_ooc_encoderDecoder_mock.hpp>
+
+
+
+extern "C" {
+#include <manchester_encoderDecoder.h>
+}
+
+
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+#define BUFFER_SIZE (1u)
+#define RAW_BYTE (0x55u)
+#define ENCODED_BYTE_MSB (0x99u)
+
+
+
+
+
+/*******************************************************************************
+ **     Variables and Types global STATIC (private)
+ ******************************************************************************/
+static manchester_encoderDecoder__ctorParamList__st ctorParamList__S;
+static manchester_encoderDecoder__this__st this__S;
+static manchester_encoderDecoder__vFTable__st* ps__vFTable;
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Local MOCKs
+ *******************************************************************************
+ ******************************************************************************/
+
+//
+//
+///* ----- PART: expacted Calls ------------------------------------------------*/
+//
+//
+//
+//static inline void expactNCall____TODO____(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList,
+//    uint8_t numberOfCalls)
+//{
+//        mock().expectNCalls(numberOfCalls, "ctor_mock")
+//            .withConstPointerParameter("ps__this", ps__this)
+//            .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+//
+//
+///* -------- END PART: expacted Calls -----------------------------------------*/
+//
+//
+//
+//
+//
+///* ----- PART: local MOCKs ---------------------------------------------------*/
+//
+//
+//
+//static void ____TODO____MOCK(mi_ooc_b1__this__st *const ps__this,
+//    mi_ooc_b1__ctorParamList__st const *const  ps__thisParamList)
+//{
+//
+//    mock().actualCall("____TODO____")
+//        .withConstPointerParameter("ps__this",ps__this)
+//        .withConstPointerParameter("ps__thisParamList", ps__thisParamList);
+//}
+//
+//
+//
+///* -------- END PART: local MOCKs --------------------------------------------*/
+//
+//
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Unittests
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+
+//
+//TEST_GROUP(MANCESTERENDECODE_TG)
+//{
+//    void setup()
+//    {
+//        ps__vFTable = _manchester_encoderDecoder__getPt_vFTable();
+//
+//        manchester_encoderDecoder__new(&this__S, &ctorParamList__S);
+//    }
+//
+//    void teardown()
+//    {
+//    }
+//};
+//
+//
+//
+//
+//
+///* ----- PART: Unit Tests ----------------------------------------------------*/
+//
+//
+//
+//
+//TEST(MANCESTERENDECODE_TG, 0__mock_call_to_menchasterEnDeCoder_ctor)
+//{
+//        #define NO_CALL_BECAUSE_CTOR_IS_CALLED_DIRECTLY (0u)
+//       UT_PTR_SET(ps__vFTable->base__S.virtualOperation__S.pf__ctor,
+//               &ctorEncoderDecoder_MOCK);
+//       expactNCall__encoderDecoderCtor(&this__S.base__S,
+//               &ctorParamList__S.base__S,
+//               NO_CALL_BECAUSE_CTOR_IS_CALLED_DIRECTLY);
+//       manchester_encoderDecoder__new(&this__S, &ctorParamList__S);
+//}
+//
+//
+//
+//TEST(MANCESTERENDECODE_TG, 1__mock_call_to_encode)
+//{
+//
+//    UT_PTR_SET(ps__vFTable->base__S.virtualOperation__S.pf__encoder,
+//            &encoderDecoder_MOCK);
+//    uint8_t buffer[BUFFER_SIZE] = {0x55};
+//    expactNCall_encoderDecoder (&this__S.base__S,
+//            &buffer[0], BUFFER_SIZE, &buffer[0], BUFFER_SIZE, 1);
+//
+//    manchester_encoderDecoder__encode(&this__S,
+//            &buffer[0], BUFFER_SIZE, &buffer[0], BUFFER_SIZE);
+//}
+//
+//
+//
+//
+//
+//TEST(MANCESTERENDECODE_TG, 2__mock_call_to_decode)
+//{
+//
+//    uint8_t buffer[5];
+//    UT_PTR_SET(ps__vFTable->base__S.virtualOperation__S.pf__decoder,
+//            &encoderDecoder_MOCK);
+//
+//    expactNCall_encoderDecoder (&this__S.base__S,
+//            &buffer[0], BUFFER_SIZE, &buffer[0], BUFFER_SIZE, 1);
+//    manchester_encoderDecoder__decode(&this__S,
+//            &buffer[0], BUFFER_SIZE, &buffer[0], BUFFER_SIZE);
+//}
+//
+//
+//
+//
+//
+//TEST(MANCESTERENDECODE_TG, 3__mock_call_to_manchesterEnDeCode_errorHandler)
+//{
+//    encoderDecoder__errorHandlerParamList__st paramList__S;
+//
+//
+//  UT_PTR_SET(ps__vFTable->base__S.virtualOperation__S.pf__errorHandler,
+//            &encoderDecoderErrorHandler_MOCK);
+//
+//   expactNCall__encoderDecoderErrorHandler(&this__S.base__S, &paramList__S,1u );
+//   manchester_encoderDecoder__erroHandler(&this__S, &paramList__S);
+//}
+//
+//
+//
+//
+//
+//TEST(MANCESTERENDECODE_TG, 4__encodeRAWData_manchesterMSB)
+//{
+//
+////    uint8_t srcBuffer[BUFFER_SIZE] = {RAW_BYTE};
+////    uint8_t destBuffer[2*BUFFER_SIZE] = {0};
+////
+//
+//
+//
+//
+//
+////   LONGS_EQUAL(destBuffer[0],ENCODED_BYTE_MSB);
+//}
+//
+//
+//
+//
+//
+
+
+
+/* -------- END PART: Unit Tests ---------------------------------------------*/
+
+
+
+
+
+/************************************************** END OF FILE ***************/
+

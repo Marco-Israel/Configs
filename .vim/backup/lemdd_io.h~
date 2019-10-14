@@ -1,0 +1,123 @@
+/**
+ * @ingroup lemdd_interface
+ * @file 	lemdd_io.h
+ * @author 	Adrian Schwigon (ASC)
+ * @author 	Daniel Nickel (DNI)
+ * @date 	
+ * 
+ * @details
+ * This interface declaration contains functions and definitions for usage of 
+ * Input\Output functionality.
+ *
+ * Revision History	
+ *
+ * | Date       | Author    | Revision  | Change Description
+ * |:----------:|:---------:|:---------:|:--------------------
+ * |2011-07-08  | ASC	    | 1.00      | initial version
+ * |2018-11-14	| DNI		| 1.01		| fixed: use pointer for lemdd_io_pin_s, 
+ *										  temporary: distinguish between LUFU and others for includes
+ *
+ * 
+ * 
+ */
+/**
+ * @ingroup lemdd_interface
+ * @file 	lemdd_io.h
+ * 
+ * This interface declaration contains functions and definitions for usage of 
+ * Input\Output functionality.
+ * 
+ */
+
+#ifndef LEMDD_IO_H_
+#define LEMDD_IO_H_
+
+
+/* ################################################################ */
+/* ### Included files	 										### */
+/* ################################################################ */
+
+#include "lemdd_header.h"
+#include "lemdd_typedef.h"
+
+
+/* ################################################################ */
+/* ### Definitions 												### */
+/* ################################################################ */
+
+
+
+/* ################################################################ */
+/* ### Abstract type definitions								### */
+/* ################################################################ */
+
+/** Declaration of generic I/O base datatype. Platform dependent data structures can be used to define base address
+ * and pin identifier. 
+ * Pointer to <i>void</i> is used for generic usage.
+ */
+typedef void *lemdd_io_device;
+
+
+
+/* ################################################################ */
+/* ### Type definitions											### */
+/* ################################################################ */
+
+/** Declaration of abstract data type: level on pin (high/low). */
+typedef enum
+{
+	LEMDD_IO_LOW 	= 0,									/*!< IO level: high (VCC) */
+	LEMDD_IO_HIGH 	= 1										/*!< IO level: low (GND) */
+	
+} lemdd_io_level_e;
+
+
+ /** Device object for I\O functionality. Every pin is uniquely identified. */
+typedef struct
+{
+	lemdd_io_device 	io_device;							/*!< Base object of I\O device */
+	uint32_t 			pin_id;								/*!< Pin identifier of used pin */
+	
+} lemdd_io_pin_s;
+
+
+
+/* ################################################################ */
+/* #### Function declarations									### */
+/* ################################################################ */
+
+/**
+ * LE interface function providing functionality to set the selected
+ * I\O-pin to selected logic level.
+ * 
+ * @param io_device 	a		
+ * @param level 		a
+ * @return 				a
+ * 
+ * @see lemdd_error_e
+ */
+lemdd_error_e lemdd_io_set_output_level(lemdd_io_pin_s *io_device, lemdd_io_level_e level);
+
+
+
+/**
+ * LE interface function providing functionality to get current logic
+ * level of selected pin.
+ * 
+ * @param io_device		a
+ * @param level 		a
+ * @return				a
+ * 
+ * @see lemdd_error_e
+ */
+lemdd_error_e lemdd_io_get_input(lemdd_io_pin_s *io_device, lemdd_io_level_e *level);
+
+
+
+
+#endif /* LEMDD_IO_H_ */
+
+
+
+
+

@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/marco'
+let g:netrw_dirhist_2='/cygdrive/d/Programming/C/MIS_BUILD/TOOLS/thirdparty/mi_ooc'
+let g:netrw_dirhist_1='/cygdrive/d/Programming/C/MIS_BUILD/TOOLS/thirdparty'

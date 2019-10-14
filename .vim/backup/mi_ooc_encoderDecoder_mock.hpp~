@@ -1,0 +1,154 @@
+/******************************************************************************
+ *
+ * @file 	mi_ooc_encoderDecoder_mock.hpp
+ * @author 	Marco Isarel (MI)
+ * @date 	2019-06
+ * @ingroup mi_ooc_utest
+ *
+ *
+ * @brief Mock the encoderDecoder functions
+ *
+ *
+ * @details Mock the encoderDecoder functions
+ *
+*
+*******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     DEFINITIONS
+ *******************************************************************************
+ ******************************************************************************/
+
+
+
+/*******************************************************************************
+ **     INCLUDED global defined information
+ ******************************************************************************/
+
+#include "CppUTest/TestHarness.h"
+#include "CppUTestExt/MockSupport.h"
+
+
+
+extern "C" {
+#include <mi_ooc_encoderDecoder.h>
+}
+
+
+
+/*******************************************************************************
+ **     MACRO definition
+ ******************************************************************************/
+
+
+
+
+
+/*******************************************************************************
+ **     Variables and Types EXTERN (public)
+ ******************************************************************************/
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ *******************************************************************************
+ **                     Globbal MOCKs
+ *******************************************************************************
+ ******************************************************************************/
+
+
+/* ----- PART: MOCK Prototypes -----------------------------------------------*/
+
+
+extern void ctorEncoderDecoder_MOCK(encoderDecoder__this__st *const ps__this,
+        encoderDecoder__ctorParamList__st *const  ps__paramList);
+
+
+
+
+
+
+extern uint8_t encoderDecoder_MOCK(encoderDecoder__this__st *const ps__this,
+    uint8_t *const pa__source, uint8_t bytesToSend,
+    uint8_t *const pa__destination, uint8_t maxLength);
+
+
+
+
+extern void encoderDecoderErrorHandler_MOCK(
+        encoderDecoder__this__st *const ps__this,
+        encoderDecoder__errorHandlerParamList__st *const ps__paramList);
+
+
+/* -------- END PART: MOCK Prototypes ----------------------------------------*/
+
+
+
+
+
+
+
+/* ----- PART: Expact CALLS --------------------------------------------------*/
+static inline void expactNCall_encoderDecoder(
+    encoderDecoder__this__st *const ps__this,
+    uint8_t *const pa__source, uint8_t bytesToSend,
+    uint8_t *const pa__destination, uint8_t maxLength,
+    uint8_t nCalls)
+{
+
+    mock().expectNCalls(nCalls,"encoderDecoder")
+        .withConstPointerParameter("ps__this", ps__this)
+        .withConstPointerParameter("pa__source", pa__source)
+        .withParameter("bytesToSend", bytesToSend)
+        .withConstPointerParameter("pa__destination", pa__destination)
+        .withParameter("maxLength", maxLength);
+
+}
+
+
+
+
+static inline void expactNCall__encoderDecoderCtor(
+        encoderDecoder__this__st *const ps__this,
+        encoderDecoder__ctorParamList__st *const  ps__paramList, uint8_t nCalls)
+{
+        mock()
+        .expectNCalls(nCalls,"ctorEncoderDecoder")
+        .withConstPointerParameter("ps__this",ps__this)
+        .withConstPointerParameter("ps__paramList",ps__paramList );
+}
+
+
+
+
+
+static inline void expactNCall__encoderDecoderErrorHandler(
+        encoderDecoder__this__st *const ps__this,
+        encoderDecoder__errorHandlerParamList__st *const ps__paramList,
+        uint8_t numberOfCalls)
+{
+    mock().expectNCalls(numberOfCalls,"encoderDecoderErrorHander")
+        .withConstPointerParameter("ps__this", ps__this)
+        .withConstPointerParameter("ps__paramList", ps__paramList);
+}
+
+
+/* -------- END PART: Expact Calls -------------------------------------------*/
+
+
+
+
+/************************************************** END OF FILE ***************/

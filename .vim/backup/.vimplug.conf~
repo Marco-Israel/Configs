@@ -1,0 +1,199 @@
+"vim Plugins"
+" Specify a directory for plugins Avoid using standard Vim directory names
+" Make sure you use single quotes
+call plug#begin('~/.vim/plugged')
+
+
+
+""" Syntax check, LINT tool Formater """""""""""""""""""""""""""""""""""""""""""
+""Plug 'Chiel92/vim-autoformat'  "(needs an external tool)
+
+"Plug 'w0rp/ale'                "SLOW and also needs a tsserver. But looks good
+"Plug 'https://github.com/vim-syntastic/syntastic'
+
+Plug 'https://github.com/kien/rainbow_parentheses.vim'
+Plug 'https://github.com/rhysd/vim-clang-format'
+Plug 'https://github.com/vim-scripts/OmniCppComplete'
+
+
+
+
+""" Additional vim commands like typical bash commands """""""""""""""""""""""""
+""Plug 'https://github.com/tpope/vim-unimpaired'    ""SLOW adding  [..  and ]..
+
+""Plug 'tpope/vim-eunuch'
+""Plug 'https://github.com/thinca/vim-quickrun'
+""Plug 'https://github.com/wellle/targets.vim'
+
+
+
+
+
+""" Alignement, tab and comment handling  """""""""""""""""""""""""""""""""""""
+"Plug 'https://github.com/tomtom/tcomment_vim' ""SLOW
+"Plug 'https://github.com/scrooloose/nerdcommenter'  ""SLOW
+
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/godlygeek/tabular'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'https://github.com/ervandew/supertab'
+
+
+
+
+
+""" Snipped plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'SirVer/ultisnips'
+
+Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+
+
+
+
+
+
+""" File and TAG Explorer """"""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'https://github.com/b4b4r07/vim-buftabs'
+"Plug 'fholgado/minibufexpl.vim'
+"Plug 'https://github.com/drmingdrmer/vim-tabbar'
+"Plug 'https://github.com/bagrat/vim-buffet'
+"Plug 'amiorin/vim-project'
+"Plug 'https://github.com/thaerkh/vim-workspace'
+"Plug 'https://github.com/xolox/vim-easytags'
+"Plug 'https://github.com/craigemery/vim-autotag'
+"Plug 'https://github.com/vim-scripts/buftabs'
+"Plug 'iberianpig/ranger-explorer.vim'
+"Plug 'francoiscabrol/ranger.vim'
+
+
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " On-demand loading
+Plug 'Shougo/vimfiler.vim' |  Plug 'Shougo/unite.vim'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/christoomey/vim-tmux-navigator'
+Plug 'https://github.com/jlanzarotta/bufexplorer'
+
+
+
+
+
+""" compleation """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' } "Use a non-master branch
+"Plug 'https://github.com/Valloric/YouCompleteMe'
+"Plug 'https://github.com/jiangmiao/auto-pairs'
+
+Plug 'https://github.com/ajh17/vimcompletesme'
+Plug 'tpope/vim-surround'
+Plug 'https://github.com/Shougo/deoplete.nvim'
+
+
+
+
+
+""" Fuzzy finding AND easy motion """"""""""""""""""""""""""""""""""""""""""""""
+""Plug 'https://github.com/tpope/vim-speeddating'
+""Plug 'https://github.com/dkprice/vim-easygrep' ""SLOW  Grep in all files
+""Plug 'https://github.com/wincent/command-t'  ""SLOW
+"Plug 'https://github.com/maxbrunsfeld/vim-yankstack' "prints errors
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'junegunn/fzf'
+"Plug 'junegunn/fzf.vim'
+
+
+Plug 'junegunn/fzf', {'do': './install --all' }
+
+Plug 'https://github.com/vim-scripts/a.vim'
+Plug 'https://github.com/svermeulen/vim-yoink'  ""SLOW Displays Yanks
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/fisadev/vim-ctrlp-cmdpalette'
+Plug 'tpope/vim-repeat'
+Plug 'https://github.com/Houl/repmo-vim'
+Plug '~/.vim/plugged/repeatable-motions'
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/haya14busa/incsearch.vim'
+Plug 'https://github.com/haya14busa/incsearch-fuzzy.vim'
+Plug 'https://github.com/haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/vim-asterisk'
+Plug 'https://github.com/vim-scripts/SearchComplete'
+Plug 'skywind3000/vim-preview'
+
+
+
+
+""" Latex """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'https://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+"Plug 'https://github.com/xuhdev/vim-latex-live-preview'
+"Plug 'https://github.com/vim-latex/vim-latex'
+"Plug 'https://github.com/lervag/vimtex'
+
+
+
+
+
+""" Other stuff """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'https://github.com/wikitopian/hardmode'
+"Plug 'https://github.com/vim-scripts/vcscommand.vim'
+"Plug 'https://github.com/freitass/todo.txt-vim'
+"Plug 'https://github.com/aserebryakov/vim-todo-lists'
+"Plug 'https://github.com/kana/vim-operator-replace'
+"Plug 'https://github.com/kana/vim-grex'
+"Plug 'https://github.com/takac/vim-hardtime'
+"Plug 'https://github.com/tpope/vim-sensible' "sets default vim settings
+Plug 'https://github.com/m42e/trace32-practice.vim'
+
+Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
+Plug 'haya14busa/vim-operator-flashy' |  Plug 'kana/vim-operator-user'
+Plug 'https://github.com/kana/vim-operator-user'
+Plug 'https://github.com/kana/vim-wwwsearch'
+Plug 'https://github.com/vim-jp/vital.vim'       ""different functions like math
+Plug 'https://github.com/xolox/vim-misc'
+Plug 'https://github.com/ntpeters/vim-better-whitespace'
+Plug 'https://github.com/Shougo/vimproc.vim'
+Plug 'https://github.com/vim-scripts/c.vim' ""SLOW
+Plug 'https://github.com/xolox/vim-session'
+Plug 'https://github.com/aklt/plantuml-syntax'
+Plug 'https://github.com/tmhedberg/matchit'
+Plug 'https://github.com/mbbill/undotree'
+Plug 'https://github.com/vim-scripts/autoproto.vim'
+Plug 'https://github.com/kshenoy/vim-signature'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Unused AND not configured in vimrc """""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""" SWYG - Rander markdown language directly in a webbrowser """""""""""""""""""
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+
+
+
+
+""" Status line """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'itchyny/lightline.vim'
+"Plug 'https://vimawesome.com/plugin/vim-airline-superman'
+
+
+
+
+
+
+""" GIT Plugins  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"(browse GITHUB events)
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'  "use any URL
+"Plug 'airblade/vim-gitgutter
+
+
+
+
+
+""" GO Programming """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'fatih/vim-go', { 'tag': '*' }  "using a  tag relase with wildcards
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } "Set plugin options
+
+
+call plug#end()
+

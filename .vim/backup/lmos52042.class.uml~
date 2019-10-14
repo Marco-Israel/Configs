@@ -1,0 +1,488 @@
+'/'******************************************************************************
+'* @file             lmos52042.class.uml
+'* @author           Marco Israel
+'* @version          v. 1.0
+'* @date             06-2019
+'* @ingroup          uml
+'* @brief            UML digram of the driver interface for the SSP elmos520.42.
+'*
+'********************************************************************************
+'* @detail
+'* ____TODO______
+'*
+'*
+'********************************************************************************
+'* @attention
+'* ____TODO______
+'*
+'*
+'******************************************************************************'/
+'
+'
+'
+@startuml
+'
+'
+'/'******************************************************************************
+'**      Included information and global Settings
+' *****************************************************************************'/
+'
+'
+'/'----- PART: Included files -------------------------------------------------'/
+'
+'!include ..\TODO.txt
+'
+'!include ..\..\..\..\TOOLS\thirdparty\mi_ooc\DOC\uml\baseSensors.uml
+''
+'/'-------- END PART: Included files ------------------------------------------'/
+'
+'
+'
+'/'----- PART: Settings -------------------------------------------------------'/
+'
+'title Lmos52042 Class digram
+'header Lmos52042 Class digram
+'footer by Marco Israel (MI / MIS)
+'
+'
+''' scale 1/2
+'
+'
+'''skinparam class {
+'''	'BackgroundColor<<H>> Wheat
+'''    'BorderColor<<H>> Tomato
+'''	'ArrowColor<<H>> SeaGreen
+'''    'BackgroundColor #D7FFAF
+'''    BackgroundColor<<HARDWARE>> #D7AF00
+'''    BackgroundColor<<HW SW Interface>> #AFD7D7
+'''    BackgroundColor<<Template>> #AFD7D7
+'''    BackgroundColor<<HW Wrapper>> #ff87af
+'''    BackgroundColor<< (H,#FF7700) HARDWARE >> #D7AF00
+'''    BackgroundColor<< (H,#FF7700) >> #FFD75F
+'''}
+''
+'/'-------- END PART: Settings ------------------------------------------------'/
+'
+'
+'
+'
+'
+'/'----- PART: Legenden -------------------------------------------------------'/
+'''legend
+'''|= |= |
+'''| | |
+'''| | |
+'''| | |
+'''| | |
+'''| | |
+'''| | |
+'''end legend
+'/'-------- END PART: Legenden ------------------------------------------------'/
+'
+'
+'
+'
+'
+'/'----- PART: Variables ------------------------------------------------------'/
+''' !$b1 = ""
+''' !$v2 = ""
+'/'-------- END PART: Variables -----------------------------------------------'/
+'
+'
+'
+'
+'/'******************************************************************************
+'**      Inheritance logic
+' *****************************************************************************'/
+'
+'
+'
+'/'******************************************************************************
+'*      Interfaces
+' *****************************************************************************'/
+'
+'
+'
+'/'******************************************************************************
+'*      Hidden elemets
+' *****************************************************************************'/
+' hide $sspW
+'
+'
+'/'******************************************************************************
+'*      Objects
+' *****************************************************************************'/
+'
+'folder Lmos52042 {
+'
+' Lmos52042 -up-|> SSP : > << Inherrits >>
+' Lmos52042 ..|> Lmos52042_WRAPPER : > << Includes >>
+' Lmos52042 .up.|> $aS : > << Implements >>
+'
+'
+' 'class Lmos52042_WRAPPER <<(W,#d70087) HW Wrapper>> {
+' Lmos52042_WRAPPER -up- command_E   :> <<Holds>
+' class Lmos52042_WRAPPER <<(W,#d70087) HW Wrapper>> {
+'    <b>TODO:</b>
+'    o Define Registers
+'    o Define Commands to send
+'    o Define Values to set in Registers and send via Commands
+' }
+'
+'
+'
+' Lmos52042 -up-* "1" menchesterEncoder : > << needs >>
+'class menchesterEncoder $hw {
+'    ----
+'    <b> Nedds some manchester encoder in hw like:  </b>
+'        o   IO + Timer + Interruts
+'        o   HW Manchester encoding unit (e.g. PSI5 Unit in Aurix Tricore TC27x)
+'
+'}
+'
+'
+' class Lmos52042 $sensS {
+'     ----
+'  '   +  _send   ::=^  _sendCommand {abstract}
+'  '   + _recive  ::=^  _reciveAnaloge  {abstract}
+'  '   + _recive  ::=^  _reciveSENT  {abstract}
+'     ____
+'
+' <b>TODO:</b>
+'
+'}
+'
+'
+'}
+'' END FOLDER Lmos52042 '/
+'
+'
+'
+'/'******************************************************************************
+'*      Enums
+' *****************************************************************************'/
+'
+enum command_E {
+
+--<b><u>Direct SIO commands --
+    ResetDevice
+    RestartDeviceFromEEPROM
+    RunSelfDiagnostic
+    StoreConfigFromRAMonEEPROM
+    LoadConfigFromEEPROMinRAM
+    ReadELmosDeviceID
+    ReadELmosProductID
+/'
+    EnableConfigurationStartup
+    EnableDiagnosticStartup
+
+
+    ResetDevice
+    RestartDeviceFromEEPROMConfig
+
+
+    StoreConfigFromRAMonEEPROM
+    LoadConfigFromEEPROMinRAM
+
+    ReadELmosDeviceID
+    ReadELmosProductID
+
+    ReadRessureValue
+    ReadTemperatureValue
+
+    Read16BitConfigValue
+    Write16BitConfigValue
+
+    StartBuildInSelftestBIST
+
+    StartAnalogOutPut
+'/
+
+--<b><u>Modes of operation configuration--
+    /'----- MODECONF (0x7E) --------------------------------------------------'/
+    SetOutputMode
+    SetWriteProtectionMode
+
+
+--<b><u>Sensor configuration --
+..<b><i>Signal path correction ..
+    /'----- SENSLP (0x7A) ----------------------------------------------------'/
+    LowPassFilterCoefficients
+    /'----- C10_H (0x80) -----------------------------------------------------'/
+    /'----- C10_L (0x81) -----------------------------------------------------'/
+    TemperatureCoefficientOf2ndOrder_NonLinearity
+    /'----- C9_H (0x82) ------------------------------------------------------'/
+    /'----- C9_L (0x83) ------------------------------------------------------'/
+    NonLinearityCoefficient3ndOrder
+    /'----- C8_H (0x84) ------------------------------------------------------'/
+    /'----- C8_L (0x85) ------------------------------------------------------'/
+    NonLinearityCoefficient2ndOrder
+    /'----- C7_H (0x86) ------------------------------------------------------'/
+    /'----- C7_L (0x87) ------------------------------------------------------'/
+    TemperaturSensorGain3ndOrder
+    /'----- C6_H (0x88) ------------------------------------------------------'/
+    /'----- C6_L (0x89) ------------------------------------------------------'/
+    TemperaturSensorGain2ndOrder
+    /'----- C5_H (0x8A) ------------------------------------------------------'/
+    /'----- C5_L (0x8B) ------------------------------------------------------'/
+    TemperaturSensorGain1ndOrder
+    /'----- C4_H (0x8C) ------------------------------------------------------'/
+    /'----- C4_L (0x8D) ------------------------------------------------------'/
+    TemperatureCoefficientOfSensorOffset3Order
+    /'----- C3_H (0x8E) ------------------------------------------------------'/
+    /'----- C3_L (0x8F) ------------------------------------------------------'/
+    TemperatureCoefficientOfSensorOffset2Order
+    /'----- C2_H (0x90) ------------------------------------------------------'/
+    /'----- C2_L (0x91) ------------------------------------------------------'/
+    TemperatureCoefficientOfSensorOffset1Order
+    /'----- C1_H (0x92) ------------------------------------------------------'/
+    /'-----c1_L (0x93) -------------------------------------------------------'/
+    SensorGainCoefficient
+    /'----- C0_H (0x94) ------------------------------------------------------'/
+    /'----- C0_L (0x95) ------------------------------------------------------'/
+    SensorOffsetCoefficient
+    /'----- SENSDIG (0x96) ---------------------------------------------------'/
+    SensorDataGainWithSignBitInTwoComplementRepresentation
+    /'----- TEMPDIG (0x97) ---------------------------------------------------'/
+    SignedTemperatureOffset
+    TemperatureDataGain_MultiplyByLeftShift
+    /'----- SENSPGA (0x78)----------------------------------------------------'/
+    SensorInputPolarity
+    GainOfProgrammableGainAmplifieablePGA
+
+..<b><i>Temperature path configuration..
+    /'----- TEMPIF (0x7B) ----------------------------------------------------'/
+    TemperatureInputControl
+
+
+--<b><u>Output configuration --
+..<b><i>Analoge output stage configuration ..
+   /'------ LIMSENS_H (0x7C) -------------------------------------------------'/
+   SensorsUpperClippingLimitvalue
+
+..<b><i>SEND output stage configuration ..
+   /'----- SENTCONF (0x7F) ---------------------------------------------------'/
+   TemperatureDataOnSENToutput_ChangesSensorTypeStandard
+   SENDPausePule
+   /'------ LIMSENS_H (0x7C) -------------------------------------------------'/
+   /'----- LIMSENS_L (0x7D) --------------------------------------------------'/
+   SensorsLowerClippingLimitvalue
+    /'----- CCODE_H (0x98) ---------------------------------------------------'/
+    /'----- CCODE_L (0x99) ---------------------------------------------------'/
+    ConfigurationCode
+    /'----- MCODE_H (0x9A) ---------------------------------------------------'/
+    /'----- MCODE_L (0x9B) ---------------------------------------------------'/
+    ManufacturerCode
+    /'----- TX1_H/PX1_H (0x9C) -----------------------------------------------'/
+    /'----- PX1_L (0x9D) -----------------------------------------------------'/
+    TemperatureCharacteristicDataFieledX1
+    PressureCharacteristicDataFieledX1
+    /'----- TX2_H/PX2_H (0x9E) -----------------------------------------------'/
+    /'----- PX2_L (0x9F) -----------------------------------------------------'/
+    TemperatureCharacteristicDataFieledX2
+    PressureCharacteristicDataFieledX2
+    /'----- TY1_H/PY1_H (0xA0) -----------------------------------------------'/
+    /'------ PY1_L (0xA1) ----------------------------------------------------'/
+    TemperatureCharacteristicDataFieledY1
+    PressureCharacteristicDataFieledY1
+    /'----- TY2_H/PY2_H (0xA2) -----------------------------------------------'/
+    /'----- PY2_L (0xA3) -----------------------------------------------------'/
+    TemperatureCharacteristicDataFieledY2
+    PressureCharacteristicDataFieledY2
+    /'----- TX1_L (0xA4) -----------------------------------------------------'/
+    TemperatureCaracteristicX1
+    /'----- TX2_L (0xA5) -----------------------------------------------------'/
+    TemperatureCaracteristicX2
+    /'----- TY1_L (0xA6) -----------------------------------------------------'/
+    TemperatureCaracteristicY1
+    /'----- TY2_L (0xA7) -----------------------------------------------------'/
+    TemperatureCaracteristicY2
+    /'----- SID1_H (0xA8) ----------------------------------------------------'/
+    /'----- SID1_L (0xA9) ----------------------------------------------------'/
+    DataFiledSensorNr1
+    /'----- SID2_H (0xAA) ----------------------------------------------------'/
+    /'----- SID2_L (0xAB) ----------------------------------------------------'/
+    DataFiledSensorNr2
+    /'----- SID3_H (0xAC) ----------------------------------------------------'/
+    /'----- SID3_L (0xAD) ----------------------------------------------------'/
+    DataFiledSensorNr3
+    /'----- SID4_H (0xAE) ----------------------------------------------------'/
+    /'----- SID4_L (0xAF) ----------------------------------------------------'/
+    DataFiledSensorNr4
+
+
+--<b><u>Diagnostic configuraton--
+
+..<b><i>BIST (Build in Status Test) status read or write..
+    /'----- BISTSTAT_H (0x6A) ------------------------------------------------'/
+    BISTSTAT_AllHighBISTStatusBits
+    SERR4_ErrorInPowerUpSERR4check
+    EECBERR_ErrorInContinuousEEPROMShadowDataBIST
+    AUBERR_ErrorInContinuousArithmeticUnitBIST
+    SPBERR_ErrorInPowerUpSignalPathBIST
+    AUPBERR_ErrorInPowerUpArithmeticUnitBIST
+    ROPBERR_ErrorInPowerUpROMBIST
+    EEPBERR_ErrorInPowerUpEEBIST
+    RAPBERR_ErrorInPowerUpRAMBIST
+    /'----- BISTSTAT_L (0x6B) ------------------------------------------------'/
+    BISTSTAT_AllBISTStatusBits
+    SERR4_DONE_PowerUpSERR4CheckStatus
+    EECBIST_DONE_ContinuousEEPROMShadowDataBISTCheckStatus
+    AUBIST_DONE_ContinuousArithmeticUnitBISTCheck Status
+    SPBIST_DONE_PowerUpSignalpathBISTCheckStatus
+    AUPBIST_DONE_PowerUpArithmeticUnitBISTCheckStatus
+    ROPBIST_DONE_PowerUpROMBISTCheckStatus
+    EEPBIST_DONE_PowerUpEEBISTCheckStatus
+    RAPBIST_DONE_PowerUpRAMBISTCheckStatus
+
+..<b><i>Read masged bits ..
+    /'----- MASKERRC_H (0x6C, READONLY) --------------------------------------'/
+    /'----- MASKERRC_M (0x6D, READONLY) --------------------------------------'/
+    /'----- MASKERRC_L (0x6E, READONLY) --------------------------------------'/
+    MASKERRC_AllMaskedBits
+    MASKERRC_HighErrorCodes
+    MASKERRC_MiddleErrorCodes
+    MASKERRC_LowErrorCodes
+    'MEECBERR_EECBERR_AND_ENEECBERR
+    'MAUBERR_AUBERR_AND_ENAUBERR
+    'MSPBERR_SPBERR_AND_ENSPBERR
+    'MAUPBERR_AUPBERR_AND_ENAUPBERR
+    'MROPBERR_ROPBERR_AND_ENROPBERR
+    'MEEPBERR_EEPBERR_AND_ENEEPBERR
+    'MRAPBERR_RAPBERR_AND_ENRAPBERR
+    'MV3ERR_V3ERR_AND_EN3ERR
+    'MCURRLIM_CURRLIM_AND_ENCURRLIM
+    'MOUTERR_OUTERR_AND_ENOUTERR
+    'MSERR0_SERR0_AND_ENSERR0
+    'MSERR1_SERR1_AND_ENSERR1
+    'MSERR2_SERR2_AND_ENSERR2
+    'MSERR3_SERR3_AND_ENSERR3
+    'MSERR4_SERR4_AND_ENSERR4
+    'MCORRSAT_CORRSAT_AND_ENCORRSAT
+    'MTNORMSAT_TNORMSAT_AND_ENTNORMSAT
+    'MTADCSAT_TADCSAT_AND_ENTADCSAT
+    'MSADCSAT_SADCSAT_AND_ENSADCSAT
+    'MSAMPSAT_SAMPSAT_AND_ENSAMPAT
+    'MV5ERR_V5ERR_AND_EN5ERR
+
+.. <b><i>Read or Write error Flags (Error Code) ..
+    /'----- ERRC_H (0x6F) ----------------------------------------------------'/
+    /'----- ERRC_M (0x70) ----------------------------------------------------'/
+    /'----- ERRC_L (0x71) ----------------------------------------------------'/
+    ERRC_AllErrorCodes
+    ERRC_HighErrorCodes
+    ERRC_MiddleErrorCodes
+    ERRC_LowErrorCodes
+    EECBERR_ContinuousEEPROMshadowdataBISTerror
+    AUBERR_ContinuousArithmeticunitBISTerror
+    SPBERR_PowerUpSignalPathBISTerror
+    AUPBERR_PowerUpArithmeticuniterror
+    ROPBERR_PowerUpROMBISTerror
+    EEPBERR_PowerUpEEPROMBISTerror
+    RAPBERR_PowerUpRAMBISTerror
+    V3ERR_VDDAOutOfRange
+    WDERR_WatchDogMonitorError
+    CURRLIM_CurrentlimitationonOUT
+    OUTERR_AnalogOutputError
+    SERR0_Openatbridgeexcitationbetween_EXHI_and_EXLO
+    SERR1_Shortbetween_EXHI_and_EXLO
+    SERR2_Shortbetween_INN_INP_and_EXHI_EXLO
+    SERR3_OpenSensorAt_INN_INP
+    SERR4_ShortSensorBetween_INN_and_INP
+    CORRSAT_SaturationInSignalCorrection
+    TNORMSAT_SaturationAfterTemperatureNormalization
+    TADCSAT_TemperatureADCsaturation
+    SADCSAT_SensorADCsaturation
+    SAMPSAT_Sensoramplifiersaturation
+    V5ERR_VVSoutofrangeerror
+    /'----- ENERR_H (0x73) --------------------------------------------------'/
+    /'----- ENERR_M (0x74) --------------------------------------------------'/
+    /'----- ENERR_L (0x75) --------------------------------------------------'/
+
+.. <b><i>Enable or disable error checking for types (error code) ..
+    ENERR_EnableAllErrorDetetions
+    ERRLEVEL_DiagnosticLevelSelectionOfFailureBand
+    ENEECBERR_EnablecontinuousEEPROMshadowdataBIST
+    ENAUBERR_EnableArithmeticUnitBIST
+    ENSPBERR_EnablePowerUpSignalpathBIST
+    ENAUPBERR_EnablePowerUpArithmeticUnitBIST
+    ENROPBERR_EnablePowerUpROMBIST
+    ENEEPBERR_EnablePowerUpEEPROMBIST
+    ENRAPBERR_EnablePowerUpRAMBIST
+    EN3ERR_EnableInternalVDDAmonitoring
+    ENCURRLIM_EnablEcurrentLimitationDetection
+    ENOUTERR_EnableAnalogOutputErrorDetection
+    ENSERR0_EnableOpenDetectionAtBridgeEXcitation_EXHI_AND_EXLO
+    ENSERR1_EnableShortDetection_EXHI_AND_EXLO
+    ENSERR2_EnableShortDetection_INN_INP_AND_EXHI_EXLO
+    ENSERR3_EnableOpenSensorOutputDetection_EXHI_EXLO
+    ENSERR4_EnableshortsensordetectionbetweenINNandINP
+    ENCORRSAT_EnableCORRSATSaturationInSignalCorrection
+    ENTNORMSAT_EnableSaturationInTemperatureNormalization
+    ENTADCSAT_EnableSaturationInTemperatureADC
+    ENSADCSAT_EnablesaturationInSensorADC
+    ENSAMPSAT_EnableSaturationInPGA
+    EN5ERR_EnableVVSOutOfRangeDetection
+}
+'
+'/'----- PART: PIC PORT_PIN ---------------------------------------------------'/
+'
+'
+'/'-------- END PART: PIC PORT_PIN --------------------------------------------'/
+'
+'
+'
+'
+'/'----- PART: PIC UART -------------------------------------------------------'/
+'
+'
+'/'-------- END PART: PIC UART ------------------------------------------------'/
+'
+'
+'
+'/'******************************************************************************
+'*      Ahhhhhse objects
+' *****************************************************************************'/
+'
+'
+'
+'
+'/'******************************************************************************
+'*      DMA base objects
+' *****************************************************************************'/
+'
+'
+'
+'
+'/'******************************************************************************
+'*      UART base objects
+' *****************************************************************************'/
+'
+'
+'
+'
+'
+'
+'
+'/'******************************************************************************
+'**      NOTES
+' *****************************************************************************'/
+'
+'/'
+' note "SOME NOTE"  as N1
+'
+'
+' mi_ooc_base .. N1
+' N1 .. mi_ooc_sub
+'
+'
+' note right of dummey
+'     some
+'     long
+'     note
+'end note
+'
+'
+''/
+'
+@enduml

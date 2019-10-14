@@ -1,0 +1,42 @@
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <sys/io.h>
+#include <termios.h>
+
+
+
+int  main ()
+{
+
+    int fd = open("/dev/console", O_RDWR | O_NOCTTY | O_NDELAY);
+    int ret = 255u;
+
+    if( -1 != fd ){
+
+        char ttys0_msg[ ] = "This is a test to ttys \n";
+
+        int write_count =  write(fd, &ttys0_msg[0], (sizeof(ttys0_msg)+1u) );
+        if (write_count != (sizeof(ttys0_msg)+1u) ){
+            perror("write failed");
+            ret -= 1u;
+        }
+        else{
+            ret = 0u;
+        }
+
+
+    }
+    else{
+        perror("Error while opening the file");
+            ret -= 1u;
+
+    }
+        close(fd);
+        return ret;
+}

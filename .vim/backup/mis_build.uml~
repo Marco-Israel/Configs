@@ -1,0 +1,392 @@
+/'******************************************************************************
+* @file             MIS_BUILD_strcture.uml
+* @author           Marco Israel
+* @version          v. 1.0
+* @date             06-2019
+* @ingroup          uml
+* @brief            Shows the mis_build buildstructure.
+*
+********************************************************************************
+* @detail
+* ____TODO______
+*
+*
+********************************************************************************
+* @attention
+* ____TODO______
+*
+*
+******************************************************************************'/
+
+@startuml
+scale 1/2
+
+!$cm1 = "coreMakeFileMisBuild"
+!$cm2 = "coreMakeFileCppUtest"
+
+title Discription of the MIS_OOC Buildsystem, its componets and interactions
+header Discription of the MIS_OOC Buildsystem, its componets and interactions
+footer Author: Marco Israel (MIS)       06-2019         %page% of %lastpage%
+
+
+legend
+    |= |= Type of call or dependency |
+    | <back:#black> </back> | Call from User / Call from outside |
+    | <back:#red> </back> | Project makefiles include global makefiles |
+    | <back:#green> </back>| Makefile command wich calls others tools |
+    | <back:#orange> </back>| Makefile makefile builds libs and targets |
+    | <back:#SkyBlue> </back>| sub objects inherrids or implements base objects|
+    | <back:#magenta> </back>| Unittestharnes runs unittests |
+endlegend
+
+
+
+/' ----- PART: Define folder struct and contend ------------------------------'/
+
+rectangle mis_build {
+
+
+   folder TOOLS{
+
+       folder makefiles {
+            file $cm1
+       }
+       folder cppUTEST{
+           file $cm2
+       }
+
+       folder thirdparty_code {
+
+            folder mi_ooc {
+
+            folder MIOOCcode{
+                file baseObjApp
+                file baseObjBsw
+                file baseObjDriver
+                file baseObjSensorX
+                file wrapperDriverN_Interface
+
+                }
+
+
+                folder unittestMIOOC {
+                file Makefile_unittestMIOOC
+                file testlistMIOOC.txt
+
+                    folder test {
+                    file baseClass1_test
+                    file baseClassN_test
+                    }
+                }
+
+                folder MIOOCAurix{
+                file doxygenMIOOC
+                }
+
+                todolistMIOOC.txt
+
+           }
+
+           folder otherThirdPartySutff{
+            }
+        }
+
+        folder templates {
+
+         }
+    }
+
+
+    folder projectPIC {
+        file Makefile_projectPIC
+        folder appPIC {
+        file subObjAppPIC
+        file subObjNAppPIC
+        }
+        folder bswPIC {
+        file subObjBswPIC
+        file subObjNBswPIC
+        }
+        folder driverPIC {
+        file subObjDriverPIC
+        file subObjNDriverPIC
+        file wrapperDriverNPIC
+        }
+
+        folder unittestPIC {
+            file Makefile_unittestPIC
+            folder testStuffPIC {
+            file testSomePicDriver.cpp
+            file testlistPIC.txt
+            }
+        }
+
+        folder osPIC {
+        }
+
+        folder docuPIC {
+         }
+
+        folder postbuildPIC {
+        }
+
+        folder prebuildPIC {
+        }
+
+        folder configsPIC {
+        }
+
+        folder startupPIC {
+        }
+
+        folder thirdpartyPIC {
+        }
+
+        file todolistPIC.txt
+
+    }
+
+    folder projectAURIX {
+        file Makefile_projectAURIX
+        folder appAURIX {
+        file subObjAppAURIX
+        file subObjNAppAURIX
+        }
+        folder bswAURIX {
+        file subObjBswAURIX
+        file subObjNBswAURIX
+        }
+        folder driverAURIX {
+        file subObjDriverAURIX
+        file subObjNDriverAURIX
+        file wrapperDriverNAURIX
+        }
+        folder osAURIX {
+        }
+
+        folder unittestAURIX{
+            file Makefile_unittestAURIX
+            folder testStuffAURIX {
+            file testSomeAurixDriver.c
+            file testlistAURIX.txt
+            }
+        }
+
+        folder docuAurixAURIX {
+        }
+
+        folder postbuildAURIX {
+        }
+
+        folder prebuildAURIX {
+        }
+
+        folder configsAURIX {
+        }
+
+        folder startupAURIX {
+        }
+
+        folder thirdpartyAURIX {
+        }
+
+        file todolistAURIX.txt
+
+
+    }
+
+    rectangle thridpartyTOOLS {
+        rectangle noteThirdpartyTOOLS [
+        NOTE: Not all tools are integrated at/or foll tested at the moment.
+        ]
+folder runCodeAnalyse {
+file staticCodeAnlyse
+file checkMISRAComplience
+}
+
+
+folder runFormatFiles{
+file formatCode
+file cleanWithspaces
+}
+
+
+folder runDocumentationBuilders{
+together {
+file generateDoxygenDocu
+file printUMLDiagrms
+file plottData
+}
+}
+
+
+
+folder runScripts{
+file runSomePythonScript
+file runSomeShellscript
+file runSomeDebuggerScript
+file runSomeOtherScript
+}
+
+folder buildTargets {
+file hex
+file elf
+file lib
+file map
+file lst
+file other
+}
+
+}
+component flashDevice
+actor User
+
+}
+
+/' -------- END PART: Define folder struct and contend -----------------------'/
+
+
+
+
+
+/' ----- PART: Makefile sub to Makefile base ---------------------------------'/
+
+Makefile_unittestPIC .up.>  $cm2 : > << includes >>
+Makefile_unittestAURIX .up.>  $cm2 : > << includes >>
+Makefile_unittestMIOOC .up.>  $cm2 : > << includes >>
+
+
+Makefile_projectPIC .[#red]up.|> $cm1 : > << includes >>
+Makefile_projectAURIX .[#red]up.|> $cm1 : > << includes >>
+
+User -[#black]down--> Makefile_projectPIC : >  <font color=black> << User calls make >> </font>
+User -[#black]down--> Makefile_projectAURIX : >  <font color=black> << User calls make >> </font>
+/' -------- END PART: Makefile sub to Makefile base --------------------------'/
+
+
+
+
+
+/' ----- PART: Object sub to Object base ---------------------------------'/
+
+subObjAppPIC -[#SkyBlue]up-|> baseObjApp: > <font color=SkyBlue> << inherits >>  </font>
+subObjAppAURIX -[#SkyBlue]up-|> baseObjApp: > <font color=SkyBlue> << inherits >>  </font>
+
+subObjBswPIC -[#SkyBlue]up-|> baseObjBsw: > <font color=SkyBlue> << inherits >>  </font>
+subObjBswAURIX -[#SkyBlue]up-|> baseObjBsw: > <font color=SkyBlue> << inherits >>  </font>
+subObjDriverPIC -[#SkyBlue]up-|> baseObjDriver: > <font color=SkyBlue> << inherits >>  </font>
+subObjDriverAURIX -[#SkyBlue]up-|> baseObjDriver: > <font color=SkyBlue> << inherits >>  </font>
+
+subObjNAppPIC -[#SkyBlue]up-|> baseObjApp: > <font color=SkyBlue> << inherits >>  </font>
+subObjNAppAURIX -[#SkyBlue]up-|> baseObjApp: > <font color=SkyBlue> << inherits >>  </font>
+
+subObjNBswPIC -[#SkyBlue]up-|> baseObjBsw: > <font color=SkyBlue> << inherits >>  </font>
+subObjNBswAURIX -[#SkyBlue]up-|> baseObjBsw: > <font color=SkyBlue> << inherits >>  </font>
+
+subObjNDriverPIC -[#SkyBlue]up-|> baseObjDriver: > <font color=SkyBlue> << inherits >>  </font>
+subObjNDriverAURIX -[#SkyBlue]up-|> baseObjDriver: > <font color=SkyBlue> << inherits >>  </font>
+
+wrapperDriverNPIC .[#SkyBlue]up.|> wrapperDriverN_Interface : > <font color=SkyBlue> << implements / overwrites >>  </font>
+wrapperDriverNAURIX .[#SkyBlue]up.|> wrapperDriverN_Interface : > <font color=SkyBlue> << implements / overwrites >>  </font>
+
+/' -------- END PART: Object sub to Object base ------------------------------'/
+
+
+
+
+
+/' ----- PART: PIC project MAKEFILE acions -----------------------------------'/
+
+Makefile_projectPIC -[#green]up-> Makefile_unittestMIOOC : > <font color=green> << calls >> </font>
+Makefile_projectPIC -[#green]-> Makefile_unittestPIC : >  <font color=green> << calls >> </font>
+Makefile_projectPIC .[#green]down.> runDocumentationBuilders : >  <font color=green> << calls >> </font>
+Makefile_projectPIC .[#green]down.> runScripts : >  <font color=green> <<optional callto >> </font>
+Makefile_projectPIC .[#green]down.> runFormatFiles : >  <font color=green> <<optional call to >> </font>
+Makefile_projectPIC .[#green]down.> runCodeAnalyse : >  <font color=green> <<optional callto >> </font>
+Makefile_projectPIC .[#green]down.> flashDevice : >  <font color=green> <<optional call to >> </font>
+Makefile_projectPIC .[#orange]down.> buildTargets : >  <font color=orange> <<optional callto >> </font>
+Makefile_projectPIC -[#orange]-> appPIC : >  <font color=orange> << build libiary from >> </font>
+Makefile_projectPIC -[#orange]-> bswPIC : >  <font color=orange> << build libiary from >> </font>
+Makefile_projectPIC -[#orange]-> driverPIC : >  <font color=orange> << build libiary from >> </font>
+Makefile_projectPIC -[#orange]-> osPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]-> postbuildPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]-> prebuildPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]-> configsPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]-> startupPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]-> thirdpartyPIC : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectPIC -[#orange]up-> MIOOCcode : >  <font color=orange> << build libiary from >> </font>
+
+/' ----- END PART: PIC project MAKEFILE actions ------------------------------'/
+
+
+
+
+
+/' ----- PART: AURIX project MAKEFILE actions --------------------------------'/
+
+Makefile_projectAURIX -[#green]up-> Makefile_unittestMIOOC : > <font color=green> << calls globale thirdparty unittests>> </font>
+Makefile_projectAURIX -[#green]-> Makefile_unittestAURIX : >  <font color=green> << calls PIC production unittests>> </font>
+Makefile_projectAURIX .[#green]down.> runDocumentationBuilders : >  <font color=green> << otional call to>> </font>
+Makefile_projectAURIX .[#green]down.> runScripts : >  <font color=green> << optional call to>> </font>
+Makefile_projectAURIX .[#green]down.> runFormatFiles : >  <font color=green> << optional call to>> </font>
+Makefile_projectAURIX .[#green]down.> runCodeAnalyse : >  <font color=green> << optional call to >> </font>
+Makefile_projectAURIX .[#green]down.> flashDevice : >  <font color=green> << optional calls >> </font>
+Makefile_projectAURIX .[#orange]down.> buildTargets : >  <font color=orange> << optional call to >> </font>
+Makefile_projectAURIX -[#orange]-> appAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> bswAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> driverAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> osAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> postbuildAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> prebuildAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> configsAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> startupAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]-> thirdpartyAURIX : >  <font color=orange> << build libiary from>> </font>
+Makefile_projectAURIX -[#orange]up-> MIOOCcode : >  <font color=orange> << build libiary from>> </font>
+
+/' ----- END PART: AURIX project MAKEFILE actions ----------------------------'/
+
+
+
+
+
+/' ----- PART: unittest production code --------------------------------------'/
+
+Makefile_unittestMIOOC -[#Magenta]right-> MIOOCcode : > <font color=magenta> << call unittests >> </font>
+
+
+Makefile_unittestAURIX -[#Magenta]right-> appAURIX : > <font color=magenta> << call unittests >> </font>
+Makefile_unittestAURIX -[#Magenta]right-> bswAURIX : > <font color=magenta> << call unittests >> </font>
+Makefile_unittestAURIX -[#Magenta]right-> driverAURIX : > <font color=magenta> << call unittests >> </font>
+
+Makefile_unittestPIC -[#Magenta]right-> appPIC : > <font color=magenta> << call unittests >> </font>
+Makefile_unittestPIC -[#Magenta]right-> bswPIC : > <font color=magenta> << call unittests >> </font>
+Makefile_unittestPIC -[#Magenta]right-> driverPIC : > <font color=magenta> << call unittests >> </font>
+/' -------- END PART: unittest production code -------------------------------'/
+
+
+
+
+/' ----- PART: Layouting -----------------------------------------------------'/
+
+thirdparty_code--[hidden]down-- appAURIX
+thirdparty_code--[hidden]down-- appPIC
+thridpartyTOOLS --[hidden]up-- appAURIX
+thridpartyTOOLS --[hidden]up-- appPIC
+flashDevice --[hidden]up-- buildTargets
+flashDevice --[hidden]up-- runScripts
+flashDevice --[hidden]up-- plottData
+flashDevice --[hidden]up-- other
+flashDevice --[hidden]up-- map
+flashDevice --[hidden]up-- lst
+flashDevice --[hidden]up-- lib
+flashDevice --[hidden]up-- thridpartyTOOLS
+flashDevice --[hidden]up-- runSomeOtherScript
+flashDevice --[hidden]up-- runSomeDebuggerScript
+
+
+
+/' ----- END PART: Layouting -------------------------------------------------'/
+
+
+
+@enduml

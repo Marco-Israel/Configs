@@ -1,0 +1,14 @@
+Dir 4.14 Required The validity of values received from external sources shall be checked
+Rule 12.5 Mandatory The sizeof operator shall not have an operand which is a function parameter declared as “array of type”
+Rule 21.13 Mandatory Any value passed to a function in <ctype.h> shall be representable as an unsigned char or be the value EOF
+Rule 21.14 Required The Standard Library function memcmp shall not be used to compare null terminated strings
+Rule 21.15 Required The pointer arguments to the Standard Library functions memcpy, memmove and memcmp shall be pointers to qualified or unqualified versions of compatible types
+Rule 21.16 Required The pointer arguments to the Standard Library function memcmp shall point to either a pointer type, an essentially signed type, an essentially unsigned type, an essentially Boolean type or an essentially enum type
+Rule 21.17 Mandatory Use of the string handling functions from <string.h> shall not result in accesses beyond the bounds of the objects referenced by their pointer parameters
+Rule 21.18 Mandatory The size_t argument passed to any function in <string.h> shall have an appropriate value
+Rule 21.19 Mandatory The pointers returned by the Standard Library functions localeconv, getenv, setlocale or, strerror shall only be used as if they have pointer to const-qualified type
+Rule 21.20 Mandatory The pointer returned by the Standard Library functions asctime, ctime, gmtime, localtime, localeconv, getenv, setlocale or strerror shall not be used following a subsequent call to the same function Resources
+Rule 22.7 Required The macro EOF shall only be compared with the unmodified return value from any Standard Library function capable of returning EOF
+Rule 22.8 Required The value of errno shall be set to zero prior to a call to an errno-setting- function
+Rule 22.9 Required The value of errno shall be tested against zero after calling an errno- setting-function 19
+Rule 22.10 Required The value of errno shall only be tested when the last function to be called was an errno-setting-function

@@ -1,0 +1,41 @@
+/**
+ * @file 	mi_ooc_gpio.cpp
+ * @author 	Marco Isarel (MI)
+ * @date 	2019-07
+ * @ingroup cppUTest
+ * @copyright Copyright (c) 2019 Marco Israel
+ *
+ *
+ * @brief GPIO Base object
+ *
+ *
+ * @details mi_ooc GPIO Base object
+*/
+
+
+#include "CppUTest/TestHarness.h"
+
+
+extern "C" {
+#include "mi_ooc_gpio.h"
+}
+
+TEST_GROUP(MI_OOC_GPIO_TG)
+{
+    void setup()
+    {
+    }
+
+    void teardown()
+    {
+    DUMMY
+    }
+};
+
+
+
+TEST(MI_OOC_GPIO_TG, DUMMY)
+{
+
+}
+
