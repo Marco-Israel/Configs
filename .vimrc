@@ -161,9 +161,6 @@ endif
 
 
 
-
-
-
 """ Foldenable codeblocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
 set foldlevelstart=10

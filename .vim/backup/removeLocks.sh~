@@ -1,7 +1,0 @@
-#!/bin/bash
-
-
-find -type f -name .*.swp -print 0 | xargs -0 rm
-find -type f -name .*.swo -print 0 | xargs -0 rm
-find -type f -name .*.lock -print 0 | xargs -0 rm
-find -type f -name *.lock -print 0 | xargs -0 rm
