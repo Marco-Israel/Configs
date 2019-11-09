@@ -1,3 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/cygdrive/c/app/Aurix/WKS_LUFU_AURIX/aurix_app/productive	1	bash	:
-window	0	0	1	:*	d0dd,271x87,0,0,0
-state	0	

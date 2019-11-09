@@ -43,4 +43,5 @@ vim_save_before_plugin/
 .vim/backup/
 .vim/plugged/
 .tags
+.tmux/resurrect
 
