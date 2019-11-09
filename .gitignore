@@ -23,7 +23,6 @@ vim.exe.stackdump
 .tmux.conf.swp
 .travis.yml
 .viminfo
-.vimplug.conf
 .vimrc.bak
 .vimrc.swn
 .vimrc.swo
