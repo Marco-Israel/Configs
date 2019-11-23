@@ -40,7 +40,7 @@ set list "listchars anzeigen
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
 set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
-set relativenumber "Relative Zeilennummern
+"set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
 set textwidth=0  "autowrap after 80 char for instance. 0==turn off.
@@ -53,7 +53,7 @@ set laststatus=2 " Statuszeile anzeigen
 set path+=** "extand the vim path"
 set path+=../**
 set path+=../../**
-set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
+"set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
 set autoread "autoread a file if it hase chaged elsewere
@@ -63,6 +63,10 @@ set scrolloff=53 "show the last X lines. 999 = Center everytime.
 "set complete-=i
 "set makeprg=make --jopbs=14 -load=10
 "
+"
+" Latex
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings  = 'make;m:makros;t:targets'
 
 if has('autocmd')
   filetype plugin indent on
@@ -161,13 +165,13 @@ endif
 
 
 
+
+
 """ Foldenable codeblocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
-
-
 
 
 
@@ -188,17 +192,17 @@ set foldmethod=indent
 "# Wann geladen wird              # Maske   # Aktivieren      #Sprache
 "au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
 "au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
-au BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
+au BufNewFile,BufRead *.txt,*.tex     setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead *.todo          setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead README          setlocal spell spelllang=en_us,de_de
-au BufNewFile,BufRead *.tex           setlocal spell spelllang=,de_de
 au BufNewFile,BufRead *.c,*.cpp       setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.py            setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.sh            setlocal spell spelllang=en_us,de_de
 
 
-
+"""tags
+au BufNewFile,BufRead *c,*.cpp,*h,*hh.*hpp  set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 
 
 
@@ -530,7 +534,7 @@ source  ~/.vimplug.conf
 "
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
-
+"
 
 
 
@@ -616,8 +620,8 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 "'<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "'<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-imap <silent> <C-Space> <C-N>
-imap <silent> <C-S-Space> <C-P>
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-O> <C-x><C-o>
 set completeopt=menuone,menu,longest
 set omnifunc=ccomplete#Complete
 "set omnifunc+=syntaxcomplete#Complete
@@ -929,7 +933,8 @@ nmap <Leader><Leader>t <Plug>(easymotion-t2)
 
 """ SuperTab """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "supertab
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 
 
@@ -1067,7 +1072,9 @@ let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
 let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 
 
-
+""" www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:wwwsearch_command_to_open_uri =  "min"
+nnoremap <Space>*  :<C-u>Wwwsearch -default <cword><Return>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

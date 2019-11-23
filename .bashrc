@@ -135,7 +135,13 @@ function whb { #Funktion to turn WLAN on at home inside
  sudo killall dhcpcd
  sudo ip link set wlo1 down
  sudo ip link set wlo1 up
- sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlo1 -B
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
+ sudo sleep 3
+ sudo dhcpcd -4
+}
+
+function wlanon {
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
  sudo sleep 3
  sudo dhcpcd -4
 }
