@@ -1,5 +1,0 @@
-2019/12/31-13:15:20.298 4ba Reusing MANIFEST /home/marco/.config/Min/IndexedDB/https_www.businessinsider.de_0.indexeddb.leveldb/MANIFEST-000001
-2019/12/31-13:17:50.720 591 Level-0 table #5: started
-2019/12/31-13:17:50.787 591 Level-0 table #5: 536 bytes OK
-2019/12/31-13:17:50.830 591 Delete type=0 #3
-2019/12/31-13:17:50.831 591 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
