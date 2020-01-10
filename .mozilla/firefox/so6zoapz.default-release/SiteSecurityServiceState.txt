@@ -37,7 +37,7 @@ www.lohnsteuer-kompakt.de:HSTS	0	18081	1593801431808,1,0,2
 agb-server.gmx.net:HSTS	0	18146	1630942332295,1,1,2
 nord.verdi.de:HSTS	0	18192	1571864386809,1,0,2
 usllpic0-006ce190fed5cb01033ded823455096166020240-am1.d.aa.online-metrix.net:HSTS	0	18158	1600439506704,1,0,2
-navigator.1und1.de:HSTS	0	18271	1581227135175,1,1,2
+navigator.1und1.de:HSTS	0	18271	1581227675180,1,1,2
 www.immonet.de:HSTS	1	18185	1573857283249,1,1,2
 www.pushcrew.com:HSTS	0	18081	1593783460410,1,0,2
 cdnjs.cloudflare.com:HSTS	15	18269	1594300925251,1,1,2
@@ -146,7 +146,7 @@ services.addons.mozilla.org:HPKP	24	18271	1583815095015,1,1,WoiWRyIOVNa9ihaBciRS
 control-center.1und1.de:HSTS	13	18271	1610168643132,1,1,2
 www.home24.de:HSTS	0	18198	1587935544448,1,1,2
 vi.stackexchange.com:HSTS	1	18222	1589923027643,1,0,2
-www.ebay-kleinanzeigen.de:HSTS	20	18271	1610170774144,1,1,2
+www.ebay-kleinanzeigen.de:HSTS	20	18271	1610171674677,1,1,2
 h6.online-metrix.net:HSTS	11	18271	1610168619443,1,0,2
 img06.en25.com:HSTS	0	18192	1603399852289,1,1,2
 atp-vim.sourceforge.io:HSTS	0	18221	1605907031167,1,0,2
@@ -301,7 +301,7 @@ ebay-kleinanzeigen.de:HSTS	3	18222	1605986670298,1,1,2
 6658784.fls.doubleclick.net:HSTS	0	18198	1572405147566,1,0,2
 sp.analytics.yahoo.com:HSTS	1	18223	1606049155959,1,0,2
 blocklists.settings.services.mozilla.com:HSTS	22	18271	1610167215355,1,0,2
-shavar.services.mozilla.com^firstPartyDomain=safebrowsing.86868755-6b82-4842-b301-72671a0db32e.mozilla:HSTS	28	18271	1610167984801,1,1,2
+shavar.services.mozilla.com^firstPartyDomain=safebrowsing.86868755-6b82-4842-b301-72671a0db32e.mozilla:HSTS	28	18271	1610171585493,1,1,2
 udd8uxur-7a355f34e26f5238512703a013c62e878fe7562a-am1.d.aa.online-metrix.net:HSTS	0	18158	1600435426390,1,0,2
 hilfe.gmx.net:HSTS	0	18146	1630941709576,1,1,2
 www.betano.com:HSTS	0	18158	1600470166746,1,1,2

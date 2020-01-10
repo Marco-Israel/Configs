@@ -21,9 +21,9 @@ $
 
 # Befehlszeile Geschichte (neueste bis älteste):
 :wq
-|2,0,1578635847,,"wq"
+|2,0,1578636257,,"wq"
 :q
-|2,0,1578635718,,"q"
+|2,0,1578636165,,"q"
 :w
 |2,0,1578635711,,"w"
 :set textwidth=0
@@ -123,7 +123,7 @@ $
 
 # Suchausdruck Geschichte (neueste bis älteste):
 ? \s\+$
-|2,1,1578635847,,"\\s\\+$"
+|2,1,1578636257,,"\\s\\+$"
 ? \<vimproc\>
 |2,1,1578635271,,"\\<vimproc\\>"
 ? \<plantuml\>
@@ -300,32 +300,32 @@ $
 	\textit{run.sh}
 |3,0,0,0,1,0,1578350984,"\\textit{run.sh}"
 ""1	LINE	0
-	>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb
-|3,1,1,1,1,0,1578635338,">>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb"
+	 .vim/plugged/
+|3,1,1,1,1,0,1578636247," .vim/plugged/"
 "2	LINE	0
-	>>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~
-|3,0,2,1,1,0,1578635338,">>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~"
+	README.md
+|3,0,2,1,1,0,1578636191,"README.md"
 "3	LINE	0
-	=======
-|3,0,3,1,1,0,1578635337,"======="
+	wpa_supplicant.conf
+|3,0,3,1,1,0,1578636182,"wpa_supplicant.conf"
 "4	LINE	0
-	<<<<<<< HEAD
-|3,0,4,1,1,0,1578635337,"<<<<<<< HEAD"
+	bin
+|3,0,4,1,1,0,1578636178,"bin"
 "5	LINE	0
-	"
-|3,0,5,1,1,0,1578635337,"\""
+	scripts
+|3,0,5,1,1,0,1578636175,"scripts"
 "6	LINE	0
-	"
-|3,0,6,1,1,0,1578635336,"\""
+	
+|3,0,6,1,1,0,1578636150,""
 "7	LINE	0
-	""Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } "Set plugin options
-|3,0,7,1,1,0,1578635335,"\"\"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } \"Set plugin options"
+	
+|3,0,7,1,1,0,1578636114,""
 "8	LINE	0
-	""Plug 'fatih/vim-go', { 'tag': '*' }  "using a  tag relase with wildcards
-|3,0,8,1,1,0,1578635335,"\"\"Plug 'fatih/vim-go', { 'tag': '*' }  \"using a  tag relase with wildcards"
+	>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb
+|3,0,8,1,1,0,1578635338,">>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb"
 "9	LINE	0
-	"""" GO Programming """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-|3,0,9,1,1,0,1578635335,"\"\"\"\" GO Programming \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+	>>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~
+|3,0,9,1,1,0,1578635338,">>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~"
 "a	CHAR	0
 	    %s/\s\+$//e
 	
@@ -404,40 +404,58 @@ $
 	yq
 |3,0,34,0,1,0,1564738556,"yq"
 "-	CHAR	0
-	Isarel
-|3,0,36,0,1,0,1578633136,"Isarel"
+	g
+|3,0,36,0,1,0,1578636168,"g"
 
 # Datei-Markierungen:
 'P  620  1  /cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h
 |4,80,620,1,1565270373,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h"
-'0  134  12  ~/.gitignore
-|4,48,134,12,1578635848,"~/.gitignore"
-'1  133  7  ~/.gitignore
-|4,49,133,7,1578635739,"~/.gitignore"
-'2  133  7  ~/.gitignore
-|4,50,133,7,1578635739,"~/.gitignore"
-'3  132  6  ~/.gitignore
-|4,51,132,6,1578635718,"~/.gitignore"
-'4  132  6  ~/.gitignore
-|4,52,132,6,1578635718,"~/.gitignore"
-'5  132  6  ~/.gitignore
-|4,53,132,6,1578635718,"~/.gitignore"
-'6  132  6  ~/.gitignore
-|4,54,132,6,1578635718,"~/.gitignore"
-'7  14  0  ~/NERD_tree_1
-|4,55,14,0,1578635502,"~/NERD_tree_1"
-'8  2  0  ~/NERD_tree_1
-|4,56,2,0,1578635451,"~/NERD_tree_1"
-'9  3  0  ~/NERD_tree_1
-|4,57,3,0,1578635451,"~/NERD_tree_1"
+'0  153  0  ~/.gitignore
+|4,48,153,0,1578636257,"~/.gitignore"
+'1  136  0  ~/.gitignore
+|4,49,136,0,1578636197,"~/.gitignore"
+'2  136  0  ~/.gitignore
+|4,50,136,0,1578636197,"~/.gitignore"
+'3  134  12  ~/.gitignore
+|4,51,134,12,1578635848,"~/.gitignore"
+'4  134  12  ~/.gitignore
+|4,52,134,12,1578635848,"~/.gitignore"
+'5  134  12  ~/.gitignore
+|4,53,134,12,1578635848,"~/.gitignore"
+'6  134  12  ~/.gitignore
+|4,54,134,12,1578635848,"~/.gitignore"
+'7  133  7  ~/.gitignore
+|4,55,133,7,1578635739,"~/.gitignore"
+'8  133  7  ~/.gitignore
+|4,56,133,7,1578635739,"~/.gitignore"
+'9  133  7  ~/.gitignore
+|4,57,133,7,1578635739,"~/.gitignore"
 
 # Jumplist (neueste zuerst):
+-'  153  0  ~/.gitignore
+|4,39,153,0,1578636257,"~/.gitignore"
+-'  136  0  ~/.gitignore
+|4,39,136,0,1578636236,"~/.gitignore"
+-'  136  0  ~/.gitignore
+|4,39,136,0,1578636197,"~/.gitignore"
+-'  134  0  ~/.gitignore
+|4,39,134,0,1578636085,"~/.gitignore"
+-'  134  0  ~/.gitignore
+|4,39,134,0,1578636085,"~/.gitignore"
 -'  134  12  ~/.gitignore
 |4,39,134,12,1578635848,"~/.gitignore"
 -'  133  0  ~/.gitignore
 |4,39,133,0,1578635832,"~/.gitignore"
+-'  133  0  ~/.gitignore
+|4,39,133,0,1578635832,"~/.gitignore"
+-'  133  0  ~/.gitignore
+|4,39,133,0,1578635832,"~/.gitignore"
 -'  133  7  ~/.gitignore
 |4,39,133,7,1578635739,"~/.gitignore"
+-'  132  0  ~/.gitignore
+|4,39,132,0,1578635726,"~/.gitignore"
+-'  132  0  ~/.gitignore
+|4,39,132,0,1578635726,"~/.gitignore"
 -'  132  0  ~/.gitignore
 |4,39,132,0,1578635726,"~/.gitignore"
 -'  132  0  ~/.gitignore
@@ -460,6 +478,102 @@ $
 |4,39,14,0,1578635502,"~/NERD_tree_1"
 -'  14  0  ~/NERD_tree_1
 |4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
 -'  1  0  ~/NERD_tree_1
 |4,39,1,0,1578635496,"~/NERD_tree_1"
 -'  1  0  ~/NERD_tree_1
@@ -508,138 +622,24 @@ $
 |4,39,2,0,1578635451,"~/NERD_tree_1"
 -'  3  0  ~/NERD_tree_1
 |4,39,3,0,1578635451,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  6  2  ~/NERD_tree_1
-|4,39,6,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1578635445,"~/NERD_tree_1"
--'  7  2  ~/NERD_tree_1
-|4,39,7,2,1578635445,"~/NERD_tree_1"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  1  0  ~/.vim/plugged/vim-surround:
-|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
--'  462  0  ~/.vimrc
-|4,39,462,0,1578635383,"~/.vimrc"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
 
 # Geschichte der Markierungen innerhalb von Dateien (neueste zuerst):
 
 > ~/.gitignore
-	*	1578635846	0
-	"	134	12
-	^	134	13
-	.	134	12
+	*	1578636256	0
+	"	153	0
+	^	153	0
+	.	153	0
 	+	1	0
 	+	2	0
 	+	5	0
@@ -657,6 +657,42 @@ $
 	+	132	6
 	+	133	7
 	+	134	12
+	+	148	67
+	+	135	14
+	+	136	9
+	+	137	13
+	+	138	10
+	+	139	19
+	+	139	7
+	+	140	11
+	+	141	13
+	+	142	3
+	+	143	11
+	+	145	9
+	+	146	3
+	+	146	9
+	+	147	5
+	+	148	7
+	+	148	2
+	+	149	6
+	+	150	9
+	+	151	6
+	+	152	5
+	+	148	0
+	+	146	0
+	+	139	0
+	+	136	0
+	+	153	0
+
+> /usr/share/vim/vim81/doc/help.txt
+	*	1578636164	0
+	"	1	0
+
+> ~/-MiniBufExplorer-
+	*	1578636161	0
+	"	1	16
+	.	2	0
+	+	2	0
 
 > ~/NERD_tree_1
 	*	1578635501	0
@@ -2103,10 +2139,6 @@ $
 	+	14	28
 	+	16	0
 
-> /usr/share/vim/vim81/doc/help.txt
-	*	1577926339	0
-	"	2	0
-
 > ~/yocto/documentation/content/layer_app.tex
 	*	1577926270	0
 	"	140	0
@@ -3045,7 +3077,3 @@ $
 > ~/.vim/plugged/vim-session/doc/session.txt
 	*	1575525961	0
 	"	8	23
-
-> ~/.vim/sessions/last-session.txt
-	*	1575525700	0
-	"	1	0
