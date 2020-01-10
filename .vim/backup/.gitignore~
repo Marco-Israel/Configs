@@ -129,3 +129,5 @@ lib64
 programming/
 test.png
 yocto/
+.cache/
+.config/

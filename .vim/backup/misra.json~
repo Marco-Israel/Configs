@@ -1,5 +1,0 @@
-{
-"script": "misra.py",
-"args": [ "--rule-texts=$PROJECT_HOME/TOOLS/cppcheck-master/addons/misra2016.txt", "--template=gcc" ]
-}
-

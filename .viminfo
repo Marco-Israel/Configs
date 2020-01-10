@@ -11,7 +11,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Letztes Suchmuster:
-~MSle0~/\<Isarel\>
+~MSle0~/\<vimproc\>
 
 # Letztes ErsetzeSuchmuster:
 ~MSle0&S\.
@@ -20,18 +20,18 @@
 $
 
 # Befehlszeile Geschichte (neueste bis älteste):
+:wq
+|2,0,1578635847,,"wq"
 :q
-|2,0,1578633142,,"q"
+|2,0,1578635718,,"q"
 :w
-|2,0,1578633141,,"w"
+|2,0,1578635711,,"w"
 :set textwidth=0
 |2,0,1578633133,,"set textwidth=0"
 :q!
 |2,0,1578633116,,"q!"
 :set wrapmargin=0
 |2,0,1578633061,,"set wrapmargin=0"
-:wq
-|2,0,1578350908,,"wq"
 :qa!
 |2,0,1578345876,,"qa!"
 :w test.tex
@@ -120,266 +120,18 @@ $
 |2,0,1575555659,,":autocmd VimResized * wincmd ="
 :tabn
 |2,0,1575448062,,"tabn"
-:tabnew
-|2,0,1575440986,,"tabnew"
-:set formatoptions+=a
-|2,0,1575384262,,"set formatoptions+=a"
-:h session
-|2,0,1575525914,,"h session"
-:SessionOpen
-|2,0,1575525894,,"SessionOpen"
-:SaveSession
-|2,0,1575525877,,"SaveSession"
-:SessionSave
-|2,0,1575525833,,"SessionSave"
-:Se
-|2,0,1575525391,,"Se"
-:h g:session_extension
-|2,0,1575524436,,"h g:session_extension"
-:h session_autosave
-|2,0,1575524100,,"h session_autosave"
-:h session_lock_enabled
-|2,0,1575524038,,"h session_lock_enabled"
-:n
-|2,0,1575204582,,"n"
-:wn
-|2,0,1575204577,,"wn"
-:% s/firefox/min/g
-|2,0,1575204575,,"% s/firefox/min/g"
-:set formatoptions=+a
-|2,0,1574941209,,"set formatoptions=+a"
-:formatoptions+=a
-|2,0,1574941186,,"formatoptions+=a"
-:set formatoptions+a
-|2,0,1574852697,,"set formatoptions+a"
-:2
-|2,0,1574852602,,"2"
-:SnipMateOpenSnippetFiles
-|2,0,1574842552,,"SnipMateOpenSnippetFiles"
-::set formatoptions=+a
-|2,0,1574841446,,":set formatoptions=+a"
-::set formatoptions+a
-|2,0,1574841435,,":set formatoptions+a"
-:setlocal spell spelllang=de_de
-|2,0,1574845375,,"setlocal spell spelllang=de_de"
-:set wm
-|2,0,1574845159,,"set wm"
-:set wrap
-|2,0,1574845151,,"set wrap"
-:set nowrap
-|2,0,1574845130,,"set nowrap"
-:set linebreak
-|2,0,1574845110,,"set linebreak"
-:set list
-|2,0,1574844991,,"set list"
-:h list
-|2,0,1574844955,,"h list"
-:::
-|2,0,1574844738,,"::"
-:set nolinebreak
-|2,0,1574844716,,"set nolinebreak"
-::
-|2,0,1574844704,,":"
-:set wrapmargin
-|2,0,1574844536,,"set wrapmargin"
-:h modeline
-|2,0,1574838995,,"h modeline"
-:h auto-format
-|2,0,1574838951,,"h auto-format"
-:h fo-table
-|2,0,1574838825,,"h fo-table"
-:h formatoptions
-|2,0,1574838809,,"h formatoptions"
-:set formatoptions
-|2,0,1574838157,,"set formatoptions"
-:h 'formatoptions'
-|2,0,1574837951,,"h 'formatoptions'"
-::set formatoptions-+a
-|2,0,1574837933,,":set formatoptions-+a"
-::set formatoptions-=a
-|2,0,1574837925,,":set formatoptions-=a"
-:qq
-|2,0,1574777101,,"qq"
-::set formatoptions+=a
-|2,0,1574776459,,":set formatoptions+=a"
-:% s/breakline/linebreak/g
-|2,0,1574775083,,"% s/breakline/linebreak/g"
-:% s/newline/breakline/g
-|2,0,1574774884,,"% s/newline/breakline/g"
-:setlocal spell spelllang=de
-|2,0,1574766755,,"setlocal spell spelllang=de"
-:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips
-|2,0,1574765519,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips"
-:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/
-|2,0,1574765511,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/"
-:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/tex.snippets
-|2,0,1574765506,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/tex.snippets"
-:let g:snipMateSourc
-|2,0,1574765463,,"let g:snipMateSourc"
-:g:snipMate.always_choose_first
-|2,0,1574765397,,"g:snipMate.always_choose_first"
-:h snipmate
-|2,0,1574765271,,"h snipmate"
-:h Snipmate
-|2,0,1574765092,,"h Snipmate"
-:h always_choose_first
-|2,0,1574765088,,"h always_choose_first"
-:h snipMate
-|2,0,1574765050,,"h snipMate"
-:Sn
-|2,0,1574764744,,"Sn"
-:1
-|2,0,1574764496,,"1"
-:set filetype=sh
-|2,0,1574693166,,"set filetype=sh"
-:h linebreak
-|2,0,1574687615,,"h linebreak"
-:h fo
-|2,0,1574687569,,"h fo"
-:set fo
-|2,0,1574687559,,"set fo"
-:set tw
-|2,0,1574687553,,"set tw"
-:h wrap
-|2,0,1574687336,,"h wrap"
-:h wrep
-|2,0,1574687160,,"h wrep"
-:PlugInstall
-|2,0,1574684315,,"PlugInstall"
-:set nopell
-|2,0,1574677360,,"set nopell"
-:set tw=
-|2,0,1574677340,,"set tw="
-:UltiSnipsEdit
-|2,0,1574674512,,"UltiSnipsEdit"
-:set wrapmargin=80
-|2,0,1574671884,,"set wrapmargin=80"
-:set wraümargin
-|2,0,1574671873,,"set wraümargin"
-:help tw
-|2,0,1574671822,,"help tw"
-:set tw=80
-|2,0,1574671812,,"set tw=80"
-:h Vital.Vim.BufferManager-Manager
-|2,0,1574669835,,"h Vital.Vim.BufferManager-Manager"
-:qqqqqqweasdfasdfasf
-|2,0,1574612414,,"qqqqqqweasdfasdfasf"
-:set filetype=tex
-|2,0,1574612225,,"set filetype=tex"
-:set filetype=set
-|2,0,1574612216,,"set filetype=set"
-:filetype=tex
-|2,0,1574612203,,"filetype=tex"
-:h BufFilePost
-|2,0,1574612130,,"h BufFilePost"
-:h BufEnter
-|2,0,1574611960,,"h BufEnter"
-:h BufNewFile
-|2,0,1574611540,,"h BufNewFile"
-:set syntax
-|2,0,1574611321,,"set syntax"
-:setfiletype tex
-|2,0,1574611168,,"setfiletype tex"
-:setfiletype
-|2,0,1574611163,,"setfiletype"
-:set spelllang
-|2,0,1574611058,,"set spelllang"
-:set noshiftround
-|2,0,1574611029,,"set noshiftround"
-:set spell=de_de
-|2,0,1574610987,,"set spell=de_de"
-:g:tex_section_commands
-|2,0,1574610796,,"g:tex_section_commands"
-:set g:tex_section_commands
-|2,0,1574610791,,"set g:tex_section_commands"
-:wq!
-|2,0,1574607878,,"wq!"
-:syntax
-|2,0,1574533730,,"syntax"
-:PlugClean
-|2,0,1574531230,,"PlugClean"
-:Q
-|2,0,1574530824,,"Q"
-:h autocmd
-|2,0,1574530005,,"h autocmd"
-:%s /\s\+$//e
-|2,0,1574529850,,"%s /\\s\\+$//e"
-:StripTrailingWhitespaces
-|2,0,1574528203,,"StripTrailingWhitespaces"
-:StripWhitespace
-|2,0,1574527712,,"StripWhitespace"
-:gg:wq
-|2,0,1574527699,,"gg:wq"
-:Sexplore
-|2,0,1574527627,,"Sexplore"
-:wqa!
-|2,0,1574525049,,"wqa!"
-:h fold
-|2,0,1574524240,,"h fold"
-:bnext
-|2,0,1574523904,,"bnext"
-:bNext
-|2,0,1574523880,,"bNext"
-:'<,'>"
-|2,0,1574523664,,"'<,'>\""
-:qD
-|2,0,1574517228,,"qD"
-:Wwwsearch yoink vim
-|2,0,1574515836,,"Wwwsearch yoink vim"
-:h zo
-|2,0,1574515165,,"h zo"
-:h flot.
-|2,0,1574515162,,"h flot."
-:h flot
-|2,0,1574515131,,"h flot"
-:h flod
-|2,0,1574515129,,"h flod"
-:Wwwsearch vim open all flattern
-|2,0,1574514701,,"Wwwsearch vim open all flattern"
-:h g:wwwsearch_command_to_open_uri
-|2,0,1574514310,,"h g:wwwsearch_command_to_open_uri"
-:Wwwsearch www.test.de
-|2,0,1574513985,,"Wwwsearch www.test.de"
-:h www
-|2,0,1574513573,,"h www"
-:h SuperTabDefaultCompletionType
-|2,0,1574507229,,"h SuperTabDefaultCompletionType"
-:W
-|2,0,1574506246,,"W"
-:!
-|2,0,1574501677,,"!"
-:syntax on
-|2,0,1574501562,,"syntax on"
-:colorscheme blue
-|2,0,1574501503,,"colorscheme blue"
-:q:
-|2,0,1574501064,,"q:"
-:qjjjkk
-|2,0,1574499304,,"qjjjkk"
-:h vimtex
-|2,0,1574455526,,"h vimtex"
-:vimtex
-|2,0,1574455520,,"vimtex"
-:set tags
-|2,0,1574455338,,"set tags"
-:set tags=
-|2,0,1574455332,,"set tags="
-:h tex
-|2,0,1574455054,,"h tex"
-:dvanced
-|2,0,1574452240,,"dvanced"
-:h manpage
-|2,0,1571087022,,"h manpage"
-:h manual
-|2,0,1571087006,,"h manual"
-:vsplit bash
-|2,0,1567854521,,"vsplit bash"
-:Explore
-|2,0,1567854304,,"Explore"
 
 # Suchausdruck Geschichte (neueste bis älteste):
 ? \s\+$
-|2,1,1578633142,,"\\s\\+$"
+|2,1,1578635847,,"\\s\\+$"
+? \<vimproc\>
+|2,1,1578635271,,"\\<vimproc\\>"
+? \<plantuml\>
+|2,1,1578635261,,"\\<plantuml\\>"
+? \<undotree\>
+|2,1,1578635254,,"\\<undotree\\>"
+?/HEAD
+|2,1,1578634691,47,"HEAD"
 ? \<Isarel\>
 |2,1,1578633027,,"\\<Isarel\\>"
 ?/aus
@@ -470,416 +222,6 @@ $
 |2,1,1575895178,,"\\<http\\>"
 ?/fest
 |2,1,1575848164,47,"fest"
-? \<von\>
-|2,1,1575848153,,"\\<von\\>"
-?/lösch
-|2,1,1575877549,47,"lösch"
-?/nat
-|2,1,1575848052,47,"nat"
-?/Gru
-|2,1,1575846199,47,"Gru"
-?/doub
-|2,1,1575846100,47,"doub"
-?/sing
-|2,1,1575845351,47,"sing"
-?/Distri
-|2,1,1575843277,47,"Distri"
-? \<Feature\>
-|2,1,1575842723,,"\\<Feature\\>"
-?/Feat
-|2,1,1575842709,47,"Feat"
-?/Dis
-|2,1,1575843085,47,"Dis"
-?/Abkü
-|2,1,1575842291,47,"Abkü"
-?/inde
-|2,1,1575837759,47,"inde"
-?/Featu
-|2,1,1575842525,47,"Featu"
-?/Fea
-|2,1,1575842388,47,"Fea"
-?/Distr
-|2,1,1575839932,47,"Distr"
-? \<DTB\>
-|2,1,1575841073,,"\\<DTB\\>"
-? \<makeindex\>
-|2,1,1575836630,,"\\<makeindex\\>"
-?/make
-|2,1,1575836442,47,"make"
-?/index
-|2,1,1575835737,47,"index"
-? \<include\>
-|2,1,1575828900,,"\\<include\\>"
-? \<printbibliography\>
-|2,1,1575827280,,"\\<printbibliography\\>"
-? \<bibliographystyle\>
-|2,1,1575823857,,"\\<bibliographystyle\\>"
-?/kkkk
-|2,1,1575819760,47,"kkkk"
-? \<acronym\>
-|2,1,1575819602,,"\\<acronym\\>"
-?/missing
-|2,1,1575820098,47,"missing"
-? \<document\>
-|2,1,1575818206,,"\\<document\\>"
-? \<printglossaries\>
-|2,1,1575817977,,"\\<printglossaries\\>"
-? \<bibliography\>
-|2,1,1575817920,,"\\<bibliography\\>"
-?/abstra
-|2,1,1575811273,47,"abstra"
-?/Rhei
-|2,1,1575812896,47,"Rhei"
-?/poly
-|2,1,1575810212,47,"poly"
-?/Sch
-|2,1,1575554303,47,"Sch"
-?/Bitbake
-|2,1,1575550476,47,"Bitbake"
-? \<Bitbake_Manual\>
-|2,1,1575544610,,"\\<Bitbake_Manual\\>"
-? \<Gon2018\>
-|2,1,1575543776,,"\\<Gon2018\\>"
-? \<preamble\>
-|2,1,1575545759,,"\\<preamble\\>"
-?/begin
-|2,1,1575545742,47,"begin"
-?/glos
-|2,1,1575545460,47,"glos"
-? \<bibtex\>
-|2,1,1575545188,,"\\<bibtex\\>"
-?/bib
-|2,1,1575545105,47,"bib"
-?/natbib
-|2,1,1575544321,47,"natbib"
-?/year
-|2,1,1575544074,47,"year"
-?/Error
-|2,1,1575543975,47,"Error"
-?/bibtex
-|2,1,1575541294,47,"bibtex"
-?/biber
-|2,1,1575539313,47,"biber"
-?/auto
-|2,1,1575525937,47,"auto"
-?/default
-|2,1,1575525929,47,"default"
-? \<session_default_to_last\>
-|2,1,1575525314,,"\\<session_default_to_last\\>"
-? \<expand\>
-|2,1,1575525156,,"\\<expand\\>"
-?/Sess
-|2,1,1575523992,47,"Sess"
-?/Sess#
-|2,1,1575523988,47,"Sess#"
-? \<downloads\>
-|2,1,1575271049,,"\\<downloads\\>"
-? \<releases\>
-|2,1,1575271023,,"\\<releases\\>"
-?/gll
-|2,1,1575269028,47,"gll"
-?/set nospell
-|2,1,1575267983,47,"set nospell"
-?/nger
-|2,1,1575267975,47,"nger"
-?/us
-|2,1,1575267894,47,"us"
-?/um
-|2,1,1575267878,47,"um"
-?/ansi
-|2,1,1575267868,47,"ansi"
-?/refname
-|2,1,1575267284,47,"refname"
-?/print
-|2,1,1575266340,47,"print"
-?/Bib
-|2,1,1575266058,47,"Bib"
-?/bi
-|2,1,1575265854,47,"bi"
-?/Mo
-|2,1,1575264628,47,"Mo"
-? firefox
-|2,1,1575204575,,"firefox"
-?/fire
-|2,1,1575204488,47,"fire"
-?/firefox
-|2,1,1575204420,47,"firefox"
-? \<ausfuhren_bestimmter_tasks_eines_recipies\>
-|2,1,1574952935,,"\\<ausfuhren_bestimmter_tasks_eines_recipies\\>"
-? \<pageref\>
-|2,1,1574952929,,"\\<pageref\\>"
-? \<meta_layer_zum_build_hinzufugen\>
-|2,1,1574952923,,"\\<meta_layer_zum_build_hinzufugen\\>"
-?/pyth
-|2,1,1574950268,47,"pyth"
-?/abs
-|2,1,1574952479,47,"abs"
-?/Work
-|2,1,1574950698,47,"Work"
-?/Em
-|2,1,1574946097,47,"Em"
-?/¼
-|2,1,1574945641,47,"¼"
-?/$
-|2,1,1574945637,47,"$"
-? \<itemize\>
-|2,1,1574945583,,"\\<itemize\\>"
-?/F1
-|2,1,1574941156,47,"F1"
-?/texti
-|2,1,1574850855,47,"texti"
-?/S-
-|2,1,1574852741,47,"S-"
-?/www
-|2,1,1574852411,47,"www"
-?/lstl
-|2,1,1574842663,47,"lstl"
-?/and
-|2,1,1574840209,47,"and"
-?/my
-|2,1,1574848873,47,"my"
-?/colo
-|2,1,1574848717,47,"colo"
-?/list
-|2,1,1574847039,47,"list"
-?/nolist
-|2,1,1574844981,47,"nolist"
-?/F10
-|2,1,1574841586,47,"F10"
-?/line break
-|2,1,1574838325,47,"line break"
-?/empty lin
-|2,1,1574838300,47,"empty lin"
-? \<fo-table\>
-|2,1,1574838005,,"\\<fo-table\\>"
-?/TODO
-|2,1,1574779372,47,"TODO"
-?/fold
-|2,1,1574779350,47,"fold"
-?/\\\
-|2,1,1574775334,47,"\\\\\\"
-?/break
-|2,1,1574775222,47,"break"
-?/line
-|2,1,1574775147,47,"line"
-? breakline
-|2,1,1574775083,,"breakline"
-? newline
-|2,1,1574774884,,"newline"
-?/#
-|2,1,1574774263,47,"#"
-?/glr
-|2,1,1574774228,47,"glr"
-? snipMate.always_choose_first
-|2,1,1574765397,,"snipMate.always_choose_first"
-? \<g:snipMate\.always_choose_first\>
-|2,1,1574765332,,"\\<g:snipMate\\.always_choose_first\\>"
-?/cha
-|2,1,1574764780,47,"cha"
-? \<F9\>
-|2,1,1574764566,,"\\<F9\\>"
-? \<F10\>
-|2,1,1574764554,,"\\<F10\\>"
-?/F11
-|2,1,1574764529,47,"F11"
-? \<VERSION\>
-|2,1,1574693303,,"\\<VERSION\\>"
-?/einlei
-|2,1,1574690502,47,"einlei"
-?/pic
-|2,1,1574688631,47,"pic"
-? \<linebreak\>
-|2,1,1574687492,,"\\<linebreak\\>"
-? \<'list'\>
-|2,1,1574687427,,"\\<'list'\\>"
-? \<nolist\>
-|2,1,1574687422,,"\\<nolist\\>"
-?/nolis
-|2,1,1574687411,47,"nolis"
-?/text
-|2,1,1574687147,47,"text"
-?/snip
-|2,1,1574684142,47,"snip"
-?/ulti
-|2,1,1574684126,47,"ulti"
-?/bit
-|2,1,1574675565,47,"bit"
-?/glo
-|2,1,1574675366,47,"glo"
-?/Ulti
-|2,1,1574676067,47,"Ulti"
-? \<'wrapmargin'\>
-|2,1,1574671897,,"\\<'wrapmargin'\\>"
-?/wr
-|2,1,1574671890,47,"wr"
-? \<Metadatendatei\>
-|2,1,1574671402,,"\\<Metadatendatei\\>"
-? \<Metadaten\>
-|2,1,1574671373,,"\\<Metadaten\\>"
-?/set file
-|2,1,1574612297,47,"set file"
-? \<set\>
-|2,1,1574612284,,"\\<set\\>"
-?/Post
-|2,1,1574612140,47,"Post"
-?/VimEnter
-|2,1,1574612104,47,"VimEnter"
-?/filetype=
-|2,1,1574611923,47,"filetype="
-?/set
-|2,1,1574611841,47,"set"
-? \<filetype\>
-|2,1,1574611812,,"\\<filetype\\>"
-? \<autocmd\>
-|2,1,1574611669,,"\\<autocmd\\>"
-?/Buf
-|2,1,1574611615,47,"Buf"
-?/vim
-|2,1,1574611561,47,"vim"
-?/filety
-|2,1,1574611437,47,"filety"
-? tex_section_commands
-|2,1,1574610796,,"tex_section_commands"
-? \<linebrake\>
-|2,1,1574534091,,"\\<linebrake\\>"
-? \<StripTrailingWhitespaces\>
-|2,1,1574531462,,"\\<StripTrailingWhitespaces\\>"
-?/latex
-|2,1,1574531209,47,"latex"
-?/Whi
-|2,1,1574530604,47,"Whi"
-?/Stripe
-|2,1,1574530596,47,"Stripe"
-?/Strikjkkkkkkkkkkkkkkkj
-|2,1,1574530579,47,"Strikjkkkkkkkkkkkkkkkj"
-?/Strip
-|2,1,1574529711,47,"Strip"
-?/WinLeavek
-|2,1,1574529615,47,"WinLeavek"
-?/Lea
-|2,1,1574529496,47,"Lea"
-?/Write
-|2,1,1574529167,47,"Write"
-?/TabClose
-|2,1,1574528933,47,"TabClose"
-?/Leav
-|2,1,1574528859,47,"Leav"
-?/Closed
-|2,1,1574528841,47,"Closed"
-?/Ta
-|2,1,1574528785,47,"Ta"
-?/TabClo
-|2,1,1574528776,47,"TabClo"
-?/Close
-|2,1,1574528759,47,"Close"
-?/Stri
-|2,1,1574528105,47,"Stri"
-? [\u0009\u0020\u00a0\u1680\u180e\u2000-\u200b\u202f\u205f\u3000\ufeff]\+$
-|2,1,1574528036,,"[\\u0009\\u0020\\u00a0\\u1680\\u180e\\u2000-\\u200b\\u202f\\u205f\\u3000\\ufeff]\\+$"
-?/str
-|2,1,1574527908,47,"str"
-?/strip
-|2,1,1574527783,47,"strip"
-?/W
-|2,1,1574527537,47,"W"
-?/vimplu
-|2,1,1574527451,47,"vimplu"
-?/plug
-|2,1,1574527447,47,"plug"
-?/bett
-|2,1,1574527428,47,"bett"
-?/Str
-|2,1,1574527266,47,"Str"
-?/Spac
-|2,1,1574527243,47,"Spac"
-?/Wi
-|2,1,1574527215,47,"Wi"
-?/plu
-|2,1,1574527108,47,"plu"
-?/color
-|2,1,1574526761,47,"color"
-?/vimpl
-|2,1,1574526616,47,"vimpl"
-?/re
-|2,1,1574526070,47,"re"
-?/yoi
-|2,1,1574525429,47,"yoi"
-?/cu^jjjjjjjjjjjjjjjjjjjjj
-|2,1,1574525065,47,"cu^jjjjjjjjjjjjjjjjjjjjj"
-? \<'foldenable'\>
-|2,1,1574524278,,"\\<'foldenable'\\>"
-?/folden
-|2,1,1574524267,47,"folden"
-?/flod
-|2,1,1574524203,47,"flod"
-?/flo
-|2,1,1574524197,47,"flo"
-? \<Foldenable\>
-|2,1,1574524144,,"\\<Foldenable\\>"
-? \<foldenable\>
-|2,1,1574524143,,"\\<foldenable\\>"
-?/bu
-|2,1,1574523951,47,"bu"
-?/fl
-|2,1,1574523800,47,"fl"
-?/abgabe
-|2,1,1574517720,47,"abgabe"
-?/Anleitung
-|2,1,1574517415,47,"Anleitung"
-?/An
-|2,1,1574517376,47,"An"
-?/yoin
-|2,1,1574516184,47,"yoin"
-?/yo
-|2,1,1574516172,47,"yo"
-?/yoink
-|2,1,1574516147,47,"yoink"
-? \<loaded_netrwPlugin\>
-|2,1,1574508451,,"\\<loaded_netrwPlugin\\>"
-?/super
-|2,1,1574507207,47,"super"
-?/Tab
-|2,1,1574507108,47,"Tab"
-?/omni
-|2,1,1574506902,47,"omni"
-?/Ul
-|2,1,1574506374,47,"Ul"
-?/trace
-|2,1,1574505359,47,"trace"
-? scroll
-|2,1,1574502394,,"scroll"
-? \<backspace\>
-|2,1,1574500986,,"\\<backspace\\>"
-? \<syntax_on\>
-|2,1,1574500880,,"\\<syntax_on\\>"
-?/L
-|2,1,1574500185,47,"L"
-?/marco_
-|2,1,1574499864,47,"marco_"
-?/marco_pi
-|2,1,1574499659,47,"marco_pi"
-?/air
-|2,1,1574455805,47,"air"
-? \<section\>
-|2,1,1574455389,,"\\<section\\>"
-? \<sub_1\>
-|2,1,1574455041,,"\\<sub_1\\>"
-?/Plu
-|2,1,1574454081,47,"Plu"
-?/mul
-|2,1,1574454000,47,"mul"
-?/Multi
-|2,1,1574453915,47,"Multi"
-?/pai
-|2,1,1574452932,47,"pai"
-?/engin
-|2,1,1574452377,47,"engin"
-?/single
-|2,1,1574452342,47,"single"
-?/singelo
-|2,1,1574452324,47,"singelo"
-?/advanc
-|2,1,1574452276,47,"advanc"
 
 # Ausdruck Geschichte (neueste bis älteste):
 
@@ -957,33 +299,33 @@ $
 "0	CHAR	0
 	\textit{run.sh}
 |3,0,0,0,1,0,1578350984,"\\textit{run.sh}"
-"1	LINE	0
-	
-|3,0,1,1,1,0,1578350727,""
+""1	LINE	0
+	>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb
+|3,1,1,1,1,0,1578635338,">>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb"
 "2	LINE	0
-	
-|3,0,2,1,1,0,1578350449,""
+	>>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~
+|3,0,2,1,1,0,1578635338,">>>>>>>> d88231ffbd3be5876fbe52d1336677819c4d9ddb:.vim/backup/.vimplug.conf~"
 "3	LINE	0
-	    \item 
-|3,0,3,1,1,0,1578349941,"    \\item "
+	=======
+|3,0,3,1,1,0,1578635337,"======="
 "4	LINE	0
-	
-|3,0,4,1,1,0,1578349680,""
+	<<<<<<< HEAD
+|3,0,4,1,1,0,1578635337,"<<<<<<< HEAD"
 "5	LINE	0
-	    \item
-|3,0,5,1,1,0,1578349674,"    \\item"
+	"
+|3,0,5,1,1,0,1578635337,"\""
 "6	LINE	0
-	
-|3,0,6,1,1,0,1578349673,""
+	"
+|3,0,6,1,1,0,1578635336,"\""
 "7	LINE	0
-	    \item
-|3,0,7,1,1,0,1578349670,"    \\item"
+	""Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } "Set plugin options
+|3,0,7,1,1,0,1578635335,"\"\"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } \"Set plugin options"
 "8	LINE	0
-	\end{itemize}
-|3,0,8,1,1,0,1578349495,"\\end{itemize}"
+	""Plug 'fatih/vim-go', { 'tag': '*' }  "using a  tag relase with wildcards
+|3,0,8,1,1,0,1578635335,"\"\"Plug 'fatih/vim-go', { 'tag': '*' }  \"using a  tag relase with wildcards"
 "9	LINE	0
-	    \item 
-|3,0,9,1,1,0,1578349494,"    \\item "
+	"""" GO Programming """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+|3,0,9,1,1,0,1578635335,"\"\"\"\" GO Programming \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
 "a	CHAR	0
 	    %s/\s\+$//e
 	
@@ -1061,242 +403,484 @@ $
 "y	CHAR	0
 	yq
 |3,0,34,0,1,0,1564738556,"yq"
-""-	CHAR	0
+"-	CHAR	0
 	Isarel
-|3,1,36,0,1,0,1578633136,"Isarel"
-
-# globale Variablen:
-!VCSCOMMAND_IDENTIFY_EXACT	NUM	1
-!YOINK_HISTORY	LIS	[]
-!VCSCOMMAND_IDENTIFY_INEXACT	NUM	-1
+|3,0,36,0,1,0,1578633136,"Isarel"
 
 # Datei-Markierungen:
 'P  620  1  /cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h
 |4,80,620,1,1565270373,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h"
-'0  1  91  ~/.git/FETCH_HEAD
-|4,48,1,91,1578633142,"~/.git/FETCH_HEAD"
-'1  1  0  ~/.git/HEAD
-|4,49,1,0,1578633117,"~/.git/HEAD"
-'2  3  197  ~/.git/logs/refs/heads/master
-|4,50,3,197,1578633097,"~/.git/logs/refs/heads/master"
-'3  130  5  ~/.gitignore
-|4,51,130,5,1578632945,"~/.gitignore"
-'4  8  37  ~/.git/config
-|4,52,8,37,1578632193,"~/.git/config"
-'5  1  31  ~/.git-credentials
-|4,53,1,31,1578632162,"~/.git-credentials"
-'6  1  0  ~/.gitconfig
-|4,54,1,0,1578632145,"~/.gitconfig"
-'7  43  22  ~/yocto/documentation/content/ausbilck.tex
-|4,55,43,22,1578351186,"~/yocto/documentation/content/ausbilck.tex"
-'8  36  3  ~/yocto/documentation/content/NERD_tree_1
-|4,56,36,3,1578350928,"~/yocto/documentation/content/NERD_tree_1"
-'9  15  3  ~/yocto/documentation/content/NERD_tree_1
-|4,57,15,3,1578345947,"~/yocto/documentation/content/NERD_tree_1"
+'0  134  12  ~/.gitignore
+|4,48,134,12,1578635848,"~/.gitignore"
+'1  133  7  ~/.gitignore
+|4,49,133,7,1578635739,"~/.gitignore"
+'2  133  7  ~/.gitignore
+|4,50,133,7,1578635739,"~/.gitignore"
+'3  132  6  ~/.gitignore
+|4,51,132,6,1578635718,"~/.gitignore"
+'4  132  6  ~/.gitignore
+|4,52,132,6,1578635718,"~/.gitignore"
+'5  132  6  ~/.gitignore
+|4,53,132,6,1578635718,"~/.gitignore"
+'6  132  6  ~/.gitignore
+|4,54,132,6,1578635718,"~/.gitignore"
+'7  14  0  ~/NERD_tree_1
+|4,55,14,0,1578635502,"~/NERD_tree_1"
+'8  2  0  ~/NERD_tree_1
+|4,56,2,0,1578635451,"~/NERD_tree_1"
+'9  3  0  ~/NERD_tree_1
+|4,57,3,0,1578635451,"~/NERD_tree_1"
 
 # Jumplist (neueste zuerst):
--'  1  91  ~/.git/FETCH_HEAD
-|4,39,1,91,1578633142,"~/.git/FETCH_HEAD"
--'  1  0  ~/.git/HEAD
-|4,39,1,0,1578633117,"~/.git/HEAD"
--'  1  0  ~/.git/HEAD
-|4,39,1,0,1578633117,"~/.git/HEAD"
--'  3  197  ~/.git/logs/refs/heads/master
-|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
--'  3  197  ~/.git/logs/refs/heads/master
-|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
--'  3  197  ~/.git/logs/refs/heads/master
-|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
--'  3  197  ~/.git/logs/refs/heads/master
-|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
--'  1  0  ~/.git/logs/refs/heads/master
-|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
--'  1  0  ~/.git/logs/refs/heads/master
-|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
--'  1  0  ~/.git/logs/refs/heads/master
-|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
--'  1  0  ~/.git/logs/refs/heads/master
-|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  130  5  ~/.gitignore
-|4,39,130,5,1578632945,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  131  0  ~/.gitignore
-|4,39,131,0,1578632935,"~/.gitignore"
--'  1  0  ~/.gitignore
-|4,39,1,0,1578632935,"~/.gitignore"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  8  37  ~/.git/config
-|4,39,8,37,1578632193,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1578632174,"~/.git/config"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  31  ~/.git-credentials
-|4,39,1,31,1578632162,"~/.git-credentials"
--'  1  0  ~/.gitconfig
-|4,39,1,0,1578632145,"~/.gitconfig"
+-'  134  12  ~/.gitignore
+|4,39,134,12,1578635848,"~/.gitignore"
+-'  133  0  ~/.gitignore
+|4,39,133,0,1578635832,"~/.gitignore"
+-'  133  7  ~/.gitignore
+|4,39,133,7,1578635739,"~/.gitignore"
+-'  132  0  ~/.gitignore
+|4,39,132,0,1578635726,"~/.gitignore"
+-'  132  0  ~/.gitignore
+|4,39,132,0,1578635726,"~/.gitignore"
+-'  132  6  ~/.gitignore
+|4,39,132,6,1578635718,"~/.gitignore"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  14  0  ~/NERD_tree_1
+|4,39,14,0,1578635502,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635496,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  2  0  ~/NERD_tree_1
+|4,39,2,0,1578635451,"~/NERD_tree_1"
+-'  3  0  ~/NERD_tree_1
+|4,39,3,0,1578635451,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  6  2  ~/NERD_tree_1
+|4,39,6,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/NERD_tree_1
+|4,39,1,0,1578635445,"~/NERD_tree_1"
+-'  7  2  ~/NERD_tree_1
+|4,39,7,2,1578635445,"~/NERD_tree_1"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  1  0  ~/.vim/plugged/vim-surround:
+|4,39,1,0,1578635444,"~/.vim/plugged/vim-surround:"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
+-'  462  0  ~/.vimrc
+|4,39,462,0,1578635383,"~/.vimrc"
 
 # Geschichte der Markierungen innerhalb von Dateien (neueste zuerst):
+
+> ~/.gitignore
+	*	1578635846	0
+	"	134	12
+	^	134	13
+	.	134	12
+	+	1	0
+	+	2	0
+	+	5	0
+	+	10	0
+	+	1	0
+	+	56	0
+	+	107	0
+	+	108	0
+	+	130	0
+	+	131	0
+	+	1	0
+	+	131	5
+	+	1	0
+	+	133	0
+	+	132	6
+	+	133	7
+	+	134	12
+
+> ~/NERD_tree_1
+	*	1578635501	0
+	"	14	0
+	.	1	0
+	+	1	0
+
+> ~/.vim/plugged/vim-surround:
+	*	1578635441	0
+	"	1	0
+
+> ~/.vimrc
+	*	1578635381	0
+	"	462	0
+	.	433	0
+	+	182	0
+	+	175	6
+	+	179	65
+	+	182	64
+	+	175	0
+	+	533	0
+	+	179	67
+	+	175	6
+	+	179	80
+	+	179	0
+	+	180	68
+	+	182	26
+	+	180	0
+	+	182	0
+	+	182	57
+	+	183	0
+	+	180	74
+	+	182	0
+	+	175	0
+	+	182	0
+	+	182	21
+	+	175	0
+	+	182	0
+	+	180	49
+	+	181	0
+	+	180	0
+	+	181	27
+	+	182	10
+	+	181	49
+	+	371	18
+	+	180	59
+	+	181	8
+	+	470	0
+	+	710	2
+	+	710	6
+	+	78	0
+	+	707	23
+	+	710	66
+	+	710	0
+	+	708	0
+	+	709	0
+	+	708	28
+	+	410	0
+	+	411	0
+	+	412	0
+	+	415	0
+	+	44	15
+	+	48	64
+	+	46	0
+	+	200	11
+	+	201	11
+	+	202	9
+	+	371	8
+	+	411	0
+	+	406	14
+	+	407	0
+	+	406	0
+	+	61	0
+	+	45	0
+	+	78	16
+	+	205	21
+	+	206	0
+	+	206	32
+	+	208	33
+	+	206	32
+	+	208	34
+	+	211	10
+	+	48	0
+	+	957	0
+	+	208	0
+	+	211	0
+	+	3	0
+	+	211	10
+	+	207	39
+	+	206	36
+	+	207	33
+	+	211	9
+	+	207	34
+	+	206	32
+	+	207	34
+	+	206	31
+	+	207	33
+	+	429	27
+	+	422	26
+	+	433	0
+	+	425	27
+	+	423	40
+	+	424	50
+	+	433	23
+	+	433	0
+	+	433	29
+	+	433	0
+	+	428	0
+	+	433	0
+	+	207	9
+	+	78	0
+	+	67	0
+	+	65	0
+	+	433	0
+
+> ~/.vimplug.conf
+	*	1578635341	0
+	"	218	0
+	^	132	1
+	.	218	0
+	+	89	0
+	+	55	0
+	+	53	0
+	+	52	0
+	+	130	0
+	+	133	3
+	+	133	0
+	+	132	28
+	+	130	0
+	+	132	27
+	+	130	0
+	+	133	0
+	+	132	53
+	+	130	0
+	+	121	63
+	+	107	0
+	+	132	0
+	+	133	0
+	+	38	0
+	+	132	0
+	+	133	0
+	+	132	0
+	+	133	0
+	+	17	0
+	+	53	19
+	+	57	0
+	+	62	0
+	+	61	0
+	+	60	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	53	0
+	+	62	0
+	+	59	0
+	+	60	0
+	+	58	19
+	+	59	23
+	+	91	0
+	+	92	0
+	+	93	0
+	+	94	0
+	+	95	0
+	+	97	49
+	+	98	0
+	+	97	0
+	+	99	70
+	+	127	86
+	+	128	0
+	+	129	0
+	+	130	105
+	+	131	0
+	+	132	0
+	+	56	0
+	+	130	0
+	+	132	109
+	+	132	60
+	+	132	67
+	+	131	62
+	+	129	106
+	+	130	0
+	+	122	0
+	+	127	0
+	+	123	0
+	+	132	0
+	+	155	62
+	+	154	82
+	+	154	0
+	+	38	0
+	+	38	28
+	+	38	0
+	+	38	3
+	+	38	0
+	+	38	4
+	+	132	0
+	+	38	0
+	+	52	0
+	+	97	0
+	+	115	0
+	+	132	0
+	+	152	0
+	+	168	0
+	+	172	0
+	+	179	0
+	+	181	0
+	+	182	0
+	+	175	0
+	+	218	0
+
+> ~/.vim/backup/.bashrc
+	*	1578634760	0
+	"	1	0
+
+> ~/.vim/backup/.bashrc~
+	*	1578634754	0
+	"	1	0
+
+> ~/.vim/backup/.bashrc~:
+	*	1578634730	0
+	"	1	0
+
+> ~/.gitignore:
+	*	1578634411	0
+	"	1	0
 
 > ~/.git/FETCH_HEAD
 	*	1578633142	0
@@ -1320,26 +904,6 @@ $
 	+	3	40
 	+	3	0
 	+	3	197
-
-> ~/.gitignore
-	*	1578632944	0
-	"	130	5
-	^	132	6
-	.	132	5
-	+	2	0
-	+	1	0
-	+	2	0
-	+	3	0
-	+	6	0
-	+	11	0
-	+	2	0
-	+	57	0
-	+	108	0
-	+	109	0
-	+	131	0
-	+	132	0
-	+	1	0
-	+	132	5
 
 > ~/.git/config
 	*	1578632191	0
@@ -2904,111 +2468,6 @@ $
 	+	86	21
 	+	86	0
 
-> ~/.vimplug.conf
-	*	1577888438	0
-	"	163	0
-	^	164	1
-	.	164	0
-	+	77	0
-	+	76	0
-	+	75	0
-	+	74	0
-	+	157	0
-	+	190	0
-	+	132	0
-	+	37	0
-	+	164	0
-	+	159	0
-	+	157	0
-	+	115	0
-	+	114	0
-	+	113	0
-	+	112	0
-	+	78	0
-	+	76	0
-	+	74	0
-	+	158	0
-	+	165	3
-	+	165	0
-	+	164	28
-	+	158	0
-	+	164	27
-	+	158	0
-	+	165	0
-	+	164	53
-	+	158	0
-	+	149	63
-	+	133	0
-	+	164	0
-	+	165	0
-	+	54	0
-	+	48	0
-	+	164	0
-	+	165	0
-	+	164	0
-	+	165	0
-	+	17	0
-	+	76	19
-	+	80	0
-	+	85	0
-	+	84	0
-	+	83	0
-	+	82	0
-	+	83	0
-	+	84	0
-	+	76	0
-	+	85	0
-	+	82	0
-	+	83	0
-	+	81	19
-	+	82	23
-	+	114	0
-	+	115	0
-	+	116	0
-	+	117	0
-	+	118	0
-	+	123	49
-	+	124	0
-	+	123	0
-	+	125	70
-	+	155	86
-	+	156	0
-	+	157	0
-	+	158	105
-	+	159	0
-	+	162	0
-	+	79	0
-	+	158	0
-	+	163	109
-	+	162	60
-	+	161	67
-	+	159	62
-	+	157	106
-	+	158	0
-	+	150	0
-	+	155	0
-	+	151	0
-	+	161	0
-	+	162	0
-	+	190	62
-	+	189	82
-	+	189	0
-	+	48	0
-	+	54	0
-	+	48	0
-	+	53	28
-	+	50	0
-	+	51	0
-	+	52	0
-	+	53	0
-	+	50	3
-	+	51	0
-	+	50	4
-	+	51	4
-	+	52	4
-	+	53	4
-	+	164	0
-
 > ~/yocto/documentation/content/[BufExplorer]
 	*	1577813600	0
 	"	4	2
@@ -3050,110 +2509,6 @@ $
 	+	133	83
 	+	120	0
 	+	120	84
-
-> ~/.vimrc
-	*	1577798989	0
-	"	318	9
-	.	318	9
-	+	290	72
-	+	290	119
-	+	290	69
-	+	293	0
-	+	286	6
-	+	290	65
-	+	293	64
-	+	286	0
-	+	651	0
-	+	290	67
-	+	286	6
-	+	290	80
-	+	290	0
-	+	291	68
-	+	293	26
-	+	291	0
-	+	293	0
-	+	293	57
-	+	294	0
-	+	291	74
-	+	293	0
-	+	286	0
-	+	293	0
-	+	293	21
-	+	286	0
-	+	293	0
-	+	291	49
-	+	292	0
-	+	291	0
-	+	292	27
-	+	293	10
-	+	292	49
-	+	482	18
-	+	291	59
-	+	292	8
-	+	588	0
-	+	828	2
-	+	828	6
-	+	162	0
-	+	825	23
-	+	828	66
-	+	828	0
-	+	826	0
-	+	827	0
-	+	826	28
-	+	521	0
-	+	522	0
-	+	523	0
-	+	526	0
-	+	44	15
-	+	48	64
-	+	46	0
-	+	311	11
-	+	312	11
-	+	313	9
-	+	482	8
-	+	522	0
-	+	517	14
-	+	518	0
-	+	517	0
-	+	61	0
-	+	45	0
-	+	160	16
-	+	316	21
-	+	317	0
-	+	317	32
-	+	319	33
-	+	317	32
-	+	319	34
-	+	322	10
-	+	48	0
-	+	1075	0
-	+	319	0
-	+	322	0
-	+	3	0
-	+	322	10
-	+	318	39
-	+	317	36
-	+	318	33
-	+	322	9
-	+	318	34
-	+	317	32
-	+	318	34
-	+	317	31
-	+	318	33
-	+	540	27
-	+	533	26
-	+	550	0
-	+	536	27
-	+	534	40
-	+	535	50
-	+	548	23
-	+	549	0
-	+	547	29
-	+	547	0
-	+	539	0
-	+	547	0
-	+	545	0
-	+	318	9
 
 > ~/yocto/documentation/content/layer_kernel.
 	*	1577798572	0
@@ -3694,113 +3049,3 @@ $
 > ~/.vim/sessions/last-session.txt
 	*	1575525700	0
 	"	1	0
-
-> ~/.vim/sessions/last-session.tex
-	*	1575524325	0
-	"	1	0
-
-> ~/yocto/documentation/main.
-	*	1575523937	0
-	"	1	0
-
-> ~/yocto/documentation/content/sdk.tex
-	*	1575467892	0
-	"	56	11
-	^	56	12
-	.	56	11
-	+	1	0
-	+	4	0
-	+	1	12
-	+	4	0
-	+	3	55
-	+	7	0
-	+	8	0
-	+	10	69
-	+	36	0
-	+	36	20
-	+	36	69
-	+	36	0
-	+	36	72
-	+	36	20
-	+	36	0
-	+	13	0
-	+	14	55
-	+	15	0
-	+	16	0
-	+	36	0
-	+	16	18
-	+	16	19
-	+	20	0
-	+	16	25
-	+	15	25
-	+	20	23
-	+	16	55
-	+	17	65
-	+	18	78
-	+	19	39
-	+	23	0
-	+	24	0
-	+	24	19
-	+	25	19
-	+	27	19
-	+	24	72
-	+	26	12
-	+	27	0
-	+	26	30
-	+	27	63
-	+	28	33
-	+	36	0
-	+	37	0
-	+	38	0
-	+	41	0
-	+	42	75
-	+	43	19
-	+	42	79
-	+	43	10
-	+	52	0
-	+	52	4
-	+	41	17
-	+	54	0
-	+	42	0
-	+	54	0
-	+	52	0
-	+	54	0
-	+	45	49
-	+	52	0
-	+	40	29
-	+	46	74
-	+	48	0
-	+	49	28
-	+	50	25
-	+	55	28
-	+	34	32
-	+	33	66
-	+	35	0
-	+	33	0
-	+	34	5
-	+	56	11
-
-> ~/yocto/documentation/content/NERD_tree_2
-	*	1575448178	0
-	"	4	0
-	.	1	0
-	+	1	0
-
-> ~/.i3/i3_layout_marco_ws6.json
-	*	1575264774	0
-	"	40	19
-	^	41	9
-	.	40	19
-	+	35	5
-	+	37	15
-	+	35	0
-	+	36	0
-	+	35	5
-	+	36	15
-	+	41	8
-	+	40	19
-	z	35	7
-
-> ~/.i3/i3_layout_marco_ws5.json
-	*	1575264711	0
-	"	18	0

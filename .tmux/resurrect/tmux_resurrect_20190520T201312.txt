@@ -1,3 +1,0 @@
-pane	0	0	:vim	1	:*	0	:/cygdrive/c/app/Aurix/WKS_LUFU_AURIX/pic_app/productive/TEMPLATE/mi_ooc	1	vim	:
-window	0	0	1	:*	b4e0,271x80,0,0,3
-state	0	

@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 2470c0ff024f1f5001f3c7ed4bb631499b476a80 Marco-Israel <Marco-Israel@gmx.de> 1571090409 +0200	commit (initial): initial configs
+2470c0ff024f1f5001f3c7ed4bb631499b476a80 d07e8ee823ff33bfc5059a25ea5fa843a849b742 Marco-Israel <Marco-Israel@gmx.de> 1571090534 +0200	commit: initial configs
+d07e8ee823ff33bfc5059a25ea5fa843a849b742 a18e63dc3fd2a44ad781a512b872579f731e1a1d Marco-Israel <Marco-Israel@gmx.de> 1571092080 +0200	pull --allow-unrelated-histories https://github.com/Marco-Isarel/Configs/ master: Merge made by the 'recursive' strategy.
+a18e63dc3fd2a44ad781a512b872579f731e1a1d f15482d4364eaff0cee3720eb1ac5f4f854524b8 Marco-Israel <Marco-Israel@gmx.de> 1574112548 +0100	commit: docker

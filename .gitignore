@@ -129,4 +129,6 @@ lib64
 programming/
 test.png
 yocto/
-.cache
+.cache/
+.config/
+.vim/plugged/
