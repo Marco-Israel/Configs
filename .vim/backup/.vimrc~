@@ -1,12 +1,10 @@
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ VIM OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"filetype on
 "filetype plugin indent on "like above
 autocmd InsertLeave * redraw! "Leerzeichen beim Tippen anzeigen
-
-
 set backup "   Backup-Dateien vor dem Speichern anlegen
 set backupdir=~/.vim/backup/ "Verzeichnis zum Speichern (vorher anlegen)
 set undofile "permanentes Rueckgaengigmachen ermoeglichen (ab Version 7.3)
@@ -30,7 +28,7 @@ set smartcase "Gross-/Kleinschreibung nicht ignorieren
 set hlsearch "Suchergebnisse hervorheben
 set incsearch "Ergebnisse beim Tippen anzeigen
 set cryptmethod=blowfish "Verschuesselungsmethode definieren
-set cursorline "aktuelle Zeile unterstreichen
+"set cursorline "aktuelle Zeile unterstreichen
 set history=1000 "setzt die bash history. Default in vim=20, vi=0
 set showmatch "öffnende und schließende Klammern hervorheben
 set showcmd "Kommandos beim Eintippen rechts unten in der Statuszeile anzeigen
@@ -40,10 +38,13 @@ set list "listchars anzeigen
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
 set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
-set relativenumber "Relative Zeilennummern
+"set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
-set textwidth=0  "autowrap after 80 char for instance. 0==turn off.
+set textwidth=80  "autowrap after 80 char for instance. 0==turn off.
+"set formatoptions+=a "Autowrep during insert or deleate
+set linebreak  "break a line hard, not only display a linebreak.
+set nolist
 set expandtab "   Tabs durch Leerzeichen ersetzen lassen
 set tabstop=4 " Tab auf 4 Zeichen setzen
 set shiftwidth=4 "   Anzahl der Leezeichen fuer autoindent
@@ -53,16 +54,17 @@ set laststatus=2 " Statuszeile anzeigen
 set path+=** "extand the vim path"
 set path+=../**
 set path+=../../**
-set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
+"set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
-set autoread "autoread a file if it hase chaged elsewere
-set scrolloff=53 "show the last X lines. 999 = Center everytime.
+set scrolloff=3 "show the last X lines. 999 = Center everytime.
 "set autowrite
 "set autowriteall
 "set complete-=i
-"set makeprg=make --jopbs=14 -load=10
 "
+" Latex
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings  = 'make;m:makros;t:targets'
 
 if has('autocmd')
   filetype plugin indent on
@@ -127,6 +129,7 @@ if &tabpagemax < 50
 endif
 if !empty(&viminfo)
   set viminfo^=!
+  b
 endif
 set sessionoptions-=options
 
@@ -151,32 +154,18 @@ endif
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 """ Foldenable codeblocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
-set foldlevelstart=10
-set foldnestmax=10
+set foldlevelstart=1
+set foldnestmax=5
 set foldmethod=indent
-
-
+"autocmd InsertLeave,WinEnter * setlocal foldmethod=syntax
+autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
 
 
 
 """  aktuelle Zeile einfärben anstatt zu unterstreichen """"""""""""""""""""""""
 "highlight CursorLine term=bold,underline,undercurl cterm=bold,underline,undercurl
-
 
 
 
@@ -191,23 +180,23 @@ set foldmethod=indent
 "# Wann geladen wird              # Maske   # Aktivieren      #Sprache
 "au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
 "au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
-au BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
+au BufNewFile,BufRead *.txt,*.tex     setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead *.todo          setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead README          setlocal spell spelllang=en_us,de_de
-au BufNewFile,BufRead *.tex           setlocal spell spelllang=,de_de
 au BufNewFile,BufRead *.c,*.cpp       setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.py            setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.sh            setlocal spell spelllang=en_us,de_de
 
 
-
+"""tags
+au BufNewFile,BufRead *c,*.cpp,*h,*hh.*hpp  set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 
 
 
 """ Syntax und Colorshame """"""""""""""""""""""""""""""""""""""""""""""""""""""
-"syntax enable
-"syntax on "Sytaxhighliting einschalten
+syntax enable
+syntax on "Sytaxhighliting einschalten
 set background=dark
 set t_Co=256
 colorscheme marco_pi
@@ -248,7 +237,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 
 
-
+"
 """ Change Cursor Colllor """"""""""""""""""""""""""""""""""""""""""""""""""""""
  if &term =~ "xterm\\|rxvt"
      "1 is the blinky block cursor
@@ -298,8 +287,10 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 
  """ Deleat all Trailing Whitespace """"""""""""""""""""""""""""""""""""""""""""
-autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
-function! <SID>StripTrailingWhitespaces()
+"autocmd TabClosed,BufLeave,VimLeave,VimLeavePre,WinLeave,BufWrite * :%s/\s\+$//e<CR>
+"autocmd BufLeave,VimLeave,VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
+autocmd VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -312,264 +303,273 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open Trees
 nnoremap <F9> :UndotreeToggle<cr>
-noremap <F11> :NERDTreeToggle<CR>
-noremap <F12> :TagbarToggle<CR>
-noremap <C-F12> :BufExplorerVerticalSplit<CR>
+noremap <F10> :NERDTreeToggle<CR>
+noremap <F11> :TagbarToggle<CR>
+noremap <F12> :BufExplorerVerticalSplit<CR>
 
 
+"Toggle auto-linebreak
+noremap <F4> :set formatoptions+=a<CR>
+noremap <C-F4> :set formatoptions-=a<CR>
 
 
 "Build files
-noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
+noremap <M-F8> :!ctags -a -f ~/.tags/last & <CR>
 
 
 
-"
-"
-""faster moving inside splits
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
-"
-"
-"
-"
-"
-""remap copy past to clipboard buffers
-"nnoremap <C-c> "+y
-"vnoremap <C-c> "+y
-"nnoremap <C-M-p> "+gP
-"vnoremap <C-M-p> "+gP
-"
-"
-"
-"
-"
-"" copy (write) highlighted text to .vimbuffer
-"vmap <M-c> y:new ~/.vb<CR>VGp:x<CR> \| :!cat ~/.vb \| clip.exe <CR><CR>
-"
-"
-"
-"
-"
-"" paste from buffer
-" map <M-v> :r ~/.vb<CR>
-"
-"
-"
-"
-"
-"
-""toggle between tabs
-"map <C-right> mz:tabn<CR>
-"map <C-l> mz:tabn<CR>
-"map <C-left> mz:tabp<CR>
-"map <C-k> mz:tabp<CR>
-"
-"
-"
-"
-"
-""Move Tabs arround
-"map <M-S-left> mz:tabm-1<CR>
-"map <M-S-right> mz:tabm+1<CR>
-"map <C-i> mz:tabm-1<CR>
-"map <C-M-i> mz:tabm+1<CR>
-"
-"
-"
-"
-"
-""toggle between tabs
-"map <C-right> mz:tabn<CR>
-"map <C-l> mz:tabn<CR>
-"map <C-left> mz:tabp<CR>
-"map <C-k> mz:tabp<CR>
-"
-"
-"
-"
-"
-""new tab or close tab with shift+[cn]
-"map <S-n> mz:tabnew<CR>
-"map <S-c> mz:tabclose<CR>
-"
-"
-"
-"
-"
-"""move lines up and down with shift+alt+[jk]
-"nmap <M-S-j> mz:m+<cr>`z
-"nmap <M-S-down> mz:m+<cr>`z
-"nmap <M-S-k> mz:m-2<cr>`z
-"nmap <M-S-up> mz:m-2<cr>`z
-"
-"
-"
-"
-"
-""strg+w mapping
-"nmap <C-Ü> <C-w>left
-"nmap <C-Ä> <C-w>right
-"nmap <C-w>< <C-w>5<
-"nmap <C-w>> <C-w>5>
-""new tab or close tab with shift+[cn]
-"map <S-n> mz:tabnew<CR>
-"map <S-c> mz:tabclose<CR>
-"
-"
-"
-"
-"
-"""move lines up and down with shift+alt+[jk]
-"nmap <M-S-j> mz:m+<cr>`z
-"nmap <M-S-down> mz:m+<cr>`z
-"nmap <M-S-k> mz:m-2<cr>`z
-"nmap <M-S-up> mz:m-2<cr>`z
-"
-"
-"
-"
-"
-""strg+w mapping
-"nmap <C-Ü> <C-w>left
-"nmap <C-Ä> <C-w>right
-"nmap <C-w>< <C-w>5<
-"nmap <C-w>> <C-w>5>
-"
-"" Steal Mr. Bradley's formatter & add it to our spec_helper
-"" http://philipbradley.net/rspec-into-vim-with-quickfix
-"" Configure the `make` command to run RSpec
-""set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
-"
-"
-"
-"
-"
-""moving between breaked lines
-"nnoremap k gk
-"nnoremap j gj
-"inoremap <C-k> <C-o>gk
-"inoremap <C-j> <C-o>gj
-"
-"
-"
-"
-"
-""Show taglist instead of jump directly
-""nnoremap <C-]> g<C-]>
-"
-"
-"
-"
-""map for all modes, apply by using nmap, vmap, and imap
-"map <F6> :w!<CR>:!aspell --lang=en_us check %<CR>:e! %<CR>
-"map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
-"map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
-"map <F3> <C-V>}<S-I>
-"map <C-9> :r!date +\%Y-\%m-\%d<CR>
-""map <F11> //####################ETWAS########################<ESC>?ETWAS<CR>cw
-"
-"
-"
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" Internal Functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"" Deleat withspaces
-"map <C-F10> :call <SID>StripTrailingWhitespaces()
-"
-"
-"" fill rest of line with characters
-"function! FillLine( str )
-"    " set tw to the desired total length
-"    let tw = &textwidth
-"    if tw==0 | let tw = 80 | endif
-"    " strip trailing spaces first
-"    .s/[[:space:]]*$//
-"    " calculate total number of 'str's to insert
-"    let reps = (tw - col("$")) / len(a:str)
-"    " insert them, if there's room, removing trailing spaces (though forcing
-"    " there to be one)
-"    if reps > 0
-"        .s/$/\=(' '.repeat(a:str, reps))/
-"    endif
-"    o
-"endfunction
-"
-"
-"
-"
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""" PLUGIN  OPTIONS
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"""" Plugins to install """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"source  ~/.vimplug.conf
-"
-"""" YCM (You complete me code completion) """""""""""""""""""""""" """""""""""""
-"
-"
-"
-"
-"""" SnipeMate (Snipet Plugin)  """""""""""""""""""""""""""""""""""""""""""""""""
-"
-"
-"
-"""" UltiSnipets (Snipte Plugin) """"""""""""""""""""""""""""""""""""""""""""""""
-""let g:UltiSnipsExpandTrigger="<tab>"
-""let g:UltiSnipsJumpForwardTrigger="<c-b>"
-""let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+
+"faster moving inside splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+
+
+
+"remap copy past to clipboard buffers
+nnoremap <C-c> "+y
+vnoremap <C-c> "+y
+nnoremap <C-M-p> "+gP
+vnoremap <C-M-p> "+gP
+
+
+
+
+
+" copy (write) highlighted text to .vimbuffer
+vmap <M-c> y:new ~/.vb<CR>VGp:x<CR> \| :!cat ~/.vb \| clip.exe <CR><CR>
+
+
+
+
+
+" paste from buffer
+ map <M-v> :r ~/.vb<CR>
+
+
+
+
+
+
+"toggle between tabs
+map <C-right> mz:tabn<CR>
+map <C-l> mz:tabn<CR>
+map <C-left> mz:tabp<CR>
+map <C-k> mz:tabp<CR>
+
+
+
+
+
+"Move Tabs arround
+map <M-S-left> mz:tabm-1<CR>
+map <M-S-right> mz:tabm+1<CR>
+map <C-i> mz:tabm-1<CR>
+map <C-M-i> mz:tabm+1<CR>
+
+
+
+
+
+"toggle between tabs
+map <C-right> mz:tabn<CR>
+map <C-l> mz:tabn<CR>
+map <C-left> mz:tabp<CR>
+map <C-k> mz:tabp<CR>
+
+
+
+
+
+"new tab or close tab with shift+[cn]
+map <S-n> mz:tabnew<CR>
+map <S-c> mz:tabclose<CR>
+
+
+
+
+
+""move lines up and down with shift+alt+[jk]
+nmap <M-S-j> mz:m+<cr>`z
+nmap <M-S-down> mz:m+<cr>`z
+nmap <M-S-k> mz:m-2<cr>`z
+nmap <M-S-up> mz:m-2<cr>`z
+
+
+
+
+
+"strg+w mapping
+nmap <C-Ü> <C-w>left
+nmap <C-Ä> <C-w>right
+nmap <C-w>< <C-w>5<
+nmap <C-w>> <C-w>5>
+"new tab or close tab with shift+[cn]
+map <S-n> mz:tabnew<CR>
+map <S-c> mz:tabclose<CR>
+
+
+
+
+
+""move lines up and down with shift+alt+[jk]
+nmap <M-S-j> mz:m+<cr>`z
+nmap <M-S-down> mz:m+<cr>`z
+nmap <M-S-k> mz:m-2<cr>`z
+nmap <M-S-up> mz:m-2<cr>`z
+
+
+
+
+
+"strg+w mapping
+nmap <C-Ü> <C-w>left
+nmap <C-Ä> <C-w>right
+nmap <C-w>< <C-w>5<
+nmap <C-w>> <C-w>5>
+
+" Steal Mr. Bradley's formatter & add it to our spec_helper
+" http://philipbradley.net/rspec-into-vim-with-quickfix
+" Configure the `make` command to run RSpec
+"set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
+
+
+
+
+
+"moving between breaked lines
+nnoremap k gk
+nnoremap j gj
+inoremap <C-k> <C-o>gk
+inoremap <C-j> <C-o>gj
+
+
+
+
+
+"Show taglist instead of jump directly
+"nnoremap <C-]> g<C-]>
+
+
+
+
+"map for all modes, apply by using nmap, vmap, and imap
+map <F6> :w!<CR>:!aspell --lang=en_us check %<CR>:e! %<CR>
+map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
+map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
+map <F3> <C-V>}<S-I>
+map <C-9> :r!date +\%Y-\%m-\%d<CR>
+"map <F11> //####################ETWAS########################<ESC>?ETWAS<CR>cw
+
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Internal Functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Deleat withspaces
+map <C-F9> :call StripTrailingWhitespaces()
+
+
+" fill rest of line with characters
+function! FillLine( str )
+    " set tw to the desired total length
+    let tw = &textwidth
+    if tw==0 | let tw = 80 | endif
+    " strip trailing spaces first
+    .s/[[:space:]]*$//
+    " calculate total number of 'str's to insert
+    let reps = (tw - col("$")) / len(a:str)
+    " insert them, if there's room, removing trailing spaces (though forcing
+    " there to be one)
+    if reps > 0
+        .s/$/\=(' '.repeat(a:str, reps))/
+    endif
+    o
+endfunction
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" PLUGIN  OPTIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Plugins to install """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source  ~/.vimplug.conf
+
+""" YCM (You complete me code completion) """""""""""""""""""""""" """""""""""""
+
+
+
+
+""" SnipeMate (Snipet Plugin)  """""""""""""""""""""""""""""""""""""""""""""""""
+"let g:snipMate.always_choose_first
+
+
+""" UltiSnipets (Snipte Plugin) """"""""""""""""""""""""""""""""""""""""""""""""
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 ""
 """ If you want :UltiSnipsEdit to split your window.
-""let g:UltiSnipsEditSplit="vertical"
-"
-"
-"
-"
-"
-"""" Extended Session Management """"""""""""""""""""""""""""""""""""""""""""""""
-"let g:session_autosave='prompt'
-"let g:session_autosave_to='~/.vim/sessions'
-""let g:session_extension='_'.strftime('%Y%m%d%H-%M%S')
-"let g:session_autosave_silent=1
-"let g:session_default_to_last=1
-"let g:session_autoload='yes'
-"let g:session_lock_enabled=1
-"let g:session_default_overwrite =1
-"let g:session_autosave_periodic = 1 "interval for autosave in minutes
-"let g:session_command_aliases = 1 "for :'Session'*<tab>
-"let g:session_menu = 1
-""let g:loaded_session = 1 "avoid loading the vim- session plug-in, set this to
-"                                            " some value, dont care about it.
-"
-"
-"
-"
-"
-"""" Syntastic Syntax Check """""""""""""""""""""""""""""""""""""""""""""""""""""
-"" "let g:syntastic_c_checkers = ['clang_check', 'gcc']
-"" let g:syntastic_c_checkers = ['clang', 'gcc', 'make']
-""let g:syntastic_clang_check_config_file
-""(string; default: '.syntastic_clang_check_config')
-"" let g:syntastic_c_compiler = 'clang'
-"" let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
-"" let g:syntastic_c_check_header = 1 "Also check header files
-"""autocmd VimEnter * execute 'let g:syntastic_c_checkers=["clanG", "GCC", "make"]'
-""set statusline+=%#warningmsg#
-""set statusline+=%{SyntasticStatuslineFlag()}
-""set statusline+=%*
+"let g:UltiSnipsEditSplit="vertical"
 ""
+"
+
+
+
+""" Extended Session Management """"""""""""""""""""""""""""""""""""""""""""""""
+let g:session_autosave='yes'
+let g:session_directory='~/.vim/sessions'
+let g:session_autosave_to='~/.vim/sessions/autosave'
+let g:session_lock_directory='~/.vim/sessions/locks'
+"let g:session_extension='_'.strftime('%Y%m%d%H-%M%S')
+let g:session_autosave_silent=1
+let g:session_autoload='yes'
+let g:session_lock_enabled=0
+let g:session_default_overwrite =1
+let g:session_autosave_periodic = 1 "interval for autosave in minutes
+let g:session_command_aliases = 1 "for :'Session'*<tab>
+let g:session_menu = 1
+let g:session_default_namea = 'last'
+let g:session_default_to_last=1
+
+set sessionoptions-=help
+"set sessionoptions-=options
+"let g:loaded_session = 1 "avoid loading the vim- session plug-in, set this to
+                                            " some value, dont care about it.
+
+
+
+
+
+""" Syntastic Syntax Check """""""""""""""""""""""""""""""""""""""""""""""""""""
+" "let g:syntastic_c_checkers = ['clang_check', 'gcc']
+" let g:syntastic_c_checkers = ['clang', 'gcc', 'make']
+"let g:syntastic_clang_check_config_file
+"(string; default: '.syntastic_clang_check_config')
+" let g:syntastic_c_compiler = 'clang'
+" let g:syntastic_c_compiler_options = ' -std=c11 -stdlib=libc'
+" let g:syntastic_c_check_header = 1 "Also check header files
+""autocmd VimEnter * execute 'let g:syntastic_c_checkers=["clanG", "GCC", "make"]'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"
+"
+"
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 0
@@ -584,82 +584,82 @@ noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
 "    \ "active_filetypes": ["c", "h"],
 "    \ "passive_filetypes": [""] }
 "
+
+
+
+
+
+""" Hard mode """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"HARDMODE (Deisable Arrow Keys, PageUp/Down ...)
+"let g:HardMode_level = 'wannabe'
+let g:HardMode_hardmodeMsg = 'Do not  use this!'
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+let g:neocomplete#enable_at_startup = 1
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
+
+
+
+
+
+""" OmniCpp Compleat "" Plugin) """"""""""""""""""""""""""""""""""""""""""""""""
+let OmniCpp_ShowScopeInAbbr = 0 "show extend scope if 1 ('MyNSpace::MyClass::m1'
+let OmniCpp_NamespaceSearch = 2 "search namespaces in current buffer + included files:
+let OmniCpp_SelectFirstItem = 0 "2=select first without inserting it to the text
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+"let OmniCpp_GlobalScopeSearch = 1
+"let OmniCpp_ShowAccess = 1 "show/hide the access information ('+', '#', '-')
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+"" automatically open and close the popup menu / preview window
+"autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"'<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"'<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-O> <C-x><C-o>
+set completeopt=menuone,menu,longest
+set omnifunc=ccomplete#Complete
+"set omnifunc+=syntaxcomplete#Complete
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc+=omni#cpp#complete#Main
+if has("autocmd") && exists("+omnifunc")
+autocmd Filetype *
+	    \	if &omnifunc == "" |
+	    \		setlocal omnifunc+=syntaxcomplete#Complete |
+	    \	endif
+endif
+
+
+
+
+
+""" plantUML """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! PlantUML()
+        execute ":w"
+        execute ":!java -jar plantuml.jar -o %:p:h %"
+        echohl StatusLine | echo "Plantuml saved and updated" | echohl None
+endfunction
+autocmd FileType plantuml nnoremap <buffer> <F3> :call PlantUML()
+
+"autocmd  BufWritePre *.uml :normal gg=G
+"autocmd FileWritePost,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,
+"*.plantuml :!java -jar ,/plantuml.jar %:p
+"autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,*.plantuml :!java -jar plantuml.jar -tsvg %
+autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,*.plantuml :!java -jar plantuml.jar %
+
+
+
+
+
+""" Multi Cursor support """""""""""""""""""""""""""""""""""""""""""""""""""""""
+"If you don't like the plugin taking over your key bindings, you can turn it off
+"and reassign them the way you want.  NOTE: Please make sure to always map
+"something to g:multi_cursor_quit_key, otherwise you'll have a tough time
+"quitting from multicursor mode.
 "
-"
-"
-"
-"
-"""" Hard mode """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""HARDMODE (Deisable Arrow Keys, PageUp/Down ...)
-""let g:HardMode_level = 'wannabe'
-"let g:HardMode_hardmodeMsg = 'Do not  use this!'
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-"let g:neocomplete#enable_at_startup = 1
-"autocmd FileType vim let b:vcm_tab_complete = 'vim'
-"
-"
-"
-"
-"
-"""" OmniCpp Compleat "" Plugin) """"""""""""""""""""""""""""""""""""""""""""""""
-"let OmniCpp_ShowScopeInAbbr = 0 "show extend scope if 1 ('MyNSpace::MyClass::m1'
-"let OmniCpp_NamespaceSearch = 2 "search namespaces in current buffer + included files:
-"let OmniCpp_SelectFirstItem = 0 "2=select first without inserting it to the text
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-""let OmniCpp_GlobalScopeSearch = 1
-""let OmniCpp_ShowAccess = 1 "show/hide the access information ('+', '#', '-')
-""let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-""" automatically open and close the popup menu / preview window
-""autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-""inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-""inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-""'<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-""inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-""'<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-"imap <silent> <C-Space> <C-N>
-"imap <silent> <C-S-Space> <C-P>
-"set completeopt=menuone,menu,longest
-"set omnifunc=ccomplete#Complete
-""set omnifunc+=syntaxcomplete#Complete
-"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc+=omni#cpp#complete#Main
-"if has("autocmd") && exists("+omnifunc")
-"autocmd Filetype *
-"	    \	if &omnifunc == "" |
-"	    \		setlocal omnifunc+=syntaxcomplete#Complete |
-"	    \	endif
-"endif
-"
-"
-"
-"
-"
-"""" plantUML """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"function! PlantUML()
-"        execute ":w"
-"        execute ":!java -jar plantuml.jar -o %:p:h %"
-"        echohl StatusLine | echo "Plantuml saved and updated" | echohl None
-"endfunction
-"autocmd FileType plantuml nnoremap <buffer> <F3> :call PlantUML()
-"
-""autocmd  BufWritePre *.uml :normal gg=G
-""autocmd FileWritePost,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,
-""*.plantuml :!java -jar ,/plantuml.jar %:p
-""autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,*.plantuml :!java -jar plantuml.jar -tsvg %
-"autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.uml,*.pl,*.plantuml :!java -jar plantuml.jar %
-"
-"
-"
-"
-"
-"""" Multi Cursor support """""""""""""""""""""""""""""""""""""""""""""""""""""""
-""If you don't like the plugin taking over your key bindings, you can turn it off
-""and reassign them the way you want.  NOTE: Please make sure to always map
-""something to g:multi_cursor_quit_key, otherwise you'll have a tough time
-""quitting from multicursor mode.
-""
 "let g:multi_cursor_use_default_mapping=0
 "
 "" Default mapping
@@ -673,127 +673,127 @@ noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
 "let g:multi_cursor_quit_key            = '<Esc>'
 "
 "
+
+
+""" Ctags """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"As we edit code, newer types get defined, but vim continues to use the same
+"tags file. So we need to regularly update our tags file. We can add a
+"shortcut map (say pressing F4) in our .vimrc for the same.
+"function! UpdateTags()
+" execute ":!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./"
+" echohl StatusLine | echo "C/C++ tag updated" | echohl None
+"endfunction
+"nnoremap <F5> :call UpdateTags()
 "
+
+"autocmd FileWritePost,BufWritePost,FilterWritePost,FileAppendPost
+"*.c,*.cpp,*.h !ctags -R &
+"autocmd BufWrite *.c,*.h silent !ctags -R -f ~/.tags/last %:p:h   2>/dev/NULL
+"autocmd BufWrite *.cpp,*.hpp silent !ctags
+"-R -f ~/.tags/last_utest %:p:h   2>/dev/NULL
+
+
+""" Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+                set csprg=/usr/bin/cscope
+                set csto=0
+                set cst
+                set nocsverb
+                set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
+                " add any database in current directory
+                if filereadable("cscope.out")
+                    cs add cscope.out
+                elseif filereadable("./OUT/cscope.out")
+                    cs add ./OUT/cscope.out
+                elseif filereadable("./OUT/other/cscope.out")
+                    cs add ./OUT/other/cscope.out
+                " else add database pointed to by environment
+                elseif $CSCOPE_DB != ""
+                    cs add ~/.tags/cscope_last.out
+                    cs add ~/.tags/last_project
+                    cs add ~/.tags/last_utest
+                    cs add ~/.tags/thirdparty
+                    cs add ~/.tags/cpputest
+                endif
+                set csverb
+        endif
+
+"These mappings for Ctrl-] (right bracket) and Ctrl-\ (backslash) allow you to
+"place your cursor over the function name or C symbol and quickly query cscope
+"for any matches.
 "
-"""" Ctags """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""As we edit code, newer types get defined, but vim continues to use the same
-""tags file. So we need to regularly update our tags file. We can add a
-""shortcut map (say pressing F4) in our .vimrc for the same.
-""function! UpdateTags()
-"" execute ":!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./"
-"" echohl StatusLine | echo "C/C++ tag updated" | echohl None
-""endfunction
-""nnoremap <F5> :call UpdateTags()
-""
+"Or you may use the following scheme, inspired by Vim/Cscope tutorial from
+"Cscope Home Page (http://cscope.sourceforge.net/):
+
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+
+        " Using 'CTRL-spacebar' then a search type makes the vim window
+        " split horizontally, with search result displayed in
+        " the new window.
+
+nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space>a :scs find a <C-R>=expand("<cword>")<CR><CR>
+
+        " Hitting CTRL-space *twice* before the search type does a vertical
+        " split instead of a horizontal one
+
+nmap <C-Space><C-Space>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-Space><C-Space>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-Space><C-Space>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
+
+
+
+""" Flashing yy area """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
+
+
+
+
+
+""" junegunn/vim-easy-align """"""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+"load vim PLUGINS
 "
-""autocmd FileWritePost,BufWritePost,FilterWritePost,FileAppendPost
-""*.c,*.cpp,*.h !ctags -R &
-""autocmd BufWrite *.c,*.h silent !ctags -R -f ~/.tags/last %:p:h   2>/dev/NULL
-""autocmd BufWrite *.cpp,*.hpp silent !ctags
-""-R -f ~/.tags/last_utest %:p:h   2>/dev/NULL
-"
-"
-"""" Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if has("cscope")
-"                set csprg=/usr/bin/cscope
-"                set csto=0
-"                set cst
-"                set nocsverb
-"                set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
-"                " add any database in current directory
-"                if filereadable("cscope.out")
-"                    cs add cscope.out
-"                elseif filereadable("./OUT/cscope.out")
-"                    cs add ./OUT/cscope.out
-"                elseif filereadable("./OUT/other/cscope.out")
-"                    cs add ./OUT/other/cscope.out
-"                " else add database pointed to by environment
-"                elseif $CSCOPE_DB != ""
-"                    cs add ~/.tags/cscope_last.out
-"                    cs add ~/.tags/last_project
-"                    cs add ~/.tags/last_utest
-"                    cs add ~/.tags/thirdparty
-"                    cs add ~/.tags/cpputest
-"                endif
-"                set csverb
-"        endif
-"
-""These mappings for Ctrl-] (right bracket) and Ctrl-\ (backslash) allow you to
-""place your cursor over the function name or C symbol and quickly query cscope
-""for any matches.
-""
-""Or you may use the following scheme, inspired by Vim/Cscope tutorial from
-""Cscope Home Page (http://cscope.sourceforge.net/):
-"
-"nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>a :cs find a <C-R>=expand("<cword>")<CR><CR>
-"
-"        " Using 'CTRL-spacebar' then a search type makes the vim window
-"        " split horizontally, with search result displayed in
-"        " the new window.
-"
-"nmap <C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-"nmap <C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"nmap <C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space>a :scs find a <C-R>=expand("<cword>")<CR><CR>
-"
-"        " Hitting CTRL-space *twice* before the search type does a vertical
-"        " split instead of a horizontal one
-"
-"nmap <C-Space><C-Space>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"nmap <C-Space><C-Space>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-Space><C-Space>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
-"
-"
-"
-"""" Flashing yy area """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map y <Plug>(operator-flashy)
-"nmap Y <Plug>(operator-flashy)$
-"
-"
-"
-"
-"
-"""" junegunn/vim-easy-align """"""""""""""""""""""""""""""""""""""""""""""""""""
-"" Start interactive EasyAlign in visual mode (e.g. vipga)
-"xmap ga <Plug>(EasyAlign)
-"
-"" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"nmap ga <Plug>(EasyAlign)
-"
-"
-""load vim PLUGINS
-""
-"
-"
-"
-"""" Vim Ranger Explorer"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
-""nnoremap <silent><Leader>o :RangerOpenProjectRootDir<CR>
-"
-"
-"
-"
-"
-"""" MiniBuffExplorer """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+""" Vim Ranger Explorer"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"nnoremap <silent><Leader>c :RangerOpenCurrentDir<CR>
+"nnoremap <silent><Leader>o :RangerOpenProjectRootDir<CR>
+
+
+
+
+
+""" MiniBuffExplorer """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplMapWindowNavArrows = 1
 "let g:miniBufExplMapCTabSwitchBufs = 1
@@ -819,14 +819,15 @@ noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
 "noremap <f1> :bprev<CR>
 "noremap <f2> :bnext<CR>
 "
-"
-"
-"
-"""" FileTyoe """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-"
-"
-"""" easy-motion """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+""" FileTyoe and Syntax """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufFilePost,BufEnter,BufReadPost,FileReadPost,SessionLoadPost *.tex set filetype=tex
+
+
+
+""" easy-motion """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 ""map <Leader> <Plug>(easymotion-prefix)
 ""
@@ -869,6 +870,7 @@ noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
 "function! s:config_easyfuzzymotion(...) abort
 "  return extend(copy({
 "  \   'converters': [incsearch#config#fuzzyword#converter()],
+"
 "  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
 "  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
 "  \   'is_expr': 0,
@@ -926,152 +928,152 @@ noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
 "nmap <Leader><Leader>s <Plug>(easymotion-s2)
 "nmap <Leader><Leader>t <Plug>(easymotion-t2)
 "
-"
-"
-"
-"
-"""" SuperTab """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""supertab
+
+
+
+
+""" SuperTab """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"supertab
 "let g:SuperTabDefaultCompletionType = "context"
-"
-"
-"
-"
-"
-"""" Stripe Withespaces """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+
+
+
+
+""" Stripe Withespaces """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:better_whitespace_enabled=1
 "let g:strip_whitespace_on_save=1
+
+
+
+
+""" Ctrlp """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_extensions = ['tag']
+
+"Other plugins
+":source % ~/.vim/plugin/supertab.vmb
+"silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+":call pathogen#helptags()
+
+"Use TAB to complete when typing words, else inserts TABs as usual.
+"Uses dictionary and source files to find matching words to complete.
+
+"See help completion for source,
+"Note: usual completion is on <C-n> but more trouble to press all the time.
+"Never type the same word twice and maybe learn a new spellings!
+"Use the Linux dictionary when spelling is in doubt.
+"Window users can copy the file to their machine.
+"function! Tab_Or_Complete()
+"  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+"    return "\<C-N>"
+"  else
+"    return "\<Tab>"
+"  endif
+"endfunction
+"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+"set dictionary="/usr/dict/words
 "
+
+
+
+""" Doxygen Toolkit """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:DoxygenToolkit_briefTag_pre="@brief    "
+let g:DoxygenToolkit_paramTag_pre="@Param    "
+let g:DoxygenToolkit_returnTag="@Returns    "
+let g:DoxygenToolkit_blockHeader=""
+let g:DoxygenToolkit_blockFooter=""
+let g:DoxygenToolkit_authorName="Marco Israel (MI / MIS)"
+let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
+
+
+
+
+
+""" Clang-Compleat """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ " path to directory where library can be found
+   "let g:clang_library_path='/usr/lib/'
+   "let g:clang_library_path='/usr/lib64/'
+   "let g:clang_library_path+='/usr/lib/gcc/avr/'
+    "let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>' " SuperTab completion fall-back
+     "or path directly to the library file
+     "let g:clang_library_path+='/usr/lib/libclang.so.3.9'"
+"     let g:clang_library_path='/usr/lib64/libclang.so.3.9'
+
+"set conceallevel=2
+"set concealcursor=vin "Sets the modes in which text in the cursor line can also be concealen
+"let g:clang_snippets=1 "If equal to 1, it will do some snippets magic on code placeholders like function argument, template parameters, etc. LIKE INSERT FUNCTION PROTOTYPE :)
+"let g:clang_conceal_snippets=1 " clang_complete will use vim 7.3 conceal feature to hide the snippet placeholders
+" The single one that works with clang_complete
+"let g:clang_snippets_engine=['clang_complete', 'ultisnips']"Clang snipet
+"let g:clang_snippets_engine = 'ultisnips' "Use ultisnip agin
+"let g:clang_snippets_engine = 'clang_complete' "Use default engin
+"engin
 "
+" " Complete options (disable preview scratch window, longest removed to aways
+" " show menu)
+"set completeopt=menu,menuone,noinsert,noselect,preview
 "
-"
-"
-"""" Ctrlp """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-"let g:ctrlp_extensions = ['tag']
-"
-""Other plugins
-"":source % ~/.vim/plugin/supertab.vmb
-""silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-"":call pathogen#helptags()
-"
-""Use TAB to complete when typing words, else inserts TABs as usual.
-""Uses dictionary and source files to find matching words to complete.
-"
-""See help completion for source,
-""Note: usual completion is on <C-n> but more trouble to press all the time.
-""Never type the same word twice and maybe learn a new spellings!
-""Use the Linux dictionary when spelling is in doubt.
-""Window users can copy the file to their machine.
-""function! Tab_Or_Complete()
-""  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-""    return "\<C-N>"
-""  else
-""    return "\<Tab>"
-""  endif
-""endfunction
-""inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-""set dictionary="/usr/dict/words
-""
-"
-"
-"
-"""" Doxygen Toolkit """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:DoxygenToolkit_briefTag_pre="@brief    "
-"let g:DoxygenToolkit_paramTag_pre="@Param    "
-"let g:DoxygenToolkit_returnTag="@Returns    "
-"let g:DoxygenToolkit_blockHeader=""
-"let g:DoxygenToolkit_blockFooter=""
-"let g:DoxygenToolkit_authorName="Marco Israel (MI / MIS)"
-"let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
-"
-"
-"
-"
-"
-"""" Clang-Compleat """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" " path to directory where library can be found
-"   "let g:clang_library_path='/usr/lib/'
-"   "let g:clang_library_path='/usr/lib64/'
-"   "let g:clang_library_path+='/usr/lib/gcc/avr/'
-"    "let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>' " SuperTab completion fall-back
-"     "or path directly to the library file
-"     "let g:clang_library_path+='/usr/lib/libclang.so.3.9'"
-""     let g:clang_library_path='/usr/lib64/libclang.so.3.9'
-"
-""set conceallevel=2
-""set concealcursor=vin "Sets the modes in which text in the cursor line can also be concealen
-""let g:clang_snippets=1 "If equal to 1, it will do some snippets magic on code placeholders like function argument, template parameters, etc. LIKE INSERT FUNCTION PROTOTYPE :)
-""let g:clang_conceal_snippets=1 " clang_complete will use vim 7.3 conceal feature to hide the snippet placeholders
-"" The single one that works with clang_complete
-""let g:clang_snippets_engine=['clang_complete', 'ultisnips']"Clang snipet
-""let g:clang_snippets_engine = 'ultisnips' "Use ultisnip agin
-""let g:clang_snippets_engine = 'clang_complete' "Use default engin
-""engin
-""
-"" " Complete options (disable preview scratch window, longest removed to aways
-"" " show menu)
-""set completeopt=menu,menuone,noinsert,noselect,preview
-""
-""" Limit popup menu height
-""set pumheight=0 " Determines the maximum number of items to show in the
-""popup menu (default = 0 --> max list  )
-"
-""let g:clang_complete_copen=1 "open Quickfix windows on erro, Default 0
-""let g:clang_complete_auto_select=0 "Select first item in list but dont insert it into the code (that would be 2). Default: 0
-""let g:clang_complete_auto=1 "If equal to 1, automatically complete after ->, ., ::
-""let g:clang_complete_optional_args_in_snippets = 1 "If equal to 1, it will add optional arguments to the function call snippet.
-""let g:clang_trailing_placeholder=1 "If equal to 1, clang_complete will add a trailing placeholder after functions
-""let g:clang_close_preview = 1 "If equal to 1, the preview window will be close automatically after a compleation. Default = 0.
-"""let g:g:clang_user_options='c11'  "User Compiler flags
-"""let g:clang_use_library=1 "use glipC libery also. Default =2
-""let g:clang_complete_macrouse = 1 "If clang should complete preprocessor macros and constants
-""let g:clang_complete_patterns=1 "If clang should complete code patterns, i.e loop constructs etc.
-"""fix Bug AutoPair Plugin and Clang-Compleat
-""let g:AutoPairsMapCR = 0
-""imap <silent><CR> <CR><Plug>AutoPairsReturn
-"
-"
-""An advanced configuration allows you to define what parentheses to use for
-""each type of file. You can also determine the colors of your parentheses by
-""this way (read file vim73/rgb.txt for all named color)
-""let g:rainbow_load_separately = [
-""    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']]  ],
-""    \ [ '*.tex' , [['(', ')'], ['\[', '\]']]  ],
-""    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']]  ],
-""    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']]  ],
-""    \
-""]
-"
-""let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-""let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-""autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=203 ctermbg=236 cterm=NONE
-"
-"
-"
-"
-"
-"""" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-""nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-"let g:ctrlp_map=''  "to work with ctrl-p
-"nmap <expr> <c-p> yoink#isSwapping() ? '<plug>(YoinkPostPasteSwapForward)' : '<Plug>(ctrlp)'
-"nmap p <plug>(YoinkPaste_p)
-"nmap P <plug>(YoinkPaste_P)
-"nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
-"nmap [y <plug>(YoinkRotateBack)
-"nmap ]y <plug>(YoinkRotateForward)
-"
-"
-"
-"
-"
-"""" C.vim (C Support) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
-"
-"
-"
-"
+"" Limit popup menu height
+"set pumheight=0 " Determines the maximum number of items to show in the
+"popup menu (default = 0 --> max list  )
+
+"let g:clang_complete_copen=1 "open Quickfix windows on erro, Default 0
+"let g:clang_complete_auto_select=0 "Select first item in list but dont insert it into the code (that would be 2). Default: 0
+"let g:clang_complete_auto=1 "If equal to 1, automatically complete after ->, ., ::
+"let g:clang_complete_optional_args_in_snippets = 1 "If equal to 1, it will add optional arguments to the function call snippet.
+"let g:clang_trailing_placeholder=1 "If equal to 1, clang_complete will add a trailing placeholder after functions
+"let g:clang_close_preview = 1 "If equal to 1, the preview window will be close automatically after a compleation. Default = 0.
+""let g:g:clang_user_options='c11'  "User Compiler flags
+""let g:clang_use_library=1 "use glipC libery also. Default =2
+"let g:clang_complete_macrouse = 1 "If clang should complete preprocessor macros and constants
+"let g:clang_complete_patterns=1 "If clang should complete code patterns, i.e loop constructs etc.
+""fix Bug AutoPair Plugin and Clang-Compleat
+"let g:AutoPairsMapCR = 0
+"imap <silent><CR> <CR><Plug>AutoPairsReturn
+
+
+"An advanced configuration allows you to define what parentheses to use for
+"each type of file. You can also determine the colors of your parentheses by
+"this way (read file vim73/rgb.txt for all named color)
+"let g:rainbow_load_separately = [
+"    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']]  ],
+"    \ [ '*.tex' , [['(', ')'], ['\[', '\]']]  ],
+"    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']]  ],
+"    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']]  ],
+"    \
+"]
+
+"let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+"let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+"autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=203 ctermbg=236 cterm=NONE
+
+
+
+
+
+""" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+"nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+let g:ctrlp_map=''  "to work with ctrl-p
+nmap <expr> <c-p> yoink#isSwapping() ? '<plug>(YoinkPostPasteSwapForward)' : '<Plug>(ctrlp)'
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
+nmap [y <plug>(YoinkRotateBack)
+nmap ]y <plug>(YoinkRotateForward)
+
+
+
+""" C.vim (C Support) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
+
+
+""" www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:wwwsearch_command_to_open_uri =  "min"
+nnoremap <Space>*  :<C-u>Wwwsearch -default <cword><Return>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ TEMPLATES

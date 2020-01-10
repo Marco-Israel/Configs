@@ -37,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# toggle debuging logging to enable/disable 
+# toggle debuging logging to enable/disable
 bindsym $mod+p debuglog toggle
 
 # start dmenu (a program launcher)
@@ -234,18 +234,18 @@ exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.i3/i3_layout_marco_w
 exec --no-startup-id "i3-msg 'workspace 5; append_layout ~/.i3/i3_layout_marco_ws5.json'"
 exec --no-startup-id "i3-msg 'workspace 6; append_layout ~/.i3/i3_layout_marco_ws6.json'"
 exec --no-startup-id "i3-msg 'workspace 1; exec urxvt; exec xterm; exec xterm'"
-exec --no-startup-id "i3-msg 'workspace 6; exec urxvt; exec firefox'"
+exec --no-startup-id "i3-msg 'workspace 6; exec urxvt; exec min'"
 exec --no-startup-id "i3-msg 'workspace 5; exec urxvt'"
 #äexec --no-startup-id "i3-msg 'exec vlsongs'"
-#exec --no-startup-id "i3-msg 'workspace 6; exec urxvt; exec firefox; workspace 5; exec urxvt; workspace 1; exec urxvt; exec xterm; exec xterm; workspace 5'"
+#exec --no-startup-id "i3-msg 'workspace 6; exec urxvt; exec min; workspace 5; exec urxvt; workspace 1; exec urxvt; exec xterm; exec xterm; workspace 5'"
 #exec xterm root/.i3/wrapper_sumi_vlc.sh
 #exec --no-startup-id xterm
 #exec --no-startup-id alsamixer
-#exec --no-startup-id firefox
+#exec --no-startup-id min
 #layout <default|tabbed|stacking|splitv|splith>
 #layout layout toggle [split|all]
 #layout fullscreen toggle
-#layout splith/splitv 
+#layout splith/splitv
 #layout stacking
 #layout tabbed
 #fullscreen enable
@@ -267,7 +267,7 @@ assign [class="TeXstudio"] 2
 assign [class="VirtualBox"] 7
 #assign [class="shutter"] 3
 #assign [class="XTerm"] 1
-assign [class="Firefox"] 9
+assign [class="min"] 9
 assign [class="libreoffice\\-startcenter$"] 6
 #
 #focus_follows_mouse no
@@ -294,7 +294,7 @@ assign [class="libreoffice\\-startcenter$"] 6
 #mode "focused" {
 
                 # hardcoded focus keybindings
-#                bindsym $mod+Shift+b [class="(?i)firefox"] focus
+#                bindsym $mod+Shift+b [class="(?i)min"] focus
 #                bindsym $mod+Shift+z [class="(?i)zathura"] focus
 #                bindsym $mod+Shift+c [class="(?i)nvlc"] focus
 #                bindsym $mod+Shift+v [class="(?i)vim"] focus

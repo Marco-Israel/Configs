@@ -32,11 +32,13 @@
        "x": 0,
        "y": 0
     },
-    "name": "transient_for - Google-Suche - Mozilla Firefox",
+    //"name": "transient_for - Google-Suche - Mozilla Firefox",
+    "name": "Min",
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^Firefox$",
+        "class": "^",
+       // "class": "^Firefox$",
        // "instance": "^Navigator$",
        // "title": "^transient_for\\ \\-\\ Google\\-Suche\\ \\-\\ Mozilla\\ Firefox$",
         "transient_for": "^$",

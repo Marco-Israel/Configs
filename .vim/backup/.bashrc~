@@ -135,7 +135,13 @@ function whb { #Funktion to turn WLAN on at home inside
  sudo killall dhcpcd
  sudo ip link set wlo1 down
  sudo ip link set wlo1 up
- sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlo1 -B
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
+ sudo sleep 3
+ sudo dhcpcd -4
+}
+
+function wlanon {
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
  sudo sleep 3
  sudo dhcpcd -4
 }
@@ -198,7 +204,7 @@ echo -e "\033[6 q"
 
 alias xc8='"/cygdrive/c/Program Files (x86)/Microchip/xc8/v2.05/bin/xc8-cc" @cf.xc8'
 
-export PROJECT_HOME=~/programming/MIS_BUILD
+export PROJECT_HOME="~/programming/MIS_BUILD"
 
 
 

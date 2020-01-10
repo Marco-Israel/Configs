@@ -1,0 +1,3806 @@
+# Diese viminfo-Datei wurde von Vim 8.1 generiert.
+# Sie k√∂nnen sie ver√§ndern, wenn Sie vorsichtig vorgehen!
+
+# Viminfo version
+|1,4
+
+# Wert von 'encoding', als diese Datei geschrieben wurde
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Letztes Suchmuster:
+~MSle0~/\<Isarel\>
+
+# Letztes ErsetzeSuchmuster:
+~MSle0&S\.
+
+# Letzte ersetzte Zeichenkette:
+$
+
+# Befehlszeile Geschichte (neueste bis √§lteste):
+:q
+|2,0,1578633142,,"q"
+:w
+|2,0,1578633141,,"w"
+:set textwidth=0
+|2,0,1578633133,,"set textwidth=0"
+:q!
+|2,0,1578633116,,"q!"
+:set wrapmargin=0
+|2,0,1578633061,,"set wrapmargin=0"
+:wq
+|2,0,1578350908,,"wq"
+:qa!
+|2,0,1578345876,,"qa!"
+:w test.tex
+|2,0,1578345785,,"w test.tex"
+:qa
+|2,0,1578345766,,"qa"
+:di
+|2,0,1578345764,,"di"
+:s
+|2,0,1578345593,,"s"
+:w flashen.tex
+|2,0,1577899579,,"w flashen.tex"
+:flashen.tex
+|2,0,1577899555,,"flashen.tex"
+:new
+|2,0,1577899546,,"new"
+:b1
+|2,0,1577895826,,"b1"
+:vsplit
+|2,0,1577895821,,"vsplit"
+:b6
+|2,0,1577895802,,"b6"
+:% s/S\./Seite/gI
+|2,0,1577888764,,"% s/S\\./Seite/gI"
+:set formatoptions-=a
+|2,0,1577888590,,"set formatoptions-=a"
+:b5
+|2,0,1577888304,,"b5"
+:b3
+|2,0,1577887415,,"b3"
+:edit abbreviations.tex
+|2,0,1577887058,,"edit abbreviations.tex"
+:vsplit glossary.tex
+|2,0,1577839949,,"vsplit glossary.tex"
+:colorscheme marco_pi
+|2,0,1577810367,,"colorscheme marco_pi"
+::w
+|2,0,1577809925,,":w"
+:wa
+|2,0,1577808895,,"wa"
+:set formatoptionsr-=a
+|2,0,1577806030,,"set formatoptionsr-=a"
+:BufExplorerVerticalSplit
+|2,0,1577806001,,"BufExplorerVerticalSplit"
+:BufExplorer
+|2,0,1577802378,,"BufExplorer"
+:SyntasticToggleMode
+|2,0,1577801115,,"SyntasticToggleMode"
+:tabclose
+|2,0,1577800769,,"tabclose"
+:set nospell
+|2,0,1576099129,,"set nospell"
+:set spell
+|2,0,1575990848,,"set spell"
+:wqa
+|2,0,1575907275,,"wqa"
+:set filetype
+|2,0,1575894123,,"set filetype"
+:set fileformats
+|2,0,1575894113,,"set fileformats"
+:set fileformat
+|2,0,1575894108,,"set fileformat"
+:filetype
+|2,0,1575894088,,"filetype"
+:q1
+|2,0,1575893656,,"q1"
+:terminal
+|2,0,1575872773,,"terminal"
+:shell
+|2,0,1575872765,,"shell"
+:split
+|2,0,1575872754,,"split"
+:w!
+|2,0,1575877776,,"w!"
+:<F10>
+|2,0,1575811247,,"<F10>"
+:exit
+|2,0,1575766197,,"exit"
+:wp!
+|2,0,1575766184,,"wp!"
+:h backup
+|2,0,1575644365,,"h backup"
+:w ~/
+|2,0,1575642708,,"w ~/"
+::autocmd VimResized * wincmd =
+|2,0,1575555659,,":autocmd VimResized * wincmd ="
+:tabn
+|2,0,1575448062,,"tabn"
+:tabnew
+|2,0,1575440986,,"tabnew"
+:set formatoptions+=a
+|2,0,1575384262,,"set formatoptions+=a"
+:h session
+|2,0,1575525914,,"h session"
+:SessionOpen
+|2,0,1575525894,,"SessionOpen"
+:SaveSession
+|2,0,1575525877,,"SaveSession"
+:SessionSave
+|2,0,1575525833,,"SessionSave"
+:Se
+|2,0,1575525391,,"Se"
+:h g:session_extension
+|2,0,1575524436,,"h g:session_extension"
+:h session_autosave
+|2,0,1575524100,,"h session_autosave"
+:h session_lock_enabled
+|2,0,1575524038,,"h session_lock_enabled"
+:n
+|2,0,1575204582,,"n"
+:wn
+|2,0,1575204577,,"wn"
+:% s/firefox/min/g
+|2,0,1575204575,,"% s/firefox/min/g"
+:set formatoptions=+a
+|2,0,1574941209,,"set formatoptions=+a"
+:formatoptions+=a
+|2,0,1574941186,,"formatoptions+=a"
+:set formatoptions+a
+|2,0,1574852697,,"set formatoptions+a"
+:2
+|2,0,1574852602,,"2"
+:SnipMateOpenSnippetFiles
+|2,0,1574842552,,"SnipMateOpenSnippetFiles"
+::set formatoptions=+a
+|2,0,1574841446,,":set formatoptions=+a"
+::set formatoptions+a
+|2,0,1574841435,,":set formatoptions+a"
+:setlocal spell spelllang=de_de
+|2,0,1574845375,,"setlocal spell spelllang=de_de"
+:set wm
+|2,0,1574845159,,"set wm"
+:set wrap
+|2,0,1574845151,,"set wrap"
+:set nowrap
+|2,0,1574845130,,"set nowrap"
+:set linebreak
+|2,0,1574845110,,"set linebreak"
+:set list
+|2,0,1574844991,,"set list"
+:h list
+|2,0,1574844955,,"h list"
+:::
+|2,0,1574844738,,"::"
+:set nolinebreak
+|2,0,1574844716,,"set nolinebreak"
+::
+|2,0,1574844704,,":"
+:set wrapmargin
+|2,0,1574844536,,"set wrapmargin"
+:h modeline
+|2,0,1574838995,,"h modeline"
+:h auto-format
+|2,0,1574838951,,"h auto-format"
+:h fo-table
+|2,0,1574838825,,"h fo-table"
+:h formatoptions
+|2,0,1574838809,,"h formatoptions"
+:set formatoptions
+|2,0,1574838157,,"set formatoptions"
+:h 'formatoptions'
+|2,0,1574837951,,"h 'formatoptions'"
+::set formatoptions-+a
+|2,0,1574837933,,":set formatoptions-+a"
+::set formatoptions-=a
+|2,0,1574837925,,":set formatoptions-=a"
+:qq
+|2,0,1574777101,,"qq"
+::set formatoptions+=a
+|2,0,1574776459,,":set formatoptions+=a"
+:% s/breakline/linebreak/g
+|2,0,1574775083,,"% s/breakline/linebreak/g"
+:% s/newline/breakline/g
+|2,0,1574774884,,"% s/newline/breakline/g"
+:setlocal spell spelllang=de
+|2,0,1574766755,,"setlocal spell spelllang=de"
+:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips
+|2,0,1574765519,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips"
+:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/
+|2,0,1574765511,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/"
+:let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/tex.snippets
+|2,0,1574765506,,"let g:snipMateSources=/home/marco/.vim/plugged/vim-snippets/UltiSnips/tex.snippets"
+:let g:snipMateSourc
+|2,0,1574765463,,"let g:snipMateSourc"
+:g:snipMate.always_choose_first
+|2,0,1574765397,,"g:snipMate.always_choose_first"
+:h snipmate
+|2,0,1574765271,,"h snipmate"
+:h Snipmate
+|2,0,1574765092,,"h Snipmate"
+:h always_choose_first
+|2,0,1574765088,,"h always_choose_first"
+:h snipMate
+|2,0,1574765050,,"h snipMate"
+:Sn
+|2,0,1574764744,,"Sn"
+:1
+|2,0,1574764496,,"1"
+:set filetype=sh
+|2,0,1574693166,,"set filetype=sh"
+:h linebreak
+|2,0,1574687615,,"h linebreak"
+:h fo
+|2,0,1574687569,,"h fo"
+:set fo
+|2,0,1574687559,,"set fo"
+:set tw
+|2,0,1574687553,,"set tw"
+:h wrap
+|2,0,1574687336,,"h wrap"
+:h wrep
+|2,0,1574687160,,"h wrep"
+:PlugInstall
+|2,0,1574684315,,"PlugInstall"
+:set nopell
+|2,0,1574677360,,"set nopell"
+:set tw=
+|2,0,1574677340,,"set tw="
+:UltiSnipsEdit
+|2,0,1574674512,,"UltiSnipsEdit"
+:set wrapmargin=80
+|2,0,1574671884,,"set wrapmargin=80"
+:set wra√ºmargin
+|2,0,1574671873,,"set wra√ºmargin"
+:help tw
+|2,0,1574671822,,"help tw"
+:set tw=80
+|2,0,1574671812,,"set tw=80"
+:h Vital.Vim.BufferManager-Manager
+|2,0,1574669835,,"h Vital.Vim.BufferManager-Manager"
+:qqqqqqweasdfasdfasf
+|2,0,1574612414,,"qqqqqqweasdfasdfasf"
+:set filetype=tex
+|2,0,1574612225,,"set filetype=tex"
+:set filetype=set
+|2,0,1574612216,,"set filetype=set"
+:filetype=tex
+|2,0,1574612203,,"filetype=tex"
+:h BufFilePost
+|2,0,1574612130,,"h BufFilePost"
+:h BufEnter
+|2,0,1574611960,,"h BufEnter"
+:h BufNewFile
+|2,0,1574611540,,"h BufNewFile"
+:set syntax
+|2,0,1574611321,,"set syntax"
+:setfiletype tex
+|2,0,1574611168,,"setfiletype tex"
+:setfiletype
+|2,0,1574611163,,"setfiletype"
+:set spelllang
+|2,0,1574611058,,"set spelllang"
+:set noshiftround
+|2,0,1574611029,,"set noshiftround"
+:set spell=de_de
+|2,0,1574610987,,"set spell=de_de"
+:g:tex_section_commands
+|2,0,1574610796,,"g:tex_section_commands"
+:set g:tex_section_commands
+|2,0,1574610791,,"set g:tex_section_commands"
+:wq!
+|2,0,1574607878,,"wq!"
+:syntax
+|2,0,1574533730,,"syntax"
+:PlugClean
+|2,0,1574531230,,"PlugClean"
+:Q
+|2,0,1574530824,,"Q"
+:h autocmd
+|2,0,1574530005,,"h autocmd"
+:%s /\s\+$//e
+|2,0,1574529850,,"%s /\\s\\+$//e"
+:StripTrailingWhitespaces
+|2,0,1574528203,,"StripTrailingWhitespaces"
+:StripWhitespace
+|2,0,1574527712,,"StripWhitespace"
+:gg:wq
+|2,0,1574527699,,"gg:wq"
+:Sexplore
+|2,0,1574527627,,"Sexplore"
+:wqa!
+|2,0,1574525049,,"wqa!"
+:h fold
+|2,0,1574524240,,"h fold"
+:bnext
+|2,0,1574523904,,"bnext"
+:bNext
+|2,0,1574523880,,"bNext"
+:'<,'>"
+|2,0,1574523664,,"'<,'>\""
+:qD
+|2,0,1574517228,,"qD"
+:Wwwsearch yoink vim
+|2,0,1574515836,,"Wwwsearch yoink vim"
+:h zo
+|2,0,1574515165,,"h zo"
+:h flot.
+|2,0,1574515162,,"h flot."
+:h flot
+|2,0,1574515131,,"h flot"
+:h flod
+|2,0,1574515129,,"h flod"
+:Wwwsearch vim open all flattern
+|2,0,1574514701,,"Wwwsearch vim open all flattern"
+:h g:wwwsearch_command_to_open_uri
+|2,0,1574514310,,"h g:wwwsearch_command_to_open_uri"
+:Wwwsearch www.test.de
+|2,0,1574513985,,"Wwwsearch www.test.de"
+:h www
+|2,0,1574513573,,"h www"
+:h SuperTabDefaultCompletionType
+|2,0,1574507229,,"h SuperTabDefaultCompletionType"
+:W
+|2,0,1574506246,,"W"
+:!
+|2,0,1574501677,,"!"
+:syntax on
+|2,0,1574501562,,"syntax on"
+:colorscheme blue
+|2,0,1574501503,,"colorscheme blue"
+:q:
+|2,0,1574501064,,"q:"
+:qjjjkk
+|2,0,1574499304,,"qjjjkk"
+:h vimtex
+|2,0,1574455526,,"h vimtex"
+:vimtex
+|2,0,1574455520,,"vimtex"
+:set tags
+|2,0,1574455338,,"set tags"
+:set tags=
+|2,0,1574455332,,"set tags="
+:h tex
+|2,0,1574455054,,"h tex"
+:dvanced
+|2,0,1574452240,,"dvanced"
+:h manpage
+|2,0,1571087022,,"h manpage"
+:h manual
+|2,0,1571087006,,"h manual"
+:vsplit bash
+|2,0,1567854521,,"vsplit bash"
+:Explore
+|2,0,1567854304,,"Explore"
+
+# Suchausdruck Geschichte (neueste bis √§lteste):
+? \s\+$
+|2,1,1578633142,,"\\s\\+$"
+? \<Isarel\>
+|2,1,1578633027,,"\\<Isarel\\>"
+?/aus
+|2,1,1578345958,47,"aus"
+?/einl
+|2,1,1578345254,47,"einl"
+?/Do
+|2,1,1578345226,47,"Do"
+?/Docker
+|2,1,1578345218,47,"Docker"
+?/grund
+|2,1,1578345195,47,"grund"
+?/docker
+|2,1,1578345943,47,"docker"
+?/\
+|2,1,1577928636,47,"\\"
+?/WY
+|2,1,1577927883,47,"WY"
+?/hierzu
+|2,1,1577924991,47,"hierzu"
+?/Siehe
+|2,1,1577924985,47,"Siehe"
+?/fulr
+|2,1,1577927264,47,"fulr"
+? \<Poky\>
+|2,1,1577926566,,"\\<Poky\\>"
+?/Po
+|2,1,1577926544,47,"Po"
+?/durc
+|2,1,1577926126,47,"durc"
+?/hier
+|2,1,1577925025,47,"hier"
+?/fulre
+|2,1,1577905071,47,"fulre"
+?/BSP
+|2,1,1577898920,47,"BSP"
+?/etwa
+|2,1,1577896223,47,"etwa"
+? S\.
+|2,1,1577888764,,"S\\."
+?/Root
+|2,1,1577841460,47,"Root"
+? \<Gonzalez2018\>
+|2,1,1577815508,,"\\<Gonzalez2018\\>"
+?/Phy
+|2,1,1577814679,47,"Phy"
+?/spell
+|2,1,1577810060,47,"spell"
+?/bitbake_
+|2,1,1577808657,47,"bitbake_"
+? \<OpenEmbedded\>
+|2,1,1577808138,,"\\<OpenEmbedded\\>"
+? \<Yocto\>
+|2,1,1577807694,,"\\<Yocto\\>"
+?/Yocto
+|2,1,1577807312,47,"Yocto"
+?/too
+|2,1,1577805708,47,"too"
+?/Tool
+|2,1,1577805485,47,"Tool"
+?/acro
+|2,1,1577800339,47,"acro"
+?/F4
+|2,1,1577798853,47,"F4"
+?/F3
+|2,1,1577798845,47,"F3"
+?/+a
+|2,1,1577798796,47,"+a"
+?/image
+|2,1,1577798590,47,"image"
+?/Kapitel
+|2,1,1576230699,47,"Kapitel"
+?/sec:
+|2,1,1576222987,47,"sec:"
+?/sdk
+|2,1,1576220829,47,"sdk"
+?/(
+|2,1,1576220648,47,"("
+?/Qu
+|2,1,1575998611,47,"Qu"
+? \<bitbake\>
+|2,1,1575986816,,"\\<bitbake\\>"
+?/In
+|2,1,1575896229,47,"In"
+?/tit
+|2,1,1575901599,47,"tit"
+? \<http\>
+|2,1,1575895178,,"\\<http\\>"
+?/fest
+|2,1,1575848164,47,"fest"
+? \<von\>
+|2,1,1575848153,,"\\<von\\>"
+?/l√∂sch
+|2,1,1575877549,47,"l√∂sch"
+?/nat
+|2,1,1575848052,47,"nat"
+?/Gru
+|2,1,1575846199,47,"Gru"
+?/doub
+|2,1,1575846100,47,"doub"
+?/sing
+|2,1,1575845351,47,"sing"
+?/Distri
+|2,1,1575843277,47,"Distri"
+? \<Feature\>
+|2,1,1575842723,,"\\<Feature\\>"
+?/Feat
+|2,1,1575842709,47,"Feat"
+?/Dis
+|2,1,1575843085,47,"Dis"
+?/Abk√º
+|2,1,1575842291,47,"Abk√º"
+?/inde
+|2,1,1575837759,47,"inde"
+?/Featu
+|2,1,1575842525,47,"Featu"
+?/Fea
+|2,1,1575842388,47,"Fea"
+?/Distr
+|2,1,1575839932,47,"Distr"
+? \<DTB\>
+|2,1,1575841073,,"\\<DTB\\>"
+? \<makeindex\>
+|2,1,1575836630,,"\\<makeindex\\>"
+?/make
+|2,1,1575836442,47,"make"
+?/index
+|2,1,1575835737,47,"index"
+? \<include\>
+|2,1,1575828900,,"\\<include\\>"
+? \<printbibliography\>
+|2,1,1575827280,,"\\<printbibliography\\>"
+? \<bibliographystyle\>
+|2,1,1575823857,,"\\<bibliographystyle\\>"
+?/kkkk
+|2,1,1575819760,47,"kkkk"
+? \<acronym\>
+|2,1,1575819602,,"\\<acronym\\>"
+?/missing
+|2,1,1575820098,47,"missing"
+? \<document\>
+|2,1,1575818206,,"\\<document\\>"
+? \<printglossaries\>
+|2,1,1575817977,,"\\<printglossaries\\>"
+? \<bibliography\>
+|2,1,1575817920,,"\\<bibliography\\>"
+?/abstra
+|2,1,1575811273,47,"abstra"
+?/Rhei
+|2,1,1575812896,47,"Rhei"
+?/poly
+|2,1,1575810212,47,"poly"
+?/Sch
+|2,1,1575554303,47,"Sch"
+?/Bitbake
+|2,1,1575550476,47,"Bitbake"
+? \<Bitbake_Manual\>
+|2,1,1575544610,,"\\<Bitbake_Manual\\>"
+? \<Gon2018\>
+|2,1,1575543776,,"\\<Gon2018\\>"
+? \<preamble\>
+|2,1,1575545759,,"\\<preamble\\>"
+?/begin
+|2,1,1575545742,47,"begin"
+?/glos
+|2,1,1575545460,47,"glos"
+? \<bibtex\>
+|2,1,1575545188,,"\\<bibtex\\>"
+?/bib
+|2,1,1575545105,47,"bib"
+?/natbib
+|2,1,1575544321,47,"natbib"
+?/year
+|2,1,1575544074,47,"year"
+?/Error
+|2,1,1575543975,47,"Error"
+?/bibtex
+|2,1,1575541294,47,"bibtex"
+?/biber
+|2,1,1575539313,47,"biber"
+?/auto
+|2,1,1575525937,47,"auto"
+?/default
+|2,1,1575525929,47,"default"
+? \<session_default_to_last\>
+|2,1,1575525314,,"\\<session_default_to_last\\>"
+? \<expand\>
+|2,1,1575525156,,"\\<expand\\>"
+?/Sess
+|2,1,1575523992,47,"Sess"
+?/Sess#
+|2,1,1575523988,47,"Sess#"
+? \<downloads\>
+|2,1,1575271049,,"\\<downloads\\>"
+? \<releases\>
+|2,1,1575271023,,"\\<releases\\>"
+?/gll
+|2,1,1575269028,47,"gll"
+?/set nospell
+|2,1,1575267983,47,"set nospell"
+?/nger
+|2,1,1575267975,47,"nger"
+?/us
+|2,1,1575267894,47,"us"
+?/um
+|2,1,1575267878,47,"um"
+?/ansi
+|2,1,1575267868,47,"ansi"
+?/refname
+|2,1,1575267284,47,"refname"
+?/print
+|2,1,1575266340,47,"print"
+?/Bib
+|2,1,1575266058,47,"Bib"
+?/bi
+|2,1,1575265854,47,"bi"
+?/Mo
+|2,1,1575264628,47,"Mo"
+? firefox
+|2,1,1575204575,,"firefox"
+?/fire
+|2,1,1575204488,47,"fire"
+?/firefox
+|2,1,1575204420,47,"firefox"
+? \<ausfuhren_bestimmter_tasks_eines_recipies\>
+|2,1,1574952935,,"\\<ausfuhren_bestimmter_tasks_eines_recipies\\>"
+? \<pageref\>
+|2,1,1574952929,,"\\<pageref\\>"
+? \<meta_layer_zum_build_hinzufugen\>
+|2,1,1574952923,,"\\<meta_layer_zum_build_hinzufugen\\>"
+?/pyth
+|2,1,1574950268,47,"pyth"
+?/abs
+|2,1,1574952479,47,"abs"
+?/Work
+|2,1,1574950698,47,"Work"
+?/Em
+|2,1,1574946097,47,"Em"
+?/¬º
+|2,1,1574945641,47,"¬º"
+?/$
+|2,1,1574945637,47,"$"
+? \<itemize\>
+|2,1,1574945583,,"\\<itemize\\>"
+?/F1
+|2,1,1574941156,47,"F1"
+?/texti
+|2,1,1574850855,47,"texti"
+?/S-
+|2,1,1574852741,47,"S-"
+?/www
+|2,1,1574852411,47,"www"
+?/lstl
+|2,1,1574842663,47,"lstl"
+?/and
+|2,1,1574840209,47,"and"
+?/my
+|2,1,1574848873,47,"my"
+?/colo
+|2,1,1574848717,47,"colo"
+?/list
+|2,1,1574847039,47,"list"
+?/nolist
+|2,1,1574844981,47,"nolist"
+?/F10
+|2,1,1574841586,47,"F10"
+?/line break
+|2,1,1574838325,47,"line break"
+?/empty lin
+|2,1,1574838300,47,"empty lin"
+? \<fo-table\>
+|2,1,1574838005,,"\\<fo-table\\>"
+?/TODO
+|2,1,1574779372,47,"TODO"
+?/fold
+|2,1,1574779350,47,"fold"
+?/\\\
+|2,1,1574775334,47,"\\\\\\"
+?/break
+|2,1,1574775222,47,"break"
+?/line
+|2,1,1574775147,47,"line"
+? breakline
+|2,1,1574775083,,"breakline"
+? newline
+|2,1,1574774884,,"newline"
+?/#
+|2,1,1574774263,47,"#"
+?/glr
+|2,1,1574774228,47,"glr"
+? snipMate.always_choose_first
+|2,1,1574765397,,"snipMate.always_choose_first"
+? \<g:snipMate\.always_choose_first\>
+|2,1,1574765332,,"\\<g:snipMate\\.always_choose_first\\>"
+?/cha
+|2,1,1574764780,47,"cha"
+? \<F9\>
+|2,1,1574764566,,"\\<F9\\>"
+? \<F10\>
+|2,1,1574764554,,"\\<F10\\>"
+?/F11
+|2,1,1574764529,47,"F11"
+? \<VERSION\>
+|2,1,1574693303,,"\\<VERSION\\>"
+?/einlei
+|2,1,1574690502,47,"einlei"
+?/pic
+|2,1,1574688631,47,"pic"
+? \<linebreak\>
+|2,1,1574687492,,"\\<linebreak\\>"
+? \<'list'\>
+|2,1,1574687427,,"\\<'list'\\>"
+? \<nolist\>
+|2,1,1574687422,,"\\<nolist\\>"
+?/nolis
+|2,1,1574687411,47,"nolis"
+?/text
+|2,1,1574687147,47,"text"
+?/snip
+|2,1,1574684142,47,"snip"
+?/ulti
+|2,1,1574684126,47,"ulti"
+?/bit
+|2,1,1574675565,47,"bit"
+?/glo
+|2,1,1574675366,47,"glo"
+?/Ulti
+|2,1,1574676067,47,"Ulti"
+? \<'wrapmargin'\>
+|2,1,1574671897,,"\\<'wrapmargin'\\>"
+?/wr
+|2,1,1574671890,47,"wr"
+? \<Metadatendatei\>
+|2,1,1574671402,,"\\<Metadatendatei\\>"
+? \<Metadaten\>
+|2,1,1574671373,,"\\<Metadaten\\>"
+?/set file
+|2,1,1574612297,47,"set file"
+? \<set\>
+|2,1,1574612284,,"\\<set\\>"
+?/Post
+|2,1,1574612140,47,"Post"
+?/VimEnter
+|2,1,1574612104,47,"VimEnter"
+?/filetype=
+|2,1,1574611923,47,"filetype="
+?/set
+|2,1,1574611841,47,"set"
+? \<filetype\>
+|2,1,1574611812,,"\\<filetype\\>"
+? \<autocmd\>
+|2,1,1574611669,,"\\<autocmd\\>"
+?/Buf
+|2,1,1574611615,47,"Buf"
+?/vim
+|2,1,1574611561,47,"vim"
+?/filety
+|2,1,1574611437,47,"filety"
+? tex_section_commands
+|2,1,1574610796,,"tex_section_commands"
+? \<linebrake\>
+|2,1,1574534091,,"\\<linebrake\\>"
+? \<StripTrailingWhitespaces\>
+|2,1,1574531462,,"\\<StripTrailingWhitespaces\\>"
+?/latex
+|2,1,1574531209,47,"latex"
+?/Whi
+|2,1,1574530604,47,"Whi"
+?/Stripe
+|2,1,1574530596,47,"Stripe"
+?/Strikjkkkkkkkkkkkkkkkj
+|2,1,1574530579,47,"Strikjkkkkkkkkkkkkkkkj"
+?/Strip
+|2,1,1574529711,47,"Strip"
+?/WinLeavek
+|2,1,1574529615,47,"WinLeavek"
+?/Lea
+|2,1,1574529496,47,"Lea"
+?/Write
+|2,1,1574529167,47,"Write"
+?/TabClose
+|2,1,1574528933,47,"TabClose"
+?/Leav
+|2,1,1574528859,47,"Leav"
+?/Closed
+|2,1,1574528841,47,"Closed"
+?/Ta
+|2,1,1574528785,47,"Ta"
+?/TabClo
+|2,1,1574528776,47,"TabClo"
+?/Close
+|2,1,1574528759,47,"Close"
+?/Stri
+|2,1,1574528105,47,"Stri"
+? [\u0009\u0020\u00a0\u1680\u180e\u2000-\u200b\u202f\u205f\u3000\ufeff]\+$
+|2,1,1574528036,,"[\\u0009\\u0020\\u00a0\\u1680\\u180e\\u2000-\\u200b\\u202f\\u205f\\u3000\\ufeff]\\+$"
+?/str
+|2,1,1574527908,47,"str"
+?/strip
+|2,1,1574527783,47,"strip"
+?/W
+|2,1,1574527537,47,"W"
+?/vimplu
+|2,1,1574527451,47,"vimplu"
+?/plug
+|2,1,1574527447,47,"plug"
+?/bett
+|2,1,1574527428,47,"bett"
+?/Str
+|2,1,1574527266,47,"Str"
+?/Spac
+|2,1,1574527243,47,"Spac"
+?/Wi
+|2,1,1574527215,47,"Wi"
+?/plu
+|2,1,1574527108,47,"plu"
+?/color
+|2,1,1574526761,47,"color"
+?/vimpl
+|2,1,1574526616,47,"vimpl"
+?/re
+|2,1,1574526070,47,"re"
+?/yoi
+|2,1,1574525429,47,"yoi"
+?/cu^jjjjjjjjjjjjjjjjjjjjj
+|2,1,1574525065,47,"cu^jjjjjjjjjjjjjjjjjjjjj"
+? \<'foldenable'\>
+|2,1,1574524278,,"\\<'foldenable'\\>"
+?/folden
+|2,1,1574524267,47,"folden"
+?/flod
+|2,1,1574524203,47,"flod"
+?/flo
+|2,1,1574524197,47,"flo"
+? \<Foldenable\>
+|2,1,1574524144,,"\\<Foldenable\\>"
+? \<foldenable\>
+|2,1,1574524143,,"\\<foldenable\\>"
+?/bu
+|2,1,1574523951,47,"bu"
+?/fl
+|2,1,1574523800,47,"fl"
+?/abgabe
+|2,1,1574517720,47,"abgabe"
+?/Anleitung
+|2,1,1574517415,47,"Anleitung"
+?/An
+|2,1,1574517376,47,"An"
+?/yoin
+|2,1,1574516184,47,"yoin"
+?/yo
+|2,1,1574516172,47,"yo"
+?/yoink
+|2,1,1574516147,47,"yoink"
+? \<loaded_netrwPlugin\>
+|2,1,1574508451,,"\\<loaded_netrwPlugin\\>"
+?/super
+|2,1,1574507207,47,"super"
+?/Tab
+|2,1,1574507108,47,"Tab"
+?/omni
+|2,1,1574506902,47,"omni"
+?/Ul
+|2,1,1574506374,47,"Ul"
+?/trace
+|2,1,1574505359,47,"trace"
+? scroll
+|2,1,1574502394,,"scroll"
+? \<backspace\>
+|2,1,1574500986,,"\\<backspace\\>"
+? \<syntax_on\>
+|2,1,1574500880,,"\\<syntax_on\\>"
+?/L
+|2,1,1574500185,47,"L"
+?/marco_
+|2,1,1574499864,47,"marco_"
+?/marco_pi
+|2,1,1574499659,47,"marco_pi"
+?/air
+|2,1,1574455805,47,"air"
+? \<section\>
+|2,1,1574455389,,"\\<section\\>"
+? \<sub_1\>
+|2,1,1574455041,,"\\<sub_1\\>"
+?/Plu
+|2,1,1574454081,47,"Plu"
+?/mul
+|2,1,1574454000,47,"mul"
+?/Multi
+|2,1,1574453915,47,"Multi"
+?/pai
+|2,1,1574452932,47,"pai"
+?/engin
+|2,1,1574452377,47,"engin"
+?/single
+|2,1,1574452342,47,"single"
+?/singelo
+|2,1,1574452324,47,"singelo"
+?/advanc
+|2,1,1574452276,47,"advanc"
+
+# Ausdruck Geschichte (neueste bis √§lteste):
+
+# Eingabe-Zeile Geschichte (neueste bis √§lteste):
+@7
+|2,3,1577798922,,"7"
+@/home/marco/yocto/documentation/content/sdk.tex
+|2,3,1575448273,,"/home/marco/yocto/documentation/content/sdk.tex"
+@/home/marco/yocto/documentation/content/cross_development.aux
+|2,3,1575448265,,"/home/marco/yocto/documentation/content/cross_development.aux"
+@/home/marco/yocto/documentation/content/sdk_erzeugen.tex
+|2,3,1575448160,,"/home/marco/yocto/documentation/content/sdk_erzeugen.tex"
+@/home/marco/yocto/documentation/content/einleitung.tex
+|2,3,1575448110,,"/home/marco/yocto/documentation/content/einleitung.tex"
+@y
+|2,3,1574531242,,"y"
+@:q
+|2,3,1574453404,,":q"
+@d
+|2,3,1565785251,,"d"
+@hjk
+|2,3,1565784261,,"hjk"
+@a
+|2,3,1565783763,,"a"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_template_mock.cpp
+|2,3,1565783497,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_template_mock.cpp"
+@kkkdd
+|2,3,1565783489,,"kkkdd"
+@kkkjk
+|2,3,1565783487,,"kkkjk"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_template_mock.hpp
+|2,3,1565686267,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_template_mock.hpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/mi_ooc_base_template_test.cpp
+|2,3,1565685475,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/mi_ooc_base_template_test.cpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_encoderDecoder_mock.hpp
+|2,3,1565253867,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_encoderDecoder_mock.hpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_encoderDecoder_mock.cpp
+|2,3,1565253849,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_encoderDecoder_mock.cpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/manchester_encoderDecoder_test.cpp
+|2,3,1565253797,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/manchester_encoderDecoder_test.cpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/manchester_encoderDecoder.cpp
+|2,3,1565251898,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/test/subObjects/manchester_encoderDecoder.cpp"
+@01
+|2,3,1565083302,,"01"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_sensor_mock.hpp
+|2,3,1565080045,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_sensor_mock.hpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_sensor_mock.cpp
+|2,3,1565080011,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/UNITTEST/double/mock/mi_ooc_template/mi_ooc_sensor_mock.cpp"
+@1
+|2,3,1565111125,,"1"
+@x
+|2,3,1565086078,,"x"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/cppcheck
+|2,3,1565013189,,"/cygdrive/d/00_MIS_BUILD/TOOLS/cppcheck"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST
+|2,3,1565010915,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST/test/elmos52042/elmos52042_test.cpp
+|2,3,1565008994,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST/test/elmos52042/elmos52042_test.cpp"
+@/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST/test/elmos52042
+|2,3,1565008609,,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/lemdd_adapters/elmos_52042/UNITTEST/test/elmos52042"
+@V.10
+|2,3,1564502973,,"V.10"
+@/cygdrive/d/01_Projekte/02_Swipetronic/MIS_BUILD/ /DOC/uml/mi_ooc_ssp.uml
+|2,3,1563198831,,"/cygdrive/d/01_Projekte/02_Swipetronic/MIS_BUILD/ /DOC/uml/mi_ooc_ssp.uml"
+@/cygdrive/d/01_Projekte/02_Swipetronic/MIS_BUILD/lmos52042_lib/project/DOC/uml/mi_ooc_ssp.uml
+|2,3,1563196749,,"/cygdrive/d/01_Projekte/02_Swipetronic/MIS_BUILD/lmos52042_lib/project/DOC/uml/mi_ooc_ssp.uml"
+@Y
+|2,3,1562170500,,"Y"
+@j
+|2,3,1562164429,,"j"
+
+# Debug-Zeile Geschichte (neueste bis √§lteste):
+
+# Register:
+"0	CHAR	0
+	\textit{run.sh}
+|3,0,0,0,1,0,1578350984,"\\textit{run.sh}"
+"1	LINE	0
+	
+|3,0,1,1,1,0,1578350727,""
+"2	LINE	0
+	
+|3,0,2,1,1,0,1578350449,""
+"3	LINE	0
+	    \item 
+|3,0,3,1,1,0,1578349941,"    \\item "
+"4	LINE	0
+	
+|3,0,4,1,1,0,1578349680,""
+"5	LINE	0
+	    \item
+|3,0,5,1,1,0,1578349674,"    \\item"
+"6	LINE	0
+	
+|3,0,6,1,1,0,1578349673,""
+"7	LINE	0
+	    \item
+|3,0,7,1,1,0,1578349670,"    \\item"
+"8	LINE	0
+	\end{itemize}
+|3,0,8,1,1,0,1578349495,"\\end{itemize}"
+"9	LINE	0
+	    \item 
+|3,0,9,1,1,0,1578349494,"    \\item "
+"a	CHAR	0
+	    %s/\s\+$//e
+	
+|3,0,10,0,2,0,1577928709,"    %s/\\s\\+$//e",""
+"b	LINE	0
+	    /*BEGIN********************BEGIN********************BEGIN*/
+|3,0,11,1,1,0,1565337736,"    /*BEGIN********************BEGIN********************BEGIN*/"
+"d	LINE	0
+	            _switchReceive(sensor__this__st* const ps__this, sensor__ctorParamList__st *const  ps__paramList)
+	            }
+	
+	
+	            switch(ps__paramList->receiveMode__E)
+	            {
+	                case receiveMenchesterEncoded:
+	                    {
+	
+	                        break;
+	                    }
+	                default:
+	                    {
+	                        break;
+	                    }
+	            }
+	
+|3,0,13,1,17,0,1565103242,"            _switchReceive(sensor__this__st* const ps__this, sensor__ctorParamList__st *const  ps__paramList)","            }","","","            switch(ps__paramList->receiveMode__E)","            {","                case receiveMenchesterEncoded:","                    {","","                        break;","                    }","                default:","                    {","                        break;",>23
+|<"                    }","            }",""
+"e	LINE	0
+	    /*END***********************END***********************END*/
+|3,0,14,1,1,0,1565337741,"    /*END***********************END***********************END*/"
+"f	LINE	0
+	    /**
+	     * Because every elmos52042 object  can have a different send or revice
+	     * function it neededs its own COPY virtual Operations.
+	     * (e.g different type of manchester encoding or different receive
+	     * types like analog, manchester or SENT)
+	     */
+|3,0,15,1,6,0,1565172430,"    /**","     * Because every elmos52042 object  can have a different send or revice","     * function it neededs its own COPY virtual Operations.","     * (e.g different type of manchester encoding or different receive","     * types like analog, manchester or SENT)","     */"
+"g	CHAR	0
+	Gonzalez2018:Embedded_Linux_Development_Using_Yocto_Project_Cookbook_2nd
+|3,0,16,0,1,0,1575987234,"Gonzalez2018:Embedded_Linux_Development_Using_Yocto_Project_Cookbook_2nd"
+"h	CHAR	0
+	i/'----- Ä˝awwlysiw)llwliÄkbÄkbÄ˝af x~f x~f x~f ~hx~xuf x~ka :Äku$xxa'/jj^^
+|3,0,17,0,1,0,1567262163,"i/'----- Ä˝awwlysiw)llwliÄkbÄkbÄ˝af x~f x~f x~f ~hx~xuf x~ka :Äku$xxa'/jj^^"
+"i	CHAR	0
+	\textit{
+|3,0,18,0,1,0,1577799717,"\\textit{"
+"j	CHAR	0
+	kjjk
+|3,0,19,0,1,0,1563207506,"kjjk"
+"l	CHAR	0
+	elmos52042 
+|3,0,21,0,1,0,1565178630,"elmos52042 "
+"q@	CHAR	0
+	xxi Ä˝a/\
+|3,2,26,0,1,0,1577925732,"xxi Ä˝a/\\"
+"s	CHAR	0
+	lstl
+|3,0,28,0,1,0,1574842662,"lstl"
+"t	CHAR	0
+	ncwiÄkb____TODO______Ä˝alxiÄ˝a
+|3,0,29,0,1,0,1574842552,"ncwiÄkb____TODO______Ä˝alxiÄ˝a"
+"w	CHAR	0
+	Ä˝aÄ˝ahwh"00Ä˝akjlllll]ykÄ˝ajÄ˝a]y
+|3,0,32,0,1,0,1565113579,"Ä˝aÄ˝ahwh\"00Ä˝akjlllll]ykÄ˝ajÄ˝a]y"
+"x	BLOCK	0
+	'
+	'
+	'
+	'
+	'
+	'
+	
+|3,0,33,2,7,0,1563452025,"'","'","'","'","'","'",""
+"y	CHAR	0
+	yq
+|3,0,34,0,1,0,1564738556,"yq"
+""-	CHAR	0
+	Isarel
+|3,1,36,0,1,0,1578633136,"Isarel"
+
+# globale Variablen:
+!VCSCOMMAND_IDENTIFY_EXACT	NUM	1
+!YOINK_HISTORY	LIS	[]
+!VCSCOMMAND_IDENTIFY_INEXACT	NUM	-1
+
+# Datei-Markierungen:
+'P  620  1  /cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h
+|4,80,620,1,1565270373,"/cygdrive/d/00_MIS_BUILD/TOOLS/thirdparty/mi_ooc/productive/manchester_encoderDecoder.h"
+'0  1  91  ~/.git/FETCH_HEAD
+|4,48,1,91,1578633142,"~/.git/FETCH_HEAD"
+'1  1  0  ~/.git/HEAD
+|4,49,1,0,1578633117,"~/.git/HEAD"
+'2  3  197  ~/.git/logs/refs/heads/master
+|4,50,3,197,1578633097,"~/.git/logs/refs/heads/master"
+'3  130  5  ~/.gitignore
+|4,51,130,5,1578632945,"~/.gitignore"
+'4  8  37  ~/.git/config
+|4,52,8,37,1578632193,"~/.git/config"
+'5  1  31  ~/.git-credentials
+|4,53,1,31,1578632162,"~/.git-credentials"
+'6  1  0  ~/.gitconfig
+|4,54,1,0,1578632145,"~/.gitconfig"
+'7  43  22  ~/yocto/documentation/content/ausbilck.tex
+|4,55,43,22,1578351186,"~/yocto/documentation/content/ausbilck.tex"
+'8  36  3  ~/yocto/documentation/content/NERD_tree_1
+|4,56,36,3,1578350928,"~/yocto/documentation/content/NERD_tree_1"
+'9  15  3  ~/yocto/documentation/content/NERD_tree_1
+|4,57,15,3,1578345947,"~/yocto/documentation/content/NERD_tree_1"
+
+# Jumplist (neueste zuerst):
+-'  1  91  ~/.git/FETCH_HEAD
+|4,39,1,91,1578633142,"~/.git/FETCH_HEAD"
+-'  1  0  ~/.git/HEAD
+|4,39,1,0,1578633117,"~/.git/HEAD"
+-'  1  0  ~/.git/HEAD
+|4,39,1,0,1578633117,"~/.git/HEAD"
+-'  3  197  ~/.git/logs/refs/heads/master
+|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
+-'  3  197  ~/.git/logs/refs/heads/master
+|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
+-'  3  197  ~/.git/logs/refs/heads/master
+|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
+-'  3  197  ~/.git/logs/refs/heads/master
+|4,39,3,197,1578633097,"~/.git/logs/refs/heads/master"
+-'  1  0  ~/.git/logs/refs/heads/master
+|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
+-'  1  0  ~/.git/logs/refs/heads/master
+|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
+-'  1  0  ~/.git/logs/refs/heads/master
+|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
+-'  1  0  ~/.git/logs/refs/heads/master
+|4,39,1,0,1578633000,"~/.git/logs/refs/heads/master"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  130  5  ~/.gitignore
+|4,39,130,5,1578632945,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  131  0  ~/.gitignore
+|4,39,131,0,1578632935,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1578632935,"~/.gitignore"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  8  37  ~/.git/config
+|4,39,8,37,1578632193,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1578632174,"~/.git/config"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  31  ~/.git-credentials
+|4,39,1,31,1578632162,"~/.git-credentials"
+-'  1  0  ~/.gitconfig
+|4,39,1,0,1578632145,"~/.gitconfig"
+
+# Geschichte der Markierungen innerhalb von Dateien (neueste zuerst):
+
+> ~/.git/FETCH_HEAD
+	*	1578633142	0
+	"	1	91
+	^	1	92
+	.	1	91
+	+	1	91
+
+> ~/.git/HEAD
+	*	1578633112	0
+	"	1	0
+
+> ~/.git/logs/refs/heads/master
+	*	1578633096	0
+	"	3	197
+	^	3	198
+	.	3	197
+	+	3	16
+	+	3	0
+	+	3	15
+	+	3	40
+	+	3	0
+	+	3	197
+
+> ~/.gitignore
+	*	1578632944	0
+	"	130	5
+	^	132	6
+	.	132	5
+	+	2	0
+	+	1	0
+	+	2	0
+	+	3	0
+	+	6	0
+	+	11	0
+	+	2	0
+	+	57	0
+	+	108	0
+	+	109	0
+	+	131	0
+	+	132	0
+	+	1	0
+	+	132	5
+
+> ~/.git/config
+	*	1578632191	0
+	"	8	37
+	^	7	38
+	.	7	37
+	+	7	37
+
+> ~/.git-credentials
+	*	1578632160	0
+	"	1	31
+
+> ~/.gitconfig
+	*	1578632137	0
+	"	1	0
+
+> ~/yocto/documentation/content/ausbilck.tex
+	*	1578351185	0
+	"	43	22
+	.	41	0
+	+	29	59
+	+	28	76
+	+	38	0
+	+	29	0
+	+	30	26
+	+	36	0
+	+	30	61
+	+	32	0
+	+	33	71
+	+	33	82
+	+	34	71
+	+	34	0
+	+	33	35
+	+	34	3
+	+	28	0
+	+	38	77
+	+	40	82
+	+	41	117
+	+	43	85
+	+	43	71
+	+	47	0
+	+	45	78
+	+	45	103
+	+	47	0
+	+	45	77
+	+	42	78
+	+	40	109
+	+	39	56
+	+	41	72
+	+	40	30
+	+	41	72
+	+	43	91
+	+	38	59
+	+	30	0
+	+	33	53
+	+	50	0
+	+	59	0
+	+	93	1
+	+	93	2
+	+	93	7
+	+	61	0
+	+	62	0
+	+	93	0
+	+	62	10
+	+	71	0
+	+	62	31
+	+	63	9
+	+	64	30
+	+	65	14
+	+	93	0
+	+	66	12
+	+	91	0
+	+	66	54
+	+	74	0
+	+	75	0
+	+	83	0
+	+	84	18
+	+	82	39
+	+	84	34
+	+	85	21
+	+	86	74
+	+	87	46
+	+	78	77
+	+	79	43
+	+	62	0
+	+	79	70
+	+	80	37
+	+	59	51
+	+	51	68
+	+	52	80
+	+	56	75
+	+	57	11
+	+	59	0
+	+	58	76
+	+	72	0
+	+	70	21
+	+	68	47
+	+	53	8
+	+	52	75
+	+	53	7
+	+	54	0
+	+	52	0
+	+	39	77
+	+	41	37
+	+	40	66
+	+	42	55
+	+	42	54
+	+	43	53
+	+	42	55
+	+	40	59
+	+	41	51
+	+	42	76
+	+	44	62
+	+	43	82
+	+	44	35
+	+	44	61
+	+	45	64
+	+	44	77
+	+	45	0
+	+	41	0
+
+> ~/yocto/documentation/content/NERD_tree_1
+	*	1578350926	0
+	"	36	3
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/content/einleitung.tex
+	*	1578350923	0
+	"	66	10
+	.	66	0
+	+	88	4
+	+	91	70
+	+	80	81
+	+	81	79
+	+	83	10
+	+	88	4
+	+	91	70
+	+	93	0
+	+	91	70
+	+	90	78
+	+	83	0
+	+	82	69
+	+	86	49
+	+	88	10
+	+	90	78
+	+	91	70
+	+	90	78
+	+	91	70
+	+	83	73
+	+	83	0
+	+	84	34
+	+	91	70
+	+	89	37
+	+	91	70
+	+	90	32
+	+	91	70
+	+	89	72
+	+	91	70
+	+	89	72
+	+	91	70
+	+	90	19
+	+	91	70
+	+	90	80
+	+	91	70
+	+	93	0
+	+	91	68
+	+	91	70
+	+	92	0
+	+	92	4
+	+	92	40
+	+	92	52
+	+	92	56
+	+	92	52
+	+	91	35
+	+	91	70
+	+	92	0
+	+	98	69
+	+	99	47
+	+	99	30
+	+	99	47
+	+	99	30
+	+	98	71
+	+	6	17
+	+	13	54
+	+	46	8
+	+	6	0
+	+	41	0
+	+	77	0
+	+	75	54
+	+	8	76
+	+	9	77
+	+	10	20
+	+	9	65
+	+	10	0
+	+	18	32
+	+	10	79
+	+	11	0
+	+	18	34
+	+	106	39
+	+	104	10
+	+	104	60
+	+	105	0
+	+	104	56
+	+	65	12
+	+	65	0
+	+	65	45
+	+	65	35
+	+	67	0
+	+	65	60
+	+	105	27
+	+	106	28
+	+	118	0
+	+	71	17
+	+	71	0
+	+	66	0
+
+> ~/yocto/documentation/content/docker.tex
+	*	1578350904	0
+	"	78	15
+	^	80	16
+	.	80	15
+	+	14	5
+	+	9	0
+	+	17	0
+	+	18	0
+	+	17	0
+	+	13	59
+	+	19	67
+	+	20	13
+	+	26	0
+	+	21	0
+	+	29	46
+	+	31	0
+	+	32	0
+	+	14	31
+	+	15	0
+	+	14	32
+	+	35	0
+	+	28	57
+	+	33	80
+	+	34	10
+	+	35	1
+	+	36	76
+	+	38	76
+	+	40	37
+	+	41	4
+	+	40	17
+	+	36	78
+	+	37	73
+	+	42	25
+	+	44	67
+	+	45	79
+	+	47	0
+	+	46	33
+	+	50	0
+	+	48	81
+	+	49	30
+	+	46	10
+	+	43	36
+	+	44	87
+	+	45	0
+	+	51	0
+	+	52	0
+	+	51	28
+	+	53	0
+	+	54	80
+	+	55	70
+	+	69	8
+	+	54	53
+	+	69	10
+	+	69	0
+	+	56	0
+	+	56	70
+	+	58	77
+	+	55	45
+	+	59	8
+	+	59	0
+	+	69	0
+	+	59	0
+	+	69	0
+	+	59	62
+	+	60	43
+	+	61	79
+	+	64	36
+	+	66	25
+	+	14	0
+	+	64	54
+	+	66	26
+	+	67	77
+	+	68	55
+	+	65	0
+	+	68	56
+	+	68	98
+	+	69	0
+	+	66	0
+	+	84	0
+	+	71	0
+	+	72	0
+	+	71	18
+	+	72	0
+	+	73	0
+	+	74	56
+	+	81	0
+	+	76	78
+	+	77	73
+	+	81	0
+	+	79	79
+	+	80	15
+
+> ~/yocto/documentation/content/setup_host.tex
+	*	1578347449	0
+	"	44	19
+	^	1	21
+	.	1	20
+	+	15	0
+	+	11	7
+	+	62	59
+	+	62	76
+	+	63	35
+	+	64	92
+	+	62	0
+	+	74	0
+	+	76	17
+	+	8	40
+	+	10	64
+	+	10	6
+	+	13	21
+	+	12	33
+	+	13	25
+	+	48	15
+	+	14	12
+	+	48	16
+	+	13	25
+	+	17	31
+	+	36	68
+	+	23	10
+	+	21	12
+	+	16	51
+	+	20	17
+	+	23	0
+	+	21	10
+	+	23	10
+	+	25	10
+	+	27	10
+	+	27	23
+	+	32	28
+	+	32	61
+	+	36	68
+	+	36	70
+	+	32	63
+	+	36	4
+	+	27	22
+	+	25	15
+	+	27	14
+	+	21	69
+	+	22	8
+	+	23	77
+	+	24	29
+	+	26	29
+	+	22	0
+	+	27	51
+	+	32	21
+	+	32	54
+	+	32	66
+	+	36	54
+	+	36	50
+	+	36	14
+	+	36	36
+	+	36	51
+	+	27	18
+	+	25	14
+	+	27	14
+	+	36	0
+	+	21	19
+	+	25	14
+	+	27	14
+	+	32	14
+	+	36	0
+	+	36	16
+	+	36	60
+	+	13	81
+	+	19	0
+	+	27	80
+	+	28	0
+	+	48	61
+	+	49	76
+	+	63	0
+	+	91	60
+	+	92	42
+	+	97	74
+	+	99	0
+	+	100	23
+	+	101	51
+	+	102	53
+	+	101	84
+	+	104	0
+	+	102	72
+	+	101	0
+	+	108	20
+	+	8	41
+	+	36	15
+	+	115	60
+	+	74	40
+	+	33	45
+	+	86	64
+	+	87	0
+	+	86	0
+	+	91	60
+	+	92	0
+	+	91	41
+	+	30	32
+	+	1	27
+	+	8	27
+	+	1	20
+
+> ~/yocto/documentation/content/test.tex
+	*	1578345865	0
+	"	64	1
+	.	102	0
+	+	102	0
+
+> ~/.cache/vim/swap/%home%marco%yocto%documentation%content%einleitung.tex.swp
+	*	1578345538	0
+	"	1	0
+
+> ~/yocto/documentation/content/einleitung.aux
+	*	1578345256	0
+	"	1	0
+
+> ~/yocto/documentation/content/grundlagen.tex
+	*	1578345248	0
+	"	184	0
+	^	181	19
+	.	181	9
+	+	34	13
+	+	35	12
+	+	38	0
+	+	108	22
+	+	91	49
+	+	108	22
+	+	93	45
+	+	93	81
+	+	108	22
+	+	94	70
+	+	108	22
+	+	94	54
+	+	98	71
+	+	108	22
+	+	110	0
+	+	111	0
+	+	110	0
+	+	108	22
+	+	108	28
+	+	108	9
+	+	110	0
+	+	108	20
+	+	108	46
+	+	108	51
+	+	108	19
+	+	108	38
+	+	108	40
+	+	104	67
+	+	108	50
+	+	108	19
+	+	108	20
+	+	101	29
+	+	101	70
+	+	110	0
+	+	108	63
+	+	131	57
+	+	180	0
+	+	180	23
+	+	180	0
+	+	182	0
+	+	180	57
+	+	182	38
+	+	180	38
+	+	199	17
+	+	180	41
+	+	184	77
+	+	199	17
+	+	183	0
+	+	184	14
+	+	199	17
+	+	186	0
+	+	187	17
+	+	189	16
+	+	191	21
+	+	193	30
+	+	196	20
+	+	188	77
+	+	189	76
+	+	190	33
+	+	192	39
+	+	194	37
+	+	198	27
+	+	196	78
+	+	197	54
+	+	198	35
+	+	197	31
+	+	191	44
+	+	189	72
+	+	183	56
+	+	194	37
+	+	195	26
+	+	196	30
+	+	197	31
+	+	195	27
+	+	199	17
+	+	200	0
+	+	21	65
+	+	22	0
+	+	21	64
+	+	106	0
+	+	163	13
+	+	180	74
+	+	21	64
+	+	74	46
+	+	180	20
+	+	131	9
+	+	180	80
+	+	181	9
+
+> ~/yocto/documentation/content/grundlagen.aux
+	*	1578345203	0
+	"	35	0
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/content/-MiniBufExplorer-
+	*	1578345196	0
+	"	1	68
+	.	2	0
+	+	2	0
+
+> ~/yocto/documentation/content/setup_eclipse.tex
+	*	1578269906	0
+	"	1	0
+	^	1	21
+	.	1	20
+	+	24	34
+	+	1	0
+	+	2	0
+	+	4	0
+	+	5	0
+	+	7	60
+	+	9	95
+	+	14	0
+	+	15	0
+	+	9	59
+	+	9	16
+	+	9	95
+	+	14	0
+	+	13	0
+	+	9	80
+	+	11	36
+	+	15	55
+	+	18	29
+	+	11	22
+	+	9	71
+	+	11	21
+	+	13	0
+	+	11	69
+	+	12	55
+	+	19	0
+	+	21	10
+	+	9	0
+	+	22	102
+	+	23	66
+	+	23	69
+	+	21	71
+	+	23	35
+	+	21	19
+	+	22	73
+	+	24	34
+	+	23	69
+	+	24	34
+	+	26	9
+	+	24	40
+	+	26	80
+	+	24	33
+	+	27	20
+	+	24	70
+	+	27	6
+	+	26	80
+	+	27	0
+	+	29	0
+	+	30	0
+	+	29	43
+	+	30	0
+	+	4	46
+	+	5	43
+	+	32	3
+	+	9	0
+	+	7	62
+	+	12	16
+	+	37	0
+	+	40	18
+	+	36	0
+	+	40	68
+	+	36	0
+	+	40	45
+	+	31	0
+	+	32	73
+	+	33	8
+	+	35	16
+	+	34	13
+	+	42	11
+	+	35	17
+	+	37	16
+	+	40	54
+	+	38	90
+	+	35	70
+	+	37	12
+	+	25	30
+	+	27	0
+	+	25	21
+	+	26	0
+	+	25	20
+	+	1	20
+
+> ~/yocto/documentation/content/flashen.tex
+	*	1578267744	0
+	"	2	0
+
+> ~/yocto/documentation/main.tex
+	*	1577928732	0
+	"	104	0
+	^	103	17
+	.	103	16
+	+	138	0
+	+	135	55
+	+	135	44
+	+	136	0
+	+	135	43
+	+	138	0
+	+	139	0
+	+	138	0
+	+	141	0
+	+	144	0
+	+	143	0
+	+	131	0
+	+	129	0
+	+	91	0
+	+	81	0
+	+	83	0
+	+	69	0
+	+	73	0
+	+	46	0
+	+	44	0
+	+	37	0
+	+	35	0
+	+	29	0
+	+	27	0
+	+	28	1
+	+	124	0
+	+	122	0
+	+	53	0
+	+	51	0
+	+	61	0
+	+	59	0
+	+	50	0
+	+	57	0
+	+	58	0
+	+	67	0
+	+	79	0
+	+	85	0
+	+	140	0
+	+	144	0
+	+	122	0
+	+	91	0
+	+	91	9
+	+	91	0
+	+	78	0
+	+	91	0
+	+	90	0
+	+	87	0
+	+	112	0
+	+	114	0
+	+	126	0
+	+	118	38
+	+	98	0
+	+	100	0
+	+	98	0
+	+	96	0
+	+	98	0
+	+	100	0
+	+	105	0
+	+	109	0
+	+	108	0
+	+	107	0
+	+	110	0
+	+	107	0
+	+	105	0
+	+	100	28
+	+	101	25
+	+	104	0
+	+	103	41
+	+	105	0
+	+	101	0
+	+	107	0
+	+	139	52
+	+	84	0
+	+	101	0
+	+	100	28
+	+	139	0
+	+	136	19
+	+	137	19
+	+	138	19
+	+	132	0
+	+	95	27
+	+	95	17
+	+	96	0
+	+	95	27
+	+	132	13
+	+	134	0
+	+	144	0
+	+	107	0
+	+	105	0
+	+	106	0
+	+	103	0
+	+	99	0
+	+	98	0
+	+	97	0
+	+	104	0
+	+	102	31
+	+	102	17
+	+	103	0
+	+	102	25
+	+	103	16
+
+> ~/yocto/documentation/preamble.tex
+	*	1577928294	0
+	"	66	14
+	^	66	15
+	.	67	15
+	+	289	0
+	+	293	0
+	+	294	0
+	+	295	0
+	+	286	0
+	+	295	7
+	+	299	0
+	+	298	0
+	+	297	0
+	+	295	0
+	+	296	0
+	+	328	0
+	+	330	0
+	+	324	0
+	+	331	0
+	+	331	9
+	+	330	0
+	+	331	0
+	+	325	52
+	+	331	0
+	+	327	3
+	+	331	0
+	+	327	0
+	+	331	0
+	+	331	13
+	+	331	0
+	+	57	0
+	+	55	0
+	+	54	0
+	+	331	0
+	+	327	5
+	+	328	19
+	+	327	4
+	+	328	4
+	+	325	22
+	+	325	0
+	+	327	7
+	+	325	22
+	+	325	15
+	+	54	0
+	+	55	0
+	+	328	0
+	+	327	0
+	+	325	0
+	+	328	0
+	+	327	0
+	+	325	4
+	+	327	0
+	+	325	0
+	+	326	23
+	+	330	0
+	+	326	27
+	+	55	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	328	0
+	+	326	0
+	+	53	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	69	0
+	+	64	14
+	+	66	55
+	+	53	0
+	+	295	0
+	+	290	16
+	+	291	9
+	+	292	9
+	+	290	0
+	+	292	10
+	+	291	14
+	+	292	0
+	+	290	0
+	+	290	16
+	+	68	64
+	+	66	55
+	+	66	63
+	+	66	42
+	+	66	74
+	+	66	24
+	+	66	55
+	+	66	13
+	+	68	0
+	+	66	69
+	+	66	42
+	+	66	69
+	+	68	0
+	+	66	0
+	+	68	0
+	+	66	0
+	+	68	0
+	+	66	0
+	+	66	71
+	+	22	30
+	+	66	55
+	+	68	0
+	+	66	80
+	+	67	15
+
+> ~/yocto/documentation/content/setup_qt5.tex
+	*	1577928040	0
+	"	15	18
+	^	17	36
+	.	5	0
+	+	2	0
+	+	3	0
+	+	5	72
+	+	8	0
+	+	9	21
+	+	10	89
+	+	11	65
+	+	5	0
+	+	14	0
+	+	15	0
+	+	18	22
+	+	17	76
+	+	21	0
+	+	18	33
+	+	19	0
+	+	18	46
+	+	19	4
+	+	20	14
+	+	17	0
+	+	18	13
+	+	17	35
+	+	5	0
+
+> ~/yocto/documentation/content/sdk_erzeugen.tex
+	*	1577927821	0
+	"	3	0
+	^	2	14
+	.	2	13
+	+	5	0
+	+	3	0
+	+	2	0
+	+	3	0
+	+	2	13
+
+> ~/yocto/documentation/preamble.
+	*	1577927015	0
+	"	1	0
+
+> ~/yocto/documentation/content/glossary.tex
+	*	1577927004	0
+	"	129	11
+	^	131	12
+	.	131	11
+	+	53	0
+	+	40	22
+	+	40	9
+	+	40	13
+	+	53	0
+	+	40	0
+	+	53	0
+	+	40	0
+	+	40	4
+	+	40	44
+	+	40	56
+	+	40	60
+	+	40	7
+	+	40	0
+	+	53	0
+	+	51	0
+	+	50	8
+	+	50	10
+	+	51	0
+	+	46	37
+	+	47	0
+	+	46	36
+	+	48	72
+	+	49	0
+	+	51	0
+	+	50	9
+	+	48	0
+	+	33	3
+	+	33	0
+	+	34	14
+	+	33	27
+	+	35	12
+	+	35	13
+	+	38	0
+	+	37	27
+	+	35	65
+	+	37	22
+	+	35	77
+	+	36	0
+	+	316	0
+	+	317	0
+	+	318	0
+	+	324	0
+	+	335	0
+	+	327	0
+	+	328	0
+	+	329	20
+	+	328	23
+	+	330	78
+	+	332	70
+	+	318	79
+	+	319	7
+	+	318	74
+	+	320	8
+	+	323	28
+	+	319	66
+	+	320	18
+	+	323	0
+	+	325	0
+	+	32	0
+	+	5	20
+	+	6	7
+	+	7	12
+	+	7	13
+	+	15	0
+	+	12	40
+	+	7	78
+	+	8	82
+	+	9	72
+	+	13	81
+	+	14	17
+	+	18	0
+	+	17	0
+	+	32	0
+	+	18	21
+	+	19	8
+	+	20	12
+	+	20	13
+	+	23	0
+	+	20	65
+	+	21	80
+	+	22	28
+	+	25	0
+	+	31	0
+	+	30	0
+	+	27	12
+	+	26	7
+	+	25	20
+	+	28	57
+	+	27	18
+	+	29	78
+	+	20	26
+	+	7	18
+	+	127	0
+	+	126	0
+	+	127	21
+	+	128	12
+	+	129	78
+	+	130	79
+	+	131	11
+
+> ~/yocto/documentation/content/pitfalls.tex
+	*	1577926467	0
+	"	72	12
+	^	63	7
+	.	7	11
+	+	34	59
+	+	35	41
+	+	34	86
+	+	35	40
+	+	41	0
+	+	45	0
+	+	34	0
+	+	30	45
+	+	35	79
+	+	36	34
+	+	41	0
+	+	37	18
+	+	38	64
+	+	40	58
+	+	37	54
+	+	38	47
+	+	39	58
+	+	41	0
+	+	40	15
+	+	17	61
+	+	20	32
+	+	12	45
+	+	43	70
+	+	44	26
+	+	36	0
+	+	44	55
+	+	36	35
+	+	37	0
+	+	36	25
+	+	12	28
+	+	37	28
+	+	12	26
+	+	36	23
+	+	39	14
+	+	47	0
+	+	48	0
+	+	52	0
+	+	53	52
+	+	68	0
+	+	69	76
+	+	70	23
+	+	69	18
+	+	75	79
+	+	76	28
+	+	21	80
+	+	22	78
+	+	77	57
+	+	78	44
+	+	76	0
+	+	54	61
+	+	55	41
+	+	57	41
+	+	58	8
+	+	57	36
+	+	58	0
+	+	59	37
+	+	62	0
+	+	60	26
+	+	62	0
+	+	63	81
+	+	65	27
+	+	63	70
+	+	65	80
+	+	66	65
+	+	65	59
+	+	62	0
+	+	61	56
+	+	65	72
+	+	67	0
+	+	50	42
+	+	63	0
+	+	77	44
+	+	78	45
+	+	89	66
+	+	89	0
+	+	81	0
+	+	82	0
+	+	88	25
+	+	89	0
+	+	82	20
+	+	82	62
+	+	82	44
+	+	82	104
+	+	82	62
+	+	88	0
+	+	82	79
+	+	83	0
+	+	84	50
+	+	82	64
+	+	84	63
+	+	85	30
+	+	84	36
+	+	85	0
+	+	87	16
+	+	87	93
+	+	63	6
+	+	37	28
+	+	77	44
+	+	78	45
+	+	7	11
+
+> ~/yocto/documentation/content/commands_bitbake.tex
+	*	1577926351	0
+	"	28	0
+	^	15	0
+	.	16	0
+	+	120	9
+	+	118	20
+	+	120	10
+	+	118	36
+	+	116	0
+	+	122	16
+	+	117	42
+	+	118	32
+	+	117	51
+	+	118	9
+	+	120	68
+	+	121	35
+	+	120	44
+	+	121	16
+	+	25	13
+	+	10	31
+	+	13	64
+	+	14	28
+	+	19	0
+	+	14	28
+	+	16	1
+	+	16	0
+	+	17	0
+	+	10	31
+	+	4	35
+	+	5	67
+	+	7	74
+	+	13	34
+	+	58	0
+	+	104	8
+	+	30	69
+	+	23	76
+	+	24	10
+	+	25	0
+	+	30	74
+	+	31	11
+	+	31	71
+	+	36	16
+	+	36	11
+	+	37	31
+	+	36	80
+	+	37	30
+	+	38	0
+	+	37	23
+	+	40	55
+	+	31	70
+	+	32	0
+	+	31	62
+	+	51	65
+	+	52	44
+	+	62	10
+	+	63	10
+	+	76	10
+	+	92	10
+	+	101	10
+	+	107	10
+	+	133	10
+	+	134	0
+	+	133	47
+	+	107	61
+	+	101	38
+	+	92	44
+	+	76	48
+	+	62	56
+	+	63	69
+	+	24	5
+	+	5	17
+	+	114	74
+	+	115	0
+	+	116	33
+	+	117	25
+	+	118	47
+	+	119	75
+	+	128	0
+	+	36	0
+	+	80	72
+	+	84	0
+	+	80	72
+	+	83	74
+	+	82	61
+	+	117	25
+	+	118	0
+	+	119	44
+	+	120	0
+	+	124	0
+	+	126	34
+	+	70	41
+	+	72	0
+	+	39	44
+	+	47	38
+	+	70	47
+	+	71	1
+	+	81	1
+	+	83	0
+	+	133	0
+	+	134	0
+	+	116	0
+	+	80	22
+	+	14	28
+	+	16	0
+
+> /usr/share/vim/vim81/doc/help.txt
+	*	1577926339	0
+	"	2	0
+
+> ~/yocto/documentation/content/layer_app.tex
+	*	1577926270	0
+	"	140	0
+	^	64	79
+	.	64	78
+	+	118	14
+	+	102	89
+	+	103	80
+	+	104	41
+	+	104	120
+	+	106	61
+	+	105	116
+	+	118	0
+	+	99	32
+	+	100	0
+	+	101	76
+	+	103	12
+	+	101	26
+	+	102	77
+	+	104	42
+	+	105	39
+	+	104	79
+	+	106	42
+	+	105	74
+	+	118	0
+	+	106	66
+	+	118	0
+	+	107	58
+	+	118	23
+	+	97	15
+	+	98	1
+	+	79	70
+	+	92	0
+	+	93	9
+	+	94	15
+	+	93	32
+	+	94	24
+	+	101	0
+	+	107	63
+	+	118	0
+	+	107	77
+	+	108	79
+	+	118	0
+	+	110	30
+	+	111	0
+	+	113	8
+	+	112	74
+	+	114	56
+	+	116	49
+	+	115	0
+	+	113	8
+	+	114	40
+	+	110	23
+	+	84	18
+	+	85	27
+	+	86	9
+	+	87	18
+	+	86	27
+	+	87	29
+	+	89	0
+	+	88	9
+	+	89	42
+	+	90	0
+	+	5	59
+	+	17	20
+	+	22	24
+	+	26	71
+	+	28	74
+	+	34	37
+	+	53	37
+	+	26	31
+	+	28	28
+	+	33	31
+	+	35	8
+	+	45	15
+	+	49	35
+	+	54	81
+	+	55	33
+	+	52	18
+	+	50	36
+	+	56	18
+	+	50	78
+	+	60	0
+	+	62	16
+	+	63	14
+	+	64	43
+	+	72	84
+	+	73	51
+	+	50	0
+	+	82	72
+	+	82	70
+	+	98	26
+	+	119	46
+	+	118	74
+	+	119	13
+	+	121	0
+	+	119	0
+	+	113	41
+	+	23	12
+	+	24	15
+	+	23	77
+	+	25	0
+	+	15	58
+	+	58	77
+	+	64	78
+	z	75	64
+
+> ~/yocto/documentation/content/layer_app..tex
+	*	1577926018	0
+	"	1	0
+
+> ~/yocto/documentation/content/setup_eclipse..tex
+	*	1577925886	0
+	"	1	0
+
+> ~/yocto/documentation/content/abbreviations.tex
+	*	1577925572	0
+	"	16	46
+	^	9	47
+	.	9	46
+	+	10	0
+	+	3	14
+	+	12	0
+	+	3	14
+	+	3	68
+	+	10	0
+	+	5	4
+	+	3	69
+	+	6	16
+	+	7	34
+	+	8	39
+	+	3	0
+	+	8	38
+	+	9	46
+
+> ~/yocto/documentation/bibtex.tex
+	*	1577905708	0
+	"	234	0
+	^	178	59
+	.	67	0
+	+	174	21
+	+	175	14
+	+	176	42
+	+	178	58
+	+	67	0
+
+> ~/downloads/documentation_5/bibtex.tex
+	*	1577905691	0
+	"	233	0
+
+> ~/yocto/documentation/content/layer_machine_and_distro.tex
+	*	1577904950	0
+	"	41	12
+	^	40	13
+	.	40	12
+	+	73	0
+	+	66	31
+	+	69	7
+	+	68	1
+	+	69	31
+	+	60	67
+	+	70	16
+	+	72	34
+	+	72	33
+	+	72	73
+	+	60	79
+	+	62	25
+	+	61	76
+	+	63	26
+	+	61	78
+	+	63	26
+	+	61	67
+	+	62	79
+	+	66	31
+	+	63	77
+	+	68	0
+	+	66	81
+	+	69	71
+	+	74	0
+	+	76	32
+	+	75	15
+	+	76	73
+	+	77	0
+	+	81	31
+	+	77	49
+	+	81	31
+	+	77	89
+	+	78	61
+	+	79	61
+	+	80	72
+	+	81	31
+	+	84	82
+	+	26	0
+	+	83	8
+	+	1	0
+	+	2	0
+	+	8	33
+	+	23	0
+	+	27	51
+	+	28	0
+	+	48	46
+	+	49	0
+	+	59	0
+	+	23	59
+	+	25	41
+	+	31	0
+	+	32	0
+	+	31	15
+	+	31	22
+	+	32	16
+	+	31	0
+	+	32	0
+	+	31	31
+	+	32	31
+	+	57	40
+	+	20	21
+	+	9	69
+	+	20	22
+	+	22	1
+	+	38	21
+	+	39	0
+	+	38	56
+	+	40	39
+	+	41	0
+	+	40	14
+	+	63	79
+	+	65	50
+	+	66	72
+	+	67	12
+	+	68	0
+	+	67	78
+	+	64	0
+	+	75	67
+	+	76	91
+	+	76	172
+	+	77	0
+	+	88	58
+	+	88	94
+	+	89	0
+	+	93	8
+	+	95	34
+	+	46	13
+	+	48	5
+	+	42	53
+	+	61	53
+	+	63	17
+	+	76	176
+	+	95	34
+	+	9	0
+	+	29	5
+	+	61	11
+	+	65	54
+	+	63	21
+	+	38	19
+	+	40	12
+
+> ~/yocto/documentation/content/layer_kernel.tex
+	*	1577899636	0
+	"	85	0
+	.	86	0
+	+	49	0
+	+	50	0
+	+	49	35
+	+	48	49
+	+	47	55
+	+	48	57
+	+	49	43
+	+	50	46
+	+	43	0
+	+	42	64
+	+	44	35
+	+	45	0
+	+	44	53
+	+	40	0
+	+	53	72
+	+	54	38
+	+	56	0
+	+	57	0
+	+	61	0
+	+	57	10
+	+	60	0
+	+	57	24
+	+	50	37
+	+	49	34
+	+	48	48
+	+	47	45
+	+	53	57
+	+	54	0
+	+	55	0
+	+	86	16
+	+	86	0
+	+	62	0
+	+	31	29
+	+	62	0
+	+	63	0
+	+	64	0
+	+	65	0
+	+	86	0
+	+	67	19
+	+	69	39
+	+	73	3
+	+	72	1
+	+	73	76
+	+	86	19
+	+	75	0
+	+	76	0
+	+	86	0
+	+	76	10
+	+	78	0
+	+	77	25
+	+	76	24
+	+	86	0
+	+	69	0
+	+	72	0
+	+	71	13
+	+	70	53
+	+	76	24
+	+	77	0
+	+	78	0
+	+	77	15
+	+	81	11
+	+	82	0
+	+	83	15
+	+	84	15
+	+	83	14
+	+	84	14
+	+	77	14
+	+	76	14
+	+	86	21
+	+	17	0
+	+	13	22
+	+	2	15
+	+	3	17
+	+	9	25
+	+	3	11
+	+	16	16
+	+	31	30
+	+	16	21
+	+	32	6
+	+	21	55
+	+	22	39
+	+	28	54
+	+	57	66
+	+	58	46
+	+	57	72
+	+	59	34
+	+	68	50
+	+	69	0
+	+	80	56
+	+	81	8
+	+	86	0
+	+	86	115
+	+	86	49
+	+	86	37
+	+	86	78
+	+	86	44
+	+	86	41
+	+	86	22
+	+	86	21
+	+	86	0
+
+> ~/.vimplug.conf
+	*	1577888438	0
+	"	163	0
+	^	164	1
+	.	164	0
+	+	77	0
+	+	76	0
+	+	75	0
+	+	74	0
+	+	157	0
+	+	190	0
+	+	132	0
+	+	37	0
+	+	164	0
+	+	159	0
+	+	157	0
+	+	115	0
+	+	114	0
+	+	113	0
+	+	112	0
+	+	78	0
+	+	76	0
+	+	74	0
+	+	158	0
+	+	165	3
+	+	165	0
+	+	164	28
+	+	158	0
+	+	164	27
+	+	158	0
+	+	165	0
+	+	164	53
+	+	158	0
+	+	149	63
+	+	133	0
+	+	164	0
+	+	165	0
+	+	54	0
+	+	48	0
+	+	164	0
+	+	165	0
+	+	164	0
+	+	165	0
+	+	17	0
+	+	76	19
+	+	80	0
+	+	85	0
+	+	84	0
+	+	83	0
+	+	82	0
+	+	83	0
+	+	84	0
+	+	76	0
+	+	85	0
+	+	82	0
+	+	83	0
+	+	81	19
+	+	82	23
+	+	114	0
+	+	115	0
+	+	116	0
+	+	117	0
+	+	118	0
+	+	123	49
+	+	124	0
+	+	123	0
+	+	125	70
+	+	155	86
+	+	156	0
+	+	157	0
+	+	158	105
+	+	159	0
+	+	162	0
+	+	79	0
+	+	158	0
+	+	163	109
+	+	162	60
+	+	161	67
+	+	159	62
+	+	157	106
+	+	158	0
+	+	150	0
+	+	155	0
+	+	151	0
+	+	161	0
+	+	162	0
+	+	190	62
+	+	189	82
+	+	189	0
+	+	48	0
+	+	54	0
+	+	48	0
+	+	53	28
+	+	50	0
+	+	51	0
+	+	52	0
+	+	53	0
+	+	50	3
+	+	51	0
+	+	50	4
+	+	51	4
+	+	52	4
+	+	53	4
+	+	164	0
+
+> ~/yocto/documentation/content/[BufExplorer]
+	*	1577813600	0
+	"	4	2
+	.	4	0
+	+	4	0
+
+> ~/yocto/documentation/content/undotree_2
+	*	1577813595	0
+	"	1	0
+	.	3	0
+	+	23	0
+	+	22	0
+	+	4	0
+	+	3	0
+
+> ~/yocto/documentation/content/diffpanel_3
+	*	1577813595	0
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/yocto/documentation/content/__Tagbar__.1
+	*	1577813586	0
+	"	18	4
+	.	21	0
+	+	71	0
+	+	63	0
+	+	37	0
+	+	21	0
+
+> ~/.vim/colors/marco_pi.vim
+	*	1577810837	0
+	"	120	84
+	^	120	85
+	.	120	84
+	+	89	0
+	+	167	0
+	+	120	84
+	+	133	83
+	+	120	0
+	+	120	84
+
+> ~/.vimrc
+	*	1577798989	0
+	"	318	9
+	.	318	9
+	+	290	72
+	+	290	119
+	+	290	69
+	+	293	0
+	+	286	6
+	+	290	65
+	+	293	64
+	+	286	0
+	+	651	0
+	+	290	67
+	+	286	6
+	+	290	80
+	+	290	0
+	+	291	68
+	+	293	26
+	+	291	0
+	+	293	0
+	+	293	57
+	+	294	0
+	+	291	74
+	+	293	0
+	+	286	0
+	+	293	0
+	+	293	21
+	+	286	0
+	+	293	0
+	+	291	49
+	+	292	0
+	+	291	0
+	+	292	27
+	+	293	10
+	+	292	49
+	+	482	18
+	+	291	59
+	+	292	8
+	+	588	0
+	+	828	2
+	+	828	6
+	+	162	0
+	+	825	23
+	+	828	66
+	+	828	0
+	+	826	0
+	+	827	0
+	+	826	28
+	+	521	0
+	+	522	0
+	+	523	0
+	+	526	0
+	+	44	15
+	+	48	64
+	+	46	0
+	+	311	11
+	+	312	11
+	+	313	9
+	+	482	8
+	+	522	0
+	+	517	14
+	+	518	0
+	+	517	0
+	+	61	0
+	+	45	0
+	+	160	16
+	+	316	21
+	+	317	0
+	+	317	32
+	+	319	33
+	+	317	32
+	+	319	34
+	+	322	10
+	+	48	0
+	+	1075	0
+	+	319	0
+	+	322	0
+	+	3	0
+	+	322	10
+	+	318	39
+	+	317	36
+	+	318	33
+	+	322	9
+	+	318	34
+	+	317	32
+	+	318	34
+	+	317	31
+	+	318	33
+	+	540	27
+	+	533	26
+	+	550	0
+	+	536	27
+	+	534	40
+	+	535	50
+	+	548	23
+	+	549	0
+	+	547	29
+	+	547	0
+	+	539	0
+	+	547	0
+	+	545	0
+	+	318	9
+
+> ~/yocto/documentation/content/layer_kernel.
+	*	1577798572	0
+	"	1	0
+
+> ~/yocto/documentation/title.tex
+	*	1577798418	0
+	"	18	0
+	^	10	46
+	.	10	45
+	+	10	45
+
+> ~/docker/latex/Dockerfile
+	*	1576230495	0
+	"	27	0
+	.	53	0
+	+	53	0
+
+> ~/yocto/documentation/content/solutions2errors.tex
+	*	1576226815	0
+	"	83	0
+	^	58	17
+	.	38	10
+	+	31	0
+	+	63	0
+	+	43	0
+	+	63	0
+	+	41	88
+	+	41	89
+	+	40	29
+	+	63	0
+	+	40	0
+	+	63	0
+	+	46	0
+	+	47	0
+	+	46	26
+	+	47	0
+	+	49	80
+	+	50	76
+	+	54	0
+	+	63	0
+	+	53	0
+	+	53	9
+	+	53	7
+	+	53	31
+	+	53	4
+	+	54	7
+	+	59	16
+	+	54	0
+	+	53	0
+	+	54	71
+	+	55	0
+	+	54	71
+	+	56	0
+	+	57	0
+	+	56	24
+	+	55	41
+	+	56	45
+	+	57	4
+	+	56	0
+	+	57	0
+	+	56	74
+	+	57	57
+	+	58	57
+	+	63	0
+	+	61	78
+	+	62	7
+	+	63	0
+	+	64	48
+	+	66	0
+	+	84	0
+	+	66	0
+	+	67	2
+	+	66	0
+	+	67	0
+	+	67	79
+	+	68	19
+	+	67	80
+	+	83	0
+	+	68	18
+	+	69	0
+	+	70	29
+	+	71	29
+	+	75	2
+	+	77	0
+	+	78	46
+	+	79	26
+	+	80	0
+	+	82	0
+	+	74	73
+	+	75	62
+	+	67	0
+	+	51	39
+	+	49	16
+	+	50	42
+	+	9	12
+	+	19	35
+	+	20	35
+	+	21	32
+	+	23	12
+	+	24	0
+	+	75	31
+	+	82	0
+	+	54	0
+	+	9	48
+	+	10	27
+	+	9	27
+	+	10	26
+	+	54	0
+	+	58	12
+	+	57	12
+	+	56	12
+	+	55	16
+	+	56	16
+	+	57	16
+	+	58	17
+	+	57	17
+	+	56	17
+	+	55	17
+	+	56	65
+	+	58	52
+	+	37	0
+	+	38	10
+
+> ~/yocto/documentation/main.pdf
+	*	1576223390	0
+	"	1	0
+	.	5	0
+	+	5	0
+
+> ~/yocto/documentation/content/commands_devtool.tex
+	*	1576221390	0
+	"	3	0
+	^	18	25
+	.	5	0
+	+	1	0
+	+	2	0
+	+	20	6
+	+	12	15
+	+	6	0
+	+	7	0
+	+	8	0
+	+	10	70
+	+	11	11
+	+	12	77
+	+	14	0
+	+	15	0
+	+	17	78
+	+	18	4
+	+	18	5
+	+	18	17
+	+	19	0
+	+	18	24
+	+	20	0
+	+	5	0
+
+> ~/yocto/documentation/content/solutions2errors.aux
+	*	1575987695	0
+	"	5	0
+
+> ~/yocto/documentation/-MiniBufExplorer-
+	*	1575901631	0
+	"	1	17
+	.	2	0
+	+	2	0
+
+> ~/yocto/documentation/content/layer_app.aux
+	*	1575897286	0
+	"	2	0
+
+> ~/yocto/documentation/content/layer_app.
+	*	1575895547	0
+	"	1	0
+
+> ~/downloads/documentation_3/content/solutions2errors.tex
+	*	1575880326	0
+	"	79	4
+
+> ~/downloads/documentation_3/content/pitfalls.tex
+	*	1575880307	0
+	"	2	0
+
+> ~/downloads/documentation_3/content/ausbilck.tex
+	*	1575880277	0
+	"	98	0
+
+> ~/downloads/documentation_2/content/pitfalls.tex
+	*	1575872919	0
+	"	1	0
+	.	3	0
+	+	3	0
+
+> ~/yocto/documentation/Makefile
+	*	1575850588	0
+	"	21	67
+	^	9	11
+	.	20	19
+	+	21	93
+	+	9	8
+	+	20	3
+	+	21	93
+	+	21	0
+	+	21	92
+	+	21	0
+	+	21	99
+	+	20	38
+	+	21	94
+	+	21	0
+	+	22	0
+	+	21	14
+	+	20	39
+	+	9	10
+	+	20	0
+	+	9	5
+	+	20	19
+
+> ~/yocto/documentation/bibtex.bib
+	*	1575848662	0
+	"	50	4
+	^	186	11
+	.	186	0
+	+	98	67
+	+	96	9
+	+	98	8
+	+	96	9
+	+	98	69
+	+	101	0
+	+	103	12
+	+	105	97
+	+	107	70
+	+	228	0
+	+	226	0
+	+	216	1
+	+	183	0
+	+	149	0
+	+	123	8
+	+	41	10
+	+	30	9
+	+	21	9
+	+	11	9
+	+	130	0
+	+	132	10
+	+	133	21
+	+	134	30
+	+	136	7
+	+	230	0
+	+	1	0
+	+	2	0
+	+	1	19
+	+	11	14
+	+	13	25
+	+	11	16
+	+	20	30
+	+	7	29
+	+	6	22
+	+	25	22
+	+	26	26
+	+	30	26
+	+	17	55
+	+	16	22
+	+	17	54
+	+	37	0
+	+	35	36
+	+	37	0
+	+	35	37
+	+	41	22
+	+	50	22
+	+	59	29
+	+	68	24
+	+	77	27
+	+	85	43
+	+	103	17
+	+	94	23
+	+	114	8
+	+	115	17
+	+	114	36
+	+	132	27
+	+	123	24
+	+	136	71
+	+	132	35
+	+	141	0
+	+	143	28
+	+	141	34
+	+	134	29
+	+	142	0
+	+	150	36
+	+	145	69
+	+	154	71
+	+	152	29
+	+	158	35
+	+	158	92
+	+	158	188
+	+	158	218
+	+	174	0
+	+	158	0
+	+	166	35
+	+	168	28
+	+	170	70
+	+	186	0
+	+	196	0
+	+	195	0
+	+	196	0
+	+	196	9
+	+	174	0
+	+	1	0
+	+	196	0
+	+	1	0
+	+	196	0
+	+	230	0
+	+	186	18
+	+	77	13
+	+	186	0
+	+	230	0
+	+	186	0
+
+> ~/yocto/bibtex.bib
+	*	1575848631	0
+	"	1	0
+
+> ~/yocto/documentation/latexmkrc
+	*	1575846287	0
+	"	3	0
+	^	3	4
+	.	5	0
+	+	5	0
+	+	5	30
+	+	5	0
+	+	3	0
+	+	5	0
+
+> ~/yocto/documentation/main.log
+	*	1575846201	0
+	"	1262	0
+	.	11	0
+	+	11	0
+
+> content/layer_machine_and_distro.tex
+	*	1575845402	0
+	"	1	0
+
+> /layer_app.tex
+	*	1575844565	0
+	"	1	0
+
+> ~/downloads/documentation_3/content/layer_app.tex
+	*	1575844458	0
+	"	1	0
+
+> ~/downloads/documentation_3/content/layer_software.tex
+	*	1575844443	0
+	"	1	0
+
+> ~/downloads/documentation_2/content/layer_software.tex
+	*	1575844429	0
+	"	1	0
+
+> ~/yocto/documentation/content/setup_qt5.aux
+	*	1575844242	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/NERD_tree_1
+	*	1575842673	0
+	"	3	0
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/layer_machine_and_distro.tex
+	*	1575842492	0
+	"	1	0
+
+> ~/yocto/documentation/content/software_module.aux
+	*	1575839530	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/bibtex.bib
+	*	1575833650	0
+	"	1	0
+
+> ~/dokumentation/main.tex
+	*	1575820558	0
+	"	1	0
+	.	5	0
+	+	5	0
+
+> ~/dokumentation/content/glossary.tex
+	*	1575820484	0
+	"	2	0
+	^	2	1
+	.	7	0
+	+	3	0
+	+	7	0
+
+> ~/yocto/documentation/main.lo
+	*	1575820088	0
+	"	1	0
+
+> ~/yocto/documentation/content/setup_bitbake.tex
+	*	1575810868	0
+	"	60	0
+	.	80	0
+	+	80	0
+
+> ~/yocto/documentation/undotree_2
+	*	1575765554	0
+	"	3	1
+	.	3	0
+	+	295	0
+	+	5	0
+	+	3	0
+
+> ~/yocto/documentation/diffpanel_3
+	*	1575765553	0
+	"	1	0
+	.	2	0
+	+	4	0
+	+	2	0
+
+> /usr/share/vim/vim81/doc/editing.txt
+	*	1575644453	0
+	"	860	0
+
+> ~/.vim/backup/einleitung.tex~
+	*	1575642943	0
+	"	1	0
+
+> ~/.vim/backup/ausbilck.tex~
+	*	1575642876	0
+	"	98	0
+
+> ~/.vim/backup/layer_machine_and_distro.tex~
+	*	1575642774	0
+	"	1	0
+
+> ~/yocto/documentation_2/content/setup_bitbake.tex
+	*	1575640932	0
+	"	121	0
+	.	80	0
+	+	80	0
+
+> ~/yocto/documentation/content/grundlagen.
+	*	1575639418	0
+	"	1	0
+
+> ~/yocto/documentation/run.sh
+	*	1575638543	0
+	"	18	0
+	.	12	0
+	+	1	10
+	+	2	0
+	+	3	0
+	+	13	20
+	+	4	15
+	+	10	0
+	+	9	1
+	+	6	45
+	+	8	0
+	+	6	45
+	+	18	49
+	+	18	51
+	+	18	55
+	+	18	52
+	+	10	0
+	+	11	0
+	+	13	15
+	+	12	0
+
+> ~/yocto/documentation/content/module_entwicklung.tex
+	*	1575622390	0
+	"	6	0
+	^	38	0
+	.	37	0
+	+	52	0
+	+	48	0
+	+	2	0
+	+	3	0
+	+	2	27
+	+	3	28
+	+	6	0
+	+	7	0
+	+	9	0
+	+	10	0
+	+	13	0
+	+	14	0
+	+	17	0
+	+	18	0
+	+	21	0
+	+	22	0
+	+	22	18
+	+	27	0
+	+	27	30
+	+	27	76
+	+	27	63
+	+	27	75
+	+	61	0
+	+	32	20
+	+	32	30
+	+	39	0
+	+	34	0
+	+	32	0
+	+	33	16
+	+	25	34
+	+	37	0
+
+> ~/yocto/documentation/content/commands_bitbake.aux
+	*	1575547173	0
+	"	2	0
+
+> ~/yocto/documentation/preamble.aux
+	*	1575546013	0
+	"	2	0
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/content/commands_bitbake.
+	*	1575542627	0
+	"	1	0
+
+> ~/yocto/documentation/ls.tex
+	*	1575540138	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/yocto/documentation/bibtex.log
+	*	1575539861	0
+	"	1	0
+	.	13	0
+	+	13	0
+
+> ~/.vim/plugged/vim-session/doc/session.txt
+	*	1575525961	0
+	"	8	23
+
+> ~/.vim/sessions/last-session.txt
+	*	1575525700	0
+	"	1	0
+
+> ~/.vim/sessions/last-session.tex
+	*	1575524325	0
+	"	1	0
+
+> ~/yocto/documentation/main.
+	*	1575523937	0
+	"	1	0
+
+> ~/yocto/documentation/content/sdk.tex
+	*	1575467892	0
+	"	56	11
+	^	56	12
+	.	56	11
+	+	1	0
+	+	4	0
+	+	1	12
+	+	4	0
+	+	3	55
+	+	7	0
+	+	8	0
+	+	10	69
+	+	36	0
+	+	36	20
+	+	36	69
+	+	36	0
+	+	36	72
+	+	36	20
+	+	36	0
+	+	13	0
+	+	14	55
+	+	15	0
+	+	16	0
+	+	36	0
+	+	16	18
+	+	16	19
+	+	20	0
+	+	16	25
+	+	15	25
+	+	20	23
+	+	16	55
+	+	17	65
+	+	18	78
+	+	19	39
+	+	23	0
+	+	24	0
+	+	24	19
+	+	25	19
+	+	27	19
+	+	24	72
+	+	26	12
+	+	27	0
+	+	26	30
+	+	27	63
+	+	28	33
+	+	36	0
+	+	37	0
+	+	38	0
+	+	41	0
+	+	42	75
+	+	43	19
+	+	42	79
+	+	43	10
+	+	52	0
+	+	52	4
+	+	41	17
+	+	54	0
+	+	42	0
+	+	54	0
+	+	52	0
+	+	54	0
+	+	45	49
+	+	52	0
+	+	40	29
+	+	46	74
+	+	48	0
+	+	49	28
+	+	50	25
+	+	55	28
+	+	34	32
+	+	33	66
+	+	35	0
+	+	33	0
+	+	34	5
+	+	56	11
+
+> ~/yocto/documentation/content/NERD_tree_2
+	*	1575448178	0
+	"	4	0
+	.	1	0
+	+	1	0
+
+> ~/.i3/i3_layout_marco_ws6.json
+	*	1575264774	0
+	"	40	19
+	^	41	9
+	.	40	19
+	+	35	5
+	+	37	15
+	+	35	0
+	+	36	0
+	+	35	5
+	+	36	15
+	+	41	8
+	+	40	19
+	z	35	7
+
+> ~/.i3/i3_layout_marco_ws5.json
+	*	1575264711	0
+	"	18	0

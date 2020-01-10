@@ -1,0 +1,48 @@
+1567858407955	Sync.Service	INFO	Loading Weave 1.70.0
+1567858407957	Sync.Engine.Clients	DEBUG	Engine constructed
+1567858407958	Sync.Engine.Clients	DEBUG	Resetting clients last sync time
+1567858407992	Sync.Engine.Addons	DEBUG	Engine constructed
+1567858408019	Sync.Engine.Addons	DEBUG	SyncEngine initialized: addons
+1567858408020	Sync.AddonsReconciler	DEBUG	No data seen in loaded file: addonsreconciler
+1567858408023	Sync.Engine.Forms	DEBUG	Engine constructed
+1567858408043	Sync.Engine.Forms	DEBUG	SyncEngine initialized: forms
+1567858408046	Sync.Engine.History	DEBUG	Engine constructed
+1567858408048	Sync.Engine.History	DEBUG	SyncEngine initialized: history
+1567858408051	Sync.Engine.Passwords	DEBUG	Engine constructed
+1567858408052	Sync.Engine.Passwords	DEBUG	SyncEngine initialized: passwords
+1567858408056	Sync.Engine.Prefs	DEBUG	Engine constructed
+1567858408057	Sync.Engine.Prefs	DEBUG	SyncEngine initialized: prefs
+1567858408060	Sync.Engine.Tabs	DEBUG	Engine constructed
+1567858408061	Sync.Engine.Tabs	DEBUG	SyncEngine initialized: tabs
+1567858408061	Sync.Engine.Tabs	DEBUG	Resetting tabs last sync time
+1567858408064	Sync.Engine.Extension-Storage	DEBUG	Engine constructed
+1567858408065	Sync.Engine.Extension-Storage	DEBUG	SyncEngine initialized: extension-storage
+1567858408071	Sync.Engine.Bookmarks	DEBUG	Engine constructed
+1567858408085	Sync.Engine.Bookmarks	DEBUG	SyncEngine initialized: bookmarks
+1567858408086	Sync.Service	INFO	Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+1567858408088	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1567858408088	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1567858408088	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1567858408090	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1567858408090	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1567858408090	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1567861227924	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1567861227924	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1567861227925	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1567861228904	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1567861236357	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1567861236357	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1567861236369	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1567861236370	Sync.Service	DEBUG	User-Agent: Firefox/68.0.2 (Linux x86_64) FxSync/1.70.0.20190814202610.desktop
+1567861236371	Sync.Service	INFO	Starting sync at 2019-09-07 15:00:36 in browser session FeUw9vXK6djr
+1567861236372	Sync.Service	DEBUG	In sync: should login.
+1567861236373	Sync.Service	INFO	User logged in successfully - verifying login.
+1567861236374	Sync.BrowserIDManager	DEBUG	unlockAndVerifyAuthState has no user
+1567861236374	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1567861236374	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1567861236374	Sync.Service	DEBUG	Fetching unlocked auth state returned error.login.reason.no_username
+1567861236375	Sync.ErrorHandler	ERROR	Sync encountered a login error
+1567861236376	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1567861236376	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1567861236386	Sync.Service	DEBUG	Exception calling WrappedLock: Error: Login failed: error.login.reason.no_username(resource://services-sync/service.js:869:15) JS Stack trace: onNotify@service.js:869:15
+1567861236386	Sync.Service	DEBUG	Not syncing: login returned false.

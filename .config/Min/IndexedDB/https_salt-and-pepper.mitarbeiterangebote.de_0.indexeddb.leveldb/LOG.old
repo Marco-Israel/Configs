@@ -1,0 +1,14 @@
+2019/12/01-19:07:56.287 22eb Reusing MANIFEST /home/marco/.config/Min/IndexedDB/https_salt-and-pepper.mitarbeiterangebote.de_0.indexeddb.leveldb/MANIFEST-000001
+2019/12/01-19:07:56.288 22eb Recovering log #58
+2019/12/01-19:07:56.288 22eb Reusing old log /home/marco/.config/Min/IndexedDB/https_salt-and-pepper.mitarbeiterangebote.de_0.indexeddb.leveldb/000058.log 
+2019/12/01-19:07:56.289 22eb Delete type=2 #56
+2019/12/01-19:07:58.724 153b Level-0 table #63: started
+2019/12/01-19:07:58.776 153b Level-0 table #63: 553 bytes OK
+2019/12/01-19:07:58.820 153b Delete type=0 #58
+2019/12/01-19:07:58.821 153b Manual compaction at level-0 from '\x00\x10\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at '\x00\x10\x00\x00\x05' @ 292 : 1
+2019/12/01-19:07:58.821 153b Compacting 1@0 + 1@1 files
+2019/12/01-19:07:58.854 153b Generated table #64@0: 7 keys, 528 bytes
+2019/12/01-19:07:58.854 153b Compacted 1@0 + 1@1 files => 528 bytes
+2019/12/01-19:07:58.897 153b compacted to: files[ 0 1 1 0 0 0 0 ]
+2019/12/01-19:07:58.898 153b Delete type=2 #63
+2019/12/01-19:07:58.899 153b Manual compaction at level-0 from '\x00\x10\x00\x00\x05' @ 292 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at (end)

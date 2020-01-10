@@ -77,13 +77,13 @@
                                "x": 0,
                                "y": 0
                             },
-                            "name": "Restore Session - Mozilla Firefox",
+                            "name": "Restore Session - Mozilla min",
                             "percent": 0.5,
                             "swallows": [
                                {
-                               // "class": "^Firefox$",
+                               // "class": "^min$",
                                // "instance": "^Navigator$",
-                               // "title": "^Restore\\ Session\\ \\-\\ Mozilla\\ Firefox$",
+                               // "title": "^Restore\\ Session\\ \\-\\ Mozilla\\ min$",
                                // "transient_for": "^$",
                                // "window_role": "^browser$"
                                }

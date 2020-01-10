@@ -1,12 +1,10 @@
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ VIM OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"filetype on
 "filetype plugin indent on "like above
 autocmd InsertLeave * redraw! "Leerzeichen beim Tippen anzeigen
-
-
 set backup "   Backup-Dateien vor dem Speichern anlegen
 set backupdir=~/.vim/backup/ "Verzeichnis zum Speichern (vorher anlegen)
 set undofile "permanentes Rueckgaengigmachen ermoeglichen (ab Version 7.3)
@@ -30,7 +28,7 @@ set smartcase "Gross-/Kleinschreibung nicht ignorieren
 set hlsearch "Suchergebnisse hervorheben
 set incsearch "Ergebnisse beim Tippen anzeigen
 set cryptmethod=blowfish "Verschuesselungsmethode definieren
-set cursorline "aktuelle Zeile unterstreichen
+"set cursorline "aktuelle Zeile unterstreichen
 set history=1000 "setzt die bash history. Default in vim=20, vi=0
 set showmatch "öffnende und schließende Klammern hervorheben
 set showcmd "Kommandos beim Eintippen rechts unten in der Statuszeile anzeigen
@@ -40,10 +38,13 @@ set list "listchars anzeigen
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
 set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
-set relativenumber "Relative Zeilennummern
+"set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
-set textwidth=0  "autowrap after 80 char for instance. 0==turn off.
+set textwidth=80  "autowrap after 80 char for instance. 0==turn off.
+"set formatoptions+=a "Autowrep during insert or deleate
+set linebreak  "break a line hard, not only display a linebreak.
+set nolist
 set expandtab "   Tabs durch Leerzeichen ersetzen lassen
 set tabstop=4 " Tab auf 4 Zeichen setzen
 set shiftwidth=4 "   Anzahl der Leezeichen fuer autoindent
@@ -53,16 +54,17 @@ set laststatus=2 " Statuszeile anzeigen
 set path+=** "extand the vim path"
 set path+=../**
 set path+=../../**
-set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
+"set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
-set autoread "autoread a file if it hase chaged elsewere
-set scrolloff=53 "show the last X lines. 999 = Center everytime.
+set scrolloff=3 "show the last X lines. 999 = Center everytime.
 "set autowrite
 "set autowriteall
 "set complete-=i
-"set makeprg=make --jopbs=14 -load=10
 "
+" Latex
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings  = 'make;m:makros;t:targets'
 
 if has('autocmd')
   filetype plugin indent on
@@ -127,6 +129,7 @@ if &tabpagemax < 50
 endif
 if !empty(&viminfo)
   set viminfo^=!
+  b
 endif
 set sessionoptions-=options
 
@@ -151,32 +154,18 @@ endif
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 """ Foldenable codeblocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
-set foldlevelstart=10
-set foldnestmax=10
+set foldlevelstart=1
+set foldnestmax=5
 set foldmethod=indent
-
-
+"autocmd InsertLeave,WinEnter * setlocal foldmethod=syntax
+autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
 
 
 
 """  aktuelle Zeile einfärben anstatt zu unterstreichen """"""""""""""""""""""""
 "highlight CursorLine term=bold,underline,undercurl cterm=bold,underline,undercurl
-
 
 
 
@@ -191,23 +180,23 @@ set foldmethod=indent
 "# Wann geladen wird              # Maske   # Aktivieren      #Sprache
 "au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
 "au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
-au BufNewFile,BufRead *.txt           setlocal spell spelllang=en_us,de_de
+au BufNewFile,BufRead *.txt,*.tex     setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead *.todo          setlocal spell spelllang=en_us,de_de
 au BufNewFile,BufRead README          setlocal spell spelllang=en_us,de_de
-au BufNewFile,BufRead *.tex           setlocal spell spelllang=,de_de
 au BufNewFile,BufRead *.c,*.cpp       setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.py            setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.sh            setlocal spell spelllang=en_us,de_de
 
 
-
+"""tags
+au BufNewFile,BufRead *c,*.cpp,*h,*hh.*hpp  set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 
 
 
 """ Syntax und Colorshame """"""""""""""""""""""""""""""""""""""""""""""""""""""
-"syntax enable
-"syntax on "Sytaxhighliting einschalten
+syntax enable
+syntax on "Sytaxhighliting einschalten
 set background=dark
 set t_Co=256
 colorscheme marco_pi
@@ -248,7 +237,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 
 
-
+"
 """ Change Cursor Colllor """"""""""""""""""""""""""""""""""""""""""""""""""""""
  if &term =~ "xterm\\|rxvt"
      "1 is the blinky block cursor
@@ -298,8 +287,10 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 
  """ Deleat all Trailing Whitespace """"""""""""""""""""""""""""""""""""""""""""
-autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
-function! <SID>StripTrailingWhitespaces()
+"autocmd TabClosed,BufLeave,VimLeave,VimLeavePre,WinLeave,BufWrite * :%s/\s\+$//e<CR>
+"autocmd BufLeave,VimLeave,VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
+autocmd VimLeavePre,BufWritePre * :call StripTrailingWhitespaces()
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -312,21 +303,23 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Key MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open Trees
 nnoremap <F9> :UndotreeToggle<cr>
-noremap <F11> :NERDTreeToggle<CR>
-noremap <F12> :TagbarToggle<CR>
-noremap <C-F12> :BufExplorerVerticalSplit<CR>
+noremap <F10> :NERDTreeToggle<CR>
+noremap <F11> :TagbarToggle<CR>
+noremap <F12> :BufExplorerVerticalSplit<CR>
 
 
+"Toggle auto-linebreak
+noremap <F4> :set formatoptions+=a<CR>
+noremap <C-F4> :set formatoptions-=a<CR>
 
 
 "Build files
-noremap <C<F8>> :!ctags -a -f ~/.tags/last & <CR>
+noremap <M-F8> :!ctags -a -f ~/.tags/last & <CR>
 
 
 
@@ -486,7 +479,7 @@ map <C-9> :r!date +\%Y-\%m-\%d<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Deleat withspaces
-map <C-F10> :call <SID>StripTrailingWhitespaces()
+map <C-F9> :call StripTrailingWhitespaces()
 
 
 " fill rest of line with characters
@@ -508,8 +501,6 @@ endfunction
 
 
 
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ PLUGIN  OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -523,33 +514,39 @@ source  ~/.vimplug.conf
 
 
 """ SnipeMate (Snipet Plugin)  """""""""""""""""""""""""""""""""""""""""""""""""
-
+"let g:snipMate.always_choose_first
 
 
 """ UltiSnipets (Snipte Plugin) """"""""""""""""""""""""""""""""""""""""""""""""
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"
-"" If you want :UltiSnipsEdit to split your window.
+""
+""" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
-
-
+""
+"
 
 
 
 """ Extended Session Management """"""""""""""""""""""""""""""""""""""""""""""""
-let g:session_autosave='prompt'
-let g:session_autosave_to='~/.vim/sessions'
+let g:session_autosave='yes'
+let g:session_directory='~/.vim/sessions'
+let g:session_autosave_to='~/.vim/sessions/autosave'
+let g:session_lock_directory='~/.vim/sessions/locks'
 "let g:session_extension='_'.strftime('%Y%m%d%H-%M%S')
 let g:session_autosave_silent=1
-let g:session_default_to_last=1
 let g:session_autoload='yes'
-let g:session_lock_enabled=1
+let g:session_lock_enabled=0
 let g:session_default_overwrite =1
 let g:session_autosave_periodic = 1 "interval for autosave in minutes
 let g:session_command_aliases = 1 "for :'Session'*<tab>
 let g:session_menu = 1
+let g:session_default_namea = 'last'
+let g:session_default_to_last=1
+
+set sessionoptions-=help
+"set sessionoptions-=options
 "let g:loaded_session = 1 "avoid loading the vim- session plug-in, set this to
                                             " some value, dont care about it.
 
@@ -570,20 +567,23 @@ let g:session_menu = 1
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 "
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_enable_balloons = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_auto_jump = 1
-"let g:syntastic_c_include_dirs = [ '/cygdrive/c/app/Aurix/WKS_LUFU_AURIX/' ]
-
-
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": ["c", "h"],
-    \ "passive_filetypes": [""] }
-
+"
+"
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_enable_balloons = 1
+"let g:syntastic_check_on_wq = 0
+""let g:syntastic_auto_jump = 1
+""let g:syntastic_c_include_dirs = [ '/cygdrive/c/app/Aurix/WKS_LUFU_AURIX/' ]
+"
+"
+"let g:syntastic_mode_map = {
+"    \ "mode": "passive",
+"    \ "active_filetypes": ["c", "h"],
+"    \ "passive_filetypes": [""] }
+"
 
 
 
@@ -619,8 +619,8 @@ let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 "'<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 "inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "'<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-imap <silent> <C-Space> <C-N>
-imap <silent> <C-S-Space> <C-P>
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-O> <C-x><C-o>
 set completeopt=menuone,menu,longest
 set omnifunc=ccomplete#Complete
 "set omnifunc+=syntaxcomplete#Complete
@@ -660,19 +660,19 @@ autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.
 "something to g:multi_cursor_quit_key, otherwise you'll have a tough time
 "quitting from multicursor mode.
 "
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-n>'
-let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
-let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
-
+"let g:multi_cursor_use_default_mapping=0
+"
+"" Default mapping
+"let g:multi_cursor_start_word_key      = '<C-n>'
+"let g:multi_cursor_select_all_word_key = '<A-n>'
+"let g:multi_cursor_start_key           = 'g<C-n>'
+"let g:multi_cursor_select_all_key      = 'g<A-n>'
+"let g:multi_cursor_next_key            = '<C-n>'
+"let g:multi_cursor_prev_key            = '<C-p>'
+"let g:multi_cursor_skip_key            = '<C-x>'
+"let g:multi_cursor_quit_key            = '<Esc>'
+"
+"
 
 
 """ Ctags """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -794,154 +794,156 @@ nmap ga <Plug>(EasyAlign)
 
 
 """ MiniBuffExplorer """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1
+"
+"let g:buffet_powerline_separators = 1
+"let g:buffet_tab_icon = "\uf00a"
+"let g:buffet_left_trunc_icon = "\uf0a8"
+"let g:buffet_right_trunc_icon = "\uf0a9"
+"
+"let g:buftabs_enabled = 1
+"let g:buftabs_in_statusline = 1
+"let g:buftabs_in_cmdline = 0
+"let g:buftabs_only_basename = 1
+"let g:buftabs_active_highlight_group = "Visual"
+"let g:buftabs_inactive_highlight_group = ""
+"let g:buftabs_statusline_highlight_group = ""
+"let g:buftabs_marker_start = "["
+"let g:buftabs_marker_end = "]"
+"let g:buftabs_separator = "-"
+"let g:buftabs_marker_modified = "!"
+"
+"noremap <f1> :bprev<CR>
+"noremap <f2> :bnext<CR>
+"
 
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-
-let g:buftabs_enabled = 1
-let g:buftabs_in_statusline = 1
-let g:buftabs_in_cmdline = 0
-let g:buftabs_only_basename = 1
-let g:buftabs_active_highlight_group = "Visual"
-let g:buftabs_inactive_highlight_group = ""
-let g:buftabs_statusline_highlight_group = ""
-let g:buftabs_marker_start = "["
-let g:buftabs_marker_end = "]"
-let g:buftabs_separator = "-"
-let g:buftabs_marker_modified = "!"
-
-noremap <f1> :bprev<CR>
-noremap <f2> :bnext<CR>
 
 
-
-
-""" FileTyoe """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" FileTyoe and Syntax """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufFilePost,BufEnter,BufReadPost,FileReadPost,SessionLoadPost *.tex set filetype=tex
 
 
 
 """ easy-motion """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"map <Leader> <Plug>(easymotion-prefix)
 "
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-
-
-" You can use other keymappings like <C-l> instead of <CR> if you want to
-" use these mappings as default search and sometimes want to move cursor with
-" EasyMotion.
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<CR>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
-
-
-
-function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-  \   'converters': [incsearch#config#fuzzyword#converter()],
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
-endfunction
-
-noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
-
-" Require tpope/vim-repeat to enable dot repeat support
-" Jump to anywhere with only `s{char}{target}`
-" `s<CR>` repeat last find motion.
-nmap s <Plug>(easymotion-s)
-" Bidirectional & within line 't' motion
-"omap t <Plug>(easymotion-bd-tl)
-" Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
- " type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
-" Smartsign (type `3` and match `3`&`#`)
-let g:EasyMotion_use_smartsign_us = 1
-
-
-"let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case-insensitive feature
+""map <Leader> <Plug>(easymotion-prefix)
+""
+"" <Leader>f{char} to move to {char}
+"map  <Leader>f <Plug>(easymotion-bd-f)
+"nmap <Leader>f <Plug>(easymotion-overwin-f)
+"
+"" s{char}{char} to move to {char}{char}
+"nmap s <Plug>(easymotion-overwin-f2)
+"
+"" Move to line
+"map <Leader>L <Plug>(easymotion-bd-jk)
+"nmap <Leader>L <Plug>(easymotion-overwin-line)
+"
+"" Move to word
+"map  <Leader>w <Plug>(easymotion-bd-w)
+"nmap <Leader>w <Plug>(easymotion-overwin-w)
+"
+"
+"
+"" You can use other keymappings like <C-l> instead of <CR> if you want to
+"" use these mappings as default search and sometimes want to move cursor with
+"" EasyMotion.
+"function! s:incsearch_config(...) abort
+"  return incsearch#util#deepextend(deepcopy({
+"  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+"  \   'keymap': {
+"  \     "\<CR>": '<Over>(easymotion)'
+"  \   },
+"  \   'is_expr': 0
+"  \ }), get(a:, 1, {}))
+"endfunction
+"
+"noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
+"noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
+"noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+"
+"
+"
+"function! s:config_easyfuzzymotion(...) abort
+"  return extend(copy({
+"  \   'converters': [incsearch#config#fuzzyword#converter()],
+"
+"  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+"  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+"  \   'is_expr': 0,
+"  \   'is_stay': 1
+"  \ }), get(a:, 1, {}))
+"endfunction
+"
+"noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+"
+"" Require tpope/vim-repeat to enable dot repeat support
+"" Jump to anywhere with only `s{char}{target}`
+"" `s<CR>` repeat last find motion.
+"nmap s <Plug>(easymotion-s)
+"" Bidirectional & within line 't' motion
+""omap t <Plug>(easymotion-bd-tl)
+"" Use uppercase target labels and type as a lower case
+"let g:EasyMotion_use_upper = 1
+" " type `l` and match `l`&`L`
 "let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" Eeasy Motions plugins
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
-" EasyMotion. Without these mappings, `n` & `N` works fine. (These mappings
-" just provide different highlight method and have some other features )
-map  <Leader><Leader>n <Plug>(easymotion-next)
-map  <Leader><Leader>N <Plug>(easymotion-prev)
-
-nmap <Leader><Leader>s <Plug>(easymotion-s2)
-nmap <Leader><Leader>t <Plug>(easymotion-t2)
-
+"" Smartsign (type `3` and match `3`&`#`)
+"let g:EasyMotion_use_smartsign_us = 1
+"
+"
+""let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"
+"" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+"" `s{char}{label}`
+"nmap s <Plug>(easymotion-overwin-f)
+"" or
+"" `s{char}{char}{label}`
+"" Need one more keystroke, but on average, it may be more comfortable.
+"nmap s <Plug>(easymotion-overwin-f2)
+"
+"" Turn on case-insensitive feature
+""let g:EasyMotion_smartcase = 1
+"
+"" JK motions: Line motions
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
+"map <Leader>l <Plug>(easymotion-lineforward)
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
+"map <Leader>h <Plug>(easymotion-linebackward)
+"
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"
+"" Eeasy Motions plugins
+"" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
+"" EasyMotion. Without these mappings, `n` & `N` works fine. (These mappings
+"" just provide different highlight method and have some other features )
+"map  <Leader><Leader>n <Plug>(easymotion-next)
+"map  <Leader><Leader>N <Plug>(easymotion-prev)
+"
+"nmap <Leader><Leader>s <Plug>(easymotion-s2)
+"nmap <Leader><Leader>t <Plug>(easymotion-t2)
+"
 
 
 
 
 """ SuperTab """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "supertab
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 
 
 
 
 """ Stripe Withespaces """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:better_whitespace_enabled=1
-let g:strip_whitespace_on_save=1
-
+"let g:better_whitespace_enabled=1
+"let g:strip_whitespace_on_save=1
 
 
 
@@ -1050,19 +1052,17 @@ let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
 
 
 
-"
-"""" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-""nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-"let g:ctrlp_map=''  "to work with ctrl-p
-"nmap <expr> <c-p> yoink#isSwapping() ? '<plug>(YoinkPostPasteSwapForward)' : '<Plug>(ctrlp)'
-"nmap p <plug>(YoinkPaste_p)
-"nmap P <plug>(YoinkPaste_P)
-"nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
-"nmap [y <plug>(YoinkRotateBack)
-"nmap ]y <plug>(YoinkRotateForward)
-"
 
+""" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+"nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+let g:ctrlp_map=''  "to work with ctrl-p
+nmap <expr> <c-p> yoink#isSwapping() ? '<plug>(YoinkPostPasteSwapForward)' : '<Plug>(ctrlp)'
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+nmap <c-=> <plug>(YoinkPostPasteToggleFormat)
+nmap [y <plug>(YoinkRotateBack)
+nmap ]y <plug>(YoinkRotateForward)
 
 
 
@@ -1070,7 +1070,9 @@ let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
 let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 
 
-
+""" www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:wwwsearch_command_to_open_uri =  "min"
+nnoremap <Space>*  :<C-u>Wwwsearch -default <cword><Return>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -1,0 +1,15 @@
+[Desktop Entry]
+FullScreen=true
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
+
+[MainWindow]
+Height 900=900
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABaAAAAOEAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1440=1440
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/Rahmendaten.pdf
+Name1[$e]=Rahmendaten.pdf

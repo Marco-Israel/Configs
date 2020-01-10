@@ -1,0 +1,87 @@
+\chapter{Arbeiten mit Docker}%
+\label{cha:arbeiten_mit_docker}
+
+Wie bereits einleitend  beschrieben, sind für das
+Arbeiten mit Bitbake, mit samt seiner Zusatztools, verschiedene Linux/Unix
+Standard Tools in zu Bitbake kompatiblen Versionen notwendig. Docker wird als
+Virtualisierungsumgebung genutzt, um eine lauffähige Bitbake build Umgebung
+bereit zu stellen ohne dabei großartig preformance durch
+Virtualisierungstechniken zu verlieren, wie es bei alternativen der Fall ist.
+siehe hierzu auch \fullref{sec:einleitung_docker}.
+\\
+Ein solches Dockerimage liegt bereits vor und muss lediglich \textit{gebaut} und
+kann anschließend genutzt werden. Siehe hierzu \ref{dockerimage_bauen} und
+\ref{sec:Dockerimage_ausführen}
+
+
+\section{Dockerimage_bauen}%
+\label{sec:dockerimage_bauen}
+Um ein Docker image zu bauen, die nachfolgenden Schritte ausführen
+\begin{itemize}
+            \item Docker Service starten
+            \item Docker-yocto Image bauen:
+                \textbf{ \textit{docker build -t Dockerfile} }.
+            \item Hilfe liefert docker --help oder die \textbf{Internetseite}
+            \item Image starten durch ausführen von \glqq ./run.sh bash \grqq
+\end{itemize}
+
+Es ist wichtig, das das \textbf{Dockerfile} im aktuellen Arbeitsverzeichnis
+liegt \textbf{und den Namen \textit{Dockerfile} trägt}.
+
+\section{Dockerimage_ausführen}%
+\label{sec:dockerimage_ausfuhren}
+Um das Dockerimage zu starten wurde der Aufruf in das Bashscript \textit{run.sh}
+gekapselt.
+\\
+Das \textit{run.sh} script erzeugt zunächst ein \textit{dockerjobs.sh} Script
+oder benötigt ein bereits vorhandenes. Das \textit{dockerjobs.sh} skript
+enthält die Befehle, welche durch \textit{bitbake} (in einem batch Betrieb}
+ausgeführt werden sollen. \textbf{Das Script kann händisch geändert oder um
+weitere Aufgaben ergänzt werden.}
+
+Das run.sh script startet
+den Docker container in definierter Version (gesetzt über Parameter oder direkt
+innerhalb des run.sh scripts). Das \textit{dockerjobs.sh} wird anschließend innerhalb Docker durch das
+Image aufgerufen und enthält alle Aufgaben welche durch den Container in einem
+Batchmodus erfüllt werden sollen.
+\textbf{Das Script kann händisch geändert oder um weitere Aufgaben ergänzt
+werden}. Es wird initial erzeugt und \textbf{überschrieben} wenn \textit{run.sh}
+mit Parametern aufgerufen wird.
+
+\subsection{\textit{run.sh} Ausführungsoptionen}%
+\label{sub:textit_run_sh}
+\begin{description}
+    \item[\textit{run.sh} ohne Parameter und Kommando] startet den Docker Container und führ
+        das \texit{dockerjobs.sh} Script aus,  insofern es vorhanden ist.
+    \item[\textit{run.sh} <cmd-to-execute>] \textbf{Überschriebt} das
+        dockerjobs.sh script, startet den Container und führt das neue
+        \textit{dockerjobs.sh} script mitsamt des übergebenen Parameters aus
+    \item[\textit{run.sh bash}] Startet den Dockercontainer im
+        den Dockercontainer selbst in einen \textit{interactiven modus}.
+        Anschließend kann in dem Container bzw. in der neuen Shell, gearbeitet
+        werden, als wenn man sich auf dem lokalen host befände mitsamt aller
+        nötigen Bitbake tools.
+    \item[\textit{run.s} -i <image-name>] Image oder Projektname unter dem
+        gearbeitet werden soll. Der default lässt sich in dem \textit{run.sh}
+        Skript definieren.
+    \item[\textit{run.sh} -t <tag-version>] Die Version, genauer der Tag, des
+        Dockerimages welcher gestartet werden soll. Der default lässt sich in dem \textit{run.sh} Skript definieren.
+\end{description}
+
+\subsection{Dockerscript einstellen}%
+\label{sub:dockerscript_einstellen}
+\begin{itemize}
+    \item In dem \textit{run.sh} Skript lässt sich die default Tag-Version des
+        Dockerimages einstellen.
+    \item In dem \textit{run.sh} Skript lässt sich der default zu verwendende
+        Projektname bzw. das zu verwendende Projektverzeichnis definieren.
+    \item Das \textit{dockerjobs.sh} kann manuell erstellt, geändert oder um
+        weitere Batchmode-Befehle erweitert werden. Je nach Aufrufoptionen wird
+    das \textit{dockerjobs.sh} Skript jedoch überschrieben.
+\end{itemize}
+
+
+
+
+
+

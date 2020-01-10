@@ -77,13 +77,13 @@
                                "x": 0,
                                "y": 0
                             },
-                            "name": "Mozilla Firefox Start Page - Mozilla Firefox",
+                            "name": "Mozilla min Start Page - Mozilla min",
                             "percent": 0.5,
                             "swallows": [
                                {
-                               "class": "^Firefox$",
+                               "class": "^min$",
                                //"instance": "^Navigator$",
-                               //"title": "^Mozilla\\ Firefox\\ Start\\ Page\\ \\-\\ Mozilla\\ Firefox$",
+                               //"title": "^Mozilla\\ min\\ Start\\ Page\\ \\-\\ Mozilla\\ min$",
                                "transient_for": "^$",
                                "window_role": "^browser$"
                                }

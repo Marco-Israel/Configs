@@ -1,0 +1,20 @@
+2020/01/10-05:29:49.023 257 Reusing MANIFEST /home/marco/.config/Min/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2020/01/10-05:29:49.024 257 Recovering log #659
+2020/01/10-05:29:49.513 257 Reusing old log /home/marco/.config/Min/IndexedDB/file__0.indexeddb.leveldb/000659.log 
+2020/01/10-05:40:12.847 41d Level-0 table #668: started
+2020/01/10-05:40:12.970 41d Level-0 table #668: 957105 bytes OK
+2020/01/10-05:40:13.009 41d Delete type=0 #659
+2020/01/10-05:40:16.118 41d Compacting 1@1 + 5@2 files
+2020/01/10-05:40:16.436 41d Generated table #669@1: 816 keys, 2109320 bytes
+2020/01/10-05:40:16.594 41d Generated table #670@1: 21319 keys, 2152215 bytes
+2020/01/10-05:40:16.828 41d Generated table #671@1: 111299 keys, 2266352 bytes
+2020/01/10-05:40:17.062 41d Generated table #672@1: 109711 keys, 2266258 bytes
+2020/01/10-05:40:17.251 41d Generated table #673@1: 91339 keys, 1922696 bytes
+2020/01/10-05:40:17.251 41d Compacted 1@1 + 5@2 files => 10716841 bytes
+2020/01/10-05:40:17.285 41d compacted to: files[ 0 0 5 0 0 0 0 ]
+2020/01/10-05:40:17.286 41d Delete type=2 #662
+2020/01/10-05:40:17.286 41d Delete type=2 #668
+2020/01/10-05:40:17.286 41d Delete type=2 #664
+2020/01/10-05:40:17.286 41d Delete type=2 #661
+2020/01/10-05:40:17.287 41d Delete type=2 #665
+2020/01/10-05:40:17.287 41d Delete type=2 #663

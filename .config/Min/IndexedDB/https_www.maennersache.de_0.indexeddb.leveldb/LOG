@@ -1,0 +1,5 @@
+2019/12/31-14:04:24.028 7bf Reusing MANIFEST /home/marco/.config/Min/IndexedDB/https_www.maennersache.de_0.indexeddb.leveldb/MANIFEST-000001
+2019/12/31-14:05:02.393 591 Level-0 table #5: started
+2019/12/31-14:05:02.449 591 Level-0 table #5: 542 bytes OK
+2019/12/31-14:05:02.493 591 Delete type=0 #3
+2019/12/31-14:05:02.494 591 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

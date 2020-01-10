@@ -117,7 +117,7 @@ hi Keyword guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=9 ctermbg=NONE c
 "int char double void ...
 hi Type guifg=#00ffff guibg=NONE guisp=NONE gui=NONE ctermfg=198 ctermbg=NONE cterm=BOLD
 hi DiffChange guifg=#000000 guibg=#c754c7 guisp=#c754c7 gui=bold ctermfg=NONE ctermbg=170 cterm=bold
-hi SpellLocal guifg=NONE guibg=#f0fff0 guisp=#f0fff0 gui=NONE ctermfg=NONE ctermbg=194 cterm=NONE
+hi SpellLocal guifg=NONE guibg=#f0fff0 guisp=#f0fff0 gui=NONE ctermfg=NONE ctermbg=53 cterm=NONE
 hi Error guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=160 cterm=NONE
 hi PMenu guifg=#000000 guibg=#ff7fc5 guisp=#ff7fc5 gui=italic ctermfg=NONE ctermbg=212 cterm=NONE
 hi SpecialKey guifg=#c2c2c2 guibg=NONE guisp=NONE gui=NONE ctermfg=7 ctermbg=NONE cterm=NONE
@@ -130,7 +130,7 @@ hi PMenuThumb guifg=#080808 guibg=#ff005f guisp=#ff005f gui=NONE ctermfg=232 cte
 hi MatchParen guifg=NONE guibg=#e3e3e3 guisp=#e3e3e3 gui=NONE ctermfg=202 ctermbg=254 cterm=NONE
 "Loop
 hi Repeat guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=85 ctermbg=NONE cterm=NONE
-hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=169 cterm=NONE
+hi SpellBad guifg=NONE guibg=#fff0f0 guisp=#fff0f0 gui=NONE ctermfg=NONE ctermbg=162 cterm=NONE
 hi Directory guifg=#4a4a4a guibg=NONE guisp=NONE gui=NONE ctermfg=249 ctermbg=NONE cterm=NONE
 hi Structure guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE
 hi Return guifg=#ff8800 guibg=NONE guisp=NONE gui=NONE ctermfg=239 ctermbg=NONE cterm=NONE
@@ -164,7 +164,7 @@ hi FoldColumn	guifg=#808080 guibg=#000040			ctermfg=darkgrey ctermbg=black cterm
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme * syn match math /[<%&*\/]/ | hi math guifg=#ff1998 guibg=#303030 guisp=#303030 gui=BOLD ctermfg=198 ctermbg=NONE cterm=NONE
 "autocmd BufRead,BufEnter,BufAdd,BufNewFile,ColorScheme  * syn match spezial2 /[{}]/ | hi spezial2 guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE            ctermfg=234 ctermbg=NONE cterm=NONE
 
-" Highlight all function names
+ "Highlight all function names
  autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme  * syntax match Type /bool_t/
  autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match Todo /TODO/
  autocmd BufRead,BufEnter,BufAdd,BufNewFile,BufWinEnter,ColorScheme * syntax match StorageClass /TRUE\|FALSE\|STATIC\|EXTERN\|PROTECTED\|INLINE\|TEST_GROUP\|TEST\|POINTERS_EQUAL\|LONGS_EQUAL\|NULL\|NULLp\|NULLv\|SPY\|MOCK\|FAKE\|STUP/

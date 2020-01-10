@@ -68,6 +68,7 @@ alias dviu='xrandr --output VGA1 --under LVDS1 --auto'
 alias office='libreoffice &'
 alias libreoffice='libreoffice &'
 alias fileroller='file-roller &'
+alias min='min &'
 alias vlsongs='nvlc --random --loop  --recursive collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
 alias vlnsongs='nvlc --random --loop  --recursive --no-video collaps /home/data/musik/{charts120116,coversongs,CD*} --no-video --recursive expand'
 alias vlcharts='nvlc /home/data/musik/charts120116/* --loop --random --recursive expand'
@@ -135,7 +136,13 @@ function whb { #Funktion to turn WLAN on at home inside
  sudo killall dhcpcd
  sudo ip link set wlo1 down
  sudo ip link set wlo1 up
- sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlo1 -B
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
+ sudo sleep 3
+ sudo dhcpcd -4
+}
+
+function wlanon {
+ sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i  wlp12s0 -B
  sudo sleep 3
  sudo dhcpcd -4
 }
