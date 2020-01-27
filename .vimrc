@@ -854,7 +854,34 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 """ Ctrlp """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_extensions = ['tag']
+let g:ctrlp_extensions = ['tag','g:ctrlp_root_markers','quickfix','dir','rtscript','autoignore','undo','line','mixed','bookmarkdir']
+"let g:ctrlp_root_markers =
+
+
+
+"The default filename for storing and loading quickfix and location lists is
+"customizable by setting the following variables in your vimrc:
+    let g:editqf_saveqf_filename  = "quickfix.list"
+    let g:editqf_saveloc_filename = "location.list"
+
+"Jump to the edited error when editing finished:
+    let g:editqf_jump_to_error = 1
+
+"Store absolute filename when adding a new note
+    let g:editqf_store_absolute_filename = 1
+
+"The default keybinding <leader>n for adding a quickfix note can be
+"custuomized by defining a mapping in your vimrc:
+"    nmap <leader>n <Plug>QFAddNote
+"    nmap <leader>N <Plug>QFAddNotePattern
+"    nmap <leader>l <Plug>LocAddNote
+"    nmap <leader>L <Plug>LocAddNotePattern
+"
+"The above mappings can be turned off by setting:
+"    let g:editqf_no_mappings = 1
+
+
+
 
 "Other plugins
 ":source % ~/.vim/plugin/supertab.vmb
@@ -952,12 +979,27 @@ let g:DoxygenToolkit_licenseTag="(c) by Marco Israel. All rights reserved"
 "let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 "let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 "autocmd BufRead,BufNewFile * syn match parens /[(){}]/ | hi parens guifg=#ff1998 guibg=#303030 guisp=#303030 gui=NONE ctermfg=203 ctermbg=236 cterm=NONE
+"
+"
+"
+"
+""" Vim-notgrep
+nnoremap <unique> <Leader>jq :<C-u>NotGrepFromSearch<CR>
+"Search for word (\b is word boundary).
+nnoremap <unique> <Leader>jw :<C-u>NotGrep \b<cword>\b<CR>
+nnoremap <unique> <Leader>jW :<C-u>NotGrep \b<cWORD>\b<CR>
+xnoremap <unique> <Leader>jw "cy:<C-u>call notgrep#search#NotGrep('grep', '\b'. @c .'\b')<CR>
+" Less precise. Similar to `*` vs `g*`.
+nnoremap <unique> <Leader>jgw :<C-u>NotGrep <cword><CR>
+nnoremap <unique> <Leader>jgW :<C-u>NotGrep <cWORD><CR>
+xnoremap <unique> <Leader>jgw "cy:<C-u>call notgrep#search#NotGrep('grep', @c)<CR>
 
 
 
 
 
-""" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Yank List (Yoink) """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 "nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 let g:ctrlp_map=''  "to work with ctrl-p
