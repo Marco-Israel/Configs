@@ -37,7 +37,7 @@ set wrap "automatischer Zeilenumbruch am Ende der Zeile aktivieren
 set list "listchars anzeigen
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
-set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
+set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
 "set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
@@ -54,7 +54,7 @@ set laststatus=2 " Statuszeile anzeigen
 set path+=** "extand the vim path"
 set path+=../**
 set path+=../../**
-"set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
+set tags=./tags,$PWD/.scopedb/ctags.db
 set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
 set scrolloff=3 "show the last X lines. 999 = Center everytime.
@@ -96,7 +96,7 @@ au BufNewFile,BufRead *.sh            setlocal spell spelllang=en_us,de_de
 
 
 """tags
-au BufNewFile,BufRead *c,*.cpp,*h,*hh.*hpp  set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
+"au BufNewFile,BufRead *c,*.cpp,*h,*hh.*hpp  set tags=~/.tags/last_project,~/.tags/last_utest,~/.tags/thirdparty,~/.tags/cpputest
 
 
 
@@ -267,38 +267,21 @@ vmap <M-c> y:new ~/.vb<CR>VGp:x<CR> \| :!cat ~/.vb \| clip.exe <CR><CR>
 
 
 "toggle between tabs
-map <C-right> mz:tabn<CR>
-map <C-l> mz:tabn<CR>
-map <C-left> mz:tabp<CR>
-map <C-k> mz:tabp<CR>
-
-
-
-
-
-"Move Tabs arround
-map <M-S-left> mz:tabm-1<CR>
-map <M-S-right> mz:tabm+1<CR>
-map <C-i> mz:tabm-1<CR>
-map <C-M-i> mz:tabm+1<CR>
-
-
-
-
-
-"toggle between tabs
-map <C-right> mz:tabn<CR>
-map <C-l> mz:tabn<CR>
-map <C-left> mz:tabp<CR>
-map <C-k> mz:tabp<CR>
-
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabmmove<Space>
+nnoremap td  :tabclose<CR>
 
 
 
 
 "new tab or close tab with shift+[cn]
-map <S-n> mz:tabnew<CR>
-map <S-c> mz:tabclose<CR>
+map <M-S-n> mz:tabnew<CR>
+map <M-S-c> mz:tabclose<CR>
 
 
 
@@ -315,33 +298,13 @@ nmap <M-S-up> mz:m-2<cr>`z
 
 
 "strg+w mapping
-nmap <C-Ü> <C-w>left
-nmap <C-Ä> <C-w>right
+nmap <C-�> <C-w>left
+nmap <C-�> <C-w>right
 nmap <C-w>< <C-w>5<
 nmap <C-w>> <C-w>5>
 "new tab or close tab with shift+[cn]
-map <S-n> mz:tabnew<CR>
-map <S-c> mz:tabclose<CR>
 
 
-
-
-
-""move lines up and down with shift+alt+[jk]
-nmap <M-S-j> mz:m+<cr>`z
-nmap <M-S-down> mz:m+<cr>`z
-nmap <M-S-k> mz:m-2<cr>`z
-nmap <M-S-up> mz:m-2<cr>`z
-
-
-
-
-
-"strg+w mapping
-nmap <C-Ü> <C-w>left
-nmap <C-Ä> <C-w>right
-nmap <C-w>< <C-w>5<
-nmap <C-w>> <C-w>5>
 
 " Steal Mr. Bradley's formatter & add it to our spec_helper
 " http://philipbradley.net/rspec-into-vim-with-quickfix
@@ -594,7 +557,9 @@ autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.
 "*.c,*.cpp,*.h !ctags -R &
 "autocmd BufWrite *.c,*.h silent !ctags -R -f ~/.tags/last %:p:h   2>/dev/NULL
 "autocmd BufWrite *.cpp,*.hpp silent !ctags
-"-R -f ~/.tags/last_utest %:p:h   2>/dev/NULL
+"-R -f ~/.tags/last_utest %:p:h   1>/dev/NULL
+
+"inoremap <c-x><c-]> <c-]>
 
 
 """ Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -604,22 +569,25 @@ if has("cscope")
                 set cst
                 set nocsverb
                 set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
+
+                cs add $PWD/.scopedb/cscope.db
+
                 " add any database in current directory
-                if filereadable("cscope.out")
-                    cs add cscope.out
-                elseif filereadable("./OUT/cscope.out")
-                    cs add ./OUT/cscope.out
-                elseif filereadable("./OUT/other/cscope.out")
-                    cs add ./OUT/other/cscope.out
-                " else add database pointed to by environment
-                elseif $CSCOPE_DB != ""
-                    cs add ~/.tags/cscope_last.out
-                    cs add ~/.tags/last_project
-                    cs add ~/.tags/last_utest
-                    cs add ~/.tags/thirdparty
-                    cs add ~/.tags/cpputest
-                endif
-                set csverb
+             "   if filereadable("cscope.out")
+             "       cs add cscope.out
+             "   elseif filereadable("./OUT/cscope.out")
+             "       cs add ./OUT/cscope.out
+             "   elseif filereadable("./OUT/other/cscope.out")
+             "       cs add ./OUT/other/cscope.out
+             "   " else add database pointed to by environment
+             "   elseif $CSCOPE_DB != ""
+             "       cs add ~/.tags/cscope_last.out
+             "       cs add ~/.tags/last_project
+             "       cs add ~/.tags/last_utest
+             "       cs add ~/.tags/thirdparty
+             "       cs add ~/.tags/cpputest
+             "   endif
+             "   set csverb
         endif
 
 "These mappings for Ctrl-] (right bracket) and Ctrl-\ (backslash) allow you to
@@ -1020,6 +988,26 @@ let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 let g:wwwsearch_command_to_open_uri =  "min"
 nnoremap <Space>*  :<C-u>Wwwsearch -default <cword><Return>
 
+
+
+""" Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
+"function! BuffersList()
+"  let all = range(0, bufnr('$'))
+"  let res = []
+"  for b in all
+"    if buflisted(b)
+"      call add(res, bufname(b))
+"    endif
+"  endfor
+"  return res
+"endfunction
+"
+"function! GrepBuffers (expression)
+"  exec 'vimgrep/'.a:expression.'/ '.join(BuffersList())
+"endfunction
+"
+"command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
+"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ TEMPLATES
