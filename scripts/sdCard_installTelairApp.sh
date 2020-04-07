@@ -20,40 +20,6 @@
 ### Functions
 ################################################################################
 
-func__build_uImage() {
-    SRC=$1
-
-    if [ -f "$SRC"/linuximage ]
-    then
-        mv "$SRC"/linuximage "$SRC"/zImage
-    fi
-
-    if [ -f "$SRC"/zImage ]
-    then
-        mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000   \
-              -n "Linux kernel" -d "$SRC"/zImage "$SRC"/uImage
-    else
-        echo "Neither an image called 'zImage' nor called 'linuximage' exists."
-        echo "Exit now. Try to rebuild the Linux image".
-        exit 1
-    fi
-}
-
-
-
-
-
-func__clean_device() {
-    DRIVE=$1
-
-    if [ "$(ls -A "$DRIVE"'1')" ]
-    then
-        sudo rm -rf /mnt/*
-    fi
-}
-
-
-
 
 func__prepare_partions() {
     DRIVE=$1
@@ -61,27 +27,23 @@ func__prepare_partions() {
 
 
     # Boot partion. Clean it first if not.
-    func__build_uImage $SRC
-    sudo mount $DRIVE"1" /mnt
-    func__clean_device $DRIVE
-    sudo cp "$SRC"/MLO /mnt
-    sudo cp "$SRC"/u-boot.img /mnt
-    sudo cp "$SRC"/uImage /mnt
-    sudo cp "$SRC"/zImage /mnt
-    sudo cp "$SRC"/*.dtb /mnt
-    ls -la /mnt/
+    sudo mount $DRIVE"2" /mnt
+    sudo cp -r "$SRC"/rootfs/* /mnt/
     sudo umount /mnt
 
-
-
-    # Rootfs partion. Clean it first if not.
-    sudo mount "$DRIVE""2" /mnt
-    func__clean_device $DRIVE
-    sudo tar zxf "$SRC"/root.tgz -C /mnt
-    ls -la /mnt/
+    sudo mount $DRIVE"3" /mnt
+    sudo cp -r "$SRC"/data/* /mnt/
     sudo umount /mnt
+
+    sudo mount $DRIVE"4" /mnt
+    sudo cp -r "$SRC"/log/* /mnt/
+    sudo umount /mnt
+
 
     sync
+
+    sudo umount $DRIVE[1-5]
+
     echo "Finished"
 }
 
@@ -102,7 +64,7 @@ else
     echo "#####################################################################"
     echo ""
     echo "USAGE:"
-    echo "${0##*/} <device-to-write-to>  <location-of-files-to-copy> "
+    echo "${0##*/} <device-to-write-to>  [location-of-files-to-copy] "
     echo ""
     echo "#####################################################################"
 fi

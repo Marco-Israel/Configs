@@ -58,6 +58,13 @@ set tags=./tags,$PWD/.scopedb/ctags.db
 set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
 set scrolloff=3 "show the last X lines. 999 = Center everytime.
+set viminfo='100,f1,:20,@20,/20
+
+
+
+packadd! matchit        "vim internal addon to define machtes like <some> <\some>
+
+
 "set autowrite
 "set autowriteall
 "set complete-=i
@@ -298,8 +305,8 @@ nmap <M-S-up> mz:m-2<cr>`z
 
 
 "strg+w mapping
-nmap <C-œ> <C-w>left
-nmap <C-„> <C-w>right
+"nmap <C-> <C-w>left
+"nmap <C-> <C-w>right
 nmap <C-w>< <C-w>5<
 nmap <C-w>> <C-w>5>
 "new tab or close tab with shift+[cn]
@@ -565,30 +572,118 @@ autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.
 """ Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
                 set csprg=/usr/bin/cscope
-                set csto=0
-                set cst
-                set nocsverb
-                set cscopequickfix=s+,c+,d+,i+,t+,e+,a+
-
                 cs add $PWD/.scopedb/cscope.db
+                "use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+                set cscopetag
+                set cst
+                " check cscope for definition of a symbol before
+                " checking ctags: set to 1
+                " if you want the reverse search order.
+                 set csto=0
 
-                " add any database in current directory
-             "   if filereadable("cscope.out")
-             "       cs add cscope.out
-             "   elseif filereadable("./OUT/cscope.out")
-             "       cs add ./OUT/cscope.out
-             "   elseif filereadable("./OUT/other/cscope.out")
-             "       cs add ./OUT/other/cscope.out
-             "   " else add database pointed to by environment
-             "   elseif $CSCOPE_DB != ""
-             "       cs add ~/.tags/cscope_last.out
-             "       cs add ~/.tags/last_project
-             "       cs add ~/.tags/last_utest
-             "       cs add ~/.tags/thirdparty
-             "       cs add ~/.tags/cpputest
-             "   endif
-             "   set csverb
-        endif
+
+                "show msg when any other cscope db added
+                set cscopeverbose
+                set csverb
+
+                "results should add / should not be added to the quickfix list
+               set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+               "set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-,f-
+	           "set cscopequickfix=s+,c+,d+,i+,t+,e+,a+,g+,f+
+
+
+
+    "Desscription: cscope_maps plugin
+
+    nmap <C-\>s :lcs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>g :lcs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>c :lcs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>t :lcs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>e :lcs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>f :lcs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-\>i :lcs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-\>d :lcs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>a :lcs find a <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>n :cn <C-R>
+    nmap <C-\>l :cl <C-R>
+
+
+    " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
+    " makes the vim window split horizontally, with search result displayed in
+    " the new window.
+    "
+    nmap <C-]>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-]>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-]>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]>a :scs find a <C-R>=expand("<cword>")<CR><CR>
+
+
+    " Hitting CTRL-space *twice* before the search type does a vertical
+    " split instead of a horizontal one (vim 6 and up only)
+    "
+    " (Note: you may wish to put a 'set splitright' in your .vimrc
+    " if you prefer the new window on the right instead of the left
+
+    nmap <C-]><C-]>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-]><C-]>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-]><C-]>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-]><C-]>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
+
+
+    """"""""""""" key map timeouts
+    "
+    " By default Vim will only wait 1 second for each keystroke in a mapping.
+    " You may find that too short with the above typemaps.  If so, you should
+    " either turn off mapping timeouts via 'notimeout'.
+    "
+    "set notimeout
+    "
+    " Or, you can keep timeouts, by uncommenting the timeoutlen line below,
+    " with your own personal favorite value (in milliseconds):
+    "
+    "set timeoutlen=4000
+    "
+    " Either way, since mapping timeout settings by default also set the
+    " timeouts for multicharacter 'keys codes' (like <F1>), you should also
+    " set ttimeout and ttimeoutlen: otherwise, you will experience strange
+    " delays as vim waits for a keystroke after you hit ESC (it will be
+    " waiting to see if the ESC is actually part of a key code like <F1>).
+    "
+    "set ttimeout
+    "
+    " personally, I find a tenth of a second to work well for key code
+    " timeouts. If you experience problems and have a slow terminal or network
+    " connection, set it higher.  If you don't set ttimeoutlen, the value for
+    " timeoutlent (default: 1000 = 1 second, which is sluggish) is used.
+    "
+    "set ttimeoutlen=100
+
+
+	" Add different cscope databases
+    "   elseif filereadable("./OUT/cscope.out")
+    "       cs add ./OUT/cscope.out
+    "   elseif filereadable("./OUT/other/cscope.out")
+    "       cs add ./OUT/other/cscope.out
+    "   " else add database pointed to by environment
+    "   elseif $CSCOPE_DB != ""
+    "       cs add ~/.tags/cscope_last.out
+    "       cs add ~/.tags/last_project
+    "       cs add ~/.tags/last_utest
+    "       cs add ~/.tags/thirdparty
+    "       cs add ~/.tags/cpputest
+    "   endif
+    "   set csverb
+endif
 
 "These mappings for Ctrl-] (right bracket) and Ctrl-\ (backslash) allow you to
 "place your cursor over the function name or C symbol and quickly query cscope

@@ -32,6 +32,10 @@ then
         then
 
 
+            # Unmount driver if currently in use
+            sudo umount $DRIVE[1-4]
+
+
             #Force English output
             unset LANG
 
@@ -41,10 +45,10 @@ then
             # This fits totally in less than 100 MB of overall size in Memory
             # for the bootloader, an linux kernel image and an uncompressed
             # busybox rootfs.
-            SIZE_PARTION_BOOT="9MB"
-            SIZE_PARTION_ROOTFS="53MB"
-            SIZE_PARTION_APP_DATA="21MB"
-            SIZE_PARTION_LOG="9MB"
+            SIZE_PARTION_BOOT="16MB"
+            SIZE_PARTION_ROOTFS="98MB"
+            SIZE_PARTION_APP_DATA="98MB"
+            SIZE_PARTION_LOG="34MB"
             #SIZE_PARTION_BACKUP="13MB"
 
 
@@ -132,7 +136,9 @@ then
             # as the needed bootloader filesystem.
             mkfs.vfat -F 12 -s 8 -S 512 -n "boot" ${DRIVE}1
             #mke2fs -j -I 128 -i 1024 -b 1024 -T small -L "rootfs" ${DRIVE}2
-            mke2fs -j -T small -L "rootfs" ${DRIVE}2
+            mke2fs -j -t ext4 -T small -L "rootfs" ${DRIVE}2
+            mke2fs -j -t ext4 -T small -L "data" ${DRIVE}3
+            mke2fs -j -t ext4 -T small -L "log" ${DRIVE}4
 
 
             #The final result:
@@ -140,7 +146,6 @@ then
             echo "#############################################################"
             echo""
             fdisk -l /dev/sdb
-            echo""
             echo "#############################################################"
 
 
