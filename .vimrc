@@ -34,10 +34,10 @@ set showmatch "öffnende und schließende Klammern hervorheben
 set showcmd "Kommandos beim Eintippen rechts unten in der Statuszeile anzeigen
 set autoread  "Liest die Datei neu, wenn ausserhalb von VIM geändert.
 set wrap "automatischer Zeilenumbruch am Ende der Zeile aktivieren
-set list "listchars anzeigen
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
-set listchars=tab:>-,trail:-,extends:>,precedes:<,nbsp:+ " Tabs und Leerzeichen am Zeilenende anzeigen
+set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen
+set list "listchars anzeigen
 "set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
 set colorcolumn=80 "show a line in <n> coloum
@@ -59,7 +59,8 @@ set number "Activates real number"
 set complete=.,w,b,u,t "not search in included files
 set scrolloff=3 "show the last X lines. 999 = Center everytime.
 set viminfo='100,f1,:20,@20,/20
-
+set encoding=utf-8
+set fileencodings:=utf-8
 
 
 packadd! matchit        "vim internal addon to define machtes like <some> <\some>

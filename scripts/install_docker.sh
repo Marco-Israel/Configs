@@ -473,7 +473,10 @@ do_install() {
 
 
 usermod_toDocker() {
-    sudo usermod -a -G docker ptxdist
+    sudo usermod -a -G docker `whoami`
+    sudo service docker start
+    su `whoami`
+    docker build --tag latex
 }
 
 ################################################################################
@@ -481,11 +484,14 @@ usermod_toDocker() {
 ################################################################################
 
 echo "Install docker now"
+
 do_install
 
 
+
+USER_INPUT=""
 echo "Do you like to use Docker as a non-root?\n (yes/no) default: yes"
-read USER_INPUT
+read $USER_INPUT
 
 if [ $USER_INPUT -eq "yes" ] ||  [ $USER_INPUT -eq "" ]
 then
@@ -493,5 +499,15 @@ then
 fi
 
 echo "finished !"
+
+echo "Do you like to run docker for a test?"
+read $USER_INPUT
+if [ USER_INPUT -eq "yes" ]
+then
+    docker run latex
+fi
+
+echo "finished !"
+
 
 ###### EOF #####################################################################
