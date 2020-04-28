@@ -13,7 +13,7 @@ set splitbelow "immer unten spliten"
 set splitright "immer nach rechts splitten"
 set nocp "vim mode
 set wildmenu "turn special function for compleation menu on
-set wildmode=longest:full,full  "omni and other menu layout
+set wildmode=longest:full,list:full,full "omni and other menu layout
 set nocp "vi-Kompatibilitaets-Modus deaktivieren
 set ruler "aktuelle Zeile und Spalte anzeigen
 set undofile "Undo-File setzendd
@@ -49,7 +49,7 @@ set expandtab "   Tabs durch Leerzeichen ersetzen lassen
 set tabstop=4 " Tab auf 4 Zeichen setzen
 set shiftwidth=4 "   Anzahl der Leezeichen fuer autoindent
 set softtabstop=4 "   Ruecktaste loescht Tab, 4 Leerzeichen
-set clipboard^=unnamed,unnamedplus
+set clipboard=unnamed,unnamedplus
 set laststatus=2 " Statuszeile anzeigen
 set path+=** "extand the vim path"
 set path+=../**
@@ -61,7 +61,9 @@ set scrolloff=3 "show the last X lines. 999 = Center everytime.
 set viminfo='100,f1,:20,@20,/20
 set encoding=utf-8
 set fileencodings:=utf-8
+set ffs=unix
 
+autocmd BufWritePost * :%s /\s\+$//e
 
 packadd! matchit        "vim internal addon to define machtes like <some> <\some>
 
@@ -464,13 +466,8 @@ set sessionoptions-=help
 
 
 
-""" Hard mode """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"HARDMODE (Deisable Arrow Keys, PageUp/Down ...)
-"let g:HardMode_level = 'wannabe'
-let g:HardMode_hardmodeMsg = 'Do not  use this!'
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-let g:neocomplete#enable_at_startup = 1
-autocmd FileType vim let b:vcm_tab_complete = 'vim'
+""" Hard Time """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:hardtime_default_on = 1
 
 
 
@@ -1081,9 +1078,10 @@ let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 
 
 """ www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:wwwsearch_command_to_open_uri =  "min"
-nnoremap <Space>*  :<C-u>Wwwsearch -default <cword><Return>
-
+let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
+nnoremap <space>*  :<C-u>Wwwsearch -default <cword><Return>
+nnoremap ,wd  :<C-u>Wwwsearch -default <cword><Return>
+nnoremap ,wg  :<C-u>Wwwsearch -google <cword><Return>
 
 
 """ Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""

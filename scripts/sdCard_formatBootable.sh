@@ -86,11 +86,17 @@ then
             3
 
             +$SIZE_PARTION_APP_DATA
+            t
+            3
+            c
             n
             p
             4
 
             +$SIZE_PARTION_LOG
+            t
+            4
+            c
             a
             1
             w
@@ -134,11 +140,13 @@ then
             # where a cluster must contain 512 sectors. This configuration is
             # used to hold the boot sector as small as possible while using FAT
             # as the needed bootloader filesystem.
-            mkfs.vfat -F 12 -s 8 -S 512 -n "boot" ${DRIVE}1
+            mkfs.vfat -F 12 -s 8 -S 512 -c -n "boot" ${DRIVE}1
             #mke2fs -j -I 128 -i 1024 -b 1024 -T small -L "rootfs" ${DRIVE}2
             mke2fs -j -t ext4 -T small -L "rootfs" ${DRIVE}2
-            mke2fs -j -t ext4 -T small -L "data" ${DRIVE}3
-            mke2fs -j -t ext4 -T small -L "log" ${DRIVE}4
+            #mke2fs -j -t vfat -T small -L "data" ${DRIVE}3
+            #mke2fs -j -t vfat -T small -L "log" ${DRIVE}4
+            Mkfs.vfat -c -n "data" ${DRIVE}3
+            Mkfs.vfat -c -n "log" ${DRIVE}4
 
 
             #The final result:
