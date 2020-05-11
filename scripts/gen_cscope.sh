@@ -61,6 +61,7 @@ find "$PWD" -name '*.[ch]' \
 -o -name '*.py' \
 -o -name '*.mk' \
 -o -name '*.make' \
+-o -name '*.tex' \
 -o -name '*.php' > "$SCOPE_DIR/$SCOPE_FILE"
 
 

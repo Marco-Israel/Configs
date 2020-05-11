@@ -180,6 +180,9 @@ function extr { #alias to extract different files
  fi
 }
 
+######## FZF with ripgrep #########
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
+
 ########Scrips at Startup###########
 #~/bin/battery_alert &
 ########Exports###########
@@ -210,3 +213,4 @@ export PROJECT_HOME="~/programming/MIS_BUILD"
 
 
 
+source ~/Configs/fzf-marks/fzf-marks.plugin.bash
