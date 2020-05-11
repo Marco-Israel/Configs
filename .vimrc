@@ -1078,10 +1078,17 @@ let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 
 
 """ www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+<<<<<<< HEAD
 "let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
 let g:wwwsearch_command_to_open_uri =  "min {uri}"
 "nnoremap <space>*  :<C-u>Wwwsearch -default <cword><Return>
 nnoremap  <expr> <space>* ':<C-u>Wwwsearch -default '.expand('<cword>').'<CR>'
+=======
+let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
+nnoremap <space>*  :<C-u>Wwwsearch -default <cword><Return>
+nnoremap ,wd  :<C-u>Wwwsearch -default <cword><Return>
+nnoremap ,wg  :<C-u>Wwwsearch -google <cword><Return>
+>>>>>>> 57140a29c67fb78106fcb3221549f66f115a90a4
 
 
 """ Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
