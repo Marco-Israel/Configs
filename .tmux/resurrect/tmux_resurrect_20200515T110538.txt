@@ -1,0 +1,5 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	1	0	:sudo	1	:*	0	:/home/ptxdist	1	sudo	:sudo microcom -p /dev/ttyUSB0
+window	0	0	1	:*	cefd,314x77,0,0,0
+window	1	0	1	:*	cefe,314x77,0,0,1
+state	0	1
