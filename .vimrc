@@ -346,7 +346,7 @@ map <F6> :w!<CR>:!aspell --lang=en_us check %<CR>:e! %<CR>
 map <leader>hex :%!xxd<CR>        " Hexeditor mit \hex starten
 map <leader>nhex :%!xxd -r<CR>    " Hexeditor mit \nhex beenden
 map <F3> <C-V>}<S-I>
-map <C-9> :r!date +\%Y-\%m-\%d<CR>
+map <C-F9> :r!date +\%Y-\%m-\%d<CR>
 "map <F11> //####################ETWAS########################<ESC>?ETWAS<CR>cw
 
 
@@ -1078,17 +1078,10 @@ let g:C_SourceCodeExtensions  = 'h cc cp cxx cpp CPP c++ C i ii'
 
 
 """ www Search """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-<<<<<<< HEAD
 "let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
-let g:wwwsearch_command_to_open_uri =  "min {uri}"
+let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
 "nnoremap <space>*  :<C-u>Wwwsearch -default <cword><Return>
 nnoremap  <expr> <space>* ':<C-u>Wwwsearch -default '.expand('<cword>').'<CR>'
-=======
-let g:wwwsearch_command_to_open_uri =  "firefox {uri}"
-nnoremap <space>*  :<C-u>Wwwsearch -default <cword><Return>
-nnoremap ,wd  :<C-u>Wwwsearch -default <cword><Return>
-nnoremap ,wg  :<C-u>Wwwsearch -google <cword><Return>
->>>>>>> 57140a29c67fb78106fcb3221549f66f115a90a4
 
 
 """ Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -1131,5 +1124,3 @@ nnoremap ,erroh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_
 nnoremap ,errohh :-1read $PROJECT_HOME/TOOLS/thirdparty/mi_ooc/productive/mi_ooc_errorHandler.h<CR>/____TODO______<CR>
 nnoremap ,umlc :-1read $PROJECT_HOME/TOOLS/templates/plantumlNote.txt<CR>/____TODO______<CR>
 nnoremap ,sempty :-1read $PROJECT_HOME/TOOLS/templates/shortDocinfo.txt<CR>/____TODO______<CR>
-
-

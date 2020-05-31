@@ -145,8 +145,8 @@ then
             mke2fs -j -t ext4 -T small -L "rootfs" ${DRIVE}2
             #mke2fs -j -t vfat -T small -L "data" ${DRIVE}3
             #mke2fs -j -t vfat -T small -L "log" ${DRIVE}4
-            Mkfs.vfat -c -n "data" ${DRIVE}3
-            Mkfs.vfat -c -n "log" ${DRIVE}4
+            mkfs.vfat -c -n "data" ${DRIVE}3
+            mkfs.vfat -c -n "log" ${DRIVE}4
 
 
             #The final result:

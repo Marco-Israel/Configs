@@ -14,32 +14,85 @@
 #
 ################################################################################
 
-if [ "$#" -gt 1 ]
-then
 
-while test $# -gt 0
+VAR1="TODO"
+VAR2=$VAR1
+VAR3=$VAR1
 
+
+_usage() {
+cat <<-EOF
+
+
+--------------------------------------------------------------------------------
+
+                "${0##*/}"
+
+  ABOUT:
+This is only an template script script. TODO edit this TODO.
+
+
+  USAGE:
+"${0##*/} < >  [<>]  [<>]"
+
+
+--------------------------------------------------------------------------------
+
+EOF
+}
+
+
+_getopts() {
+
+#while getopts "h:n:o:p:" OPT
+#do
+#	case "$OPT" in
+#	h)  _usage
+#		exit 1
+#		;;
+#	o) IMAGEFILE="$OPTARG"
+#	    ;;
+#	p)  partcount=$(($partcount + 1))
+#	    PART[$partcount]="$OPTARG"
+#	    ;;
+#	esac
+#done
+
+
+while [ $# -gt 0 ]
     do
         case "$1" in
-            --opt1) echo "option 1"
+            01 | --opt1)
+                echo "TODO"
                 ;;
-            --opt2) echo "option 2"
+            O2 | option2)
+				echo "TODO"
                 ;;
-            --*) echo "bad option $1"
-                ;;
-            *) echo "argument $1"
+            *) echo TODO
+                echo "TODO"
                 ;;
         esac
         shift
     done
+}
+
+
+##### MAIN #####################################################################
+
+if [ "$#" -gt 1 ]
+then
+
+    _getopts "$@"
 
 else
-    echo "#####################################################################"
-    echo ""
-    echo "USAGE:"
-    echo "${0##*/} < >  [<>]  [<>]"
-    echo ""
-    echo "#####################################################################"
+   _usage
+
+#    echo "#####################################################################"
+#    echo ""
+#    echo "USAGE:"
+#    echo "${0##*/} [<serach-engin>] \"<search string>\""
+#    echo ""
+#    echo "#####################################################################"
 fi
 
 ##### EOF ######################################################################
