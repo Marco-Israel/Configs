@@ -199,7 +199,7 @@ sudo systemctl stop avahi-daemon.service
 sudo systemctl stop org.cups.cupsd.service
 }
 
-extr() { #alias to extract different files
+extr() {
  if [ -f $1 ] ; then
      case $1 in
          *.tar.bz2)   tar xjf $1        ;;

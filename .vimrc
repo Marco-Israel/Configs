@@ -68,6 +68,18 @@ autocmd BufWritePost * :%s /\s\+$//e
 packadd! matchit        "vim internal addon to define machtes like <some> <\some>
 
 
+set diffopt+=iwhite,iwhiteall,iwhiteeol,vertical,closeoff
+if &diff
+     map gs :call IwhiteToggle()<CR>
+     function! IwhiteToggle()
+       if &diffopt =~ 'iwhite'
+		 set diffopt+=iwhite,iwhiteall,iwhiteeol,vertical,closeoff
+       else
+		 set diffopt-=iwhite,iwhiteall,iwhiteeol,vertical,closeoff
+       endif
+     endfunction
+ endif
+
 "set autowrite
 "set autowriteall
 "set complete-=i
@@ -567,7 +579,8 @@ autocmd FileWritePost,BufwritePre,BufWritePost,FilterWritePost,FileAppendPost *.
 "inoremap <c-x><c-]> <c-]>
 
 
-""" Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Cscope  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("cscope")
                 set csprg=/usr/bin/cscope
                 cs add $PWD/.scopedb/cscope.db
@@ -638,6 +651,7 @@ if has("cscope")
     nmap <C-]><C-]>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
 
 
+
     """"""""""""" key map timeouts
     "
     " By default Vim will only wait 1 second for each keystroke in a mapping.
@@ -681,7 +695,8 @@ if has("cscope")
     "       cs add ~/.tags/cpputest
     "   endif
     "   set csverb
-endif
+
+
 
 "These mappings for Ctrl-] (right bracket) and Ctrl-\ (backslash) allow you to
 "place your cursor over the function name or C symbol and quickly query cscope
@@ -727,6 +742,43 @@ nmap <C-Space><C-Space>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-Space><C-Space>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
 
+endif
+
+
+""" GutenTags (plus) """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" You can disable the default keymaps by:
+"let g:gutentags_plus_nomap = 1
+" enable gtags module
+if isdirectory(".git")
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+endif
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" config project root markers.
+let g:gutentags_project_root = ['.git']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+"Workarround 'job fails'
+let g:gutentags_define_advanced_commands = 1
+
+noremap <silent> <C-\>gs :GscopeFind s <C-R><C-W><cr>
+noremap <silent> <C-\>gg :GscopeFind g <C-R><C-W><cr>
+noremap <silent> <C-\>gc :GscopeFind c <C-R><C-W><cr>
+noremap <silent> <C-\>gt :GscopeFind t <C-R><C-W><cr>
+noremap <silent> <C-\>ge :GscopeFind e <C-R><C-W><cr>
+noremap <silent> <C-\>gf :GscopeFind f <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <C-\>gi :GscopeFind i <C-R>=expand("<cfile>")<cr><cr>
+noremap <silent> <C-\>gd :GscopeFind d <C-R><C-W><cr>
+noremap <silent> <C-\>ga :GscopeFind a <C-R><C-W><cr>
+noremap <silent> <C-\>gz :GscopeFind z <C-R><C-W><cr>
 
 
 """ Flashing yy area """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
