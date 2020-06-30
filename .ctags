@@ -6,12 +6,13 @@
 --asm-kinds=+dlmt
 --extra=+fq
 --fields=+afiKmnsSztk
---languages=C,C++,Make
---langmap=c:.c.h,C++:.cpp.hpp.c.h,Make:+.mk
+--languages=C,C++,Make,TeX,Python
+--langmap=c:.c.h,C++:.cpp.hpp.c.h,Make:+.mk.Tex:.tex.bib,Python:+.py
 --if0=yes
 --tag-relative=yes
--I
+--file-tags=yes
 --file-scope=yes
+-I
 --links=yes
 --recurse=yes
 --sort=no
@@ -26,6 +27,7 @@
 --exclude=*.min.*
 --exclude=*.map
 --exclude=*.swp
+--exclude=*.swo
 --exclude=*.bak
 --exclude=*.pyc
 --exclude=*.class
@@ -59,4 +61,19 @@
 --exclude=*.html
 --exclude=.localhistory
 --exclude=.vs
---exclude=.*.swp
+
+--langdef=tex2
+--langmap=tex2:.tex
+--regex-tex2=/\\label[ \t]*\*?\{[ \t]*([^}]*)\}/\1/l,label/
+--tex-kinds=+csubPpGi
+--tex2-kinds=+l
+--langdef=bib
+--langmap=bib:.bib
+--regex-bib=/^@[A-Za-z]+\{([^,]*)/\1/b,online/
+--regex-bib=/^@[A-Za-z]+\{([^,]*)/\1/b,^@online/
+--regex-bib=/^@[A-Za-z]+\{([^,]*)/\1/b,bib/
+--regex-bib=/^@[A-Za-z]+\{([^,]+),/\1/e,BibTeX-Entries/i
+--regex-bib=/^@string\{([^ "#%')(,=}{]+)/\1/s,BibTeX-Strings/i
+--regex-bib=/author[[:space:]]*=[[:space:]]*("([^"]+)"|\{([^\}]+)\})[[:space:]]*,?[[:space:]]*$/\2\3/a,BibTeX-Authors/i
+--bib-kinds=+be
+--python-kinds=+cfm

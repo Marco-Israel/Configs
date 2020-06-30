@@ -1,22 +1,7 @@
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" VIM OPTIONS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"file type plugin indent on "like above
-autocmd InsertLeave * redraw! "Leerzeichen beim Tippen anzeigen
-set backup "   Backup-Dateien vor dem Speichern anlegen
-set backupdir=~/.vim/backup/ "Verzeichnis zum Speichern (vorher anlegen)
-set undofile "permanentes Rueckgaengigmachen ermoeglichen (ab Version 7.3)
-set undodir=~/.vimm/undo/ "Wiederherstellungfiles
-set splitbelow "immer unten spliten"
-set splitright "immer nach rechts splitten"
-set nocp "vim mode, not cpmpatible to old vi. Provides more function.
-set wildmenu "turn special function for compleation menu on
-set wildmode=longest:full,list:full,full "omni and other menu layout
-set ruler "aktuelle Zeile und Spalte anzeigen
-set undofile "Undo-File setzendd
-set undodir=~/.vim/undo "Verzeichnis fuer Wiederherstellungsinformationen
+"""
 set autoindent "automatische Zeileneinrueckung
 set smartindent "intelligente Zeileneinrueckung
 set expandtab "Tabs durch Leerzeichen ersetzen lassen
@@ -35,7 +20,7 @@ set autoread  "Liest die Datei neu, wenn ausserhalb von VIM geändert.
 set wrap "automatischer Zeilenumbruch am Ende der Zeile aktivieren
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
-set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen
+set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen
 set list "listchars anzeigen
 "set relativenumber "Relative Zeilennummern
 set nocompatible "enter the current millenium
@@ -48,7 +33,7 @@ set expandtab "   Tabs durch Leerzeichen ersetzen lassen
 set tabstop=4 " Tab auf 4 Zeichen setzen
 set shiftwidth=4 "   Anzahl der Leezeichen fuer autoindent
 set softtabstop=4 "   Ruecktaste loescht Tab, 4 Leerzeichen
-set clipboard=unnamed,unnamedplus
+"set clipboard=unnamedplus,unnamed "d,c,y,x will write the text into *,+.
 set clipboard=""
 set laststatus=2 " Statuszeile immer anzeigen.
 set statusline+=%F
@@ -67,12 +52,24 @@ set shortmess+=aFOo     "Error message format and types
 set shortmess-=S        "Show search / matching results lik [ 11 / 47 ] if <99
 "set pumheight=8 "Maximum members of matches shown in poplist. 0 all.
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
-
+"set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+"
+"
+" Always show the signcolumn, otherwise it would shift the text
+" each time diagnostics appear/become resolved.
+" Recently vim can merge signcolumn and number column into one
+"if has("patch-8.1.1564")
+"    set signcolumn=number
+"else
+"    set signcolumn=yes
+"endif
+""
+"
 """ "Vim (quickfix) completion """""""""""""""""""""""""""""""""""""""""""""""""
 set autowrite
 set autowriteall
 set complete=.,t,w,b,u,U,k,kspell,s "not: d/i=included, k/sfile special file
-set completeopt=menuone,popup,longest
+set completeopt=menu,menuone,longest,preview
 "set previewpopup=height:10,width:60 "Overwrite use of preview to popup
 
 """ Foldable code blocks """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -404,7 +401,7 @@ source  ~/.vimplug.conf
 
 
 
-""" Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
+"""" Grep in all open bufffers """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ TEMPLATES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

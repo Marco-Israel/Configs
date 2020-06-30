@@ -90,6 +90,9 @@ alias make='make -j4'
 alias fn='find -name'
 alias wpasup='sudo wpa_supplicant -D wext -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlp12s0 -B'
 
+#cope / past directly from / to cliepboard.
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 
 ##########CD################

@@ -1,49 +1,82 @@
 #!/bin/bash
-#
-################################################################################
-#
-#@author    Marco Israel (MI)
-#@date      2020-01
-#@authors   Last changed by:  Marco Israel - 2020.
-#
-#
-#@brief     Builds an u-boot uImage from an zImage.
-#@details   The bootloader u-boot needs an zImage with some additional header
-#           information. Thats why it looks for an uImage which is such an
-#           zImage with the additional information.
-#
+
+
+_usage() {
+cat <<-EOF
+                "${0##*/}"
 ################################################################################
 
+@author    Marco Israel (MI)
+@date      2020-TODO
+@authors   Last changed by:  Marco Israel - 2020.
+
+
+@brief     This is only a dummy brief. TODO change this!
+@details   This is only a dummy detail description. TODO change this!
+
+
+  USAGE:
+ "${0##*/} <yourRequiredParameter>  [<yourOptionalParameter>]  [<moreOptional>]"
+
+ -p     Requiremed. Some required Parameterdscription TODO.
+
+ -o     Optional. Some otional Parameterdscription TODO.
+
+ -h     Show this help.
+
+
+ @example
+ "${0##*/} -p <yourPath/yourFile>  [-o <optionalFlag>]"
+
+
+ @node  NOTE: Some usefull information TODO.
+
+ @todo  TODO: Some known open (required) tasks.
+
+ @attention     ATTENTION:  Some importan information.  TODO.
+ @warning       WARN: Same as above. TODO
+
+
+ @copyright     Available under the MIT License.
+
+                Copyright (C) 2020 Marco Israel (MIS).      All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall and MUST BE
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+################################################################################
+# END OF HELP.
+EOF
+}
+
+################################################################################
+#File Global Variables
 
 VAR1="TODO"
 VAR2=$VAR1
 VAR3=$VAR1
 
 
-_usage() {
-cat <<-EOF
 
-
---------------------------------------------------------------------------------
-
-                "${0##*/}"
-
-  ABOUT:
-This is only an template script script. TODO edit this TODO.
-
-
-  USAGE:
-"${0##*/} < >  [<>]  [<>]"
-
-
---------------------------------------------------------------------------------
-
-EOF
-}
-
-
+################################################################################
+#Local Functions
 _getopts() {
 
+    # TODO select only once, depending on how to get the parameters.
 #while getopts "h:n:o:p:" OPT
 #do
 #	case "$OPT" in
