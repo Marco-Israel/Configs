@@ -1,0 +1,3 @@
+pane	0	0	:vim	1	:*	0	:/home/ptxdist/workdir/sdCardCreate	1	vim	:vim
+window	0	0	1	:*	c83d,383x94,0,0,0
+state	0	

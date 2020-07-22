@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/local_src/telair-build_image	1	bash	:vim sdCard_buildImg.sh
+pane	0	0	:vim	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/local_src/telair-build_image	0	vim	:vim ../../tools/telair/sdCard_formatBootable.sh
+window	0	0	1	:*	7ee6,319x86,0,0{225x86,0,0,1,93x86,226,0,2}
+state	0	

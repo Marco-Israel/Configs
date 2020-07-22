@@ -1,0 +1,11 @@
+pane	0	0	:vim	0	:	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760	1	vim	:vim main.tex
+pane	0	1	:bash	0	:	0	:/home/ptxdist/_Tests/simple_c_testapp	1	bash	:
+pane	0	2	:bash	1	:*	0	:/home/ptxdist/Downloads/util-linux-2.36-rc1	1	bash	:vim sdCard_buildImg.sh
+vim sdcard_example2.sh
+pane	0	2	:bash	1	:*	1	:/home/ptxdist/Downloads/util-linux-2.36-rc1\ (deleted)	0	bash	:
+pane	0	3	:min	0	:#-	0	:/home/ptxdist	1	min	:/usr/lib/min/min
+window	0	0	0	:	c83d,383x94,0,0,0
+window	0	1	0	:	c83e,383x94,0,0,1
+window	0	2	1	:*	cdcb,383x94,0,0{191x94,0,0,2,191x94,192,0,6}
+window	0	3	0	:#-	c840,383x94,0,0,3
+state	0	

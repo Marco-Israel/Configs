@@ -1,0 +1,5 @@
+pane	0	0	:vim	1	:*	0	:/home/ptxdist/.config/min/userscripts	1	vim	:vim /home/ptxdist/.vimplug.conf +40
+/usr/lib/min/min
+pane	0	0	:vim	1	:*	1	:/home/ptxdist	0	bash	:
+window	0	0	1	:*	4dc7,383x94,0,0{191x94,0,0,0,191x94,192,0,1}
+state	0	

@@ -1,0 +1,4 @@
+pane	0	0	:bash	1	:*	0	:/home/ptxdist/workdir/sdCardCreate	1	bash	:/usr/lib/min/min
+vim -O ../sdcard_example.sh sdCard_buildImg.sh /home/ptxdist/scripts/sdCard_formatBootable.sh
+window	0	0	1	:*	c83d,383x94,0,0,0
+state	0	

@@ -1,0 +1,10 @@
+pane	0	0	:bash	0	:	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/platform-MBa335x	1	bash	:
+pane	0	1	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760/content	1	bash	:
+pane	0	2	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760/content	0	vim	:vim scripts.tex
+pane	0	2	:vim	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/tools/telair	1	vim	:vim /home/ptxdist/scripts/bash_template.sh
+pane	0	3	:bash	0	:#	0	:/home/ptxdist	1	bash	:
+window	0	0	0	:	cf7d,319x86,0,0,0
+window	0	1	0	:-	cf7e,319x86,0,0,1
+window	0	2	1	:*	5794,319x86,0,0[319x43,0,0,12,319x42,0,44,6]
+window	0	3	0	:#	cf84,319x86,0,0,7
+state	0	

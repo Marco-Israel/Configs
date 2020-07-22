@@ -1,0 +1,3 @@
+pane	0	0	:vim	1	:*	0	:/mnt/share/software_sample/Beluga/appl_ctrl	1	vim	:vim -O appl_ctrl_proc.c appl_ctrl_proc.h
+window	0	0	1	:*	bebd,308x82,0,0,0
+state	0	

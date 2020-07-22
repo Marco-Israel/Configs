@@ -1,0 +1,6 @@
+pane	0	0	:sudo	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:sudo	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	sudo	:sudo vim /usr/local/sbin/surmptxdistroot
+pane	0	0	:sudo	1	:*	2	:/home/ptxdist	0	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	0	:sudo	1	:*	3	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	vim	:vim ptxdist_buildCP790760.sh
+window	0	0	1	:*	f6dc,319x77,0,0{158x77,0,0[158x38,0,0,0,158x38,0,39,2],160x77,159,0[160x38,159,0,1,160x38,159,39,4]}
+state	0	

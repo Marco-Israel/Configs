@@ -1,0 +1,5 @@
+pane	0	0	:vimdiff	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	vimdiff	:vimdiff local_src/telair-patches/linux-4.4/new/arch/arm/boot/dts/telair-am335x.dts platform-MBa335x/build-target/linux-4.4/arch/arm/boot/dts/telair-am335x.dts
+vim rules/telair-install-log-partion.make
+pane	0	0	:vimdiff	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+window	0	0	1	:*	23e8,319x86,0,0{159x86,0,0,0,159x86,160,0,1}
+state	0	

@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	vim	:vim tools/telair/sdCard_copyImage.sh
+pane	0	0	:vim	1	:*	1	:/home/ptxdist	0	sudo	:sudo microcom -p /dev/ttyUSB0
+window	0	0	1	:*	5e70,319x86,0,0{176x86,0,0,0,142x86,177,0,1}
+state	0	

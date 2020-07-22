@@ -1,0 +1,7 @@
+pane	0	0	:sudo	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:vim local_src/telair-cp_790760_1/main.cpp
+pane	0	0	:sudo	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:sudo	1	:*	2	:/home/ptxdist	1	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	1	:vim	0	:-	0	:/home/ptxdist/Dokumente/telair_appData/rootfs/home/testsoftware/sources	1	vim	:vim CP_790760_1/utilities.cpp
+window	0	0	1	:*	44fd,383x94,0,0{191x94,0,0,0,191x94,192,0[191x46,192,0,1,191x47,192,47,3]}
+window	0	1	0	:-	c841,383x94,0,0,4
+state	0	

@@ -1,0 +1,12 @@
+pane	0	0	:[tmux]	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	0	0	:[tmux]	0	:-	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	0	:-	2	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	0	:-	3	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	2	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760	1	vim	:vim main.tex
+pane	1	0	:vim	1	:*	0	:/home/ptxdist	1	bash	:
+pane	2	0	:[tmux]	1	:*	0	:/home/ptxdist	1	bash	:
+window	0	0	0	:-	74ae,383x94,0,0[383x48,0,0{196x48,0,0,1,186x48,197,0,2},383x45,0,49{196x45,0,49,3,186x45,197,49,4}]
+window	0	2	1	:*	c844,383x94,0,0,7
+window	1	0	1	:*	d182,319x96,0,0,5
+window	2	0	1	:*	d185,319x96,0,0,8
+state	0	1

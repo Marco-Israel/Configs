@@ -1,0 +1,5 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	1	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760	1	vim	:vim content/scripts.tex
+window	0	0	1	:*	d17d,319x96,0,0,0
+window	1	0	1	:*	d17e,319x96,0,0,1
+state	1	

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 _usage() {
 cat <<-EOF
                 "${0##*/}"
@@ -29,9 +28,9 @@ cat <<-EOF
  "${0##*/} -p <yourPath/yourFile>  [-o <optionalFlag>]"
 
 
- @node  NOTE: Some usefull information TODO.
+ @node  NOTE:   Some usefull information TODO.
 
- @todo  TODO: Some known open (required) tasks.
+ @todo  TODO:   Some known open (required) tasks.
 
  @attention     ATTENTION:  Some importan information.  TODO.
  @warning       WARN: Same as above. TODO
@@ -39,7 +38,7 @@ cat <<-EOF
 
  @copyright     Available under the MIT License.
 
-                Copyright (C) 2020 Marco Israel (MIS).      All rights reserved.
+                Copyright (C) 2020 Marco Israel (MI).       All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -64,7 +63,7 @@ EOF
 }
 
 ################################################################################
-#File Global Variables
+#File global variables
 
 VAR1="TODO"
 VAR2=$VAR1
@@ -73,42 +72,51 @@ VAR3=$VAR1
 
 
 ################################################################################
-#Local Functions
+#File local functions
 _getopts() {
 
-    # TODO select only once, depending on how to get the parameters.
-#while getopts "h:n:o:p:" OPT
-#do
-#	case "$OPT" in
-#	h)  _usage
-#		exit 1
-#		;;
-#	o) IMAGEFILE="$OPTARG"
-#	    ;;
-#	p)  partcount=$(($partcount + 1))
-#	    PART[$partcount]="$OPTARG"
-#	    ;;
-#	esac
-#done
-
-
-while [ $# -gt 0 ]
+        # TODO select only once, depending on how to get the parameters.
+    while getopts "h:o:p:" OPT
     do
-        case "$1" in
-            01 | --opt1)
-                echo "TODO"
-                ;;
-            O2 | option2)
-				echo "TODO"
-                ;;
-            *) echo TODO
-                echo "TODO"
-                ;;
-        esac
-        shift
+    	case "$OPT" in
+    	o)  echo TODO
+    	    ;;
+    	p)  echo TODO
+    	    ;;
+        *)
+            if [[ "${1}" == "-h" ]]                                         \
+                || [[ "${1}" == "h" ]]                                      \
+                || [[ "${1}" == "help" ]]                                   \
+                || [[ "${1}" == "--help" ]]
+            then
+                echo TODO
+            else
+                _usage
+            fi
+            ;;
+    	esac
+       shift $((OPTIND -1))
     done
 }
 
+#_getopts() {
+#while [ $# -gt 0 ]
+#    do
+#        case "$1" in
+#            01 | --opt1)
+#                echo "TODO"
+#                ;;
+#            O2 | option2)
+#				echo "TODO"
+#                ;;
+#            *) echo TODO
+#                echo "TODO"
+#                ;;
+#        esac
+#        shift
+#    done
+#}
+#
 
 ##### MAIN #####################################################################
 

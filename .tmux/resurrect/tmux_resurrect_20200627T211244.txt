@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/documentation/telair_cp790760/content	1	vim	:vim sdCard_buildImg.sh
+vim patches.tex
+window	0	0	1	:*	cf7e,319x86,0,0,1
+state	0	

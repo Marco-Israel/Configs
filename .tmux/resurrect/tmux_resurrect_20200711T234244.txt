@@ -1,0 +1,8 @@
+pane	0	0	:bash	0	:#-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:/bin/bash ./ptxdist_buildCP790760.sh
+vim local_src/telair-cp_790760_1/main.cpp
+pane	0	0	:bash	0	:#-	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:bash	0	:#-	2	:/home/ptxdist	0	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	1	:vim	1	:*	0	:/home/ptxdist/Dokumente/telair_appData/rootfs/home/testsoftware/sources	1	vim	:vim clear_flash.c get_flash.c get_serial.c get_temp.c get_watchdog.c read_flash.c read_i2c.c set_backlight.c set_flash.c set_reset_reason.c test2.c test.c watchdog_reg.c
+window	0	0	0	:#-	44fd,383x94,0,0{191x94,0,0,0,191x94,192,0[191x46,192,0,1,191x47,192,47,3]}
+window	0	1	1	:*	c841,383x94,0,0,4
+state	0	

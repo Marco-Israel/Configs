@@ -1,0 +1,5 @@
+pane	0	0	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	0	1	:git	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	git	:git commit
+window	0	0	0	:-	cf7d,319x86,0,0,0
+window	0	1	1	:*	cf7e,319x86,0,0,1
+state	0	

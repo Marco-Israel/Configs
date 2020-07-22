@@ -1,0 +1,6 @@
+pane	0	0	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	0	1	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:vim local_src/telair-cp_790760_1/main_window.cpp
+/bin/bash /usr/local/lib/ptxdist-2016.04.0/bin/ptxdist --auto-version images
+window	0	0	0	:-	cf7d,319x86,0,0,0
+window	0	1	1	:*	cf7e,319x86,0,0,1
+state	0	

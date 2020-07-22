@@ -1,0 +1,4 @@
+pane	0	0	:bash	1	:*	0	:/tmp/ptxdist.dPVHn0/kconfig.L20G22	1	bash	:/bin/bash /usr/local/lib/ptxdist-2016.04.0/bin/ptxdist --auto-version menuconfig
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+window	0	0	1	:*	d637,383x94,0,0{192x94,0,0,0,190x94,193,0,2}
+state	0	

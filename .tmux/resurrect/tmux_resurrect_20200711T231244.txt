@@ -1,0 +1,6 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:/bin/bash ./ptxdist_buildCP790760.sh
+vim local_src/telair-cp_790760_1/main.cpp
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:bash	1	:*	2	:/home/ptxdist	0	sudo	:sudo microcom -p /dev/ttyUSB0
+window	0	0	1	:*	44fd,383x94,0,0{191x94,0,0,0,191x94,192,0[191x46,192,0,1,191x47,192,47,3]}
+state	0	

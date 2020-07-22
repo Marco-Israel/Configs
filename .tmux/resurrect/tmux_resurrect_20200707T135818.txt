@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:vim	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	vim	:vim configs/platforms/tqma335x/mba335x/rules/image-telair-cp790760.make
+window	0	0	1	:*	cdc7,383x94,0,0{191x94,0,0,0,191x94,192,0,2}
+state	0	

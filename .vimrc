@@ -2,6 +2,12 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """
+set backup
+set backupdir=~/.vim/backup
+set undodir=~/.vim/undo
+set directory=~/.vim/swp,/tmp,/var/tmp,.
+set writebackup
+autocmd BufWritePre  * let &bex='@' . strftime("%F.%H:%M")
 set autoindent "automatische Zeileneinrueckung
 set smartindent "intelligente Zeileneinrueckung
 set expandtab "Tabs durch Leerzeichen ersetzen lassen
@@ -20,6 +26,7 @@ set autoread  "Liest die Datei neu, wenn ausserhalb von VIM geändert.
 set wrap "automatischer Zeilenumbruch am Ende der Zeile aktivieren
 set linebreak "Bei aautomatiscben Linebreak (set wrap) Wörter nicht trennen
 set wrap linebreak nolist
+set list "listchars anzeigen
 set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:+,eol:$,precedes:#,extends:* " Tabs und Leerzeichen am Zeilenende anzeigen
 set list "listchars anzeigen
 "set relativenumber "Relative Zeilennummern
@@ -79,9 +86,14 @@ set foldnestmax=5
 set foldmethod=indent
 autocmd InsertEnter,WinLeave * setlocal foldmethod=manual
 
+""" List special chars  for filetypes
+autocmd BufNewFile,BufRead *.make,mk            setlocal list
+autocmd BufNewFile,BufRead *.make,mk            setlocal noexpandtab
+
+
 
 """ Open Quickfix entry in Vertical split """""""""""""""""""""""""""""""""""""
-autocmd! FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
+autocmd FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
 
 
 """ Removing trailing white spaces when write """"""""""""""""""""""""""""""""""
@@ -180,14 +192,14 @@ command! -nargs=+ GrepBufs call GrepBuffers(<q-args>)
 """ Spelling and spellcheck """"""""""""""""""""""""""""""""""""""""""""""""""""
 set spell spelllang=en_us
 autocmd VimEnter,BufNewFile,BufReadPost *.uml <buffer> :setlocal nospell
-au BufNewFile,BufRead *.txt           setlocal spelllang=en_us,de_de
-au BufNewFile,BufRead *.tex           setlocal spelllang=en_us
-au BufNewFile,BufRead *.todo          setlocal spelllang=en_us,de_de
-au BufNewFile,BufRead README          setlocal spelllang=en_us,de_de
-au BufNewFile,BufRead *.c,*.cpp       setlocal spelllang=en_us
-au BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spelllang=en_us
-au BufNewFile,BufRead *.py            setlocal spelllang=en_us
-au BufNewFile,BufRead *.sh            setlocal spelllang=en_us
+autocmd BufNewFile,BufRead *.txt           setlocal spelllang=en_us,de_de
+autocmd BufNewFile,BufRead *.tex           setlocal spelllang=en_us
+autocmd BufNewFile,BufRead *.todo          setlocal spelllang=en_us,de_de
+autocmd BufNewFile,BufRead README          setlocal spelllang=en_us,de_de
+autocmd BufNewFile,BufRead *.c,*.cpp       setlocal spelllang=en_us
+autocmd BufNewFile,BufRead *.h,*.hpp,*.hh  setlocal spelllang=en_us
+autocmd BufNewFile,BufRead *.py            setlocal spelllang=en_us
+autocmd BufNewFile,BufRead *.sh            setlocal spelllang=en_us
 
 
 """ Tag handling """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

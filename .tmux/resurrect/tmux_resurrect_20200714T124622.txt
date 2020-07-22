@@ -1,0 +1,8 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	vim	:vim projectroot/etc/inittab
+pane	0	0	:bash	1	:*	2	:/etc/rc.d	0	vim	:vim ../init.d/logrotate
+pane	0	0	:bash	1	:*	3	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	1	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+window	0	0	1	:*	c7e4,383x94,0,0{191x94,0,0[191x47,0,0,1,191x46,0,48,5],191x94,192,0[191x49,192,0,2,191x44,192,50,3]}
+window	0	1	0	:-	c841,383x94,0,0,4
+state	0	

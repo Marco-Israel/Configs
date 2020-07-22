@@ -1,0 +1,5 @@
+pane	0	0	:htop	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	git	:git commit
+vim rules/telair-install-log-partion.make
+pane	0	0	:htop	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	htop	:htop
+window	0	0	1	:*	23e8,319x86,0,0{159x86,0,0,0,159x86,160,0,1}
+state	0	

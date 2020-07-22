@@ -40,6 +40,7 @@ alias zmanual_aurixXX_v14='zathura  /cygdrive/c/app/Aurix/Documentation/00_Manue
 alias zmanual_aurix_instrset='zathura /cygdrive/c/app/Aurix/Documentation/00_Manuels/00_AURIX/UserManuels/TC_Architecture_vol2__INSTRUCTIONSET__TC161_TCS_TC16P_TC16E.pdf &'
 alias zmanual_tasking='zathura /cygdrive/c/app/Aurix/Documentation/00_Manuels/02_TASKING/Tasking_debugger_user_guide.pdf &'
 
+alias conpressfind='find -type f -name *.jpg | xargs -I {} convert -strip -interlace Plane -antialias -adaptive-sharpen 1x0,1 -auto-level -quality 30% {} {}'
 
 
 
@@ -89,6 +90,8 @@ alias avr_we='avrdude -c jtag2 -p m128 -P usb:xx -v -U eeprom:w:eeprom.hex -U ef
 alias make='make -j4'
 alias fn='find -name'
 alias wpasup='sudo wpa_supplicant -D wext -c /etc/wpa_supplicant/wpa_supplicant_7270home.conf -i wlp12s0 -B'
+alias md5sumdir='find somedir -type f -exec md5sum {} \; | sort -k 2 | md5sum'
+alias pixeldiff='compare -compose src'
 
 #cope / past directly from / to cliepboard.
 alias pbcopy='xclip -selection clipboard'
@@ -129,6 +132,8 @@ alias ctags_cpputest='ctags -R -f ~/.tags/cpputest $PROJECT_HOME/bin/cpputest --
 alias ctags_tasking='ctags -R -f ~/.tags/tasking $PROJECT_HOME/bin/tasking/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
 alias ctags_microchip='ctags -R -f ~/.tags/microchip $PROJECT_HOME/bin/microchip/ --extra=+fq --c++-kinds=+p --fields=+afikKlmnsSzt --tag-relative=yes --languages=C,C++,Make -I'
 
+#### Converters ###########
+alias dirconvertqulaity='find -type f -name *.jpg | xargs -I {} convert -strip -interlace Plane -antialias -adaptive-sharpen 1x0,1 -auto-level -quality 80% {} {}'
 
 #### Git ##########
 alias gs='git status '

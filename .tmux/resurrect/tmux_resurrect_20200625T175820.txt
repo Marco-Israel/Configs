@@ -1,0 +1,3 @@
+pane	0	0	:bash	1	:*	0	:/mnt	1	bash	:vim sdCard_buildImg.sh
+window	0	0	1	:*	c83d,383x94,0,0,0
+state	0	

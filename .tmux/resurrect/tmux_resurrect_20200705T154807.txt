@@ -1,0 +1,4 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	vim	:vim -O configs/platforms/tqma335x/mba335x/rules/image-TESTIMG-tgz.make configs/platforms/tqma335x/mba335x/rules/image-telair-cp790760.make
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/platform-MBa335x	1	bash	:-bash
+window	0	0	1	:*	3556,317x82,0,0{158x82,0,0,0,158x82,159,0,1}
+state	0	

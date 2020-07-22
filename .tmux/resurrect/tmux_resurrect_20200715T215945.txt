@@ -1,0 +1,6 @@
+pane	0	0	:[tmux]	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:vim tools/telair/sdCard_generateFlashableImagefile.sh
+pane	0	0	:[tmux]	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	0	:[tmux]	1	:*	2	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	3	:/mnt/sdb6	0	bash	:
+window	0	0	1	:*	3678,319x77,0,0[319x40,0,0{159x40,0,0,6,159x40,160,0,4},319x36,0,41{159x36,0,41,7,159x36,160,41,3}]
+state	0	

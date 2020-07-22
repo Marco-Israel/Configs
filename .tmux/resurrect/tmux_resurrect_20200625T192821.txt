@@ -1,0 +1,3 @@
+pane	0	0	:man	1	:*	0	:/usr/share/man	1	man	:man mtools
+window	0	0	1	:*	c83d,383x94,0,0,0
+state	0	

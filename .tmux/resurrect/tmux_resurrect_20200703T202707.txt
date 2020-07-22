@@ -1,0 +1,4 @@
+pane	0	0	:bash	1	:*	0	:/home/ptxdist	1	bash	:
+pane	0	0	:bash	1	:*	1	:/usr/share/man	0	man	:man sudoers
+window	0	0	1	:*	23e8,319x86,0,0{159x86,0,0,0,159x86,160,0,1}
+state	0	

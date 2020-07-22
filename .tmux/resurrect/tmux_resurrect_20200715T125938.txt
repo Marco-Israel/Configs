@@ -1,0 +1,6 @@
+pane	0	0	:[tmux]	1	:*	0	:/home/ptxdist	0	bash	:
+pane	0	0	:[tmux]	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	0	:[tmux]	1	:*	2	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	3	:/home/ptxdist	0	bash	:
+window	0	0	1	:*	835d,319x77,0,0[319x39,0,0{159x39,0,0,6,159x39,160,0,4},319x37,0,40{159x37,0,40,7,159x37,160,40,3}]
+state	0	

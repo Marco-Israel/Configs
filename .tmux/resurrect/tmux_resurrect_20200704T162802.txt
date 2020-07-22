@@ -1,0 +1,3 @@
+pane	0	0	:vim	1	:*	0	:/mnt/share/software_sample/129100	1	vim	:vim -R acMon.c acmon_CurrentDataAcquisition.c acMon_currentMonitoring.c acMon_hallSensorCalibrationTimer.c acMon_phaseMonitoring.c commIf_addressAssignment.c commIf_addressDataAcquisition.c commIf.c commIf_controllerErrorMonitoring.c commIf_endianMapping.c commIf_hardwareInitialisation.c commIf_receptionRequestHandling.c commIf_selfTest.c commIf_softwareInitialisation.c commIf_transmissionRequestHandling.c dcMon.c sys_mainSchedule.c sys_operationalCycles.c acMon_Priv.h acMon_Pub.h commIf_endianMapping.h commIf_messages.h commIf_Private.h commIf_Public.h dcMon_Pub.h sys_mainSchedule.h sys_operationalCycles_Pub.h
+window	0	0	1	:*	bebd,308x82,0,0,0
+state	0	

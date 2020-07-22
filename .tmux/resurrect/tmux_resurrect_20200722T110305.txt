@@ -1,0 +1,14 @@
+pane	0	0	:[tmux]	1	:*	0	:/home/ptxdist/Downloads/util-linux-2.36-rc1	1	bash	:
+pane	0	0	:[tmux]	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	2	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	3	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	2	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	1	0	:vim	1	:*	0	:/home/ptxdist	1	bash	:
+pane	2	0	:bash	1	:*	0	:/home/ptxdist	1	bash	:
+pane	3	0	:[tmux]	1	:*	0	:/home/ptxdist	1	bash	:
+window	0	0	1	:*	c892,319x86,0,0[319x44,0,0{163x44,0,0,1,155x44,164,0,2},319x41,0,45{164x41,0,45,3,154x41,165,45,4}]
+window	0	2	0	:-	cf82,319x86,0,0,5
+window	1	0	1	:*	cf83,319x86,0,0,6
+window	2	0	1	:*	cf84,319x86,0,0,7
+window	3	0	1	:*	cf85,319x86,0,0,8
+state	0	1

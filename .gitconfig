@@ -8,10 +8,15 @@
 [commit]
   template = ~/.gitfiles/templates/default.tmpl
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
+    co = checkout
+    ci = commit
+    ci = cm
+    st = status
+    br = branch
+	ac = !git add -A && git commit
+	add-commit = !git add -A && git commit
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[diff]
+	tool = vimdiff

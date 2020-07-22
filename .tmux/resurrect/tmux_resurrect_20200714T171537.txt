@@ -1,0 +1,6 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:bash	1	:*	1	:/media/ptxdist/ROOTF	0	bash	:
+pane	0	0	:bash	1	:*	2	:/home/ptxdist	0	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	0	:bash	1	:*	3	:/tmp/ptxdist.ulvS5C/kconfig.iHOPRt	1	bash	:/bin/bash /usr/local/lib/ptxdist-2016.04.0/bin/ptxdist --auto-version menuconfig
+window	0	0	1	:*	3ae2,319x77,0,0{159x77,0,0[159x38,0,0,0,159x38,0,39,2],159x77,160,0[159x38,160,0,1,159x38,160,39,4]}
+state	0	

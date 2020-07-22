@@ -1,0 +1,7 @@
+pane	0	0	:bash	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	sudo	:sudo microcom -p /dev/ttyUSB0
+pane	0	0	:bash	1	:*	2	:/tmp/ptxdist.lE0Q5C/kconfig.zc5eIT	1	bash	:/bin/bash /usr/local/lib/ptxdist-2016.04.0/bin/ptxdist --auto-version menuconfig
+pane	0	1	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+window	0	0	1	:*	977e,319x86,0,0{159x86,0,0,5,159x86,160,0[159x43,160,0,6,159x42,160,44,7]}
+window	0	1	0	:-	cf7e,319x86,0,0,1
+state	0	

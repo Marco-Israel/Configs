@@ -1,0 +1,12 @@
+pane	0	0	:[tmux]	1	:*	0	:/usr/local/share/util-linux	1	bash	:
+pane	0	0	:[tmux]	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	2	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:[tmux]	1	:*	3	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	2	:bash	0	:-	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	bash	:
+pane	1	0	:vim	1	:*	0	:/home/ptxdist	1	bash	:
+pane	2	0	:[tmux]	1	:*	0	:/home/ptxdist	1	bash	:
+window	0	0	1	:*	4f93,319x86,0,0[319x44,0,0{164x44,0,0,1,154x44,165,0,2},319x41,0,45{164x41,0,45,3,154x41,165,45,4}]
+window	0	2	0	:-	cf82,319x86,0,0,5
+window	1	0	1	:*	cf83,319x86,0,0,6
+window	2	0	1	:*	cf84,319x86,0,0,7
+state	0	1

@@ -1,0 +1,4 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119/tools/telair	1	vim	:vim sdCard_generateFlashableImagefile.sh
+vim rules/telair-install-log-partion.make
+window	0	0	1	:*	cf7d,319x86,0,0,0
+state	0	

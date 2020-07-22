@@ -75,3 +75,4 @@ export PS1="\[\033[38;5;243m\][\[$(tput sgr0)\]\[\033[38;5;219m\]\!\[$(tput sgr0
 
 
 #### EOF #######################################################################
+#find -type f -name *.jpg | xargs -I {} convert -strip -interlace Plane -antialias -adaptive-sharpen 1x0,1 -auto-level -quality 30% {} {}

@@ -1,0 +1,5 @@
+pane	0	0	:vim	1	:*	0	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	1	vim	:vim tools/telair/sdCard_generateFlashableImagefile.sh
+pane	0	0	:vim	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+pane	0	0	:vim	1	:*	2	:/home/ptxdist	0	bash	:
+window	0	0	1	:*	6cb1,383x94,0,0{192x94,0,0,0,190x94,193,0[190x46,193,0,1,190x47,193,47,3]}
+state	0	

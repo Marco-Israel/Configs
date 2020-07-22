@@ -1,0 +1,5 @@
+pane	0	0	:bash	1	:*	0	:/home/ptxdist/workdir/sdCardCreate	1	bash	:/usr/lib/min/min
+vim -O ../sdcard_example.sh sdCard_buildImg.sh /home/ptxdist/scripts/sdCard_formatBootable.sh
+pane	0	0	:bash	1	:*	1	:/ptxdist/projects/TQMaxx.BSP.SW.REV.0119/TQMaxx.BSP.SW.SRC.0119	0	bash	:
+window	0	0	1	:*	cdc7,383x94,0,0{191x94,0,0,0,191x94,192,0,2}
+state	0	

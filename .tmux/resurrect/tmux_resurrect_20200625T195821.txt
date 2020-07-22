@@ -1,0 +1,5 @@
+pane	0	0	:bash	1	:*	0	:/home/ptxdist/workdir/sdCardCreate	1	bash	:vim sdCard_buildImg.sh
+pane	0	1	:bash	0	:-	0	:/home/ptxdist	1	bash	:
+window	0	0	1	:*	c83d,383x94,0,0,0
+window	0	1	0	:-	c83e,383x94,0,0,1
+state	0	
